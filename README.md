@@ -1,0 +1,2 @@
+# DouYinComment
+这个Demo是仿照抖音的小视频评论手势拖拽效果,可以说完全和抖音的效果一模一样,至少我在github,cocoachina,coco4app等Demo网址上找了很久,都没有一个demo是能完全和抖音的一致的

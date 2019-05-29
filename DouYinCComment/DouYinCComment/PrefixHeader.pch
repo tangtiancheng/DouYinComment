@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  DouYinCComment
+//
+//  Created by 唐天成 on 2019/5/28.
+//  Copyright © 2019 唐天成. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import "masonry.h"
+#import "UIImageView+WebCache.h"
+#import "UIView+CommonFunction.h"
+#import "ReactiveCocoa.h"
+#import "NSDate+Helper.h"
+
+#define SCREEN_WIDTH            ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT           ([UIScreen mainScreen].bounds.size.height)
+// 颜色值RGB
+#define RGBA(r,g,b,a)                       [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGBCOLORVALUE(rgb)      UIColorFromRGBValue((rgb))
+//是否是iPhoneX
+#define kDevice_Is_iPhoneX (@available(iOS 11.0, *) ? ([UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom ? YES : NO) : NO)
+#define SafeAreaBottomHeight (@available(iOS 11.0, *) ? [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom : 0)
+#define SafeAreaTopHeight (@available(iOS 11.0, *) ? [UIApplication sharedApplication].keyWindow.safeAreaInsets.top : 0)
+#define SafeAreaLeftHeight (@available(iOS 11.0, *) ? [UIApplication sharedApplication].keyWindow.safeAreaInsets.left : 0)
+#define SafeAreaRightHeight (@available(iOS 11.0, *) ? [UIApplication sharedApplication].keyWindow.safeAreaInsets.right : 0)
+
+
+#define DLog(format, ...) printf("\n %s [第%d行] %s\n",  __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+
+
+
+#endif /* PrefixHeader_pch */

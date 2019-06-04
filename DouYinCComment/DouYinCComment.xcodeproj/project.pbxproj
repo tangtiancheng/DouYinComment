@@ -856,8 +856,6 @@
 		790F14D6225CF98F000E7335 /* DouYinCComment */ = {
 			isa = PBXGroup;
 			children = (
-				790F1537225DF51B000E7335 /* TCCommentsPopView */,
-				795DB587229D33AB003AFE44 /* Third */,
 				795DB588229D33B8003AFE44 /* CommentMethod */,
 				795DB589229D33EB003AFE44 /* DouYinPlay */,
 				795DB584229D3355003AFE44 /* RootViewController.h */,
@@ -951,6 +949,7 @@
 		795DB588229D33B8003AFE44 /* CommentMethod */ = {
 			isa = PBXGroup;
 			children = (
+				790F1537225DF51B000E7335 /* TCCommentsPopView */,
 				790F150C225CFF0C000E7335 /* MyCommentView.h */,
 				790F150D225CFF0C000E7335 /* MyCommentView.m */,
 				790F1510225D8F3D000E7335 /* MyCommentCell.h */,
@@ -964,6 +963,7 @@
 		795DB589229D33EB003AFE44 /* DouYinPlay */ = {
 			isa = PBXGroup;
 			children = (
+				795DB587229D33AB003AFE44 /* Third */,
 				795DB5CC229D3DF4003AFE44 /* Other */,
 				795DB5CA229D3DE7003AFE44 /* VIew */,
 				795DB5C9229D3DE3003AFE44 /* Model */,

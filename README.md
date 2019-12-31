@@ -10,4 +10,4 @@
 
 ![效果图](https://github.com/tangtiancheng/DouYinComment/blob/master/莲塘一鹅-2019-04-04-20.22.05-2.gif?raw=true)
 
-
+## 3.和铃声多多一样,支持上传音频到库乐队(GarageBand)直接设置手机铃声

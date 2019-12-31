@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "ViewController.h"
 #import "SmallVideoListViewController.h"
+#import "GarageBandViewController.h"
 
 @interface RootViewController ()
 
@@ -29,15 +30,28 @@
     [douyinPlaybtn setBackgroundColor:[UIColor redColor]];
     [douyinPlaybtn setTitle:@"播放小视频" forState:UIControlStateNormal];
     [douyinPlaybtn addTarget:self action:@selector(douyinPlay) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *uploadbtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 500, 150, 100)];
+    [self.view addSubview:uploadbtn];
+    [uploadbtn setBackgroundColor:[UIColor redColor]];
+    [uploadbtn setTitle:@"上传音频到库乐队" forState:UIControlStateNormal];
+    [uploadbtn addTarget:self action:@selector(uploadGarageBand) forControlEvents:UIControlEventTouchUpInside];
 }
+
 
 - (void)commentMethod {
     ViewController *vc = [[ViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 - (void)douyinPlay {
     
     SmallVideoListViewController *vc = [[SmallVideoListViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)uploadGarageBand {
+    GarageBandViewController *vc = [[GarageBandViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

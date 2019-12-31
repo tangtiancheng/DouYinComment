@@ -258,6 +258,16 @@
 		795DB93B229E8803003AFE44 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB91C229E8803003AFE44 /* YYClassInfo.m */; };
 		795DB93E229E8844003AFE44 /* CommentInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB93C229E8844003AFE44 /* CommentInputView.m */; };
 		795DB941229E9459003AFE44 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB940229E9459003AFE44 /* NSDate+Helper.m */; };
+		79BC688123BAF80100FF4894 /* 牡丹亭外.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 79BC687C23BAF80000FF4894 /* 牡丹亭外.m4a */; };
+		79BC688223BAF80100FF4894 /* 51560665713287.caf in Resources */ = {isa = PBXBuildFile; fileRef = 79BC687D23BAF80000FF4894 /* 51560665713287.caf */; };
+		79BC688323BAF80100FF4894 /* 21560312169529.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 79BC687E23BAF80100FF4894 /* 21560312169529.m4a */; };
+		79BC688423BAF80100FF4894 /* 71560665671244.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 79BC687F23BAF80100FF4894 /* 71560665671244.mp3 */; };
+		79BC688523BAF80100FF4894 /* 51560665749396.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79BC688023BAF80100FF4894 /* 51560665749396.wav */; };
+		79BC688B23BAF81300FF4894 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BC688823BAF81300FF4894 /* libmp3lame.a */; };
+		79BC688C23BAF81300FF4894 /* ExtAudioConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BC688923BAF81300FF4894 /* ExtAudioConverter.m */; };
+		79BC688F23BAF81E00FF4894 /* bandfolder.band in Resources */ = {isa = PBXBuildFile; fileRef = 79BC688E23BAF81E00FF4894 /* bandfolder.band */; };
+		79BC689323BAF84E00FF4894 /* AppConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BC689223BAF84E00FF4894 /* AppConfigure.m */; };
+		79BC689623BAF88C00FF4894 /* GarageBandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BC689523BAF88C00FF4894 /* GarageBandViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -806,6 +816,21 @@
 		795DB93D229E8844003AFE44 /* CommentInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentInputView.h; sourceTree = "<group>"; };
 		795DB93F229E9459003AFE44 /* NSDate+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		795DB940229E9459003AFE44 /* NSDate+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		79BC687C23BAF80000FF4894 /* 牡丹亭外.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "牡丹亭外.m4a"; sourceTree = "<group>"; };
+		79BC687D23BAF80000FF4894 /* 51560665713287.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 51560665713287.caf; sourceTree = "<group>"; };
+		79BC687E23BAF80100FF4894 /* 21560312169529.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 21560312169529.m4a; sourceTree = "<group>"; };
+		79BC687F23BAF80100FF4894 /* 71560665671244.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 71560665671244.mp3; sourceTree = "<group>"; };
+		79BC688023BAF80100FF4894 /* 51560665749396.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 51560665749396.wav; sourceTree = "<group>"; };
+		79BC688723BAF81300FF4894 /* ExtAudioConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtAudioConverter.h; sourceTree = "<group>"; };
+		79BC688823BAF81300FF4894 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		79BC688923BAF81300FF4894 /* ExtAudioConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtAudioConverter.m; sourceTree = "<group>"; };
+		79BC688A23BAF81300FF4894 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		79BC688E23BAF81E00FF4894 /* bandfolder.band */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = bandfolder.band; sourceTree = "<group>"; };
+		79BC689023BAF83200FF4894 /* readme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = readme.h; sourceTree = "<group>"; };
+		79BC689123BAF84E00FF4894 /* AppConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfigure.h; sourceTree = "<group>"; };
+		79BC689223BAF84E00FF4894 /* AppConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfigure.m; sourceTree = "<group>"; };
+		79BC689423BAF88C00FF4894 /* GarageBandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GarageBandViewController.h; sourceTree = "<group>"; };
+		79BC689523BAF88C00FF4894 /* GarageBandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GarageBandViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -813,6 +838,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79BC688B23BAF81300FF4894 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,6 +882,7 @@
 		790F14D6225CF98F000E7335 /* DouYinCComment */ = {
 			isa = PBXGroup;
 			children = (
+				79BC687A23BAF7D200FF4894 /* UploadToGarageBand */,
 				795DB588229D33B8003AFE44 /* CommentMethod */,
 				795DB589229D33EB003AFE44 /* DouYinPlay */,
 				795DB584229D3355003AFE44 /* RootViewController.h */,
@@ -1719,6 +1746,52 @@
 			path = YYModel;
 			sourceTree = "<group>";
 		};
+		79BC687A23BAF7D200FF4894 /* UploadToGarageBand */ = {
+			isa = PBXGroup;
+			children = (
+				79BC688D23BAF81E00FF4894 /* BandResource */,
+				79BC688623BAF81300FF4894 /* libmp3 */,
+				79BC687B23BAF7E800FF4894 /* Resource */,
+				79BC689123BAF84E00FF4894 /* AppConfigure.h */,
+				79BC689223BAF84E00FF4894 /* AppConfigure.m */,
+				79BC689423BAF88C00FF4894 /* GarageBandViewController.h */,
+				79BC689523BAF88C00FF4894 /* GarageBandViewController.m */,
+			);
+			path = UploadToGarageBand;
+			sourceTree = "<group>";
+		};
+		79BC687B23BAF7E800FF4894 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				79BC689023BAF83200FF4894 /* readme.h */,
+				79BC687E23BAF80100FF4894 /* 21560312169529.m4a */,
+				79BC687D23BAF80000FF4894 /* 51560665713287.caf */,
+				79BC688023BAF80100FF4894 /* 51560665749396.wav */,
+				79BC687F23BAF80100FF4894 /* 71560665671244.mp3 */,
+				79BC687C23BAF80000FF4894 /* 牡丹亭外.m4a */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		79BC688623BAF81300FF4894 /* libmp3 */ = {
+			isa = PBXGroup;
+			children = (
+				79BC688723BAF81300FF4894 /* ExtAudioConverter.h */,
+				79BC688823BAF81300FF4894 /* libmp3lame.a */,
+				79BC688923BAF81300FF4894 /* ExtAudioConverter.m */,
+				79BC688A23BAF81300FF4894 /* lame.h */,
+			);
+			path = libmp3;
+			sourceTree = "<group>";
+		};
+		79BC688D23BAF81E00FF4894 /* BandResource */ = {
+			isa = PBXGroup;
+			children = (
+				79BC688E23BAF81E00FF4894 /* bandfolder.band */,
+			);
+			path = BandResource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1822,10 +1895,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79BC688223BAF80100FF4894 /* 51560665713287.caf in Resources */,
 				795DB8CA229E86E9003AFE44 /* IQKeyboardManager.bundle in Resources */,
+				79BC688423BAF80100FF4894 /* 71560665671244.mp3 in Resources */,
 				795DB75E229E372F003AFE44 /* ZFPlayer.bundle in Resources */,
+				79BC688F23BAF81E00FF4894 /* bandfolder.band in Resources */,
 				790F14E4225CF991000E7335 /* LaunchScreen.storyboard in Resources */,
+				79BC688123BAF80100FF4894 /* 牡丹亭外.m4a in Resources */,
+				79BC688523BAF80100FF4894 /* 51560665749396.wav in Resources */,
 				790F14E1225CF991000E7335 /* Assets.xcassets in Resources */,
+				79BC688323BAF80100FF4894 /* 21560312169529.m4a in Resources */,
 				790F14DF225CF98F000E7335 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1877,6 +1956,7 @@
 				795DB628229E2FA1003AFE44 /* KTVHCDataCacheItem.m in Sources */,
 				795DB5BA229D3D69003AFE44 /* UIImageView+HighlightedWebCache.m in Sources */,
 				795DB836229E3FAC003AFE44 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
+				79BC689623BAF88C00FF4894 /* GarageBandViewController.m in Sources */,
 				790F1535225DED17000E7335 /* MASViewConstraint.m in Sources */,
 				795DB8D5229E8758003AFE44 /* CommentModel.m in Sources */,
 				795DB724229E372F003AFE44 /* AVPlayer+MyAvPlayerCate.m in Sources */,
@@ -1983,11 +2063,13 @@
 				795DB87D229E3FAC003AFE44 /* RACSubject.m in Sources */,
 				795DB5C6229D3D69003AFE44 /* UIView+WebCacheOperation.m in Sources */,
 				795DB91F229E8803003AFE44 /* YYCache.m in Sources */,
+				79BC689323BAF84E00FF4894 /* AppConfigure.m in Sources */,
 				795DB89E229E7D2C003AFE44 /* CommentsPopView.m in Sources */,
 				795DB935229E8803003AFE44 /* UIPasteboard+YYText.m in Sources */,
 				795DB844229E3FAC003AFE44 /* MKAnnotationView+RACSignalSupport.m in Sources */,
 				795DB879229E3FAC003AFE44 /* UIButton+RACCommandSupport.m in Sources */,
 				795DB934229E8803003AFE44 /* NSAttributedString+YYText.m in Sources */,
+				79BC688C23BAF81300FF4894 /* ExtAudioConverter.m in Sources */,
 				795DB835229E3FAC003AFE44 /* RACScheduler.m in Sources */,
 				795DB8C8229E86E9003AFE44 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				795DB847229E3FAC003AFE44 /* RACSignalSequence.m in Sources */,
@@ -2268,12 +2350,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GE5UCEG562;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = DouYinCComment/PrefixHeader.pch;
 				INFOPLIST_FILE = DouYinCComment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DouYinCComment/UploadToGarageBand/libmp3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = DBLD.DouYinCComment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2289,12 +2376,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GE5UCEG562;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = DouYinCComment/PrefixHeader.pch;
 				INFOPLIST_FILE = DouYinCComment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DouYinCComment/UploadToGarageBand/libmp3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = DBLD.DouYinCComment;
 				PRODUCT_NAME = "$(TARGET_NAME)";

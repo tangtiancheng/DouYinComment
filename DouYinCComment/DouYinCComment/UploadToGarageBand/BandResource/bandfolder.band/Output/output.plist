@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>encoding application</key>
+	<string>GarageBand for iOS 2.3.6</string>
+	<key>maxLength</key>
+	<real>29.5</real>
+	<key>settings</key>
+	<string>CbPrefs_exportPreset_aacSongMediumQuality</string>
+	<key>tempo</key>
+	<string>110</string>
+	<key>title</key>
+	<string>template</string>
+	<key>video</key>
+	<false/>
+	<key>year</key>
+	<string>2018</string>
+</dict>
+</plist>

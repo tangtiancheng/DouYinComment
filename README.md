@@ -11,5 +11,6 @@
 ![效果图](https://github.com/tangtiancheng/DouYinComment/blob/master/莲塘一鹅-2019-04-04-20.22.05-2.gif?raw=true)
 
 ## 3.和铃声多多一样,支持上传音频到库乐队(GarageBand)直接设置手机铃声
+这个小众功能我看现在基本没有开发者把实现代码开源出来,鉴于之前有好几位iOS开发者通过简书找到我,都是公司需要做这个功能但是不知道怎么实现,所以今天把这个功能实现代码写出来,希望能帮到大家.如果确实解决了您的燃眉之急,希望能帮我点一个star,谢谢啦.
 ![效果图](https://github.com/tangtiancheng/DouYinComment/blob/master/GarageBand.gif?raw=true)
 

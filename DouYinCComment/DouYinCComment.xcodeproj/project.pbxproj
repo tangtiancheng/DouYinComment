@@ -259,10 +259,6 @@
 		795DB93E229E8844003AFE44 /* CommentInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB93C229E8844003AFE44 /* CommentInputView.m */; };
 		795DB941229E9459003AFE44 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB940229E9459003AFE44 /* NSDate+Helper.m */; };
 		79BC688123BAF80100FF4894 /* 牡丹亭外.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 79BC687C23BAF80000FF4894 /* 牡丹亭外.m4a */; };
-		79BC688223BAF80100FF4894 /* 51560665713287.caf in Resources */ = {isa = PBXBuildFile; fileRef = 79BC687D23BAF80000FF4894 /* 51560665713287.caf */; };
-		79BC688323BAF80100FF4894 /* 21560312169529.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 79BC687E23BAF80100FF4894 /* 21560312169529.m4a */; };
-		79BC688423BAF80100FF4894 /* 71560665671244.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 79BC687F23BAF80100FF4894 /* 71560665671244.mp3 */; };
-		79BC688523BAF80100FF4894 /* 51560665749396.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79BC688023BAF80100FF4894 /* 51560665749396.wav */; };
 		79BC688B23BAF81300FF4894 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BC688823BAF81300FF4894 /* libmp3lame.a */; };
 		79BC688C23BAF81300FF4894 /* ExtAudioConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BC688923BAF81300FF4894 /* ExtAudioConverter.m */; };
 		79BC688F23BAF81E00FF4894 /* bandfolder.band in Resources */ = {isa = PBXBuildFile; fileRef = 79BC688E23BAF81E00FF4894 /* bandfolder.band */; };
@@ -817,10 +813,6 @@
 		795DB93F229E9459003AFE44 /* NSDate+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		795DB940229E9459003AFE44 /* NSDate+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		79BC687C23BAF80000FF4894 /* 牡丹亭外.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "牡丹亭外.m4a"; sourceTree = "<group>"; };
-		79BC687D23BAF80000FF4894 /* 51560665713287.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 51560665713287.caf; sourceTree = "<group>"; };
-		79BC687E23BAF80100FF4894 /* 21560312169529.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 21560312169529.m4a; sourceTree = "<group>"; };
-		79BC687F23BAF80100FF4894 /* 71560665671244.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 71560665671244.mp3; sourceTree = "<group>"; };
-		79BC688023BAF80100FF4894 /* 51560665749396.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 51560665749396.wav; sourceTree = "<group>"; };
 		79BC688723BAF81300FF4894 /* ExtAudioConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtAudioConverter.h; sourceTree = "<group>"; };
 		79BC688823BAF81300FF4894 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		79BC688923BAF81300FF4894 /* ExtAudioConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtAudioConverter.m; sourceTree = "<group>"; };
@@ -1764,10 +1756,6 @@
 			isa = PBXGroup;
 			children = (
 				79BC689023BAF83200FF4894 /* readme.h */,
-				79BC687E23BAF80100FF4894 /* 21560312169529.m4a */,
-				79BC687D23BAF80000FF4894 /* 51560665713287.caf */,
-				79BC688023BAF80100FF4894 /* 51560665749396.wav */,
-				79BC687F23BAF80100FF4894 /* 71560665671244.mp3 */,
 				79BC687C23BAF80000FF4894 /* 牡丹亭外.m4a */,
 			);
 			path = Resource;
@@ -1895,16 +1883,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79BC688223BAF80100FF4894 /* 51560665713287.caf in Resources */,
 				795DB8CA229E86E9003AFE44 /* IQKeyboardManager.bundle in Resources */,
-				79BC688423BAF80100FF4894 /* 71560665671244.mp3 in Resources */,
 				795DB75E229E372F003AFE44 /* ZFPlayer.bundle in Resources */,
 				79BC688F23BAF81E00FF4894 /* bandfolder.band in Resources */,
 				790F14E4225CF991000E7335 /* LaunchScreen.storyboard in Resources */,
 				79BC688123BAF80100FF4894 /* 牡丹亭外.m4a in Resources */,
-				79BC688523BAF80100FF4894 /* 51560665749396.wav in Resources */,
 				790F14E1225CF991000E7335 /* Assets.xcassets in Resources */,
-				79BC688323BAF80100FF4894 /* 21560312169529.m4a in Resources */,
 				790F14DF225CF98F000E7335 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

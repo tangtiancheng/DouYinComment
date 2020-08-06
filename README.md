@@ -19,7 +19,7 @@
 ## 4.多列表嵌套分页滚动,header悬浮
 ### 该功能共有两个类:1.TCViewPager(用于处理列表分页)  2.TCNestScrollPageView(用于处理嵌套header滚动悬浮)
 一开始铃声多多中只有分页功能，没有需要加入headerView悬浮嵌套的功能，所以就只写了TCViewPager，用于处理分页功能，后来个人主页需要做成headerView悬浮的效果，但是我又不想修改之前TCViewPager已经写好的代码，而且肯定也有其他开发者已经有了自己的分页控件（改样式改代码肯定是改自己的代码比较熟悉），只想添加一个headerView悬浮功能，不想用我的TCViewPager，所以我就索性写了TCNestScrollPageView用于处理嵌套headerView滚动悬浮，把TCNestScrollPageView和TCViewPager完全拆开。
-如果你已经有了自己的分页控件,但是想在其基础上再添加header悬浮滚动的功能,那么你就只需要使用TCNestScrollPageView即可,不需要用到TCViewPager.用法非常非常简单,直接参照demo
+如果你已经有了自己的分页控件,但是想在其基础上再添加header悬浮滚动的功能,那么你就只需要使用TCNestScrollPageView即可,不需要用到TCViewPager.用法非常非常简单,直接参照demo（github上有一些一两千star的项目我觉得无论是代码还是使用都有丢丢复杂，对新手不太友好，看起来一脸懵逼，想做一些改动都无从下手，TCNestScrollPageView和TCViewPager相对来说思想思路和代码都很简单，想做一些修改看看代码就能改，有需要的就用起来吧）
 ### (1).简单分页
 ![image](https://github.com/tangtiancheng/DouYinComment/blob/master/gif/分页效果.gif)
 ### (2).headerView随时变动
@@ -31,4 +31,4 @@
 ### (5).headerView不吸顶,下拉变大
 ![image](https://github.com/tangtiancheng/DouYinComment/blob/master/gif/headerView不吸顶,下拉变大.gif)
 
-另外还有其他的效果自己去看demo,使用起来很简单,不会qing侵入你的代码,实现原理也不难,自己去看代码也肯定能看懂
+另外还有其他的效果自己去看demo,使用起来很简单,不会侵入你的代码,实现原理也不难,自己去看代码也肯定能看懂(好用请给个star,谢谢)

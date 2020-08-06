@@ -10,7 +10,6 @@
 //#import "UIButton+CustomCategory.h"
 //#import "TCCustomBtn.h"
 //#import "UserHomeViewController.h"
-#import "YYLabel.h"
 #import "UIButton+WebCache.h"
 
 @interface CommentMessageCell ()
@@ -22,7 +21,7 @@
 //评论日期
 @property(nonatomic, strong) UILabel *commentDateLabel;
 //评论内容
-@property(nonatomic, strong) YYLabel *commentMessageLabel;
+@property(nonatomic, strong) UILabel *commentMessageLabel;
 
 
 @end
@@ -78,9 +77,9 @@
     }];
     
     //回复内容
-    self.commentMessageLabel = [[YYLabel alloc]init];
-    self.commentMessageLabel.displaysAsynchronously = YES;
-    self.commentMessageLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - 14    -14    -14    -34   ;
+    self.commentMessageLabel = [[UILabel alloc]init];
+//    self.commentMessageLabel.displaysAsynchronously = YES;
+//    self.commentMessageLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - 14    -14    -14    -34   ;
 
 //    self.commentMessageLabel.adjustsFontSizeToFitWidth = YES;
     self.commentMessageLabel.lineBreakMode = NSLineBreakByTruncatingTail;

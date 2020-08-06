@@ -105,11 +105,7 @@
         make.left.with.offset(9 );
         make.size.mas_equalTo(CGSizeMake(40 , 40 ));
     }];
-    @weakify(self)
-    [[RACObserve(self, model.comment_num) ignore:nil] subscribeNext:^(NSNumber *x) {
-        @strongify(self);
-        self.commentNumLabel.text = x.stringValue;
-    }];
+    
     
  
     self.gradientBackView = [[UIView alloc] init];
@@ -162,6 +158,8 @@
     self.messageLabel.text = model.name;
     
     self.concernNumLabel.text = @(model.score).stringValue;
+    
+    self.commentNumLabel.text = @(model.comment_num).stringValue;
 }
 
 

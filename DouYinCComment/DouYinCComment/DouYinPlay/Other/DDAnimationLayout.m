@@ -78,7 +78,6 @@
  * 返回所有的尺寸
  */
 -(CGSize)collectionViewContentSize{
-    //    DLog(@"字典:%@  ",self.maxXDict);
     __block NSString* maxColumn=@"0";
     [self.maxXDict enumerateKeysAndObjectsUsingBlock:^(NSString *column, NSNumber *maxX, BOOL *stop) {
         if([maxX floatValue]>[self.maxXDict[maxColumn]floatValue]){
@@ -205,7 +204,6 @@
  */
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
 {
-    //    DLog(@"%s  %d   %@",__func__,self.attrsArray.count,NSStringFromCGRect(rect));
     return self.attrsArray;
 }
 

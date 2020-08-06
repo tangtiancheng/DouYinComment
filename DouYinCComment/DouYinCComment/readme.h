@@ -9,8 +9,7 @@
 #ifndef readme_h
 #define readme_h
 
-
-//你只需要把 TCCommentsPopView 这个类拖入你的工程里,具体使用参照demo
+//你只需要把 TCCommentsPopView 这个类拖入你的工程里就可以实现抖音评论拖拽效果,具体使用参照demo
 
 
 #endif /* readme_h */

@@ -319,14 +319,7 @@
             make.top.equalTo(_artistLabel.mas_bottom).with.offset(3 );
         }];
         
-        [[RACObserve(self, model.comment_num) ignore:nil] subscribeNext:^(NSNumber *x) {
-            @strongify(self);
-            self.commentNum.text = x.stringValue;
-        }];
-        [[RACObserve(self, model.score) ignore:nil] subscribeNext:^(NSNumber *x) {
-            @strongify(self);
-            self.favoriteNum.text = x.stringValue;
-        }];
+       
     }
     return self;
 }
@@ -340,6 +333,8 @@
     } else {
         self.artistLabel.text = @"";
     }
+    self.commentNum.text = @(model.comment_num).stringValue;
+    self.favoriteNum.text = @(model.score).stringValue;
     
     if(model.aspect >= 1.4) {
         self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -352,6 +347,7 @@
   
     self.focus.hidden = NO;
     self.favorite.isChoose = NO;
+    
     
 }
 
@@ -416,7 +412,6 @@
 }
 
 - (void)dealloc {
-    DLog(@"销毁了");
 }
 
 @end

@@ -97,9 +97,9 @@
         NSError *error;
         [KTVHTTPCache proxyStart:&error];
         if (error) {
-            DLog(@"开启服务失败");
+            NSLog(@"开启服务失败");
         }else{
-            DLog(@"开启服务成功");
+            NSLog(@"开启服务成功");
         }
     });
 }
@@ -271,7 +271,7 @@
 }
 
 - (void)dealloc {
-    DLog(@"销毁");
+    NSLog(@"销毁");
     [self resetPlayer];
 }
 

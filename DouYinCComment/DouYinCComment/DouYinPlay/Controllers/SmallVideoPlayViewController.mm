@@ -107,7 +107,6 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SmallVideoPlayCell *cell = [tableView dequeueReusableCellWithIdentifier:SmallVideoCellIdentifier forIndexPath:indexPath];
     cell.delegate = self;
-    DLog(@"cell的地址:%p   index:%ld   %ld",cell,indexPath.row,self.modelArray.count-2);
     cell.model = self.modelArray[indexPath.row];
     NSInteger rowIndex = indexPath.row;
     NSInteger index = self.modelArray.count - 2;
@@ -123,7 +122,6 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    DLog(@"快点播放下一个");
     NSInteger currentIndex = round(self.tableView.contentOffset.y / SCREEN_HEIGHT);
     if(self.currentPlayIndex != currentIndex) {
         if(self.currentPlayIndex > currentIndex) {
@@ -132,7 +130,6 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
             [self preLoadIndex:currentIndex+1];
         }
         self.currentPlayIndex = currentIndex;
-        DLog(@"播放下一个");
         [self playIndex:self.currentPlayIndex];
     }
 }
@@ -146,7 +143,6 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 }
 
 - (void)playIndex:(NSInteger)currentIndex {
-    DLog(@"播放下一个");
     SmallVideoPlayCell *currentCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:currentIndex inSection:0]];
     
     NSString *artist = nil;
@@ -275,7 +271,6 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 
 - (DDVideoPlayerManager *)preloadVideoPlayerManager {
     if(!_preloadVideoPlayerManager) {
-        DLog(@"%@",self);
         _preloadVideoPlayerManager = [[DDVideoPlayerManager alloc] init];
     }
     return _preloadVideoPlayerManager;

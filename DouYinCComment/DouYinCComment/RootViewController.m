@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "SmallVideoListViewController.h"
 #import "GarageBandViewController.h"
+#import "RootViewPageViewController.h"
 
 @interface RootViewController ()
 
@@ -25,17 +26,23 @@
     [combtn setTitle:@"评论功能" forState:UIControlStateNormal];
     [combtn addTarget:self action:@selector(commentMethod) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *douyinPlaybtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 300, 150, 100)];
+    UIButton *douyinPlaybtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 250, 150, 100)];
     [self.view addSubview:douyinPlaybtn];
     [douyinPlaybtn setBackgroundColor:[UIColor redColor]];
     [douyinPlaybtn setTitle:@"播放小视频" forState:UIControlStateNormal];
     [douyinPlaybtn addTarget:self action:@selector(douyinPlay) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *uploadbtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 500, 150, 100)];
+    UIButton *uploadbtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 400, 150, 100)];
     [self.view addSubview:uploadbtn];
     [uploadbtn setBackgroundColor:[UIColor redColor]];
     [uploadbtn setTitle:@"上传音频到库乐队" forState:UIControlStateNormal];
     [uploadbtn addTarget:self action:@selector(uploadGarageBand) forControlEvents:UIControlEventTouchUpInside];
+   
+    UIButton *viewPagebtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 550, 150, 100)];
+    [self.view addSubview:viewPagebtn];
+    [viewPagebtn setBackgroundColor:[UIColor redColor]];
+    [viewPagebtn setTitle:@"多页面嵌套" forState:UIControlStateNormal];
+    [viewPagebtn addTarget:self action:@selector(showViewPage) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -55,6 +62,9 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
+- (void)showViewPage {
+    RootViewPageViewController *vc = [[RootViewPageViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

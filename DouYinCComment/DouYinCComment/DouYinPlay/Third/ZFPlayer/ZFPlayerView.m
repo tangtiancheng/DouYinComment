@@ -165,7 +165,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
 - (void)dealloc {
 //    [self.urlAsset.resourceLoader setDelegate:nil queue:dispatch_get_main_queue()];
     //    self.resourceLoader = nil;
-    DLog(@"播放器销毁");
     self.playerItem = nil;
     self.urlAsset = nil;
     self.scrollView  = nil;
@@ -186,7 +185,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
  */
 - (void)resetToPlayNewURL {
     self.repeatToPlay = YES;
-    DLog(@"哈哈1");
     [self resetPlayer];
 }
 
@@ -289,76 +287,53 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
  *  重置player
  */
 - (void)resetPlayer {
-    DLog(@"%@ 调用一下resetPlayer",[NSThread currentThread]);
 //    [self.urlAsset.resourceLoader setDelegate:nil queue:dispatch_get_main_queue()];
     //    self.resourceLoader = nil;
     
     // 改为为播放完
     self.playDidEnd         = NO;
-    DLog(@"%@ 调用一下resetPlayer1",[NSThread currentThread]);
     self.urlAsset = nil;
-    DLog(@"%@ 调用一下resetPlayer2",[NSThread currentThread]);
     self.playerItem         = nil;
-    DLog(@"%@ 调用一下resetPlayer3",[NSThread currentThread]);
     self.didEnterBackground = NO;
-    DLog(@"%@ 调用一下resetPlayer4",[NSThread currentThread]);
 //    self.isAutoPlay = YES;
     // 视频跳转秒数置0
     self.seekTime           = 0;
-    DLog(@"%@ 调用一下resetPlayer5",[NSThread currentThread]);
 //    self.isAutoPlay         = YES;
     if (self.timeObserve) {
-        DLog(@"%@ 调用一下resetPlayer6",[NSThread currentThread]);
         [self.player removeTimeObserver:self.timeObserve];
         self.timeObserve = nil;
     }
-    DLog(@"%@ 调用一下resetPlayer7",[NSThread currentThread]);
     // 移除通知
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     // 暂停
 //    [self pause];
-    DLog(@"%@ 调用一下resetPlayer8",[NSThread currentThread]);
     [self.player pause];
-    DLog(@"%@ 调用一下resetPlayer9",[NSThread currentThread]);
     [self.player cancelPendingPrerolls];
     // 移除原来的layer
-    DLog(@"%@ 调用一下resetPlayer10",[NSThread currentThread]);
     [self.playerLayer removeFromSuperlayer];
     // 把player置为nil
-    DLog(@"%@ 调用一下resetPlayer11",[NSThread currentThread]);
     self.imageGenerator = nil;
-    DLog(@"%@ 调用一下resetPlayer12",[NSThread currentThread]);
     self.player         = nil;
-    DLog(@"%@ 调用一下resetPlayer13",[NSThread currentThread]);
     if (self.isChangeResolution) { // 切换分辨率
         [self.controlView zf_playerResetControlViewForResolution];
         self.isChangeResolution = NO;
     }else { // 重置控制层View
         [self.controlView zf_playerResetControlView];
     }
-    DLog(@"%@ 调用一下resetPlayer14",[NSThread currentThread]);
     self.controlView   = nil;
-    DLog(@"%@ 调用一下resetPlayer15",[NSThread currentThread]);
     // 非重播时，移除当前playerView
     if (!self.repeatToPlay) {
         [self removeFromSuperview];
-        DLog(@"%@ 调用一下resetPlayer16",[NSThread currentThread]);
     }
     // 底部播放video改为NO
     self.isBottomVideo = NO;
-    DLog(@"%@ 调用一下resetPlayer17",[NSThread currentThread]);
     // cell上播放视频 && 不是重播时
     if (self.isCellVideo && !self.repeatToPlay) {
-        DLog(@"%@ 调用一下resetPlayer18",[NSThread currentThread]);
         // vicontroller中页面消失
         self.viewDisappear = YES;
-        DLog(@"%@ 调用一下resetPlayer19",[NSThread currentThread]);
         self.isCellVideo   = NO;
-        DLog(@"%@ 调用一下resetPlayer20",[NSThread currentThread]);
         self.scrollView     = nil;
-        DLog(@"%@ 调用一下resetPlayer21",[NSThread currentThread]);
         self.indexPath     = nil;
-        DLog(@"%@ 调用一下resetPlayer22",[NSThread currentThread]);
     }
 }
 
@@ -367,7 +342,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
  */
 - (void)resetToPlayNewVideo:(ZFPlayerModel *)playerModel {
     self.repeatToPlay = YES;
-    DLog(@"哈哈2");
     [self resetPlayer];
     self.playerModel = playerModel;
     [self configZFPlayer];
@@ -408,7 +382,9 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
                     AtIndexPath:(NSIndexPath *)indexPath {
     
     // 如果页面没有消失，并且playerItem有值，需要重置player(其实就是点击播放其他视频时候)
-    if (!self.viewDisappear && self.playerItem) {DLog(@"哈哈3"); [self resetPlayer]; }
+    if (!self.viewDisappear && self.playerItem) {
+        [self resetPlayer];
+    }
     // 在cell上播放视频
     self.isCellVideo      = YES;
     // viewDisappear改为NO
@@ -715,7 +691,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
             [self updatePlayerViewToCell];
         } else {
             if (self.stopPlayWhileCellNotVisable) {
-                DLog(@"哈哈4");
                 [self resetPlayer];
             } else {
                 // 在底部
@@ -730,7 +705,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
             [self updatePlayerViewToCell];
         } else {
             if (self.stopPlayWhileCellNotVisable) {
-                DLog(@"哈哈5");
                 [self resetPlayer];
             } else {
                 // 在底部
@@ -749,7 +723,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     if (self.playDidEnd) { // 如果播放完了，滑动到小屏bottom位置时，直接resetPlayer
         self.repeatToPlay = NO;
         self.playDidEnd   = NO;
-        DLog(@"哈哈6");
         [self resetPlayer];
         return;
     }
@@ -1154,7 +1127,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     if (self.isBottomVideo && !self.isFullScreen) { // 播放完了，如果是在小屏模式 && 在bottom位置，直接关闭播放器
         self.repeatToPlay = NO;
         self.playDidEnd   = NO;
-        DLog(@"哈哈7");
         [self resetPlayer];
     } else {
         if (!self.isDragged) { // 如果不是拖拽中，直接结束播放
@@ -1244,7 +1216,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         //        CMTime dragedCMTime = CMTimeMakeWithSeconds(dragedSeconds, 1000); //kCMTimeZero
         __weak typeof(self) weakSelf = self;
         [self.player seekToTime:time completionHandler:^(BOOL finished) {
-            DLog(@"移动Finish = %ld",finished);
             
             [weakSelf.controlView zf_playerActivity:NO];
             // 视频跳转回调
@@ -1622,7 +1593,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
 }
 
 - (void)zf_controlView:(UIView *)controlView closeAction:(UIButton *)sender {
-    DLog(@"哈哈8");
     [self resetPlayer];
     [self removeFromSuperview];
 }

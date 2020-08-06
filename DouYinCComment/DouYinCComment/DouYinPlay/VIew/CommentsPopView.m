@@ -98,13 +98,9 @@ static NSString *const replyCommentMessageCellIdentifier = @"replyCommentMessage
             make.top.left.right.equalTo(self.container);
             make.height.mas_equalTo(35  );
         }];
-        @weakify(self);
-        [RACObserve(self, videoModel.comment_num) subscribeNext:^(NSNumber *x) {
-            @strongify(self);
-            self.numCommentLabel.text = [NSString stringWithFormat:@"%ld条评论",x.integerValue];
-        }];
-        
-        
+      
+        self.numCommentLabel.text = [NSString stringWithFormat:@"%ld条评论",self.videoModel.comment_num];
+
         _closeBtn = [[UIButton alloc] init];
         [_closeBtn setBackgroundImage:[UIImage imageNamed: @"smallVideo_close_comment"] forState:UIControlStateNormal] ;
         _closeBtn.contentMode = UIViewContentModeCenter;
@@ -271,10 +267,7 @@ static NSString *const replyCommentMessageCellIdentifier = @"replyCommentMessage
 #pragma mark - UIGestureRecognizerDelegate
 //1
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    //    if([gestureRecognizer isKindOfClass:[UIGestureRecognizer class]]) {
-    //        CGPoint point = [gestureRecognizer locationInView:_container];
-    //        DLog(@"%@",NSStringFromCGPoint(point));
-    //    }
+
     if(gestureRecognizer == self.panGestureRecognizer) {
         UIView *touchView = touch.view;
         while (touchView != nil) {
@@ -287,7 +280,6 @@ static NSString *const replyCommentMessageCellIdentifier = @"replyCommentMessage
             }
             touchView = [touchView nextResponder];
         }
-        DLog(@"shouldReceiveTouch");
     }
     return YES;
 }
@@ -302,14 +294,13 @@ static NSString *const replyCommentMessageCellIdentifier = @"replyCommentMessage
         }
     } else if(gestureRecognizer == self.panGestureRecognizer){
         //如果是自己加的拖拽手势
-        DLog(@"gestureRecognizerShouldBegin");
     }
     return YES;
 }
 
 //3. 是否与其他手势共存，一般使用默认值(默认返回NO：不与任何手势共存)
 - (BOOL)gestureRecognizer:(UIPanGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    DLog(@"shouldRecognizeSimultaneouslyWithGestureRecognizer :\n%@  \n%@  \n%@",self.panGestureRecognizer,gestureRecognizer,otherGestureRecognizer);
+    NSLog(@"shouldRecognizeSimultaneouslyWithGestureRecognizer :\n%@  \n%@  \n%@",self.panGestureRecognizer,gestureRecognizer,otherGestureRecognizer);
     if(gestureRecognizer == self.panGestureRecognizer) {
         if ([otherGestureRecognizer isKindOfClass:NSClassFromString(@"UIScrollViewPanGestureRecognizer")] || [otherGestureRecognizer isKindOfClass:NSClassFromString(@"UIPanGestureRecognizer")] ) {
             if(otherGestureRecognizer.view == self.tableView) {
@@ -382,7 +373,6 @@ static NSString *const replyCommentMessageCellIdentifier = @"replyCommentMessage
                                      self.container.top = SCREEN_HEIGHT - self.container.height;
                                  }
                                  completion:^(BOOL finished) {
-                                     DLog(@"结束");
                                  }];
                 
             }
@@ -409,12 +399,7 @@ static NSString *const replyCommentMessageCellIdentifier = @"replyCommentMessage
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    DLog(@"scrollViewDidScroll  %@",NSStringFromCGPoint( [scrollView.panGestureRecognizer translationInView:self.tableView]));
-////    if(scrollView.tracking == YES) {
-////
-////    }
-//}
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

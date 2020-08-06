@@ -84,16 +84,7 @@
 //        }];
         _keyboardHeight = SafeAreaBottomHeight;
         @weakify(self);
-//        [self.textView.rac_textSignal subscribeNext:^(NSString *text) {
-//            @strongify(self);
-//            if (text.length) {
-//                self.sendButton.enabled = YES;
-//                [_placeholderLabel setHidden:YES];
-//            } else {
-//                self.sendButton.enabled = NO;
-//                [_placeholderLabel setHidden:NO];
-//            }
-//        }];
+
         [RACObserve(self.textView, text)subscribeNext:^(NSString *text) {
             @strongify(self);
             if (text.length) {
@@ -127,14 +118,11 @@
 
 - (void)updateTextViewFrame {
 
-    DLog(@"%lf",SafeAreaBottomHeight);
     CGFloat textViewHeight = 0.0;
     if(_keyboardHeight > SafeAreaBottomHeight) {
         textViewHeight = _textHeight + 2 * kCommentTextViewTopBottomInset ;
-        DLog(@"哈哈:%lf",textViewHeight);
     } else {
         textViewHeight = ceilf(_textView.font.lineHeight) + 2 * kCommentTextViewTopBottomInset ;
-        DLog(@"呵呵:%lf",textViewHeight);
     }
     _textBackView.frame = CGRectMake(0, 0, SCREEN_WIDTH, textViewHeight + kCommentTextViewTopSpace + kCommentTextViewBottomSpace);
     _textView.frame = CGRectMake(kCommentTextViewLeftSpace, kCommentTextViewTopSpace, SCREEN_WIDTH - kCommentTextViewLeftSpace - kCommentTextViewRightSpace, textViewHeight);

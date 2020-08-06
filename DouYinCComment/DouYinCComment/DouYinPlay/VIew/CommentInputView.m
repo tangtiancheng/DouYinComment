@@ -54,8 +54,8 @@
         }];
         
         
-        _commentTextView = [[UITextView alloc] init];//WithFrame:CGRectMake(25 * KWIDTH_IPHONE6_SCALE, SCREEN_HEIGHT - 35 * KHEIGHT_IPHONE6_SCALE, SCREEN_WIDTH - 25 * 2 * KWIDTH_IPHONE6_SCALE, 35 * KWIDTH_IPHONE6_SCALE)];
-        _commentTextView.textContainerInset = UIEdgeInsetsMake(10   , 0, 10   , 0);//UIEdgeInsetsZero;
+        _commentTextView = [[UITextView alloc] init];
+        _commentTextView.textContainerInset = UIEdgeInsetsMake(10   , 0, 10   , 0);
         _commentTextView.backgroundColor = [UIColor clearColor];
         _commentTextView.returnKeyType = UIReturnKeySend;
         _commentTextView.font = [UIFont systemFontOfSize:15.0   ];

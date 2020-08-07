@@ -39,6 +39,7 @@
 		7927264F24DC046300907E77 /* Type4ViewControllerThird.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927264E24DC046300907E77 /* Type4ViewControllerThird.m */; };
 		7927265224DC0EFF00907E77 /* Type4ViewControllerFourth.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927265124DC0EFF00907E77 /* Type4ViewControllerFourth.m */; };
 		7927265524DC2B4600907E77 /* BaseTableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927265424DC2B4600907E77 /* BaseTableViewController2.m */; };
+		7927266324DD0CEB00907E77 /* UIView+EasyFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927266224DD0CEB00907E77 /* UIView+EasyFrame.m */; };
 		793E814C24D821FC008978D5 /* RootViewPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793E814B24D821FC008978D5 /* RootViewPageViewController.m */; };
 		793E815224D822A6008978D5 /* TCViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 793E815024D822A6008978D5 /* TCViewPager.m */; };
 		793E815324D822A6008978D5 /* TCNestScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793E815124D822A6008978D5 /* TCNestScrollPageView.m */; };
@@ -369,6 +370,8 @@
 		7927265124DC0EFF00907E77 /* Type4ViewControllerFourth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerFourth.m; sourceTree = "<group>"; };
 		7927265324DC2B4600907E77 /* BaseTableViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController2.h; sourceTree = "<group>"; };
 		7927265424DC2B4600907E77 /* BaseTableViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController2.m; sourceTree = "<group>"; };
+		7927266124DD0CEB00907E77 /* UIView+EasyFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyFrame.h"; sourceTree = "<group>"; };
+		7927266224DD0CEB00907E77 /* UIView+EasyFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+EasyFrame.m"; sourceTree = "<group>"; };
 		793E814A24D821FC008978D5 /* RootViewPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewPageViewController.h; sourceTree = "<group>"; };
 		793E814B24D821FC008978D5 /* RootViewPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewPageViewController.m; sourceTree = "<group>"; };
 		793E814E24D822A6008978D5 /* TCViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewPager.h; sourceTree = "<group>"; };
@@ -1010,6 +1013,26 @@
 			path = Type4;
 			sourceTree = "<group>";
 		};
+		7927265F24DD0C9600907E77 /* TCNestScrollPageView */ = {
+			isa = PBXGroup;
+			children = (
+				793E814F24D822A6008978D5 /* TCNestScrollPageView.h */,
+				793E815124D822A6008978D5 /* TCNestScrollPageView.m */,
+			);
+			path = TCNestScrollPageView;
+			sourceTree = "<group>";
+		};
+		7927266024DD0CA100907E77 /* TCViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				7927266124DD0CEB00907E77 /* UIView+EasyFrame.h */,
+				7927266224DD0CEB00907E77 /* UIView+EasyFrame.m */,
+				793E814E24D822A6008978D5 /* TCViewPager.h */,
+				793E815024D822A6008978D5 /* TCViewPager.m */,
+			);
+			path = TCViewPager;
+			sourceTree = "<group>";
+		};
 		793E814924D820B8008978D5 /* ViewPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1027,10 +1050,8 @@
 		793E814D24D82299008978D5 /* TCViewPage(你只需要以下两个类即可实现分页和嵌套滚动) */ = {
 			isa = PBXGroup;
 			children = (
-				793E814F24D822A6008978D5 /* TCNestScrollPageView.h */,
-				793E815124D822A6008978D5 /* TCNestScrollPageView.m */,
-				793E814E24D822A6008978D5 /* TCViewPager.h */,
-				793E815024D822A6008978D5 /* TCViewPager.m */,
+				7927265F24DD0C9600907E77 /* TCNestScrollPageView */,
+				7927266024DD0CA100907E77 /* TCViewPager */,
 			);
 			path = "TCViewPage(你只需要以下两个类即可实现分页和嵌套滚动)";
 			sourceTree = "<group>";
@@ -2192,6 +2213,7 @@
 				795DB5C6229D3D69003AFE44 /* UIView+WebCacheOperation.m in Sources */,
 				79BC689323BAF84E00FF4894 /* AppConfigure.m in Sources */,
 				795DB89E229E7D2C003AFE44 /* CommentsPopView.m in Sources */,
+				7927266324DD0CEB00907E77 /* UIView+EasyFrame.m in Sources */,
 				795DB844229E3FAC003AFE44 /* MKAnnotationView+RACSignalSupport.m in Sources */,
 				795DB879229E3FAC003AFE44 /* UIButton+RACCommandSupport.m in Sources */,
 				79BC688C23BAF81300FF4894 /* ExtAudioConverter.m in Sources */,

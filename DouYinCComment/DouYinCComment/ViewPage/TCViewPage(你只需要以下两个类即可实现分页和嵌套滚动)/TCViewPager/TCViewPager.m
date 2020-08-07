@@ -7,6 +7,7 @@
 //
 
 #import "TCViewPager.h"
+#import "UIView+EasyFrame.h"
 
 #define MYRGBACOLOR(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
@@ -44,6 +45,10 @@
     self.selectedLabelBigScale = 1.0;
     self.labelFont = [UIFont systemFontOfSize:15];
     self.pageHeaderHeight = 40;
+    
+    self.showBottomGradientLayer = YES;
+    self.bottomGradientH = 6;
+    self.bottomGradientColorArr = @[MYRGBACOLOR(239,242,241,1), MYRGBACOLOR(239,242,241,0.0)];
 }
 
 
@@ -105,6 +110,10 @@
 @property (nonatomic, strong)  NSMutableArray *titleBtnArray;
 //视图
 @property (nonatomic, strong)  NSArray *views;
+
+//底部选中下划线
+@property (nonatomic, strong) UIView *selectedBottomLine;
+
 //// 当前选择的ViewController或者View
 //@property (nonatomic, strong) id currentSelectViewOrController;
 //点击block
@@ -116,7 +125,6 @@
 
 
 @implementation TCViewPager
-
 
 
 //按钮的点击事件
@@ -157,7 +165,7 @@
         btn.transform = CGAffineTransformIdentity;
     }
     UIButton *button = (UIButton *)[self.pageHeaderControl viewWithTag:index + 100];
-    UILabel *selectedLabel = (UILabel *)[self.pageHeaderControl viewWithTag:300];
+//    UIView *selectedLabel = (UIView *)[self.pageHeaderControl viewWithTag:300];
     button.selected = YES;
     button.transform = CGAffineTransformMakeScale(self.param.selectedLabelBigScale, self.param.selectedLabelBigScale);
     
@@ -165,19 +173,19 @@
     if([childVc isKindOfClass:[UIViewController class]]) {
         if (![childVc isViewLoaded]) {
             [self.scrollView addSubview:((UIViewController *)childVc).view];
-            ((UIViewController *)childVc).view.frame = CGRectMake(index * self.width, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+            ((UIViewController *)childVc).view.frame = CGRectMake(index * self.width, 0, self.scrollView.width, self.scrollView.height);
         }
     } else if([childVc isKindOfClass:[UIView class]]) {
         if(![self.scrollView.subviews containsObject:childVc]) {
             [self.scrollView addSubview:((UIView *)childVc)];
-            ((UIView *)childVc).frame = CGRectMake(index * self.width, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+            ((UIView *)childVc).frame = CGRectMake(index * self.width, 0, self.scrollView.width, self.scrollView.height);
         }
     }
 
-    if(floor(self.scrollView.contentOffset.x) == floor(index * self.frame.size.width)) {
-        selectedLabel.width = [self.param.titleArrayLength[index] floatValue] * self.param.selectedBottomLineScale;
-        selectedLabel.centerX = button.centerX;
-        self.scrollView.contentOffset = CGPointMake(index * self.frame.size.width, 0);
+    if(floor(self.scrollView.contentOffset.x) == floor(index * self.width)) {
+        self.selectedBottomLine.width = [self.param.titleArrayLength[index] floatValue] * self.param.selectedBottomLineScale;
+        self.selectedBottomLine.centerX = button.centerX;
+        self.scrollView.contentOffset = CGPointMake(index * self.width, 0);
         //让按钮居中
         [self setUpTitleCenter:button];
         if(self.block) {
@@ -186,9 +194,9 @@
         self.param.selectIndex = index;
     } else {
         [UIView animateWithDuration:0.3 animations:^{
-            selectedLabel.width = [self.param.titleArrayLength[index] floatValue] * self.param.selectedBottomLineScale;
-            selectedLabel.centerX = button.centerX;
-            self.scrollView.contentOffset = CGPointMake(index * self.frame.size.width, 0);
+            self.selectedBottomLine.width = [self.param.titleArrayLength[index] floatValue] * self.param.selectedBottomLineScale;
+            self.selectedBottomLine.centerX = button.centerX;
+            self.scrollView.contentOffset = CGPointMake(index * self.width, 0);
             //让按钮居中
             [self setUpTitleCenter:button];
         } completion:^(BOOL finished) {
@@ -203,7 +211,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    NSInteger index = scrollView.contentOffset.x/self.frame.size.width;
+    NSInteger index = scrollView.contentOffset.x/self.width;
     [self setSelectIndex:index isClickBtn:NO];
 }
 
@@ -246,14 +254,13 @@
         offsetX = offsetX + ([self.param.titleArrayLength[indexInt] floatValue]/2 + self.param.titlePageSpace +( self.param.titleArrayLength.count > (indexInt+1) ? [self.param.titleArrayLength[indexInt+1] floatValue]/2 : 0)) * indexFloat;
     }
     
-    UIView *selectedBottomView = (UIView *)[self.pageHeaderControl viewWithTag:300];
     
      if(rightIndex <  _titleBtnArray.count) {
-         selectedBottomView.width = [self.param.titleArrayLength[leftIndex] floatValue] * self.param.selectedBottomLineScale * leftScale + [self.param.titleArrayLength[rightIndex] floatValue] * self.param.selectedBottomLineScale * rightScale;
+         self.selectedBottomLine.width = [self.param.titleArrayLength[leftIndex] floatValue] * self.param.selectedBottomLineScale * leftScale + [self.param.titleArrayLength[rightIndex] floatValue] * self.param.selectedBottomLineScale * rightScale;
      } else {
-         selectedBottomView.width = [self.param.titleArrayLength[leftIndex] floatValue] * self.param.selectedBottomLineScale * leftScale;
+         self.selectedBottomLine.width = [self.param.titleArrayLength[leftIndex] floatValue] * self.param.selectedBottomLineScale * leftScale;
      }
-      selectedBottomView.centerX = offsetX;
+    self.selectedBottomLine.centerX = offsetX;
     
     offsetX = offsetX - self.width * 0.5;
     if (offsetX < 0) offsetX = 0;
@@ -328,7 +335,7 @@
     [super layoutSubviews];
     if(self.scrollView) return;
     CGRect rect = self.bounds;
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.param.pageHeaderHeight, self.frame.size.width, self.frame.size.height - self.param.pageHeaderHeight)];
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.param.pageHeaderHeight, self.width, self.height - self.param.pageHeaderHeight)];
     if(@available(iOS 11.0, *)){
         self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//UIScrollView也适用
     } else {
@@ -341,27 +348,31 @@
     self.scrollView.directionalLockEnabled = YES;
     self.scrollView.bounces = NO;
     self.scrollView.backgroundColor = [UIColor whiteColor];
-    self.pageHeaderControl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.param.pageHeaderHeight)];
+    self.pageHeaderControl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.param.pageHeaderHeight)];
     self.pageHeaderControl.backgroundColor = [UIColor whiteColor];
     self.pageHeaderControl.showsHorizontalScrollIndicator = NO;
     [self addSubview:self.scrollView];
     [self addSubview:self.pageHeaderControl];
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.colors =@[(__bridge id)MYRGBACOLOR(239,242,241,1).CGColor, (__bridge id)MYRGBACOLOR(239,242,241,0.0).CGColor];
-    gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(0, 1.0);
-    gradientLayer.frame = CGRectMake(0, self.param.pageHeaderHeight, rect.size.width, 6);
-    [self.layer addSublayer:gradientLayer];
-    //创建菜单按钮下划线
-    UILabel *selectedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.pageHeaderControl.frame.size.height -3, self.param.titlePageSpace * self.param.selectedBottomLineScale, 3)];
-    selectedLabel.textColor = [UIColor clearColor];
-    selectedLabel.backgroundColor = self.param.tabSelectedArrowBgColor;
-    selectedLabel.tag = 300;
+    
+    if(self.param.showBottomGradientLayer) {
+        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        NSMutableArray *colorArr = [NSMutableArray array];
+        for(UIColor *c in self.param.bottomGradientColorArr) {
+            [colorArr addObject:(__bridge id)c.CGColor];
+        }
+        gradientLayer.colors = colorArr;
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(0, 1.0);
+        gradientLayer.frame = CGRectMake(0, self.param.pageHeaderHeight, rect.size.width, self.param.bottomGradientH);
+        [self.layer addSublayer:gradientLayer];
+    }
+
+    
    
-    if(!self.param.showSelectedBottomLine) {
-        CGRect selectedFrame = selectedLabel.frame;
-        selectedFrame.size.height = 0;
-        selectedLabel.frame = selectedFrame;
+    if(self.param.showSelectedBottomLine) {
+        //创建菜单按钮下划线
+        self.selectedBottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.pageHeaderControl.height -3, self.param.titlePageSpace * self.param.selectedBottomLineScale, 3)];
+        self.selectedBottomLine.backgroundColor = self.param.tabSelectedArrowBgColor;
     }
     for(NSInteger i = 0; i < self.views.count; i++) {
         
@@ -371,12 +382,7 @@
         for(NSInteger j = 0; j < i; j++) {
             pageframe.origin.x = pageframe.origin.x + self.param.titlePageSpace + [self.param.titleArrayLength[j] floatValue];
         }
-        
-        if(pageframe.size.height > 50) {
-            pageframe.size.height = 50;
-            pageframe.origin.y = self.pageHeaderControl.frame.size.height - 50;
-        }
-        
+
         //创建菜单按钮
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -404,12 +410,12 @@
         }
         if(button.selected) {
             [UIView animateWithDuration:0.3 animations:^{
-                selectedLabel.centerX = button.centerX;
+                self.selectedBottomLine.centerX = button.centerX;
             }];
         }
         [self.pageHeaderControl addSubview:button];
     }
-    [self.pageHeaderControl addSubview:selectedLabel];
+    [self.pageHeaderControl addSubview:self.selectedBottomLine];
 
     CGFloat pageContentSizeWidth = 2 * self.param.leftAndRightSpace + (self.param.titleArrayLength.count - 1)*self.param.titlePageSpace;
     for(NSInteger i = 0; i < self.param.titleArrayLength.count; i++) {
@@ -418,7 +424,7 @@
     self.pageHeaderControl.contentSize = CGSizeMake(pageContentSizeWidth >= self.pageHeaderControl.width ? pageContentSizeWidth : self.pageHeaderControl.width, 0);
     [self.scrollView setContentSize:CGSizeMake(rect.size.width * self.views.count + 1, 0)];
     self.scrollView.delegate = self;
-    self.scrollView.contentOffset = CGPointMake(self.frame.size.width*self.param.selectIndex, 0);
+    self.scrollView.contentOffset = CGPointMake(self.width*self.param.selectIndex, 0);
     if(self.views.count) {
         [self setSelectIndex:self.param.selectIndex isClickBtn:YES];
     }

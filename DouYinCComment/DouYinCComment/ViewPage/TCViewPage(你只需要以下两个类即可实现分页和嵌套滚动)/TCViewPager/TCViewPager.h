@@ -41,6 +41,13 @@ typedef void (^TC_VP_SelectedBlock)(TCViewPager *viewPager, NSInteger currentInd
 //顶部pageHeaderControl滚动条最左边按钮距离左边的间距 最右边按钮距离右边的间距
 @property (nonatomic, assign)CGFloat leftAndRightSpace;
 
+//顶部pageHeaderControl底下的渐变层 //默认为YES
+@property (nonatomic, assign)BOOL showBottomGradientLayer ;
+//顶部pageHeaderControl底下的渐变层颜色 //默认@[MYRGBACOLOR(239,242,241,1), MYRGBACOLOR(239,242,241,0.0)];
+@property (nonatomic, strong) NSArray *bottomGradientColorArr;
+//顶部pageHeaderControl底下的渐变层大小 //默认6
+@property (nonatomic, assign) CGFloat bottomGradientH;
+
 //菜单的文本label
 @property (nonatomic, strong) NSMutableArray *titleArray;
 

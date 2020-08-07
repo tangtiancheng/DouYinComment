@@ -57,6 +57,7 @@
     TCPageParam *pageParam = [[TCPageParam alloc] init];
     pageParam.titleArray = arry_seg_title;
     pageParam.pageHeaderHeight = 0;
+    pageParam.showBottomGradientLayer = NO;
     TCViewPager *viewPager = [[TCViewPager alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) views:vcArray param:pageParam];
    
     //2.创建你自己界面需要展示的嵌套headser

@@ -13,6 +13,7 @@
 #import "masonry.h"
 #import "UIImageView+WebCache.h"
 #import "UIView+CommonFunction.h"
+#import "UIView+EasyFrame.h"
 #import "ReactiveCocoa.h"
 #import "NSDate+Helper.h"
 

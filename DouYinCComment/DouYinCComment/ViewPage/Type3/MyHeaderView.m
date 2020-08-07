@@ -28,7 +28,9 @@
     self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"headerImage"]];
     self.imageView.frame = self.bounds;
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.layer.masksToBounds = YES;
     [self addSubview:self.imageView];
+
     //设置UIVisualEffectView
     UIVisualEffectView *topBackVisualView = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
     self.topBackVisualView = topBackVisualView;
@@ -40,6 +42,7 @@
         make.top.left.right.bottom.with.offset(0);
     }];
 }
+
 
 - (void)resetFrame:(CGRect)frame {
     self.frame = frame;

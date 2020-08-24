@@ -13,12 +13,14 @@
 
 #define DefultLeftAndRightSpace  22
 #define DefultTitlePageSpace     22
+#define EditBtnW   30
 
 @interface TCPageParam ()
 
 @property (nonatomic, assign) CGFloat width;
 //菜单标题数组长度
 @property (nonatomic, strong) NSArray *titleArrayLength;
+
 
 @end
 
@@ -56,12 +58,12 @@
     _titleArray = [NSMutableArray arrayWithArray:titleArray];
 }
 
-//这个方法是当用户没有传入leftAndRightSpace或者titlePageSpace,那么就按照默认的逻辑来做
+//这个方法是当用户没有传入leftAndRightSpace或者titlePageSpace,那么就按照默认的逻辑来做,
 /*
  1.leftAndRightSpace和titlePageSpace都没有传入,那么就默认leftAndRightSpace为22,titlePageSpace为22,然后如果加上titleWidth后还是小于一屏,那么久重新计算leftAndRightSpace和titlePageSpace,使其刚好一屏
  2.如果leftAndRightSpace有值,titlePageSpace无值,那么让titlePageSpace默认为22,然后如果加上titleWidth后还是小于一屏,那么久重新计算titlePageSpace,使其刚好一屏
  3.如果leftAndRightSpace无值,titlePageSpace有值,那么leftAndRightSpace默认为22
- 4.如果leftAndRightSpace和titlePageSpace都有值
+ 4.如果leftAndRightSpace和titlePageSpace都有值,那就照着你设置的值来
  */
 - (void)calculate {
     CGFloat titleAllLength = 0;
@@ -110,7 +112,7 @@
 @property (nonatomic, strong)  NSMutableArray *titleBtnArray;
 //视图
 @property (nonatomic, strong)  NSArray *views;
-
+@property (nonatomic, strong) UIButton *editTagBtn;
 //底部选中下划线
 @property (nonatomic, strong) UIView *selectedBottomLine;
 
@@ -118,8 +120,11 @@
 //@property (nonatomic, strong) id currentSelectViewOrController;
 //点击block
 @property (nonatomic, copy) TC_VP_SelectedBlock block;
+@property (nonatomic, copy) TC_VP_EditTagBlock editTagBlock;;
 //配置
 @property (nonatomic, strong) TCPageParam *param;
+
+@property (nonatomic, assign) NSInteger currentIndex;
 
 @end
 
@@ -142,13 +147,17 @@
     }
 }
 
-//- (id)currentSelectViewOrController {
-//    if(self.views.count > self.param.selectIndex && self.param.selectIndex >= 0) {
-//        _currentSelectViewOrController = self.views[self.param.selectIndex];
-//        return _currentSelectViewOrController;
-//    }
-//    return nil;
-//}
+- (void)changeSelectedIndex:(NSInteger)selectIndex {
+    if(selectIndex == self.param.selectIndex) {
+         if(_block) {
+             _block(self, selectIndex,self.param.selectIndex, NO);
+         }
+         return;
+     } else {
+         [self setSelectIndex:selectIndex isClickBtn:NO];
+     }
+}
+
 
 /**
  设置选择的按钮索引 触发的方法(里面主要做的就是修改下面红色label的滑动距离,并且使得上面的按钮选中状态发生改变)
@@ -171,10 +180,10 @@
     
     id childVc = self.views[index];
     if([childVc isKindOfClass:[UIViewController class]]) {
-        if (![childVc isViewLoaded]) {
+//        if (![childVc isViewLoaded]) {
             [self.scrollView addSubview:((UIViewController *)childVc).view];
             ((UIViewController *)childVc).view.frame = CGRectMake(index * self.width, 0, self.scrollView.width, self.scrollView.height);
-        }
+//        }
     } else if([childVc isKindOfClass:[UIView class]]) {
         if(![self.scrollView.subviews containsObject:childVc]) {
             [self.scrollView addSubview:((UIView *)childVc)];
@@ -265,7 +274,7 @@
     offsetX = offsetX - self.width * 0.5;
     if (offsetX < 0) offsetX = 0;
     // 获取最大滚动范围
-    CGFloat maxOffsetX = self.pageHeaderControl.contentSize.width - self.width;
+    CGFloat maxOffsetX = self.pageHeaderControl.contentSize.width - self.pageHeaderControl.width;
     if (offsetX > maxOffsetX) offsetX = maxOffsetX;
     // 滚动标题滚动条
     [self.pageHeaderControl setContentOffset:CGPointMake(offsetX, 0) animated:NO];
@@ -294,7 +303,7 @@
     CGFloat offsetX = centerButton.center.x - self.width * 0.5;
     if (offsetX < 0) offsetX = 0;
     // 获取最大滚动范围
-    CGFloat maxOffsetX = self.pageHeaderControl.contentSize.width - self.width;
+    CGFloat maxOffsetX = self.pageHeaderControl.contentSize.width - self.pageHeaderControl.width;
     if (offsetX > maxOffsetX) offsetX = maxOffsetX;
     // 滚动标题滚动条
     self.pageHeaderControl.contentOffset = CGPointMake(offsetX, 0);
@@ -305,6 +314,19 @@
     self.block = block;
 }
 
+- (void)editTagBtnClickBlock:(TC_VP_EditTagBlock)block {
+    _editTagBlock = block;
+}
+
+- (void)editTagBtnClick {
+    if(_editTagBlock) {
+        _editTagBlock();
+    }
+}
+
+- (NSInteger)currentIndex {
+    return self.param.selectIndex;
+}
 
 - (id)initWithFrame:(CGRect)frame
  views:(NSArray *)views
@@ -348,11 +370,37 @@
     self.scrollView.directionalLockEnabled = YES;
     self.scrollView.bounces = NO;
     self.scrollView.backgroundColor = [UIColor whiteColor];
-    self.pageHeaderControl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.param.pageHeaderHeight)];
+    self.pageHeaderControl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.param.canEdit ? self.width - EditBtnW : self.width, self.param.pageHeaderHeight)];
     self.pageHeaderControl.backgroundColor = [UIColor whiteColor];
     self.pageHeaderControl.showsHorizontalScrollIndicator = NO;
     [self addSubview:self.scrollView];
     [self addSubview:self.pageHeaderControl];
+    
+    if(self.param.canEdit) {
+        self.editTagBtn = [[UIButton alloc] init];
+        self.editTagBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 5);
+        self.editTagBtn.backgroundColor = [UIColor clearColor];
+        [self.editTagBtn addTarget:self action:@selector(editTagBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.editTagBtn];
+        [self.editTagBtn setImage:[UIImage imageNamed:@"TAG_Mger_Edit"] forState:UIControlStateNormal];
+        [self.editTagBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.with.offset(0);
+            make.right.with.offset(0);
+            make.height.mas_equalTo(self.param.pageHeaderHeight);
+            make.width.mas_equalTo(EditBtnW);
+        }];
+//        TOGradientView *gradientView = [[TOGradientView alloc] init];
+//        gradientView.startPoint = CGPointMake(1, 0);
+//        gradientView.endPoint = CGPointMake(0, 0);
+//        gradientView.colors = @[(id)RGBA(255, 255, 255, 1).CGColor,(id)RGBA(255, 255, 255, 0.0).CGColor];
+//        [self addSubview:gradientView];
+//        [gradientView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.width.mas_equalTo(10);
+//            make.top.with.offset(0);
+//            make.height.mas_equalTo(_pageHeaderHeight);
+//            make.right.equalTo(self.editTagBtn.mas_left);
+//        }];
+    }
     
     if(self.param.showBottomGradientLayer) {
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
@@ -366,8 +414,6 @@
         gradientLayer.frame = CGRectMake(0, self.param.pageHeaderHeight, rect.size.width, self.param.bottomGradientH);
         [self.layer addSublayer:gradientLayer];
     }
-
-    
    
     if(self.param.showSelectedBottomLine) {
         //创建菜单按钮下划线

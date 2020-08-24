@@ -24,6 +24,8 @@
 #import "Type4ViewControllerThird.h"
 #import "Type4ViewControllerFourth.h"
 
+#import "Type5ViewControllerFirst.h"
+
 static NSString *const cellIdentifier = @"cellIdentifier";
 
 @interface RootViewPageViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -46,7 +48,7 @@ static NSString *const cellIdentifier = @"cellIdentifier";
 #pragma mark - UITableViewDataSource || UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(section == 0) {
@@ -57,6 +59,8 @@ static NSString *const cellIdentifier = @"cellIdentifier";
         return 2;
     } else if(section == 3) {
         return 4;
+    } else if(section == 4) {
+        return 1;
     }
     return 0;
 }
@@ -71,6 +75,8 @@ static NSString *const cellIdentifier = @"cellIdentifier";
         label.text = @"嵌套滚动(header吸顶不动)";
     } else if(section == 3) {
         label.text = @"嵌套滚动(header不吸顶)";
+    } else if(section == 4) {
+        label.text = @"编辑标签";
     }
     return label;
 }
@@ -111,6 +117,10 @@ static NSString *const cellIdentifier = @"cellIdentifier";
             cell.textLabel.text = @"适用于下拉的时候图片也拉升变大的个人主页(列表为ViewControl)";
         } else if(indexPath.row == 3) {
             cell.textLabel.text = @"类似铃声多多铃单页";
+        }
+    } else if(indexPath.section == 4) {
+        if(indexPath.row == 0) {
+            cell.textLabel.text = @"编辑标签";
         }
     }
     cell.textLabel.font = [UIFont systemFontOfSize:12];
@@ -161,6 +171,11 @@ static NSString *const cellIdentifier = @"cellIdentifier";
             [self.navigationController pushViewController:vc animated:YES];
         } else if(indexPath.row == 3) {
             Type4ViewControllerFourth *vc = [[Type4ViewControllerFourth alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    } else if(indexPath.section == 4) {
+        if(indexPath.row == 0) {
+            Type5ViewControllerFirst *vc = [[Type5ViewControllerFirst alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

@@ -12,13 +12,14 @@
 @class TCViewPager;
 
 typedef void (^TC_VP_SelectedBlock)(TCViewPager *viewPager, NSInteger currentIndex, NSInteger previousIndex, BOOL isClickBtn);
-
+typedef void (^TC_VP_EditTagBlock)();
 
 @interface TCPageParam : NSObject
 
 //当前选择的菜单索引
 @property (nonatomic, assign) NSInteger selectIndex;
-
+//是否允许编辑标签列表
+@property (nonatomic, assign) NSInteger canEdit;
 //选中按钮下方横线背景颜色 默认为 blackColor
 @property (nonatomic, strong) UIColor *tabSelectedArrowBgColor;
 //选中按钮是否显示底部横线  默认NO
@@ -58,14 +59,16 @@ typedef void (^TC_VP_SelectedBlock)(TCViewPager *viewPager, NSInteger currentInd
 
 
 //视图
-@property (nonatomic, strong, readonly)  NSArray *views;
+@property (nonatomic, strong, readonly) NSArray *views;
+@property (nonatomic, assign, readonly) NSInteger currentIndex;
+
 /**
  *  点击菜单按钮时 调用的block方法
  *
  *  @param block 返回YFViewPager本身和点击的按钮的索引值,从左到右一次是0,1,2,3...
  */
 - (void)didSelectedBlock:(TC_VP_SelectedBlock)block;
-
+- (void)editTagBtnClickBlock:(TC_VP_EditTagBlock)block;
 /**
  *  初始化 TCViewPager的方法
  *
@@ -78,6 +81,8 @@ typedef void (^TC_VP_SelectedBlock)(TCViewPager *viewPager, NSInteger currentInd
               views:(NSArray *)views
               param:(TCPageParam *)param;
 
+
+- (void)changeSelectedIndex:(NSInteger)selectIndex;
 
 @end
 

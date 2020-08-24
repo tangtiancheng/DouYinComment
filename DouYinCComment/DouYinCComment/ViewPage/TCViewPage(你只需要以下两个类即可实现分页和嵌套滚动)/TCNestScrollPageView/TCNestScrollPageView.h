@@ -23,7 +23,6 @@ typedef NS_ENUM(NSInteger, NestScrollPageViewType) {
 
 @property (nonatomic, assign) BOOL isScrolBySelf;
 @property (nonatomic, weak) UIScrollView *currentSubScrolleView;
-
 @property(nonatomic,strong)NSMutableArray *viewArray;     //自己和viewArray上的首饰
 
 @end
@@ -43,6 +42,7 @@ typedef NS_ENUM(NSInteger, NestScrollPageViewType) {
 @property(nonatomic,copy)void(^didScrollBlock)(CGFloat dy);         //滚动回调
 
 - (void)resetHeader:(UIView *)headerView;
+- (void)resetViewPage:(UIView *)viewPage;
 - (instancetype)initWithFrame:(CGRect)frame headView:(UIView *)headView viewPageView:(UIView *)viewPager nestScrollParam:(TCNestScrollParam *)param;
 
 @end

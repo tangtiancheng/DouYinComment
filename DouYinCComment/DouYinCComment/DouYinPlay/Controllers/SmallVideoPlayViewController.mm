@@ -87,7 +87,7 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
     
     UIButton *btn = [[UIButton alloc] init];
     [self.view addSubview:btn];
-    [btn setImage:[UIImage imageNamed:@"Comment_Navi_button_back"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"button_back"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backToPreviousView:) forControlEvents:UIControlEventTouchUpInside];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.with.offset(10);

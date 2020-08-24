@@ -90,6 +90,7 @@
 @property (nonatomic, strong) TCNestScrollParam *param;
 @property (nonatomic, strong) UIView *headerView;
 @property (nonatomic, strong) TCMainScrollView *mainTabelView;
+@property (nonatomic, strong) UITableViewCell *cell;
 @property (nonatomic, strong) UIView *viewPager;
 @property (nonatomic, assign) CGFloat lastDy;//mainTableView最后停留位置
 @property(nonatomic,assign)BOOL nextReturn;//这个用于记录是否是手动改变contentOffset的conteentOffSet,是的话就不用做监听处理
@@ -119,6 +120,7 @@
     } else {
         self.viewController.automaticallyAdjustsScrollViewInsets = NO;
     }
+    [self.mainTabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
     self.mainTabelView.dataSource = self;
     self.mainTabelView.delegate = self;
     self.mainTabelView.bounces = self.param.bounces;
@@ -134,6 +136,10 @@
 
 - (void)resetHeader:(UIView *)headerView {
     self.headerView = headerView;
+}
+
+- (void)resetViewPage {
+    
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview{
@@ -354,14 +360,22 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"];
-    if(!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
-        NSLog(@"%lf   %lf",self.frame.size.height , self.param.yOffset);
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+    self.cell = cell;
+    if(![cell.contentView.subviews containsObject:self.viewPager]) {
         self.viewPager.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - self.param.yOffset);
         [cell.contentView addSubview:self.viewPager];
     }
     return cell;
+}
+
+- (void)resetViewPage:(UIView *)viewPage {
+    
+    [self.viewPager removeFromSuperview];
+    self.viewPager = viewPage;
+    self.viewPager.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - self.param.yOffset);
+    [self.cell.contentView addSubview:self.viewPager];
+    
 }
 
 - (void)dealloc {

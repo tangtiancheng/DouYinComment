@@ -30,5 +30,7 @@
 ![image](https://github.com/tangtiancheng/DouYinComment/blob/master/gif/改变headerView高度.gif)
 ### (5).headerView不吸顶,下拉变大
 ![image](https://github.com/tangtiancheng/DouYinComment/blob/master/gif/headerView不吸顶,下拉变大.gif)
+### (6).标签编辑功能
+![image](https://github.com/tangtiancheng/DouYinComment/blob/master/gif/editTag.gif)
 
 另外还有其他的效果自己去看demo,使用起来很简单,不会侵入你的代码,实现原理也不难,自己去看代码也肯定能看懂(好用请给个star,谢谢)

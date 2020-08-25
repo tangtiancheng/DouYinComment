@@ -186,7 +186,7 @@
 
 #pragma mark - ScrollVieeScroll
 
-//mainScrollView
+//mainScrollView(三种效果都分开写,全写一起我自己都晕了,也不方便其他人阅读)
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if(self.param.pageType == NestScrollPageViewHeadViewChageType) {
         [self headViewChageTypeScrollViewDidScroll:scrollView];
@@ -200,9 +200,7 @@
     }
 }
 
-
-
-//subScrollView
+//subScrollView(三种效果都分开写,全写一起我自己都晕了,也不方便其他人阅读)
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:@"contentOffset"]){
         if(self.param.pageType == NestScrollPageViewHeadViewChageType) {
@@ -288,14 +286,20 @@
             _lastDy = scrollView.contentOffset.y;
             return;
         }
-        //向下拖拽
-        NSLog(@"%lf %lf %lf  %lf %lf",currenSubScrollView.contentOffset.y,scrollView.contentOffset.y,_stayHeight,scrollView.contentOffset.y,_lastDy);
-        if (currenSubScrollView.contentOffset.y > 0 && (scrollView.contentOffset.y < _stayHeight) && (scrollView.contentOffset.y - _lastDy)<0  && self.mainTabelView.isScrolBySelf == NO) {
+        NSLog(@"哈哈哈哈%lf %lf %lf ",currenSubScrollView.contentOffset.y,scrollView.contentOffset.y,_stayHeight);
+        if(currenSubScrollView.contentOffset.y > 0 && (scrollView.contentOffset.y < _stayHeight) && (scrollView.contentOffset.y - _lastDy)<0  && self.mainTabelView.isScrolBySelf == NO) {
+            NSLog(@"main向下%lf",_lastDy);
+            //向下拖拽
+            scrollView.contentOffset = CGPointMake(0, _lastDy);
+        } else if((scrollView.contentOffset.y - _lastDy)>0 && currenSubScrollView.contentOffset.y<0) {
+            NSLog(@"main向上%lf",_lastDy);
+            //向上
             scrollView.contentOffset = CGPointMake(0, _lastDy);
         }
         _lastDy = scrollView.contentOffset.y;
     }
 }
+
 //subScrollView
 - (void)headViewSuckTopTypeObserveValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if (_nextReturn) {
@@ -319,7 +323,9 @@
         if (self.mainTabelView.contentOffset.y < _stayHeight) {
             if (((UIScrollView *)object).contentOffset.y > 0) {
                 _nextReturn = true;
-                //                                    self.scrollTag = true;
+                if(old < 0) {
+                    old = 0;
+                }
                 ((UIScrollView *)object).contentOffset = CGPointMake(0, old);
             }
         }else{
@@ -345,7 +351,6 @@
             return;
         }
         //向下拖拽
-       
         if (currenSubScrollView.contentOffset.y > 0 && (self.mainTabelView.contentOffset.y < _stayHeight) && (self.mainTabelView.contentOffset.y - _lastDy)<0  && self.mainTabelView.isScrolBySelf == NO) {
             scrollView.contentOffset = CGPointMake(0, _lastDy);
         }

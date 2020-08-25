@@ -10,9 +10,10 @@
 #import "Masonry.h"
 #import "MJRefresh.h"
 #import "ReactiveCocoa.h"
+#import "MyTableViewCell.h"
 
 static NSString *const cellIdentifier = @"cellIdentifier";
-
+static NSString *const MyTableViewCellIdentifier = @"MyTableViewCellIdentifier";
 
 #pragma mark - BaseTableView
 
@@ -88,14 +89,29 @@ static NSString *const cellIdentifier = @"cellIdentifier";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = @(indexPath.row).stringValue;
-    return cell;
+    if(indexPath.row == 5) {
+        MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyTableViewCellIdentifier forIndexPath:indexPath];
+        cell.num = 2;
+        return cell;
+    } else if(indexPath.row == 7) {
+        MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyTableViewCellIdentifier forIndexPath:indexPath];
+        cell.num = 20;
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = @(indexPath.row).stringValue;
+        return cell;
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    if(indexPath.row == 5 || indexPath.row == 7) {
+        return 80;
+    } else {
+        return 40;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -109,6 +125,7 @@ static NSString *const cellIdentifier = @"cellIdentifier";
     if(!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdentifier];
+        [_tableView registerClass:[MyTableViewCell class] forCellReuseIdentifier:MyTableViewCellIdentifier];
         [self addSubview:_tableView];
         _tableView.tableFooterView = [UIView new];
         _tableView.dataSource = self;

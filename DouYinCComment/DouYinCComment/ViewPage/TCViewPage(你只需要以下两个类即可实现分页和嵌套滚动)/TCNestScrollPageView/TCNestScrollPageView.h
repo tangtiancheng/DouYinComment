@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, NestScrollPageViewType) {
 @property (nonatomic, weak) UIScrollView *currentSubScrolleView;
 @property(nonatomic,strong)NSMutableArray *viewArray;     //自己和viewArray上的首饰
 
+
 @end
 
 @interface TCNestScrollParam : NSObject

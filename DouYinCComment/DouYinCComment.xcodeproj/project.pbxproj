@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79044A2324F3BD320003E755 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79044A2224F3BD320003E755 /* MyTableViewCell.m */; };
+		79044A5224F4FFFE0003E755 /* UICollectionView+MyCol.m in Sources */ = {isa = PBXBuildFile; fileRef = 79044A5124F4FFFE0003E755 /* UICollectionView+MyCol.m */; };
 		790F14D9225CF98F000E7335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F14D8225CF98F000E7335 /* AppDelegate.m */; };
 		790F14DC225CF98F000E7335 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F14DB225CF98F000E7335 /* ViewController.m */; };
 		790F14DF225CF98F000E7335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 790F14DD225CF98F000E7335 /* Main.storyboard */; };
@@ -308,6 +310,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79044A2124F3BD320003E755 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		79044A2224F3BD320003E755 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		79044A5024F4FFFE0003E755 /* UICollectionView+MyCol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+MyCol.h"; sourceTree = "<group>"; };
+		79044A5124F4FFFE0003E755 /* UICollectionView+MyCol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+MyCol.m"; sourceTree = "<group>"; };
 		790F14D4225CF98F000E7335 /* DouYinCComment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYinCComment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		790F14D7225CF98F000E7335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		790F14D8225CF98F000E7335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1126,6 +1132,8 @@
 				793E816A24D909FB008978D5 /* MJRefresh */,
 				793E815D24D848A0008978D5 /* BaseTableViewController.h */,
 				793E815E24D848A0008978D5 /* BaseTableViewController.m */,
+				79044A2124F3BD320003E755 /* MyTableViewCell.h */,
+				79044A2224F3BD320003E755 /* MyTableViewCell.m */,
 				7927265324DC2B4600907E77 /* BaseTableViewController2.h */,
 				7927265424DC2B4600907E77 /* BaseTableViewController2.m */,
 				793E816024D848B0008978D5 /* BaseCollectionViewController.h */,
@@ -1136,6 +1144,8 @@
 				7927263824DAE3F800907E77 /* BaseScrollViewController.m */,
 				793E816624D84908008978D5 /* BaseViewController.h */,
 				793E816724D84908008978D5 /* BaseViewController.m */,
+				79044A5024F4FFFE0003E755 /* UICollectionView+MyCol.h */,
+				79044A5124F4FFFE0003E755 /* UICollectionView+MyCol.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -2219,6 +2229,7 @@
 				790F1530225DED17000E7335 /* MASConstraintMaker.m in Sources */,
 				795DB885229E3FAC003AFE44 /* RACCommand.m in Sources */,
 				793E81A224D909FC008978D5 /* UIScrollView+MJRefresh.m in Sources */,
+				79044A2324F3BD320003E755 /* MyTableViewCell.m in Sources */,
 				795DB869229E3FAC003AFE44 /* UISegmentedControl+RACSignalSupport.m in Sources */,
 				795DB881229E3FAC003AFE44 /* RACDelegateProxy.m in Sources */,
 				795DB8CC229E86E9003AFE44 /* IQNSArray+Sort.m in Sources */,
@@ -2389,6 +2400,7 @@
 				795DB661229E300D003AFE44 /* HTTPRedirectResponse.m in Sources */,
 				795DB8D1229E86E9003AFE44 /* IQUIViewController+Additions.m in Sources */,
 				795DB76F229E3F2E003AFE44 /* FavoriteView.m in Sources */,
+				79044A5224F4FFFE0003E755 /* UICollectionView+MyCol.m in Sources */,
 				795DB666229E300D003AFE44 /* MultipartMessageHeaderField.m in Sources */,
 				795DB8CB229E86E9003AFE44 /* IQKeyboardManager.m in Sources */,
 				795DB725229E372F003AFE44 /* UIView+CustomControlView.m in Sources */,

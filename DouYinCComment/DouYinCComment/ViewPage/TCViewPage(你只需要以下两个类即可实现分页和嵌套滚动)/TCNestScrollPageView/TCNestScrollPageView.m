@@ -10,17 +10,25 @@
 
 #pragma mark - TCMainScrollView
 
+@interface TCMainScrollView ()
+
+@property (nonatomic, strong) UIView *viewPager;
+
+@end
 
 @implementation TCMainScrollView
 /********************** 多手势同时识别 ***************************/
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     UIView *otherGestureRecognizerView = otherGestureRecognizer.view;
-    if(([otherGestureRecognizerView isKindOfClass:[UITableView class]] || [otherGestureRecognizerView isKindOfClass:[UICollectionView class]] || [otherGestureRecognizerView isKindOfClass:NSClassFromString(@"WKScrollView")] || [otherGestureRecognizerView isKindOfClass:[UIScrollView class]]) && otherGestureRecognizerView != self && gestureRecognizer == self.panGestureRecognizer && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-        if(floor(((UIScrollView *)otherGestureRecognizerView).contentSize.width) > floor(otherGestureRecognizerView.frame.size.width) && ((UIScrollView *)otherGestureRecognizerView).contentSize.height <= otherGestureRecognizerView.frame.size.height) {
-            return NO;
-        } else {
+
+    if( [otherGestureRecognizerView isKindOfClass:[UIScrollView class]] && otherGestureRecognizerView != self && gestureRecognizer == self.panGestureRecognizer && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        
+        if([self.viewArray containsObject:(UIScrollView *)otherGestureRecognizerView]) {
             return YES;
+        } else {
+            return NO;
         }
+
     }
     return NO;
 }
@@ -32,26 +40,53 @@
         self.isScrolBySelf = YES;
         self.currentSubScrolleView = nil;
         UIView *touchView = touch.view;
+        BOOL isContain = NO;
         while (touchView != nil) {
-            if(([touchView isKindOfClass:[UITableView class]] || [touchView isKindOfClass:[UICollectionView class]] || [touchView isKindOfClass:[UIScrollView class]] || [touchView isKindOfClass:NSClassFromString(@"WKScrollView")]) && touchView != self) {
-
-
-                if(floor(((UIScrollView *)touchView).contentSize.width) > floor(touchView.frame.size.width) && ((UIScrollView *)touchView).contentSize.height <= touchView.frame.size.height) {
-                } else {
-                    self.isScrolBySelf = NO;
-                    self.currentSubScrolleView = (UIScrollView *)touchView;
-                    if(![self.viewArray containsObject:self.currentSubScrolleView]) {
-                        [self.viewArray addObject:self.currentSubScrolleView];
-                        [self.currentSubScrolleView addObserver:self.superview forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-                    }
-                    break;
-                }
-            }
-            if(touchView == self) {
+            if(touchView == self.viewPager) {
+                isContain = YES;
                 break;
             }
             touchView = [touchView nextResponder];
         }
+        if(isContain) {
+            touchView = touch.view;
+            while (touchView != nil) {
+
+                if([touchView isKindOfClass:[UIScrollView class]] && touchView != self) {
+                    BOOL canContain = NO;
+//                    if(((UIScrollView *)touchView).contentSize.height > touchView.frame.size.height) {
+//                        canContain = YES;
+//                    } else {
+                        NSInteger scrollCount = 0;
+                        UIView *tempView = touchView;
+                        while (tempView != self.viewPager) {
+                            if([tempView isKindOfClass:[UIScrollView class]]) {
+                                scrollCount++;
+                            }
+                            tempView = [tempView nextResponder];
+                        }
+                        if(scrollCount == 2 && ((UIScrollView *)touchView).contentSize.width <= touchView.frame.size.width) {
+                            canContain = YES;
+                        }
+//                    }
+                    
+                    if(canContain) {
+                        self.isScrolBySelf = NO;
+                        self.currentSubScrolleView = (UIScrollView *)touchView;
+                        if(![self.viewArray containsObject:self.currentSubScrolleView]) {
+                            [self.viewArray addObject:self.currentSubScrolleView];
+                            [self.currentSubScrolleView addObserver:self.superview forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+                        }
+                        break;
+                    }
+                }
+                if(touchView == self.viewPager) {
+                    break;
+                }
+                touchView = [touchView nextResponder];
+            }
+        }
+        
     }
     return YES;
 }
@@ -109,6 +144,7 @@
         self.viewPager = viewPager;
         [self setupBaseView];
         self.headerView = headView;
+        self.mainTabelView.viewPager = viewPager;
     }
     return self;
 }
@@ -138,9 +174,6 @@
     self.headerView = headerView;
 }
 
-- (void)resetViewPage {
-    
-}
 
 - (void)willMoveToSuperview:(UIView *)newSuperview{
     [super willMoveToSuperview:newSuperview];
@@ -226,10 +259,10 @@
     } else if(dh > 0) {
         //向上
         NSLog(@"向上old : %lf",old);
-        if (self.mainTabelView.contentOffset.y < _stayHeight && ((UIScrollView *)object).contentOffset.y > 0 && self.mainTabelView.dragging == YES) {
+        if(self.mainTabelView.contentOffset.y < _stayHeight && ((UIScrollView *)object).contentOffset.y > 0 && self.mainTabelView.dragging == YES) {
             //加一下这个if判断是因为在tableView的情况下,如果只选reloadData之后,不知道为什么会导致contentOffSet莫名其妙加上40,也就是会照成dh>0.然后当执行((UIScrollView *)object).contentOffset = CGPointMake(0, old)后并不管用,tableView会反复让contentOffSet莫名其妙加上40,最后照成崩溃,所以想法:当maintableView的contentoffset变化没有subScrollView的contentOffset变化那么大时,就表示出现了上述行为,那么就不做强制修改contentoffset
             NSLog(@"uiuiuiu%lf  %lf  %lf  %lf",_mainTabExchangeDy,self.mainTabelView.contentOffset.y,old,new);
-            if(dh > _mainTabExchangeDy) {
+            if(dh > (_mainTabExchangeDy/*+2*/)) {
                 return;
             }
             _nextReturn = true;
@@ -375,6 +408,7 @@
     self.viewPager = viewPage;
     self.viewPager.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - self.param.yOffset);
     [self.cell.contentView addSubview:self.viewPager];
+    self.mainTabelView.viewPager = self.viewPager;
     
 }
 

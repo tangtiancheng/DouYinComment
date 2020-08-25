@@ -290,6 +290,17 @@
 		79BC688F23BAF81E00FF4894 /* bandfolder.band in Resources */ = {isa = PBXBuildFile; fileRef = 79BC688E23BAF81E00FF4894 /* bandfolder.band */; };
 		79BC689323BAF84E00FF4894 /* AppConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BC689223BAF84E00FF4894 /* AppConfigure.m */; };
 		79BC689623BAF88C00FF4894 /* GarageBandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BC689523BAF88C00FF4894 /* GarageBandViewController.m */; };
+		79BD7A9E24F531100064533C /* ZJContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7A8F24F5310F0064533C /* ZJContentView.m */; };
+		79BD7A9F24F531100064533C /* ZJCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7A9124F5310F0064533C /* ZJCollectionView.m */; };
+		79BD7AA024F531100064533C /* ZJSegmentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7A9324F5310F0064533C /* ZJSegmentStyle.m */; };
+		79BD7AA124F531100064533C /* UIViewController+ZJScrollPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7A9424F5310F0064533C /* UIViewController+ZJScrollPageController.m */; };
+		79BD7AA224F531100064533C /* ZJScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7A9624F5310F0064533C /* ZJScrollPageView.m */; };
+		79BD7AA324F531100064533C /* ZJScrollSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7A9724F5310F0064533C /* ZJScrollSegmentView.m */; };
+		79BD7AA424F531100064533C /* UIView+ZJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7A9924F5310F0064533C /* UIView+ZJFrame.m */; };
+		79BD7AA524F531100064533C /* ZJTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7A9C24F531100064533C /* ZJTitleView.m */; };
+		79BD7AA824F531590064533C /* Type4ViewControllerFifth.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7AA724F531590064533C /* Type4ViewControllerFifth.m */; };
+		79BD7AAB24F532ED0064533C /* ZJPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7AAA24F532ED0064533C /* ZJPageTableViewController.m */; };
+		79BD7AAE24F533040064533C /* ZJPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BD7AAC24F533040064533C /* ZJPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -899,6 +910,29 @@
 		79BC689223BAF84E00FF4894 /* AppConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfigure.m; sourceTree = "<group>"; };
 		79BC689423BAF88C00FF4894 /* GarageBandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GarageBandViewController.h; sourceTree = "<group>"; };
 		79BC689523BAF88C00FF4894 /* GarageBandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GarageBandViewController.m; sourceTree = "<group>"; };
+		79BD7A8D24F5310F0064533C /* ZJSegmentStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJSegmentStyle.h; sourceTree = "<group>"; };
+		79BD7A8E24F5310F0064533C /* UIViewController+ZJScrollPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZJScrollPageController.h"; sourceTree = "<group>"; };
+		79BD7A8F24F5310F0064533C /* ZJContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJContentView.m; sourceTree = "<group>"; };
+		79BD7A9024F5310F0064533C /* ZJCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCollectionView.h; sourceTree = "<group>"; };
+		79BD7A9124F5310F0064533C /* ZJCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionView.m; sourceTree = "<group>"; };
+		79BD7A9224F5310F0064533C /* ZJScrollPageViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJScrollPageViewDelegate.h; sourceTree = "<group>"; };
+		79BD7A9324F5310F0064533C /* ZJSegmentStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJSegmentStyle.m; sourceTree = "<group>"; };
+		79BD7A9424F5310F0064533C /* UIViewController+ZJScrollPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZJScrollPageController.m"; sourceTree = "<group>"; };
+		79BD7A9524F5310F0064533C /* ZJScrollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJScrollPageView.h; sourceTree = "<group>"; };
+		79BD7A9624F5310F0064533C /* ZJScrollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJScrollPageView.m; sourceTree = "<group>"; };
+		79BD7A9724F5310F0064533C /* ZJScrollSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJScrollSegmentView.m; sourceTree = "<group>"; };
+		79BD7A9824F5310F0064533C /* UIView+ZJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJFrame.h"; sourceTree = "<group>"; };
+		79BD7A9924F5310F0064533C /* UIView+ZJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJFrame.m"; sourceTree = "<group>"; };
+		79BD7A9A24F5310F0064533C /* ZJContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJContentView.h; sourceTree = "<group>"; };
+		79BD7A9B24F531100064533C /* ZJScrollSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJScrollSegmentView.h; sourceTree = "<group>"; };
+		79BD7A9C24F531100064533C /* ZJTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTitleView.m; sourceTree = "<group>"; };
+		79BD7A9D24F531100064533C /* ZJTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTitleView.h; sourceTree = "<group>"; };
+		79BD7AA624F531590064533C /* Type4ViewControllerFifth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Type4ViewControllerFifth.h; sourceTree = "<group>"; };
+		79BD7AA724F531590064533C /* Type4ViewControllerFifth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerFifth.m; sourceTree = "<group>"; };
+		79BD7AA924F532ED0064533C /* ZJPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPageTableViewController.h; sourceTree = "<group>"; };
+		79BD7AAA24F532ED0064533C /* ZJPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPageTableViewController.m; sourceTree = "<group>"; };
+		79BD7AAC24F533040064533C /* ZJPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPageViewController.m; sourceTree = "<group>"; };
+		79BD7AAD24F533040064533C /* ZJPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPageViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1031,6 +1065,7 @@
 		7927264324DBC6C100907E77 /* Type4 */ = {
 			isa = PBXGroup;
 			children = (
+				79BD7A8C24F530EB0064533C /* ZJScrollPageView */,
 				7927264424DBE87A00907E77 /* Type4ViewControllerFirst.h */,
 				7927264524DBE87A00907E77 /* Type4ViewControllerFirst.m */,
 				7927264A24DBFCC500907E77 /* Type4ViewControllerSecond.h */,
@@ -1039,6 +1074,8 @@
 				7927264E24DC046300907E77 /* Type4ViewControllerThird.m */,
 				7927265024DC0EFF00907E77 /* Type4ViewControllerFourth.h */,
 				7927265124DC0EFF00907E77 /* Type4ViewControllerFourth.m */,
+				79BD7AA624F531590064533C /* Type4ViewControllerFifth.h */,
+				79BD7AA724F531590064533C /* Type4ViewControllerFifth.m */,
 			);
 			path = Type4;
 			sourceTree = "<group>";
@@ -2002,6 +2039,34 @@
 			path = BandResource;
 			sourceTree = "<group>";
 		};
+		79BD7A8C24F530EB0064533C /* ZJScrollPageView */ = {
+			isa = PBXGroup;
+			children = (
+				79BD7AAD24F533040064533C /* ZJPageViewController.h */,
+				79BD7AAC24F533040064533C /* ZJPageViewController.m */,
+				79BD7AA924F532ED0064533C /* ZJPageTableViewController.h */,
+				79BD7AAA24F532ED0064533C /* ZJPageTableViewController.m */,
+				79BD7A9824F5310F0064533C /* UIView+ZJFrame.h */,
+				79BD7A9924F5310F0064533C /* UIView+ZJFrame.m */,
+				79BD7A8E24F5310F0064533C /* UIViewController+ZJScrollPageController.h */,
+				79BD7A9424F5310F0064533C /* UIViewController+ZJScrollPageController.m */,
+				79BD7A9024F5310F0064533C /* ZJCollectionView.h */,
+				79BD7A9124F5310F0064533C /* ZJCollectionView.m */,
+				79BD7A9A24F5310F0064533C /* ZJContentView.h */,
+				79BD7A8F24F5310F0064533C /* ZJContentView.m */,
+				79BD7A9524F5310F0064533C /* ZJScrollPageView.h */,
+				79BD7A9624F5310F0064533C /* ZJScrollPageView.m */,
+				79BD7A9224F5310F0064533C /* ZJScrollPageViewDelegate.h */,
+				79BD7A9B24F531100064533C /* ZJScrollSegmentView.h */,
+				79BD7A9724F5310F0064533C /* ZJScrollSegmentView.m */,
+				79BD7A8D24F5310F0064533C /* ZJSegmentStyle.h */,
+				79BD7A9324F5310F0064533C /* ZJSegmentStyle.m */,
+				79BD7A9D24F531100064533C /* ZJTitleView.h */,
+				79BD7A9C24F531100064533C /* ZJTitleView.m */,
+			);
+			path = ZJScrollPageView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2141,6 +2206,7 @@
 				795DB85A229E3FAC003AFE44 /* NSObject+RACPropertySubscribing.m in Sources */,
 				795DB863229E3FAC003AFE44 /* RACScopedDisposable.m in Sources */,
 				795DB833229E3FAC003AFE44 /* RACStringSequence.m in Sources */,
+				79BD7AA124F531100064533C /* UIViewController+ZJScrollPageController.m in Sources */,
 				795DB5BD229D3D69003AFE44 /* UIImage+MultiFormat.m in Sources */,
 				795DB84F229E3FAC003AFE44 /* RACKVOTrampoline.m in Sources */,
 				795DB8C7229E86E9003AFE44 /* IQBarButtonItem.m in Sources */,
@@ -2164,6 +2230,7 @@
 				795DB84D229E3FAC003AFE44 /* RACCompoundDisposableProvider.d in Sources */,
 				795DB61F229E2FA1003AFE44 /* KTVHCDataStorage.m in Sources */,
 				795DB628229E2FA1003AFE44 /* KTVHCDataCacheItem.m in Sources */,
+				79BD7AA824F531590064533C /* Type4ViewControllerFifth.m in Sources */,
 				795DB5BA229D3D69003AFE44 /* UIImageView+HighlightedWebCache.m in Sources */,
 				795DB836229E3FAC003AFE44 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				79BC689623BAF88C00FF4894 /* GarageBandViewController.m in Sources */,
@@ -2196,6 +2263,7 @@
 				795DB8CD229E86E9003AFE44 /* IQUIWindow+Hierarchy.m in Sources */,
 				795DB877229E3FAC003AFE44 /* NSString+RACKeyPathUtilities.m in Sources */,
 				790F14DC225CF98F000E7335 /* ViewController.m in Sources */,
+				79BD7AA024F531100064533C /* ZJSegmentStyle.m in Sources */,
 				795DB8CF229E86E9003AFE44 /* IQUIScrollView+Additions.m in Sources */,
 				795DB62E229E2FA1003AFE44 /* KTVHCError.m in Sources */,
 				79B91BA924D9C905003534BD /* Type1ViewControllerSecond.m in Sources */,
@@ -2216,11 +2284,13 @@
 				795DB83F229E3FAC003AFE44 /* RACStream.m in Sources */,
 				795DB62F229E2FA1003AFE44 /* KTVHCDownload.m in Sources */,
 				795DB625229E2FA1003AFE44 /* KTVHCDataUnitItem.m in Sources */,
+				79BD7AA524F531100064533C /* ZJTitleView.m in Sources */,
 				795DB668229E300D003AFE44 /* MultipartMessageHeader.m in Sources */,
 				795DB58C229D3BC3003AFE44 /* SmallVideoListViewController.m in Sources */,
 				795DB878229E3FAC003AFE44 /* RACDisposable.m in Sources */,
 				795DB8C9229E86E9003AFE44 /* IQPreviousNextView.m in Sources */,
 				795DB627229E2FA1003AFE44 /* KTVHCDataSourceManager.m in Sources */,
+				79BD7A9F24F531100064533C /* ZJCollectionView.m in Sources */,
 				795DB86C229E3FAC003AFE44 /* NSString+RACSequenceAdditions.m in Sources */,
 				795DB871229E3FAC003AFE44 /* NSSet+RACSequenceAdditions.m in Sources */,
 				795DB629229E2FA1003AFE44 /* KTVHCDataUnitQueue.m in Sources */,
@@ -2244,6 +2314,7 @@
 				795DB853229E3FAC003AFE44 /* RACReplaySubject.m in Sources */,
 				793E81B924D909FC008978D5 /* MJRefreshTrailer.m in Sources */,
 				795DB93E229E8844003AFE44 /* CommentInputView.m in Sources */,
+				79BD7AAB24F532ED0064533C /* ZJPageTableViewController.m in Sources */,
 				795DB8D2229E86E9003AFE44 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				795DB880229E3FAC003AFE44 /* RACSubscriber.m in Sources */,
 				795DB626229E2FA1003AFE44 /* KTVHCDataNetworkSource.m in Sources */,
@@ -2299,6 +2370,7 @@
 				795DB61E229E2FA1003AFE44 /* KTVHCDataUnitPool.m in Sources */,
 				795DB8C5229E86E9003AFE44 /* IQToolbar.m in Sources */,
 				790F1531225DED17000E7335 /* MASLayoutConstraint.m in Sources */,
+				79BD7A9E24F531100064533C /* ZJContentView.m in Sources */,
 				7927265224DC0EFF00907E77 /* Type4ViewControllerFourth.m in Sources */,
 				793E81AF24D909FC008978D5 /* MJRefreshStateTrailer.m in Sources */,
 				795DB85B229E3FAC003AFE44 /* RACBehaviorSubject.m in Sources */,
@@ -2340,6 +2412,7 @@
 				795DB623229E2FA1003AFE44 /* KTVHCDataRequest.m in Sources */,
 				793E81A324D909FC008978D5 /* MJRefreshConst.m in Sources */,
 				7927263C24DB069A00907E77 /* Type3ViewControllerFirst.m in Sources */,
+				79BD7AA324F531100064533C /* ZJScrollSegmentView.m in Sources */,
 				790F14E7225CF991000E7335 /* main.m in Sources */,
 				795DB721229E372F003AFE44 /* ZFDouYinPlayerControlView.m in Sources */,
 				795DB769229E372F003AFE44 /* DDVideoPlayerManager.m in Sources */,
@@ -2365,6 +2438,7 @@
 				795DB83B229E3FAC003AFE44 /* NSUserDefaults+RACSupport.m in Sources */,
 				795DB765229E372F003AFE44 /* ZFPlayerView.m in Sources */,
 				795DB722229E372F003AFE44 /* UITabBarController+ZFPlayerRotation.m in Sources */,
+				79BD7AAE24F533040064533C /* ZJPageViewController.m in Sources */,
 				7920B51F24EFD1CC00946EB5 /* TOGradientView.m in Sources */,
 				795DB62B229E2FA1003AFE44 /* KTVHCDataCallback.m in Sources */,
 				793E81B024D909FC008978D5 /* MJRefreshNormalTrailer.m in Sources */,
@@ -2389,6 +2463,7 @@
 				79BBE57924EF8B6300AE2FFC /* TAGChannelParam.m in Sources */,
 				795DB841229E3FAC003AFE44 /* RACEXTRuntimeExtensions.m in Sources */,
 				795DB62A229E2FA1003AFE44 /* KTVHCDataLoader.m in Sources */,
+				79BD7AA224F531100064533C /* ZJScrollPageView.m in Sources */,
 				795DB883229E3FAC003AFE44 /* RACUnit.m in Sources */,
 				795DB83E229E3FAC003AFE44 /* UITextView+RACSignalSupport.m in Sources */,
 				795DB868229E3FAC003AFE44 /* RACKVOProxy.m in Sources */,
@@ -2403,6 +2478,7 @@
 				79044A5224F4FFFE0003E755 /* UICollectionView+MyCol.m in Sources */,
 				795DB666229E300D003AFE44 /* MultipartMessageHeaderField.m in Sources */,
 				795DB8CB229E86E9003AFE44 /* IQKeyboardManager.m in Sources */,
+				79BD7AA424F531100064533C /* UIView+ZJFrame.m in Sources */,
 				795DB725229E372F003AFE44 /* UIView+CustomControlView.m in Sources */,
 				795DB895229E4606003AFE44 /* global.m in Sources */,
 				793E81B424D909FC008978D5 /* MJRefreshFooter.m in Sources */,

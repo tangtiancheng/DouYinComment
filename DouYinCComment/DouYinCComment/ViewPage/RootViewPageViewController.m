@@ -23,6 +23,7 @@
 #import "Type4ViewControllerSecond.h"
 #import "Type4ViewControllerThird.h"
 #import "Type4ViewControllerFourth.h"
+#import "Type4ViewControllerFifth.h"
 
 #import "Type5ViewControllerFirst.h"
 
@@ -58,7 +59,7 @@ static NSString *const cellIdentifier = @"cellIdentifier";
     } else if(section == 2) {
         return 2;
     } else if(section == 3) {
-        return 4;
+        return 5;
     } else if(section == 4) {
         return 1;
     }
@@ -117,6 +118,8 @@ static NSString *const cellIdentifier = @"cellIdentifier";
             cell.textLabel.text = @"适用于下拉的时候图片也拉升变大的个人主页(列表为ViewControl)";
         } else if(indexPath.row == 3) {
             cell.textLabel.text = @"类似铃声多多铃单页";
+        } else if(indexPath.row == 4) {
+            cell.textLabel.text = @"viewPager使用第三方的ZJScrollPageView(viewPager可以使用你自己的写好的分页控制视图)";
         }
     } else if(indexPath.section == 4) {
         if(indexPath.row == 0) {
@@ -171,6 +174,9 @@ static NSString *const cellIdentifier = @"cellIdentifier";
             [self.navigationController pushViewController:vc animated:YES];
         } else if(indexPath.row == 3) {
             Type4ViewControllerFourth *vc = [[Type4ViewControllerFourth alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        } else if(indexPath.row == 4) {
+            Type4ViewControllerFifth *vc = [[Type4ViewControllerFifth alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
     } else if(indexPath.section == 4) {

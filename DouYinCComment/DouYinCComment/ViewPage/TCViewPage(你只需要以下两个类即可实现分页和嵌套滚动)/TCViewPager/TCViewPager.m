@@ -9,7 +9,6 @@
 //
 
 #import "TCViewPager.h"
-#import "TOGradientView.h"
 
 #define MYRGBACOLOR(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
@@ -20,8 +19,6 @@
 @interface TCPageParam ()
 
 @property (nonatomic, assign) CGFloat width;
-
-
 
 @end
 
@@ -408,18 +405,13 @@
     [self addSubview:self.pageHeaderControl];
     
     if(self.param.canEdit) {
-        self.editTagBtn = [[UIButton alloc] init];
+        self.editTagBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-EditBtnW, 0, EditBtnW, self.param.pageHeaderHeight)];
         self.editTagBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 5);
         self.editTagBtn.backgroundColor = [UIColor clearColor];
         [self.editTagBtn addTarget:self action:@selector(editTagBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.editTagBtn];
         [self.editTagBtn setImage:[UIImage imageNamed:@"TAG_Mger_Edit"] forState:UIControlStateNormal];
-        [self.editTagBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.with.offset(0);
-            make.right.with.offset(0);
-            make.height.mas_equalTo(self.param.pageHeaderHeight);
-            make.width.mas_equalTo(EditBtnW);
-        }];
+        
     }
     
     if(self.param.showBottomGradientLayer) {

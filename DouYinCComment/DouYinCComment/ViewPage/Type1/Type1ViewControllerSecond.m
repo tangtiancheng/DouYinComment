@@ -48,7 +48,7 @@
     //当前选择的菜单索引
     pageParam.selectIndex = 1;
     //选中按钮下方横线背景颜色
-    pageParam.tabSelectedArrowBgColor = [UIColor redColor];
+    pageParam.tabSelectedBottomLineColor = [UIColor redColor];
     //选中按钮是否显示底部横线
     pageParam.showSelectedBottomLine = YES;
     //选中按钮底部横线与按钮的宽度比例

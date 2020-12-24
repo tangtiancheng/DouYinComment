@@ -1,3 +1,5 @@
+
+
 //
 //  TCViewPager.m
 //  XiaoHaiTun
@@ -7,7 +9,7 @@
 //
 
 #import "TCViewPager.h"
-#import "UIView+EasyFrame.h"
+#import "TOGradientView.h"
 
 #define MYRGBACOLOR(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
@@ -18,8 +20,7 @@
 @interface TCPageParam ()
 
 @property (nonatomic, assign) CGFloat width;
-//菜单标题数组长度
-@property (nonatomic, strong) NSArray *titleArrayLength;
+
 
 
 @end
@@ -38,7 +39,7 @@
 - (void)setupDefaultValue {
     self.selectIndex = 0;
     self.titleArray = [NSMutableArray array];
-    self.tabSelectedArrowBgColor = [UIColor blackColor];
+    self.tabSelectedBottomLineColor = [UIColor blackColor];
     self.showSelectedBottomLine = NO;
     self.selectedBottomLineScale = 1.0;
     
@@ -51,6 +52,13 @@
     self.showBottomGradientLayer = YES;
     self.bottomGradientH = 6;
     self.bottomGradientColorArr = @[MYRGBACOLOR(239,242,241,1), MYRGBACOLOR(239,242,241,0.0)];
+    
+    self.pageHeaderControlBottomLineColor = [UIColor clearColor];
+    self.pageHeaderControlBottomLineHeight = 1.0;
+    self.viewPagerBgColor = [UIColor whiteColor];
+    self.titlePageSpace = DefultTitlePageSpace;
+    self.leftAndRightSpace = DefultLeftAndRightSpace;
+    self.animateScroll = YES;
 }
 
 
@@ -67,18 +75,20 @@
  */
 - (void)calculate {
     CGFloat titleAllLength = 0;
-    NSMutableArray *titleWidths = [NSMutableArray array];
-    for(NSString *title in _titleArray) {
-        CGFloat width = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesFontLeading attributes:@{ NSFontAttributeName:self.labelFont} context:nil].size.width +1;
-        [titleWidths addObject:@(width)];
-        titleAllLength = titleAllLength + width;
+    if(!self.titleArrayLength.count) {
+        NSMutableArray *titleWidths = [NSMutableArray array];
+        for(NSString *title in _titleArray) {
+            CGFloat width = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesFontLeading attributes:@{ NSFontAttributeName:self.labelFont} context:nil].size.width +1;
+            [titleWidths addObject:@(width)];
+            titleAllLength = titleAllLength + width;
+        }
+        self.titleArrayLength = titleWidths;
     }
-    self.titleArrayLength = titleWidths;
-    
-    
-    
-    if(self.leftAndRightSpace > 0) {
-        if(self.titlePageSpace > 0) {
+    for(NSNumber *width in self.titleArrayLength) {
+        titleAllLength = titleAllLength + width.floatValue;
+    }
+    if(self.leftAndRightSpace >= 0) {
+        if(self.titlePageSpace >= 0) {
         } else {
             self.titlePageSpace = DefultTitlePageSpace;
             if((titleAllLength + self.leftAndRightSpace * 2 + (self.titleArray.count -1) * self.titlePageSpace) < self.width && self.titleArray.count>1) {
@@ -86,7 +96,7 @@
             }
         }
     } else {
-        if(self.titlePageSpace > 0) {
+        if(self.titlePageSpace >= 0) {
             self.leftAndRightSpace = DefultLeftAndRightSpace;
         } else {
             self.leftAndRightSpace = DefultLeftAndRightSpace;
@@ -131,6 +141,13 @@
 
 @implementation TCViewPager
 
+- (UIViewController *)selectController {
+    if(_views.count > self.currentIndex && self.currentIndex >= 0) {
+        _selectController = _views[self.currentIndex];
+        return _selectController;
+    }
+    return nil;
+}
 
 //按钮的点击事件
 - (void)tabBtnClicked:(UIButton *)sender
@@ -149,15 +166,25 @@
 
 - (void)changeSelectedIndex:(NSInteger)selectIndex {
     if(selectIndex == self.param.selectIndex) {
-         if(_block) {
-             _block(self, selectIndex,self.param.selectIndex, NO);
-         }
-         return;
-     } else {
-         [self setSelectIndex:selectIndex isClickBtn:NO];
-     }
+        if(_block) {
+            _block(self, selectIndex,self.param.selectIndex, NO);
+        }
+        return;
+    } else {
+        [self setSelectIndex:selectIndex isClickBtn:NO];
+    }
 }
 
+//修改某一个标题的名字
+- (void)setTitle:(NSString *)title forSegmentAtIndex:(NSInteger)index {
+    if(self.param.titleArray.count > index) {
+        NSMutableArray *titleMutableArray = [NSMutableArray arrayWithArray:self.param.titleArray];
+        titleMutableArray[index] = title;
+        self.param.titleArray = titleMutableArray;
+    }
+    UIButton *btn = self.titleBtnArray[index];
+    [btn setTitle:title forState:UIControlStateNormal];
+}
 
 /**
  设置选择的按钮索引 触发的方法(里面主要做的就是修改下面红色label的滑动距离,并且使得上面的按钮选中状态发生改变)
@@ -169,28 +196,28 @@
     for(NSInteger i = 0; i < self.views.count; i++) {
         UIButton *btn = (UIButton *)[self.pageHeaderControl viewWithTag:i + 100];
         [btn setTitleColor:self.param.tabTitleColor forState:UIControlStateNormal];
-        btn.backgroundColor = [UIColor whiteColor];
         btn.selected = NO;
         btn.transform = CGAffineTransformIdentity;
     }
     UIButton *button = (UIButton *)[self.pageHeaderControl viewWithTag:index + 100];
-//    UIView *selectedLabel = (UIView *)[self.pageHeaderControl viewWithTag:300];
+    //    UIView *selectedLabel = (UIView *)[self.pageHeaderControl viewWithTag:300];
     button.selected = YES;
     button.transform = CGAffineTransformMakeScale(self.param.selectedLabelBigScale, self.param.selectedLabelBigScale);
     
     id childVc = self.views[index];
     if([childVc isKindOfClass:[UIViewController class]]) {
-//        if (![childVc isViewLoaded]) {
-            [self.scrollView addSubview:((UIViewController *)childVc).view];
-            ((UIViewController *)childVc).view.frame = CGRectMake(index * self.width, 0, self.scrollView.width, self.scrollView.height);
-//        }
+        //        if (![childVc isViewLoaded]) {
+        [self.scrollView addSubview:((UIViewController *)childVc).view];
+        ((UIViewController *)childVc).view.frame = CGRectMake(index * self.width, 0, self.scrollView.width, self.scrollView.height);
+        //        }
+      
     } else if([childVc isKindOfClass:[UIView class]]) {
         if(![self.scrollView.subviews containsObject:childVc]) {
             [self.scrollView addSubview:((UIView *)childVc)];
             ((UIView *)childVc).frame = CGRectMake(index * self.width, 0, self.scrollView.width, self.scrollView.height);
         }
     }
-
+    
     if(floor(self.scrollView.contentOffset.x) == floor(index * self.width)) {
         self.selectedBottomLine.width = [self.param.titleArrayLength[index] floatValue] * self.param.selectedBottomLineScale;
         self.selectedBottomLine.centerX = button.centerX;
@@ -202,20 +229,24 @@
         }
         self.param.selectIndex = index;
     } else {
-        [UIView animateWithDuration:0.3 animations:^{
+        CGFloat duration = 0.3;
+        if(!self.param.animateScroll) {
+            duration = 0;
+        }
+        [UIView animateWithDuration:duration animations:^{
             self.selectedBottomLine.width = [self.param.titleArrayLength[index] floatValue] * self.param.selectedBottomLineScale;
             self.selectedBottomLine.centerX = button.centerX;
             self.scrollView.contentOffset = CGPointMake(index * self.width, 0);
             //让按钮居中
             [self setUpTitleCenter:button];
         } completion:^(BOOL finished) {
-            if(self.block) {
-                self.block(self, index,self.param.selectIndex,isClickBtn);
-            }
-            self.param.selectIndex = index;
+            
         }];
+        if(self.block) {
+            self.block(self, index,self.param.selectIndex,isClickBtn);
+        }
+        self.param.selectIndex = index;
     }
-    
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -263,12 +294,11 @@
         offsetX = offsetX + ([self.param.titleArrayLength[indexInt] floatValue]/2 + self.param.titlePageSpace +( self.param.titleArrayLength.count > (indexInt+1) ? [self.param.titleArrayLength[indexInt+1] floatValue]/2 : 0)) * indexFloat;
     }
     
-    
-     if(rightIndex <  _titleBtnArray.count) {
-         self.selectedBottomLine.width = [self.param.titleArrayLength[leftIndex] floatValue] * self.param.selectedBottomLineScale * leftScale + [self.param.titleArrayLength[rightIndex] floatValue] * self.param.selectedBottomLineScale * rightScale;
-     } else {
-         self.selectedBottomLine.width = [self.param.titleArrayLength[leftIndex] floatValue] * self.param.selectedBottomLineScale * leftScale;
-     }
+    if(rightIndex <  _titleBtnArray.count) {
+        self.selectedBottomLine.width = [self.param.titleArrayLength[leftIndex] floatValue] * self.param.selectedBottomLineScale * leftScale + [self.param.titleArrayLength[rightIndex] floatValue] * self.param.selectedBottomLineScale * rightScale;
+    } else {
+        self.selectedBottomLine.width = [self.param.titleArrayLength[leftIndex] floatValue] * self.param.selectedBottomLineScale * leftScale;
+    }
     self.selectedBottomLine.centerX = offsetX;
     
     offsetX = offsetX - self.width * 0.5;
@@ -329,8 +359,8 @@
 }
 
 - (id)initWithFrame:(CGRect)frame
- views:(NSArray *)views
- param:(TCPageParam *)param
+              views:(NSArray *)views
+              param:(TCPageParam *)param
 {
     self = [super initWithFrame:frame];
     if(self) {
@@ -357,6 +387,7 @@
     [super layoutSubviews];
     if(self.scrollView) return;
     CGRect rect = self.bounds;
+    self.backgroundColor = self.param.viewPagerBgColor;
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.param.pageHeaderHeight, self.width, self.height - self.param.pageHeaderHeight)];
     if(@available(iOS 11.0, *)){
         self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//UIScrollView也适用
@@ -369,9 +400,9 @@
     self.scrollView.pagingEnabled = YES;
     self.scrollView.directionalLockEnabled = YES;
     self.scrollView.bounces = NO;
-    self.scrollView.backgroundColor = [UIColor whiteColor];
+    self.scrollView.backgroundColor = self.param.viewPagerBgColor;
     self.pageHeaderControl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.param.canEdit ? self.width - EditBtnW : self.width, self.param.pageHeaderHeight)];
-    self.pageHeaderControl.backgroundColor = [UIColor whiteColor];
+    self.pageHeaderControl.backgroundColor = self.param.viewPagerBgColor;
     self.pageHeaderControl.showsHorizontalScrollIndicator = NO;
     [self addSubview:self.scrollView];
     [self addSubview:self.pageHeaderControl];
@@ -389,17 +420,6 @@
             make.height.mas_equalTo(self.param.pageHeaderHeight);
             make.width.mas_equalTo(EditBtnW);
         }];
-//        TOGradientView *gradientView = [[TOGradientView alloc] init];
-//        gradientView.startPoint = CGPointMake(1, 0);
-//        gradientView.endPoint = CGPointMake(0, 0);
-//        gradientView.colors = @[(id)RGBA(255, 255, 255, 1).CGColor,(id)RGBA(255, 255, 255, 0.0).CGColor];
-//        [self addSubview:gradientView];
-//        [gradientView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.width.mas_equalTo(10);
-//            make.top.with.offset(0);
-//            make.height.mas_equalTo(_pageHeaderHeight);
-//            make.right.equalTo(self.editTagBtn.mas_left);
-//        }];
     }
     
     if(self.param.showBottomGradientLayer) {
@@ -414,12 +434,6 @@
         gradientLayer.frame = CGRectMake(0, self.param.pageHeaderHeight, rect.size.width, self.param.bottomGradientH);
         [self.layer addSublayer:gradientLayer];
     }
-   
-    if(self.param.showSelectedBottomLine) {
-        //创建菜单按钮下划线
-        self.selectedBottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.pageHeaderControl.height -3, self.param.titlePageSpace * self.param.selectedBottomLineScale, 3)];
-        self.selectedBottomLine.backgroundColor = self.param.tabSelectedArrowBgColor;
-    }
     for(NSInteger i = 0; i < self.views.count; i++) {
         
         CGRect pageframe = self.pageHeaderControl.frame;
@@ -428,7 +442,7 @@
         for(NSInteger j = 0; j < i; j++) {
             pageframe.origin.x = pageframe.origin.x + self.param.titlePageSpace + [self.param.titleArrayLength[j] floatValue];
         }
-
+        
         //创建菜单按钮
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -436,6 +450,7 @@
         button.tag = 100 + i;
         [button setTitleColor:self.param.tabTitleColor forState:UIControlStateNormal];
         [button setTitleColor:self.param.tabSelectedTitleColor forState:UIControlStateSelected];
+        [button setBackgroundColor:[UIColor clearColor]];
         id currentTitle = self.param.titleArray[i];
         if([currentTitle isKindOfClass:[NSString class]]) {
             [button setTitle:self.param.titleArray[i] forState:UIControlStateNormal];
@@ -447,22 +462,35 @@
             self.titleBtnArray = [NSMutableArray array];
         }
         [self.titleBtnArray addObject:button];
-
+        
         button.titleLabel.font = self.param.labelFont;
         
         [button addTarget:self action:@selector(tabBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         if(!i) {
             button.selected = YES;
+            self.selectedBottomLine.centerX = button.centerX;
         }
-        if(button.selected) {
-            [UIView animateWithDuration:0.3 animations:^{
-                self.selectedBottomLine.centerX = button.centerX;
-            }];
-        }
+
         [self.pageHeaderControl addSubview:button];
     }
-    [self.pageHeaderControl addSubview:self.selectedBottomLine];
-
+    
+    //创建菜单标题scrollView下方的横线
+    if(self.param.pageHeaderControlBottomLineWidth == 0) {
+        self.param.pageHeaderControlBottomLineWidth = self.width;
+    }
+    UIView *pageHeaderControlBottomLine = [[UIView alloc] initWithFrame:CGRectMake((self.width - self.param.pageHeaderControlBottomLineWidth)/2, self.param.pageHeaderHeight - self.param.pageHeaderControlBottomLineHeight, self.param.pageHeaderControlBottomLineWidth, self.param.pageHeaderControlBottomLineHeight)];
+    pageHeaderControlBottomLine.backgroundColor = self.param.pageHeaderControlBottomLineColor;
+    [self.pageHeaderControl addSubview:pageHeaderControlBottomLine];
+    
+    if(self.param.showSelectedBottomLine) {
+        //创建菜单按钮下划线
+        self.selectedBottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.pageHeaderControl.height -3, self.param.titlePageSpace * self.param.selectedBottomLineScale, 3)];
+        self.selectedBottomLine.backgroundColor = self.param.tabSelectedBottomLineColor;
+        [self.pageHeaderControl addSubview:self.selectedBottomLine];
+    }
+    
+    
+    
     CGFloat pageContentSizeWidth = 2 * self.param.leftAndRightSpace + (self.param.titleArrayLength.count - 1)*self.param.titlePageSpace;
     for(NSInteger i = 0; i < self.param.titleArrayLength.count; i++) {
         pageContentSizeWidth = pageContentSizeWidth + [self.param.titleArrayLength[i] floatValue];
@@ -472,7 +500,7 @@
     self.scrollView.delegate = self;
     self.scrollView.contentOffset = CGPointMake(self.width*self.param.selectIndex, 0);
     if(self.views.count) {
-        [self setSelectIndex:self.param.selectIndex isClickBtn:YES];
+        [self setSelectIndex:self.param.selectIndex isClickBtn:NO];
     }
 }
 
@@ -485,7 +513,7 @@
     do
     {
         nextResponder = [nextResponder nextResponder];
-
+        
         if ([nextResponder isKindOfClass:[UIViewController class]])
             return (UIViewController*)nextResponder;
     } while (nextResponder != nil);
@@ -494,6 +522,3 @@
 
 
 @end
-
-
-

@@ -75,6 +75,10 @@
 		793E81B724D909FC008978D5 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 793E819C24D909FC008978D5 /* MJRefreshAutoFooter.m */; };
 		793E81B824D909FC008978D5 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 793E819E24D909FC008978D5 /* MJRefreshComponent.m */; };
 		793E81B924D909FC008978D5 /* MJRefreshTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 793E81A124D909FC008978D5 /* MJRefreshTrailer.m */; };
+		795D3E562591FF11005AA461 /* Type6ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 795D3E552591FF11005AA461 /* Type6ViewControllerFirst.m */; };
+		795D3E5F259203D7005AA461 /* TopBackContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795D3E5E259203D7005AA461 /* TopBackContentView.m */; };
+		795D3E65259203EA005AA461 /* PlayToolBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795D3E64259203EA005AA461 /* PlayToolBackView.m */; };
+		795D3E6B259203F8005AA461 /* ContentListVBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795D3E6A259203F8005AA461 /* ContentListVBackView.m */; };
 		795DB586229D3355003AFE44 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB585229D3355003AFE44 /* RootViewController.m */; };
 		795DB58C229D3BC3003AFE44 /* SmallVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB58B229D3BC3003AFE44 /* SmallVideoListViewController.m */; };
 		795DB58F229D3C56003AFE44 /* DDAnimationLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB58E229D3C56003AFE44 /* DDAnimationLayout.m */; };
@@ -275,6 +279,9 @@
 		795DB8D8229E876A003AFE44 /* CommentMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB8D6229E876A003AFE44 /* CommentMessageCell.m */; };
 		795DB93E229E8844003AFE44 /* CommentInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB93C229E8844003AFE44 /* CommentInputView.m */; };
 		795DB941229E9459003AFE44 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB940229E9459003AFE44 /* NSDate+Helper.m */; };
+		79821712259489A00045C124 /* ZFSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79821710259489A00045C124 /* ZFSliderView.m */; };
+		7982171B259492200045C124 /* UIScrollView+Interaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7982171A259492200045C124 /* UIScrollView+Interaction.m */; };
+		79821721259494750045C124 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79821720259494750045C124 /* ListViewController.m */; };
 		79B91BA924D9C905003534BD /* Type1ViewControllerSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B91BA824D9C905003534BD /* Type1ViewControllerSecond.m */; };
 		79B91BAF24DA6AAC003534BD /* Type1ViewControllerThird.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B91BAE24DA6AAC003534BD /* Type1ViewControllerThird.m */; };
 		79BBE57824EF8B6300AE2FFC /* TagBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBE57024EF8B6300AE2FFC /* TagBtn.m */; };
@@ -463,6 +470,14 @@
 		793E819F24D909FC008978D5 /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
 		793E81A024D909FC008978D5 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
 		793E81A124D909FC008978D5 /* MJRefreshTrailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshTrailer.m; sourceTree = "<group>"; };
+		795D3E542591FF11005AA461 /* Type6ViewControllerFirst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Type6ViewControllerFirst.h; sourceTree = "<group>"; };
+		795D3E552591FF11005AA461 /* Type6ViewControllerFirst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Type6ViewControllerFirst.m; sourceTree = "<group>"; };
+		795D3E5D259203D7005AA461 /* TopBackContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopBackContentView.h; sourceTree = "<group>"; };
+		795D3E5E259203D7005AA461 /* TopBackContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopBackContentView.m; sourceTree = "<group>"; };
+		795D3E63259203EA005AA461 /* PlayToolBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayToolBackView.h; sourceTree = "<group>"; };
+		795D3E64259203EA005AA461 /* PlayToolBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayToolBackView.m; sourceTree = "<group>"; };
+		795D3E69259203F8005AA461 /* ContentListVBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentListVBackView.h; sourceTree = "<group>"; };
+		795D3E6A259203F8005AA461 /* ContentListVBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentListVBackView.m; sourceTree = "<group>"; };
 		795DB584229D3355003AFE44 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		795DB585229D3355003AFE44 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		795DB58A229D3BC3003AFE44 /* SmallVideoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallVideoListViewController.h; sourceTree = "<group>"; };
@@ -881,6 +896,12 @@
 		795DB93D229E8844003AFE44 /* CommentInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentInputView.h; sourceTree = "<group>"; };
 		795DB93F229E9459003AFE44 /* NSDate+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		795DB940229E9459003AFE44 /* NSDate+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		79821710259489A00045C124 /* ZFSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSliderView.m; sourceTree = "<group>"; };
+		79821711259489A00045C124 /* ZFSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSliderView.h; sourceTree = "<group>"; };
+		79821719259492200045C124 /* UIScrollView+Interaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Interaction.h"; sourceTree = "<group>"; };
+		7982171A259492200045C124 /* UIScrollView+Interaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Interaction.m"; sourceTree = "<group>"; };
+		7982171F259494750045C124 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		79821720259494750045C124 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		79B91BA724D9C905003534BD /* Type1ViewControllerSecond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Type1ViewControllerSecond.h; sourceTree = "<group>"; };
 		79B91BA824D9C905003534BD /* Type1ViewControllerSecond.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Type1ViewControllerSecond.m; sourceTree = "<group>"; };
 		79B91BAD24DA6AAC003534BD /* Type1ViewControllerThird.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Type1ViewControllerThird.h; sourceTree = "<group>"; };
@@ -1110,6 +1131,7 @@
 				793E815924D83DF1008978D5 /* Type3 */,
 				7927264324DBC6C100907E77 /* Type4 */,
 				79BBE57F24EFB99B00AE2FFC /* Type5 */,
+				795D3E532591FEE9005AA461 /* Type6 */,
 				793E814A24D821FC008978D5 /* RootViewPageViewController.h */,
 				793E814B24D821FC008978D5 /* RootViewPageViewController.m */,
 			);
@@ -1296,6 +1318,35 @@
 				793E81A124D909FC008978D5 /* MJRefreshTrailer.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		795D3E532591FEE9005AA461 /* Type6 */ = {
+			isa = PBXGroup;
+			children = (
+				795D3E6F259204EB005AA461 /* View */,
+				795D3E542591FF11005AA461 /* Type6ViewControllerFirst.h */,
+				795D3E552591FF11005AA461 /* Type6ViewControllerFirst.m */,
+			);
+			path = Type6;
+			sourceTree = "<group>";
+		};
+		795D3E6F259204EB005AA461 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				795D3E5D259203D7005AA461 /* TopBackContentView.h */,
+				795D3E5E259203D7005AA461 /* TopBackContentView.m */,
+				795D3E63259203EA005AA461 /* PlayToolBackView.h */,
+				795D3E64259203EA005AA461 /* PlayToolBackView.m */,
+				795D3E69259203F8005AA461 /* ContentListVBackView.h */,
+				795D3E6A259203F8005AA461 /* ContentListVBackView.m */,
+				79821711259489A00045C124 /* ZFSliderView.h */,
+				79821710259489A00045C124 /* ZFSliderView.m */,
+				79821719259492200045C124 /* UIScrollView+Interaction.h */,
+				7982171A259492200045C124 /* UIScrollView+Interaction.m */,
+				7982171F259494750045C124 /* ListViewController.h */,
+				79821720259494750045C124 /* ListViewController.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		795DB587229D33AB003AFE44 /* Third */ = {
@@ -2226,6 +2277,7 @@
 				793E815C24D84779008978D5 /* Type1ViewControllerFirst.m in Sources */,
 				795DB876229E3FAC003AFE44 /* UIControl+RACSignalSupport.m in Sources */,
 				795DB5BF229D3D69003AFE44 /* SDWebImagePrefetcher.m in Sources */,
+				795D3E6B259203F8005AA461 /* ContentListVBackView.m in Sources */,
 				79BBE57B24EF8B6300AE2FFC /* TagModel.m in Sources */,
 				795DB84D229E3FAC003AFE44 /* RACCompoundDisposableProvider.d in Sources */,
 				795DB61F229E2FA1003AFE44 /* KTVHCDataStorage.m in Sources */,
@@ -2241,11 +2293,13 @@
 				795DB862229E3FAC003AFE44 /* RACEvent.m in Sources */,
 				79BBE58224EFBAC200AE2FFC /* Type5ViewControllerFirst.m in Sources */,
 				795DB618229E2FA1003AFE44 /* KTVHCPathTool.m in Sources */,
+				79821721259494750045C124 /* ListViewController.m in Sources */,
 				793E81A824D909FC008978D5 /* UIView+MJExtension.m in Sources */,
 				795DB834229E3FAC003AFE44 /* NSObject+RACDescription.m in Sources */,
 				795DB837229E3FAC003AFE44 /* RACSignal.m in Sources */,
 				795DB884229E3FAC003AFE44 /* RACCompoundDisposable.m in Sources */,
 				795DB669229E300D003AFE44 /* HTTPAuthenticationRequest.m in Sources */,
+				795D3E5F259203D7005AA461 /* TopBackContentView.m in Sources */,
 				795DB8C4229E86E9003AFE44 /* IQTextView.m in Sources */,
 				795DB848229E3FAC003AFE44 /* RACUnarySequence.m in Sources */,
 				795DB886229E3FAC003AFE44 /* RACEmptySignal.m in Sources */,
@@ -2367,6 +2421,7 @@
 				790F150B225CF9A3000E7335 /* TCCommentsPopView.m in Sources */,
 				795DB852229E3FAC003AFE44 /* UIImagePickerController+RACSignalSupport.m in Sources */,
 				795DB87B229E3FAC003AFE44 /* RACSerialDisposable.m in Sources */,
+				7982171B259492200045C124 /* UIScrollView+Interaction.m in Sources */,
 				795DB61E229E2FA1003AFE44 /* KTVHCDataUnitPool.m in Sources */,
 				795DB8C5229E86E9003AFE44 /* IQToolbar.m in Sources */,
 				790F1531225DED17000E7335 /* MASLayoutConstraint.m in Sources */,
@@ -2394,6 +2449,7 @@
 				795DB720229E372F003AFE44 /* ZFPlayerModel.m in Sources */,
 				795DB592229D3CE6003AFE44 /* SmallVideoPlayViewController.mm in Sources */,
 				795DB84A229E3FAC003AFE44 /* RACDynamicSequence.m in Sources */,
+				795D3E65259203EA005AA461 /* PlayToolBackView.m in Sources */,
 				790F1532225DED17000E7335 /* NSArray+MASAdditions.m in Sources */,
 				795DB858229E3FAC003AFE44 /* RACBlockTrampoline.m in Sources */,
 				795DB83A229E3FAC003AFE44 /* RACTargetQueueScheduler.m in Sources */,
@@ -2410,6 +2466,7 @@
 				795DB87F229E3FAC003AFE44 /* NSObject+RACSelectorSignal.m in Sources */,
 				795DB768229E372F003AFE44 /* ASValueTrackingSlider.m in Sources */,
 				795DB623229E2FA1003AFE44 /* KTVHCDataRequest.m in Sources */,
+				795D3E562591FF11005AA461 /* Type6ViewControllerFirst.m in Sources */,
 				793E81A324D909FC008978D5 /* MJRefreshConst.m in Sources */,
 				7927263C24DB069A00907E77 /* Type3ViewControllerFirst.m in Sources */,
 				79BD7AA324F531100064533C /* ZJScrollSegmentView.m in Sources */,
@@ -2453,6 +2510,7 @@
 				795DB831229E3FAC003AFE44 /* UIStepper+RACSignalSupport.m in Sources */,
 				793E81A724D909FC008978D5 /* NSBundle+MJRefresh.m in Sources */,
 				795DB662229E300D003AFE44 /* HTTPMessage.m in Sources */,
+				79821712259489A00045C124 /* ZFSliderView.m in Sources */,
 				790F1536225DED17000E7335 /* MASViewAttribute.m in Sources */,
 				795DB5C2229D3D69003AFE44 /* NSData+ImageContentType.m in Sources */,
 				795DB854229E3FAC003AFE44 /* UIControl+RACSignalSupportPrivate.m in Sources */,

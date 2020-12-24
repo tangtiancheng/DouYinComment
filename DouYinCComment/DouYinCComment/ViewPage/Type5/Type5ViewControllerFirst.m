@@ -40,12 +40,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:true animated:animated];
+    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:false animated:animated];
     if (@available(iOS 13.0, *)) {
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDarkContent;
     } else {

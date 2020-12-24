@@ -43,7 +43,8 @@ static char leftNameKey;
 - (UIView*)hitTest:(CGPoint) point withEvent:(UIEvent*) event {
     CGRect rect = [self enlargedRect];
     if (CGRectEqualToRect(rect, self.bounds) || self.hidden == YES || self.alpha == 0 || self.userInteractionEnabled == NO) {
-        return [super hitTest:point withEvent:event];
+        UIView *v = [super hitTest:point withEvent:event];
+        return v;
     }
     return CGRectContainsPoint(rect, point) ? self : nil;
 }

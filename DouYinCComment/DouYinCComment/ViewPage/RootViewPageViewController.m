@@ -139,7 +139,7 @@ static NSString *const cellIdentifier = @"cellIdentifier";
         }
     } else if(indexPath.section == 5) {
         if(indexPath.row == 0) {
-            cell.textLabel.text = @"铃声多多音乐播放界面(和QQ音乐播放界面一样支持侧滑和下拉返回)";
+            cell.textLabel.text = @"铃声多多音乐播放界面(类似豆瓣电影主页)(和酷我音乐播放界面一样支持侧滑和下拉返回)";
         }
     }
     cell.textLabel.font = [UIFont systemFontOfSize:12];

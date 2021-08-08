@@ -108,6 +108,7 @@
 		793D5D8826C02C6300DFC4FB /* MyCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8326C02C6300DFC4FB /* MyCommentView.m */; };
 		793D5D8926C02C6300DFC4FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8426C02C6300DFC4FB /* ViewController.m */; };
 		793D5D8A26C02C6300DFC4FB /* MyCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8626C02C6300DFC4FB /* MyCommentCell.m */; };
+		793D5DB826C060C600DFC4FB /* TTCTool.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 793D5DB726C060C500DFC4FB /* TTCTool.podspec */; };
 		795DB586229D3355003AFE44 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB585229D3355003AFE44 /* RootViewController.m */; };
 		795DB58C229D3BC3003AFE44 /* SmallVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB58B229D3BC3003AFE44 /* SmallVideoListViewController.m */; };
 		795DB58F229D3C56003AFE44 /* DDAnimationLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB58E229D3C56003AFE44 /* DDAnimationLayout.m */; };
@@ -536,6 +537,7 @@
 		793D5D8526C02C6300DFC4FB /* MyCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCommentView.h; path = DouYinCComment/MyCommentView.h; sourceTree = SOURCE_ROOT; };
 		793D5D8626C02C6300DFC4FB /* MyCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCommentCell.m; path = DouYinCComment/MyCommentCell.m; sourceTree = SOURCE_ROOT; };
 		793D5D8726C02C6300DFC4FB /* MyCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCommentCell.h; path = DouYinCComment/MyCommentCell.h; sourceTree = SOURCE_ROOT; };
+		793D5DB726C060C500DFC4FB /* TTCTool.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TTCTool.podspec; path = ../../TTCTool.podspec; sourceTree = "<group>"; };
 		795DB584229D3355003AFE44 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		795DB585229D3355003AFE44 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		795DB58A229D3BC3003AFE44 /* SmallVideoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallVideoListViewController.h; sourceTree = "<group>"; };
@@ -1005,6 +1007,7 @@
 		790F14D6225CF98F000E7335 /* DouYinCComment */ = {
 			isa = PBXGroup;
 			children = (
+				793D5DB726C060C500DFC4FB /* TTCTool.podspec */,
 				793D5C0F26BFE74F00DFC4FB /* CommentMethod */,
 				793D5C0026BFE74F00DFC4FB /* UploadToGarageBand */,
 				793D5B5526BFE74E00DFC4FB /* ViewPage */,
@@ -2234,6 +2237,7 @@
 				795DB75E229E372F003AFE44 /* ZFPlayer.bundle in Resources */,
 				793D5C6826BFE74F00DFC4FB /* bandfolder.band in Resources */,
 				793D5C6526BFE74F00DFC4FB /* 牡丹亭外.m4a in Resources */,
+				793D5DB826C060C600DFC4FB /* TTCTool.podspec in Resources */,
 				790F14E4225CF991000E7335 /* LaunchScreen.storyboard in Resources */,
 				790F14E1225CF991000E7335 /* Assets.xcassets in Resources */,
 				793D5D0B26C0135F00DFC4FB /* MJRefresh.bundle in Resources */,

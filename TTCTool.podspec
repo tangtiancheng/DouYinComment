@@ -1,7 +1,4 @@
-
-
 Pod::Spec.new do |spec|
-
   spec.name         = "TTCTool"
   spec.version      = "0.0.2"
   spec.summary      = "TTCTool."
@@ -26,4 +23,11 @@ Pod::Spec.new do |spec|
  
   spec.ios.deployment_target = '9.0'
   spec.dependency 'Masonry'
+  spec.frameworks = 'UIKit', 'Foundation'
+  
+  
+ # s.source_files = 'lib/XMGDownLoad/Classes/**/*.h'
+#s.vendored_frameworks = 'lib/XMGDownLoad/Products/FrameworkTe.framework'
+#s.vendored_libraries = 'lib/XMGDownLoad/Products/libtesttt.a'
+  
 end

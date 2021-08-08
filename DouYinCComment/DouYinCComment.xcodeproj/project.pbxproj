@@ -40,9 +40,6 @@
 		793D5C6726BFE74F00DFC4FB /* ExtAudioConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5C0B26BFE74F00DFC4FB /* ExtAudioConverter.m */; };
 		793D5C6826BFE74F00DFC4FB /* bandfolder.band in Resources */ = {isa = PBXBuildFile; fileRef = 793D5C0E26BFE74F00DFC4FB /* bandfolder.band */; };
 		793D5C6926BFE74F00DFC4FB /* TCCommentsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5C1326BFE74F00DFC4FB /* TCCommentsPopView.m */; };
-		793D5C6A26BFE74F00DFC4FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5C1526BFE74F00DFC4FB /* ViewController.m */; };
-		793D5C6B26BFE74F00DFC4FB /* MyCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5C1626BFE74F00DFC4FB /* MyCommentView.m */; };
-		793D5C6C26BFE74F00DFC4FB /* MyCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5C1726BFE74F00DFC4FB /* MyCommentCell.m */; };
 		793D5D0026C0135F00DFC4FB /* MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5C6E26C0135F00DFC4FB /* MyHeaderView.m */; };
 		793D5D0126C0135F00DFC4FB /* Type3ViewControllerSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5C7226C0135F00DFC4FB /* Type3ViewControllerSecond.m */; };
 		793D5D0226C0135F00DFC4FB /* Type3ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5C7326C0135F00DFC4FB /* Type3ViewControllerFirst.m */; };
@@ -108,6 +105,9 @@
 		793D5D3E26C0136000DFC4FB /* PlayToolBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CFC26C0135F00DFC4FB /* PlayToolBackView.m */; };
 		793D5D3F26C0136000DFC4FB /* TopBackContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CFE26C0135F00DFC4FB /* TopBackContentView.m */; };
 		793D5D4026C0136000DFC4FB /* Type6ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CFF26C0135F00DFC4FB /* Type6ViewControllerFirst.m */; };
+		793D5D8826C02C6300DFC4FB /* MyCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8326C02C6300DFC4FB /* MyCommentView.m */; };
+		793D5D8926C02C6300DFC4FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8426C02C6300DFC4FB /* ViewController.m */; };
+		793D5D8A26C02C6300DFC4FB /* MyCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8626C02C6300DFC4FB /* MyCommentCell.m */; };
 		795DB586229D3355003AFE44 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB585229D3355003AFE44 /* RootViewController.m */; };
 		795DB58C229D3BC3003AFE44 /* SmallVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB58B229D3BC3003AFE44 /* SmallVideoListViewController.m */; };
 		795DB58F229D3C56003AFE44 /* DDAnimationLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB58E229D3C56003AFE44 /* DDAnimationLayout.m */; };
@@ -397,14 +397,8 @@
 		793D5C0B26BFE74F00DFC4FB /* ExtAudioConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtAudioConverter.m; sourceTree = "<group>"; };
 		793D5C0C26BFE74F00DFC4FB /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		793D5C0E26BFE74F00DFC4FB /* bandfolder.band */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = bandfolder.band; sourceTree = "<group>"; };
-		793D5C1026BFE74F00DFC4FB /* MyCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCommentView.h; sourceTree = "<group>"; };
-		793D5C1126BFE74F00DFC4FB /* MyCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCommentCell.h; sourceTree = "<group>"; };
 		793D5C1326BFE74F00DFC4FB /* TCCommentsPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCommentsPopView.m; sourceTree = "<group>"; };
 		793D5C1426BFE74F00DFC4FB /* TCCommentsPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCommentsPopView.h; sourceTree = "<group>"; };
-		793D5C1526BFE74F00DFC4FB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		793D5C1626BFE74F00DFC4FB /* MyCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCommentView.m; sourceTree = "<group>"; };
-		793D5C1726BFE74F00DFC4FB /* MyCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCommentCell.m; sourceTree = "<group>"; };
-		793D5C1826BFE74F00DFC4FB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		793D5C6E26C0135F00DFC4FB /* MyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeaderView.m; sourceTree = "<group>"; };
 		793D5C6F26C0135F00DFC4FB /* Type3ViewControllerSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type3ViewControllerSecond.h; sourceTree = "<group>"; };
 		793D5C7026C0135F00DFC4FB /* Type3ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type3ViewControllerFirst.h; sourceTree = "<group>"; };
@@ -536,6 +530,12 @@
 		793D5CFE26C0135F00DFC4FB /* TopBackContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopBackContentView.m; sourceTree = "<group>"; };
 		793D5CFF26C0135F00DFC4FB /* Type6ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type6ViewControllerFirst.m; sourceTree = "<group>"; };
 		793D5D4126C0137200DFC4FB /* RootViewPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewPageViewController.h; path = DouYinCComment/RootViewPageViewController.h; sourceTree = SOURCE_ROOT; };
+		793D5D8226C02C6300DFC4FB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = DouYinCComment/ViewController.h; sourceTree = SOURCE_ROOT; };
+		793D5D8326C02C6300DFC4FB /* MyCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCommentView.m; path = DouYinCComment/MyCommentView.m; sourceTree = SOURCE_ROOT; };
+		793D5D8426C02C6300DFC4FB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = DouYinCComment/ViewController.m; sourceTree = SOURCE_ROOT; };
+		793D5D8526C02C6300DFC4FB /* MyCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCommentView.h; path = DouYinCComment/MyCommentView.h; sourceTree = SOURCE_ROOT; };
+		793D5D8626C02C6300DFC4FB /* MyCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCommentCell.m; path = DouYinCComment/MyCommentCell.m; sourceTree = SOURCE_ROOT; };
+		793D5D8726C02C6300DFC4FB /* MyCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCommentCell.h; path = DouYinCComment/MyCommentCell.h; sourceTree = SOURCE_ROOT; };
 		795DB584229D3355003AFE44 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		795DB585229D3355003AFE44 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		795DB58A229D3BC3003AFE44 /* SmallVideoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallVideoListViewController.h; sourceTree = "<group>"; };
@@ -1186,13 +1186,13 @@
 		793D5C0F26BFE74F00DFC4FB /* CommentMethod */ = {
 			isa = PBXGroup;
 			children = (
-				793D5C1126BFE74F00DFC4FB /* MyCommentCell.h */,
-				793D5C1726BFE74F00DFC4FB /* MyCommentCell.m */,
-				793D5C1026BFE74F00DFC4FB /* MyCommentView.h */,
-				793D5C1626BFE74F00DFC4FB /* MyCommentView.m */,
+				793D5D8726C02C6300DFC4FB /* MyCommentCell.h */,
+				793D5D8626C02C6300DFC4FB /* MyCommentCell.m */,
+				793D5D8526C02C6300DFC4FB /* MyCommentView.h */,
+				793D5D8326C02C6300DFC4FB /* MyCommentView.m */,
+				793D5D8226C02C6300DFC4FB /* ViewController.h */,
+				793D5D8426C02C6300DFC4FB /* ViewController.m */,
 				793D5C1226BFE74F00DFC4FB /* TCCommentsPopView */,
-				793D5C1826BFE74F00DFC4FB /* ViewController.h */,
-				793D5C1526BFE74F00DFC4FB /* ViewController.m */,
 			);
 			name = CommentMethod;
 			path = TTCTool/CommentMethod;
@@ -2356,6 +2356,7 @@
 				795DB629229E2FA1003AFE44 /* KTVHCDataUnitQueue.m in Sources */,
 				795DB62C229E2FA1003AFE44 /* KTVHCLog.m in Sources */,
 				793D5D3C26C0136000DFC4FB /* ZFSliderView.m in Sources */,
+				793D5D8826C02C6300DFC4FB /* MyCommentView.m in Sources */,
 				790F1530225DED17000E7335 /* MASConstraintMaker.m in Sources */,
 				795DB885229E3FAC003AFE44 /* RACCommand.m in Sources */,
 				795DB869229E3FAC003AFE44 /* UISegmentedControl+RACSignalSupport.m in Sources */,
@@ -2457,8 +2458,8 @@
 				793D5D1626C0135F00DFC4FB /* MJRefreshNormalTrailer.m in Sources */,
 				790F1532225DED17000E7335 /* NSArray+MASAdditions.m in Sources */,
 				795DB858229E3FAC003AFE44 /* RACBlockTrampoline.m in Sources */,
-				793D5C6C26BFE74F00DFC4FB /* MyCommentCell.m in Sources */,
 				795DB83A229E3FAC003AFE44 /* RACTargetQueueScheduler.m in Sources */,
+				793D5D8A26C02C6300DFC4FB /* MyCommentCell.m in Sources */,
 				795DB865229E3FAC003AFE44 /* RACPassthroughSubscriber.m in Sources */,
 				795DB660229E300D003AFE44 /* HTTPAsyncFileResponse.m in Sources */,
 				795DB61A229E2FA1003AFE44 /* KTVHCHTTPConnection.m in Sources */,
@@ -2496,11 +2497,11 @@
 				795DB85F229E3FAC003AFE44 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
 				793D5D1726C0135F00DFC4FB /* MJRefreshNormalHeader.m in Sources */,
 				795DB61D229E2FA1003AFE44 /* KTVHCDataResponse.m in Sources */,
-				793D5C6A26BFE74F00DFC4FB /* ViewController.m in Sources */,
 				793D5D1326C0135F00DFC4FB /* MJRefreshAutoGifFooter.m in Sources */,
 				795DB5B9229D3D69003AFE44 /* SDWebImageDecoder.m in Sources */,
 				793D5D3F26C0136000DFC4FB /* TopBackContentView.m in Sources */,
 				795DB5C4229D3D69003AFE44 /* NSImage+WebCache.m in Sources */,
+				793D5D8926C02C6300DFC4FB /* ViewController.m in Sources */,
 				793D5D3E26C0136000DFC4FB /* PlayToolBackView.m in Sources */,
 				795DB86D229E3FAC003AFE44 /* UIAlertView+RACSignalSupport.m in Sources */,
 				793D5D1826C0135F00DFC4FB /* MJRefreshStateHeader.m in Sources */,
@@ -2536,7 +2537,6 @@
 				793D5D0726C0135F00DFC4FB /* BaseViewController.m in Sources */,
 				790F1534225DED17000E7335 /* MASConstraint.m in Sources */,
 				795DB941229E9459003AFE44 /* NSDate+Helper.m in Sources */,
-				793D5C6B26BFE74F00DFC4FB /* MyCommentView.m in Sources */,
 				795DB87C229E3FAC003AFE44 /* NSObject+RACLifting.m in Sources */,
 				795DB857229E3FAC003AFE44 /* RACArraySequence.m in Sources */,
 				793D5D0326C0135F00DFC4FB /* Type1ViewControllerFirst.m in Sources */,

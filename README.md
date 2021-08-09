@@ -1,14 +1,9 @@
 # DouYinComment
-支持pod导入:  
-
-pod 'TTCTool  
-
-或者只导入单个功能 
-
+支持pod导入:
+pod 'TTCTool
+或者只导入单个功能
 抖音评论效果: pod 'TTCTool/TCCommentsPopView'
-
 分页: pod 'TTCTool/TCViewPage'
-
 标签管理: pod 'TTCTool/TagChannelManager'
 
 

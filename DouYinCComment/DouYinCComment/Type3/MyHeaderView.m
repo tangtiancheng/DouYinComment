@@ -7,6 +7,8 @@
 //
 
 #import "MyHeaderView.h"
+#import "TTCCom.h"
+#import "Masonry.h"
 
 @interface MyHeaderView ()
 

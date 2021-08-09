@@ -7,6 +7,7 @@
 //
 
 #import "DDAnimationLayout.h"
+#import "TTCCom.h"
 
 @interface DDAnimationLayout()
 

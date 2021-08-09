@@ -7,8 +7,9 @@
 //
 
 #import "CommentTextView.h"
-
-
+#import "TTCCom.h"
+#import "UIView+EasyFrame.h"
+#import "ReactiveObjC.h"
 @interface CommentTextView ()<UITextViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) CGFloat            textHeight;

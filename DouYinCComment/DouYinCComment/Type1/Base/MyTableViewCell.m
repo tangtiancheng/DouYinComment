@@ -9,7 +9,7 @@
 #import "MyTableViewCell.h"
 #import "Masonry.h"
 #import "UICollectionView+MyCol.h"
-
+#import "UIView+EasyFrame.h"
 #pragma mark - MyCollectionViewCell
 
 @interface MyCollectionViewCell : UICollectionViewCell

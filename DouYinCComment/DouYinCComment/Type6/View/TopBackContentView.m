@@ -11,7 +11,10 @@
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
 #import "UIButton+CommonFunction.h"
-
+#import "TTCCom.h"
+#import "UIImageView+WebCache.h"
+#import "ReactiveObjC.h"
+#import "UIView+CommonFunction.h"
 @interface TopBackContentView ()
 
 //@property (nonatomic, strong) UIView *previousFatherView;

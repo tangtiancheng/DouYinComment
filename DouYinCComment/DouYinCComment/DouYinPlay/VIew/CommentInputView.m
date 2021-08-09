@@ -7,7 +7,8 @@
 //
 
 #import "CommentInputView.h"
-
+#import "Masonry.h"
+#import "TTCCom.h"
 
 @interface CommentInputView ()
 

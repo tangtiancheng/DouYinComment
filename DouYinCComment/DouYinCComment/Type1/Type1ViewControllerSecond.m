@@ -13,6 +13,7 @@
 #import "BaseViewController.h"
 #import "BaseScrollViewController.h"
 #import "TCViewPager.h"
+#import "TTCCom.h"
 
 @interface Type1ViewControllerSecond ()
 

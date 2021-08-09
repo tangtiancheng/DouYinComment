@@ -8,7 +8,7 @@
 
 #import "UIButton+CommonFunction.h"
 #import <objc/runtime.h>
-
+#import "TTCCom.h"
 
 @implementation UIButton (CommonFunction)
 

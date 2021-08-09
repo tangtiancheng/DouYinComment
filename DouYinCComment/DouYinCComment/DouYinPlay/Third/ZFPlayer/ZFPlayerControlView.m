@@ -25,7 +25,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "UIView+CustomControlView.h"
-
+#import "TTCCom.h"
+#import "UIImageView+WebCache.h"
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
 

@@ -8,7 +8,8 @@
 
 #import "SmallVideoCell.h"
 #import "Masonry.h"
-
+#import "TTCCom.h"
+#import "UIImageView+WebCache.h"
 @interface SmallVideoCell ()
 
 @property (nonatomic, strong) UIImageView *videoImageView;

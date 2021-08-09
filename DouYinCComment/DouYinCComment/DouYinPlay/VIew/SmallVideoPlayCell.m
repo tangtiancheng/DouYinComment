@@ -8,9 +8,11 @@
 
 #import "SmallVideoPlayCell.h"
 #import "FavoriteView.h"
-//#import "ReactiveCocoa.h"
-
-
+#import "Masonry.h"
+#import "TTCCom.h"
+#import "UIView+CommonFunction.h"
+#import "ReactiveObjC.h"
+#import "UIImageView+WebCache.h"
 @interface SmallVideoPlayCell ()
 
 @property (nonatomic, strong) UIImageView *coverImageView;

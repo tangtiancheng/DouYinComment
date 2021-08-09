@@ -9,7 +9,7 @@
 #import "BaseCollectionViewController.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
-
+#import "ReactiveObjC.h"
 static NSString *collIdentifier = @"collIdentifier";
 
 #pragma mark - BaseCell

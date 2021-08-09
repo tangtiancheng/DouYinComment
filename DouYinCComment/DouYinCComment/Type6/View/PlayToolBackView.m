@@ -8,6 +8,9 @@
 
 #import "PlayToolBackView.h"
 #import "ZFSliderView.h"
+#import "TTCCom.h"
+#import "Masonry.h"
+#import "UIView+CommonFunction.h"
 
 @interface PlayToolBackView ()<ZFSliderViewDelegate>
 

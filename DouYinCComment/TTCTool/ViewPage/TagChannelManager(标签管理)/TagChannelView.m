@@ -10,7 +10,10 @@
 #import "TagBtn.h"
 #import "TagModel.h"
 #import "UIButton+CommonFunction.h"
-
+#import "TTCCom.h"
+#import "Masonry.h"
+#import "UIView+EasyFrame.h"
+#import "ReactiveObjC.h"
 
 #define TopHeadHeight  50
 #define TagTipHeight   55

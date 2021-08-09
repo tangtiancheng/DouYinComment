@@ -14,7 +14,8 @@
 #import "BaseScrollViewController.h"
 #import "BaseViewController.h"
 #import "MyHeaderView.h"
-
+#import "TTCCom.h"
+#import "ReactiveObjC.h"
 #define imageScale (18.0/11)
 #define headerHeight (floor(SCREEN_WIDTH/imageScale))
 #define naviHederH (kDevice_Is_iPhoneX ? 88 : 64)

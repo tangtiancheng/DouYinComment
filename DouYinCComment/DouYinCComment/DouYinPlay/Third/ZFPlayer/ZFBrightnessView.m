@@ -23,7 +23,7 @@
 
 #import "ZFBrightnessView.h"
 #import "ZFPlayer.h"
-
+#import "UIView+CommonFunction.h"
 @interface ZFBrightnessView ()
 
 @property (nonatomic, strong) UIImageView		*backImage;

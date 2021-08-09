@@ -17,7 +17,8 @@
 #import "MyModel.h"
 #import "TagModel.h"
 #import "TagChannelView.h"
-
+#import "TTCCom.h"
+#import "ReactiveObjC.h"
 #define imageScale (18.0/11)
 #define headerHeight (floor(SCREEN_WIDTH/imageScale))
 #define naviHederH (kDevice_Is_iPhoneX ? 88 : 64)

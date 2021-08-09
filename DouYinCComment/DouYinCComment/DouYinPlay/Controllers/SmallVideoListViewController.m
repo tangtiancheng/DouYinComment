@@ -12,7 +12,8 @@
 #import "SmallVideoModel.h"
 #import "SmallVideoPlayViewController.h"
 #import "SmallVideoPlayViewController.h"
-
+#import "Masonry.h"
+#import "TTCCom.h"
 
 static NSString* const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 

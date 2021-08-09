@@ -13,6 +13,7 @@
 #import "BaseWebViewController.h"
 #import "BaseScrollViewController.h"
 #import "BaseViewController.h"
+#import "TTCCom.h"
 
 @interface Type2ViewControllerFirst ()
 

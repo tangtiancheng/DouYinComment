@@ -9,7 +9,7 @@
 #import "BaseTableViewController.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
-#import "ReactiveCocoa.h"
+#import "ReactiveObjC.h"
 #import "MyTableViewCell.h"
 
 static NSString *const cellIdentifier = @"cellIdentifier";

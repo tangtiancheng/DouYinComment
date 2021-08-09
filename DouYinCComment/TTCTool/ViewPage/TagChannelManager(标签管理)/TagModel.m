@@ -7,7 +7,7 @@
 //
 
 #import "TagModel.h"
-
+#import "TTCCom.h"
 @implementation TagModel
 
 - (instancetype)init {

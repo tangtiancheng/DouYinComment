@@ -12,6 +12,7 @@
 #import "DDVideoPlayerManager.h"
 #import "SDImageCache.h"
 #import "CommentsPopView.h"
+#import "TTCCom.h"
 
 static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 

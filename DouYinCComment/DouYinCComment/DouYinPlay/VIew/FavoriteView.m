@@ -7,6 +7,7 @@
 //
 
 #import "FavoriteView.h"
+#import "TTCCom.h"
 
 static const NSInteger kFavoriteViewLikeBeforeTag  = 0x01;
 static const NSInteger kFavoriteViewLikeAfterTag   = 0x02;

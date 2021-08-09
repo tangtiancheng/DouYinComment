@@ -7,7 +7,7 @@
 //
 
 #import "TOGradientView.h"
-
+#import "TTCCom.h"
 @interface TOGradientView ()
 
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;

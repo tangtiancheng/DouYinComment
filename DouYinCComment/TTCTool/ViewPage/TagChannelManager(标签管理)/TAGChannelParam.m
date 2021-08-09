@@ -7,7 +7,7 @@
 //
 
 #import "TAGChannelParam.h"
-
+#import "TTCCom.h"
 @implementation TAGChannelParam
 
 - (instancetype)init {

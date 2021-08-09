@@ -13,7 +13,8 @@
 #import "BaseViewController.h"
 #import "BaseScrollViewController.h"
 #import "TCViewPager.h"
-
+#import "TTCCom.h"
+#import "ReactiveObjC.h"
 @interface Type1ViewControllerThird ()
 
 @property (nonatomic, strong) TCViewPager *viewPager;

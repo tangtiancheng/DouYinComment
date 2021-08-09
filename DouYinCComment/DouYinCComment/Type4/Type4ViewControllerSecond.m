@@ -15,7 +15,8 @@
 #import "BaseViewController.h"
 #import "MyHeaderView.h"
 #import "MJRefresh.h"
-#import "ReactiveCocoa.h"
+#import "ReactiveObjC.h"
+#import "TTCCom.h"
 
 #define imageScale (18.0/11)
 #define headerHeight (floor(SCREEN_WIDTH/imageScale))

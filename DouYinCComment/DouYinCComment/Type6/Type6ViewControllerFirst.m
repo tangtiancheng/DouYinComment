@@ -10,6 +10,7 @@
 #import "TopBackContentView.h"
 #import "PlayToolBackView.h"
 #import "ContentListVBackView.h"
+#import "TTCCom.h"
 
 #import "UIView+EasyFrame.h"
 

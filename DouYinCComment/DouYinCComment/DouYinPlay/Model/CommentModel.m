@@ -7,6 +7,8 @@
 //
 
 #import "CommentModel.h"
+#import "TTCCom.h"
+
 @implementation CommentModel
 
 - (CGFloat)height {

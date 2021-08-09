@@ -14,6 +14,7 @@
 #import "BaseScrollViewController.h"
 #import "BaseViewController.h"
 #import "MyHeaderView.h"
+#import "TTCCom.h"
 
 #define imageScale (18.0/11)
 #define headerHeight (floor(SCREEN_WIDTH/imageScale))

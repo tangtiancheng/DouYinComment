@@ -8,6 +8,9 @@
 
 #import "TagBtn.h"
 #import "UIView+CommonFunction.h"
+#import "Masonry.h"
+#import "ReactiveObjC.h"
+#import "TTCCom.h"
 
 @interface TagBtn ()
 

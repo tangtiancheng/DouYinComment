@@ -7,7 +7,8 @@
 //
 
 #import "CommentsPopView.h"
-
+#import "TTCCom.h"
+#import "Masonry.h"
 #import "CommentMessageCell.h"
 #import "IQKeyboardManager.h"
 #import "CommentInputView.h"
@@ -19,7 +20,8 @@
 #import "CommentTextView.h"
 //#import "UIButton+CustomCategory.h"
 #import "CommentModel.h"
-
+#import "UIView+EasyFrame.h"
+#import "UIView+CommonFunction.h"
 
 static NSString *const commentMessageCellIdentifier = @"commentMessageCellIdentifier";
 static NSString *const replyCommentMessageCellIdentifier = @"replyCommentMessageCellIdentifier";

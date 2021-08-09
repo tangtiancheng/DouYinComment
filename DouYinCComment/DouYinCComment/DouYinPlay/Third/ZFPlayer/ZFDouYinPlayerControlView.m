@@ -11,7 +11,8 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "UIView+CustomControlView.h"
 #import "MMMaterialDesignSpinner.h"
-
+#import "TTCCom.h"
+#import "UIImageView+WebCache.h"
 static const CGFloat ZFPlayerAnimationTimeInterval             = 7.0f;
 static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 

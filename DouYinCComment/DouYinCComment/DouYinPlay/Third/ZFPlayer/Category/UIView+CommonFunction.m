@@ -8,6 +8,7 @@
 
 #import "UIView+CommonFunction.h"
 #import <objc/runtime.h>
+#import "TTCCom.h"
 
 
 typedef void (^XP_WhenTappedBlock)();

@@ -35,4 +35,5 @@ Pod::Spec.new do |spec|
 #s.vendored_frameworks = 'lib/XMGDownLoad/Products/FrameworkTe.framework'
 #s.vendored_libraries = 'lib/XMGDownLoad/Products/libtesttt.a'
   
+  #s.resources = "XMGSegment/*.{bundle,xib,nib}"
 end

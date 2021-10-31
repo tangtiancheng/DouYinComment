@@ -23,9 +23,7 @@ pod 'TTCTool
 一行或者两行代码实现抖音视频播放转场动画,支持push和present,两行代码脑残式操作,自己看下代码
 
 #import "TTCTransitionDelegate.h"
-
 第一行:假设需要转场的控制器叫myVC,  那么调用myVC.ttcTransitionDelegate = [[TTCTransitionDelegate alloc] init];
-
 第二行:抖音的转场动画效果是一个小窗口cell扩大到全屏播放界面,所以需要将小窗口cell传给我,不传也可以,默认就是从中心开始扩大,myVC.ttcTransitionDelegate.smalCurPlayCell = cell
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/TTCTransition.gif)

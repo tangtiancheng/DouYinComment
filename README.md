@@ -27,7 +27,7 @@ pod 'TTCTool
 
 第二行:抖音的转场动画效果是一个小窗口cell扩大到全屏播放界面,所以需要将小窗口cell传给我,不传也可以,默认就是从中心开始扩大,myVC.ttcTransitionDelegate.smalCurPlayCell = cell
 
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/TTCTransition.gif)
 
 
 ## 4.和铃声多多一样,支持上传音频到库乐队(GarageBand)直接设置手机铃声

@@ -18,7 +18,7 @@ pod 'TTCTool
 可以说完全和抖音的效果一模一样,该功能我已经在"铃声多多"项目中使用,iOS端日活有70万左右,现在是没发现有什么问题.我在github,cocoachina,coco4app等Demo网址上找了很久,都没有一个demo是能完全和抖音的一致的.如果觉得好用希望给一个star
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
 
-## 3.抖音转场动画
+## 3.抖音转场动画(github上其它demo并未做到和抖音一样,所以我自己封装了一个)
 一行或者两行代码实现抖音视频播放转场动画,支持push和present,使用非常非常简单
 
 #import "TTCTransitionDelegate.h"

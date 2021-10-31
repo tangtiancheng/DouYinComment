@@ -13,7 +13,7 @@
 #import "SDImageCache.h"
 #import "CommentsPopView.h"
 #import "TTCCom.h"
-#import "UIViewController+TTCTransitionAnimator.h"
+#import "TTCTransitionDelegate.h"
 #import "ViewController1.h"
 
 static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";

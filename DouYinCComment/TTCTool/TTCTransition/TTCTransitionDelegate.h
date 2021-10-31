@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "UIViewController+TTCTransitionAnimator.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TTCTransitionDelegate : NSObject<UIViewControllerTransitioningDelegate>

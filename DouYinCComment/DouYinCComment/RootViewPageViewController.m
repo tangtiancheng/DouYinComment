@@ -41,7 +41,6 @@ static NSString *const cellIdentifier = @"cellIdentifier";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)viewDidLoad {

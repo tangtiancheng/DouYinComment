@@ -9,26 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "ZFPlayer.h"
 
-//@class ZFHttpRequest;
-//@class ZFFileModel;
-
-//@protocol ZFManagerDownLoadDelegate <NSObject>
-//
-//// 开始下载
-////- (void)ZFManagerStartDownload;//:(ZFHttpRequest *)request;
-////// 下载中
-////- (void)ZFManagerUpdateCellProgress:(ZFHttpRequest *)request;
-////// 下载完成
-////- (void)ZFManagerFinishedDownload:(ZFHttpRequest *)request;
-//////下载失败
-////- (void)ZFManagerFailDownLoad:(ZFHttpRequest *)request;
-////// 更新下载进度
-////- (void)ZFManagerUpdateCellOnMainThread:(ZFFileModel *)fileInfo;
-//////更新播放进度
-////- (void)ZFManager_playerCurrentSliderValue:(CGFloat)value playerModel:(ZFPlayerModel *)model;
-//
-//@end
-
 
 @protocol ZFManagerPlayerDelegate <NSObject>
 

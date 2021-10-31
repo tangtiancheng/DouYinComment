@@ -33,7 +33,6 @@
 //#import "NSString+CustomCategory.h"
 #import "KTVHTTPCache.h"
 #import "ZFDouYinPlayerControlView.h"
-#import "ZFSuspendPlayerControlView.h"
 
 #define CellPlayerFatherViewTag  200
 
@@ -119,7 +118,7 @@
 /** 小窗口距屏幕右边和下边的距离 */
 @property (nonatomic, assign) CGPoint                shrinkRightBottomPoint;
 
-@property (nonatomic, strong) UIPanGestureRecognizer *shrinkPanGesture;
+//@property (nonatomic, strong) UIPanGestureRecognizer *shrinkPanGesture;
 
 @property (nonatomic, strong) UIView                 *controlView;
 @property (nonatomic, assign) NSInteger              seekTime;
@@ -395,9 +394,9 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     self.indexPath        = indexPath;
     // 在cell播放
     [self.controlView zf_playerCellPlay];
-    self.shrinkPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(shrikPanAction:)];
-    self.shrinkPanGesture.delegate = self;
-    [self addGestureRecognizer:self.shrinkPanGesture];
+//    self.shrinkPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(shrikPanAction:)];
+//    self.shrinkPanGesture.delegate = self;
+//    [self addGestureRecognizer:self.shrinkPanGesture];
 }
 
 /**
@@ -438,46 +437,18 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
 //播放资源
 - (void)playResource {
     // 初始化playerItem
-    
     self.playerItem = [AVPlayerItem playerItemWithAsset:self.urlAsset];
     // 每次都重新创建Player，替换replaceCurrentItemWithPlayerItem:，该方法阻塞线程
     self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
-    
     // 初始化playerLayer
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-    
-    //    self.backgroundColor = [UIColor blackColor];
-    //    self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-    // 此处为默认视频填充模式
-    //    if(self.playerModel.videoGravity.length) {
     self.playerLayer.videoGravity = self.playerModel.videoGravity;
-    //    } else {
-    //        //获取视频尺寸
-    //        NSArray *array = self.urlAsset.tracks;
-    //        CGSize videoSize = CGSizeZero;
-    //        for (AVAssetTrack *track in array) {
-    //            if ([track.mediaType isEqualToString:AVMediaTypeVideo]) {
-    //                videoSize = track.naturalSize;
-    //            }
-    //        }
-    //        if(videoSize.width / videoSize.height >= 1.0) {
-    //            self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-    //        } else {
-    //             self.playerLayer.videoGravity = AVLayerVideoGravityResize;
-    //        }
-    //    }
-    
     // 增加下面这行可以解决iOS10兼容性问题了
     if ([self.player respondsToSelector:@selector(automaticallyWaitsToMinimizeStalling)]) {
         if (@available(iOS 10.0, *)) {
             self.player.automaticallyWaitsToMinimizeStalling = NO;
-        } else {
-            // Fallback on earlier versions
         }
     }
-  
-//    // 自动播放
-//    self.isAutoPlay = YES;
     // 添加播放进度计时器
     [self createTimer];
     // 获取系统音量
@@ -493,11 +464,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     if(self.playerModel.isAutoPlay) {
         [self play];
         self.isPauseByUser = NO;
-    } else {
-//        [self play];
-//        self.isPauseByUser = YES;
     }
-    
 }
 
 
@@ -859,52 +826,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     }
 }
 
-///**
-// *  屏幕方向发生变化会调用这里
-// */
-//- (void)onDeviceOrientationChange {
-//    if (!self.player) { return; }
-//    if (ZFPlayerShared.isLockScreen) { return; }
-//    if (self.didEnterBackground) { return; };
-//    if (self.playerPushedOrPresented) { return; }
-//    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-//    UIInterfaceOrientation interfaceOrientation = (UIInterfaceOrientation)orientation;
-//    if (orientation == UIDeviceOrientationFaceUp || orientation == UIDeviceOrientationFaceDown || orientation == UIDeviceOrientationUnknown ) { return; }
-//
-//    switch (interfaceOrientation) {
-//        case UIInterfaceOrientationPortraitUpsideDown:{
-//        }
-//            break;
-//        case UIInterfaceOrientationPortrait:{
-//            if (self.isFullScreen) {
-//                [self toOrientation:UIInterfaceOrientationPortrait];
-//
-//            }
-//        }
-//            break;
-//        case UIInterfaceOrientationLandscapeLeft:{
-//            if (self.isFullScreen == NO) {
-//                [self toOrientation:UIInterfaceOrientationLandscapeLeft];
-//                self.isFullScreen = YES;
-//            } else {
-//                [self toOrientation:UIInterfaceOrientationLandscapeLeft];
-//            }
-//
-//        }
-//            break;
-//        case UIInterfaceOrientationLandscapeRight:{
-//            if (self.isFullScreen == NO) {
-//                [self toOrientation:UIInterfaceOrientationLandscapeRight];
-//                self.isFullScreen = YES;
-//            } else {
-//                [self toOrientation:UIInterfaceOrientationLandscapeRight];
-//            }
-//        }
-//            break;
-//        default:
-//            break;
-//    }
-//}
 
 // 状态条变化通知（在前台播放才去处理）
 - (void)onStatusBarOrientationChange {
@@ -1036,84 +957,10 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         else {
             if([self.controlView isKindOfClass:[ZFDouYinPlayerControlView class]]) {
                 [self zf_controlView:self.controlView playAction:nil];
-            } else if([self.controlView isKindOfClass:[ZFSuspendPlayerControlView class]]) {
-                if([self.delegate respondsToSelector:@selector(zf_playerPushToPlaySmallViewListVC)]) {
-                    [self.delegate zf_playerPushToPlaySmallViewListVC];
-                }
             }
         }
     }
 }
-
-///**
-// *  双击播放/暂停
-// *
-// *  @param gesture UITapGestureRecognizer
-// */
-//- (void)doubleTapAction:(UIGestureRecognizer *)gesture {
-//    if (self.playDidEnd) { return;  }
-//    // 显示控制层
-//    [self.controlView zf_playerShowControlView];
-//    if (self.isPauseByUser) { [self play]; }
-//    else { [self pause]; }
-//    if (!self.isAutoPlay) {
-//        self.isAutoPlay = YES;
-//        [self configZFPlayer];
-//    }
-//}
-
-- (void)shrikPanAction:(UIPanGestureRecognizer *)gesture {
-    CGPoint point = [gesture locationInView:[UIApplication sharedApplication].keyWindow];
-    ZFPlayerView *view = (ZFPlayerView *)gesture.view;
-    const CGFloat width = view.frame.size.width;
-    const CGFloat height = view.frame.size.height;
-    const CGFloat distance = 10;  // 离四周的最小边距
-    
-    if (gesture.state == UIGestureRecognizerStateEnded) {
-        // x轴的的移动
-        if (point.x < width/2) {
-            point.x = width/2 + distance;
-        } else if (point.x > ScreenWidth - width/2) {
-            point.x = ScreenWidth - width/2 - distance;
-        }
-        // y轴的移动
-        if (point.y < height/2) {
-            point.y = height/2 + distance;
-        } else if (point.y > ScreenHeight - height/2) {
-            point.y = ScreenHeight - height/2 - distance;
-        }
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            view.center = point;
-            self.shrinkRightBottomPoint = CGPointMake(ScreenWidth - view.frame.origin.x - width, ScreenHeight - view.frame.origin.y - height);
-        }];
-        
-    } else {
-        view.center = point;
-        self.shrinkRightBottomPoint = CGPointMake(ScreenWidth - view.frame.origin.x- view.frame.size.width, ScreenHeight - view.frame.origin.y-view.frame.size.height);
-    }
-}
-
-///** 全屏 */
-//- (void)_fullScreenAction {
-//    if (ZFPlayerShared.isLockScreen) {
-//        [self unLockTheScreen];
-//        return;
-//    }
-//    if (self.isFullScreen) {
-//        [self interfaceOrientation:UIInterfaceOrientationPortrait];
-//        self.isFullScreen = NO;
-//        return;
-//    } else {
-//        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-//        if (orientation == UIDeviceOrientationLandscapeRight) {
-//            [self interfaceOrientation:UIInterfaceOrientationLandscapeLeft];
-//        } else {
-//            [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
-//        }
-//        self.isFullScreen = YES;
-//    }
-//}
 
 #pragma mark - NSNotification Action
 
@@ -1253,12 +1100,12 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     
-    if (gestureRecognizer == self.shrinkPanGesture && self.isCellVideo) {
-        if (!self.isBottomVideo || self.isFullScreen) {
-            return NO;
-        }
-    }
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && gestureRecognizer != self.shrinkPanGesture) {
+//    if (gestureRecognizer == self.shrinkPanGesture && self.isCellVideo) {
+//        if (!self.isBottomVideo || self.isFullScreen) {
+//            return NO;
+//        }
+//    }
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] ) {
         if ((self.isCellVideo && !self.isFullScreen) || self.playDidEnd || self.isLocked){
             return NO;
         }
@@ -1286,8 +1133,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         ((ZFPlayerControlView *)self.controlView).fullScreen = _isFullScreen;
     } else if(self.controlView && [self.controlView isKindOfClass:[ZFDouYinPlayerControlView class]]) {
         ((ZFDouYinPlayerControlView *)self.controlView).fullScreen = _isFullScreen;
-    }else if(self.controlView && [self.controlView isKindOfClass:[ZFSuspendPlayerControlView class]]) {
-        ((ZFDouYinPlayerControlView *)self.controlView).fullScreen = _isFullScreen;
     }
 }
 
@@ -1298,7 +1143,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
  */
 - (void)setVideoURL:(NSURL *)videoURL {
     _videoURL = videoURL;
-    
+   
     // 每次加载视频URL都设置重播为NO
     self.repeatToPlay = NO;
     self.playDidEnd   = NO;
@@ -1344,14 +1189,11 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
             break;
         case ZFPlayerStateBuffering:// 缓冲中
         {
-            //            // 隐藏占位图
-            //            [self.controlView zf_playerItemPlaying];
         }
             break;
         case ZFPlayerStatePlaying:// 播放中
         {
-            //            // 隐藏占位图
-            //            [self.controlView zf_playerItemPlaying];
+
         }
             break;
         case ZFPlayerStateStopped:// 播放结束
@@ -1368,14 +1210,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
         default:
             break;
     }
-    //
-    //    if (state == ZFPlayerStatePlaying || state == ZFPlayerStateBuffering) {
-    //        // 隐藏占位图
-    //        [self.controlView zf_playerItemPlaying];
-    //    } else if (state == ZFPlayerStateFailed) {
-    //        NSError *error = [self.playerItem error];
-    //        [self.controlView zf_playerItemStatusFailed:error];
-    //    }
+   
     if([self.delegate respondsToSelector:@selector(zf_playerPlayerStatusChange:)]) {
         [self.delegate zf_playerPlayerStatusChange:state];
     }
@@ -1421,31 +1256,6 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
     _scrollView = scrollView;
     if (scrollView) { [scrollView addObserver:self forKeyPath:kZFPlayerViewContentOffset options:NSKeyValueObservingOptionNew context:nil]; }
 }
-
-///**
-// *  设置playerLayer的填充模式
-// *
-// *  @param playerLayerGravity playerLayerGravity
-// */
-//- (void)setPlayerLayerGravity:(ZFPlayerLayerGravity)playerLayerGravity {
-//    _playerLayerGravity = playerLayerGravity;
-//    switch (playerLayerGravity) {
-//        case ZFPlayerLayerGravityResize:
-//            self.playerLayer.videoGravity = AVLayerVideoGravityResize;
-//            self.videoGravity = AVLayerVideoGravityResize;
-//            break;
-//        case ZFPlayerLayerGravityResizeAspect:
-//            self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-//            self.videoGravity = AVLayerVideoGravityResizeAspect;
-//            break;
-//        case ZFPlayerLayerGravityResizeAspectFill:
-//            self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-//            self.videoGravity = AVLayerVideoGravityResizeAspectFill;
-//            break;
-//        default:
-//            break;
-//    }
-//}
 
 /**
  *  是否有下载功能
@@ -1564,11 +1374,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
             
         }
     }
-    
-//    if (!self.isAutoPlay) {
-//        self.isAutoPlay = YES;
-//        [self configZFPlayer];
-//    }
+
 }
 
 /** 播放按钮事件 */

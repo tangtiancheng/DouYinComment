@@ -306,8 +306,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.01f;
         }
     }
 }
-// 不做处理，只是为了滑动slider其他地方不响应其他手势
-- (void)panRecognizer:(UIPanGestureRecognizer *)sender {}
+//// 不做处理，只是为了滑动slider其他地方不响应其他手势
+//- (void)panRecognizer:(UIPanGestureRecognizer *)sender {}
 
 - (void)backBtnClick:(UIButton *)sender {
     // 状态条的方向旋转的方向,来判断当前屏幕的方向
@@ -689,13 +689,13 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.01f;
         UITapGestureRecognizer *sliderTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSliderAction:)];
         [_videoSlider addGestureRecognizer:sliderTap];
         
-        UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panRecognizer:)];
-        panRecognizer.delegate = self;
-        [panRecognizer setMaximumNumberOfTouches:1];
-        [panRecognizer setDelaysTouchesBegan:YES];
-        [panRecognizer setDelaysTouchesEnded:YES];
-        [panRecognizer setCancelsTouchesInView:YES];
-        [_videoSlider addGestureRecognizer:panRecognizer];
+//        UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panRecognizer:)];
+//        panRecognizer.delegate = self;
+//        [panRecognizer setMaximumNumberOfTouches:1];
+//        [panRecognizer setDelaysTouchesBegan:YES];
+//        [panRecognizer setDelaysTouchesEnded:YES];
+//        [panRecognizer setCancelsTouchesInView:YES];
+//        [_videoSlider addGestureRecognizer:panRecognizer];
     }
     return _videoSlider;
 }
@@ -918,9 +918,11 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.01f;
 
 /** 正在播放（隐藏placeholderImageView） */
 - (void)zf_playerItemPlaying {
-    [UIView animateWithDuration:1.0 animations:^{
-        self.placeholderImageView.alpha = 0;
-    }];
+    if(self.placeholderImageView.alpha != 0) {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.placeholderImageView.alpha = 0;
+        }];
+    }
 }
 
 - (void)zf_playerShowOrHideControlView {

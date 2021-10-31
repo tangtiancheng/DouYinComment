@@ -27,6 +27,11 @@ Pod::Spec.new do |spec|
     ss.dependency 'Masonry'
  end
  
+    spec.subspec 'TTCTransition' do |ss|
+    ss.source_files  = "DouYinCComment/TTCTool/TTCTransition/**/*.{h,m}","DouYinCComment/TTCTool/ViewPage/UIView+EasyFrame.{h,m}","DouYinCComment/TTCTool/TTCCom.h"
+  end
+ 
+ 
   spec.ios.deployment_target = '9.0'
   spec.frameworks = 'UIKit', 'Foundation'
   

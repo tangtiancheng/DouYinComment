@@ -32,7 +32,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }

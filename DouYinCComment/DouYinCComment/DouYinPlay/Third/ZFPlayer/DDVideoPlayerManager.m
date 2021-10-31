@@ -109,46 +109,7 @@
  */
 - (void)resetToPlayNewVideo {//WithplayNowRealType:(BOOL)playNowRealType {
     [self startServer];
-//    if(playNowRealType) {
-//        //传的playerModel.videoURL是什么样的就播放什么样的(其实只有iOS11以下会跑进来)
-//         [self.playerView resetToPlayNewVideo:self.playerModel];
-//
-//    } else {
-        NSString *localPath = nil;
-//        if([self.playerModel.videoURL.scheme isEqualToString:@"file"]) {
-//            NSRange range= [self.playerModel.videoURL.absoluteString rangeOfString:@"file://"];
-//            localPath = [self.playerModel.videoURL.absoluteString stringByReplacingCharactersInRange:range withString:@""];
-//        } else {
-//            localPath = FILE_PATH_ID_URL(self.playerModel.videoURL);
-//        }
-//
-//        if([[NSFileManager defaultManager] fileExistsAtPath:localPath]) {
-//            //顺便如果有缓存目录也给删除掉
-//            [[KTVHCDataUnitPool pool] deleteUnitWithURL:self.playerModel.videoURL];
-//            //如果之前下载过
-//            //之前发生过一次下载完毕之后只有声音,没有界面的现象,拿到那个文件发现没有视频轨道,(具体实现暂时还没看)所以只能尽量做处理
-//            AVURLAsset *assert = [AVURLAsset assetWithURL:[NSURL fileURLWithPath:localPath]];
-//            NSArray *VideoAttackCount = [assert tracksWithMediaType:AVMediaTypeVideo];
-//            if(!VideoAttackCount.count) {
-//                [[NSFileManager defaultManager] removeItemAtPath:localPath error:NULL];
-////                [DDGlobal umengEvent:AVPlayerResourceLoaderError name:self.playerModel.title];
-//            } else {
-//                self.playerModel.videoURL     = [NSURL fileURLWithPath:localPath];
-//            }
-//            [self.playerView resetToPlayNewVideo:self.playerModel];
-//        } else {
-            //如果之前没有下载过
-//            if(@available(iOS 11.0, *)){
-                //11.0支持边下边播
-                [self.playerView resetToPlayNewVideo:self.playerModel];
-//            } else {
-//                //低于11的话先下载后播放
-//                if([self.managerDownLoadDelegate respondsToSelector:@selector(ZFManagerStartDownload)]) {
-//                    [self.managerDownLoadDelegate ZFManagerStartDownload];
-//                }
-//            }
-//        }
-//    }
+    [self.playerView resetToPlayNewVideo:self.playerModel];
 }
 
 - (NSString *_Nullable)cacheKeyForURL:(NSURL *)url {
@@ -263,12 +224,7 @@
     }
 }
 
-/** 前往小视频播放界面 */
-- (void)zf_playerPushToPlaySmallViewListVC {
-    if([self.managerDelegate respondsToSelector:@selector(zfManager_playerPushToPlaySmallViewListVC)]) {
-        [self.managerDelegate zfManager_playerPushToPlaySmallViewListVC];
-    }
-}
+
 
 - (void)dealloc {
     NSLog(@"销毁");

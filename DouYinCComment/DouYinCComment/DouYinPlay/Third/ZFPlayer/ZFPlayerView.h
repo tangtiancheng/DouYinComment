@@ -241,8 +241,7 @@ typedef NS_ENUM(NSInteger, ZFPlayerState) {
 - (void)zf_playerCurrentSliderValue:(CGFloat)value playerModel:(ZFPlayerModel *)model;
 /** 播放状态发生改变 */
 - (void)zf_playerPlayerStatusChange:(ZFPlayerState)statu;
-/** 前往小视频播放界面 */
-- (void)zf_playerPushToPlaySmallViewListVC;
+
 
 @end
 

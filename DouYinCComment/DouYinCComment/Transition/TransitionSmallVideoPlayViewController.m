@@ -6,18 +6,20 @@
 //  Copyright © 2019年 duoduo. All rights reserved.
 //
 
-#import "SmallVideoPlayViewController.h"
+#import "TransitionSmallVideoPlayViewController.h"
 #import "SmallVideoPlayCell.h"
 #import "SmallVideoModel.h"
 #import "DDVideoPlayerManager.h"
 #import "SDImageCache.h"
 #import "CommentsPopView.h"
 #import "TTCCom.h"
+#import "UIViewController+TTCTransitionAnimator.h"
+#import "ViewController1.h"
 
 static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 
 
-@interface SmallVideoPlayViewController ()<UITableViewDataSource, UITableViewDelegate, ZFManagerPlayerDelegate, SmallVideoPlayCellDlegate>
+@interface TransitionSmallVideoPlayViewController ()<UITableViewDataSource, UITableViewDelegate, ZFManagerPlayerDelegate, SmallVideoPlayCellDlegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *fatherView;
@@ -28,7 +30,7 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 
 @end
 
-@implementation SmallVideoPlayViewController
+@implementation TransitionSmallVideoPlayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -181,6 +183,11 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
         self.videoPlayerManager.playerModel.useDownAndPlay = NO;
     }
     [self.videoPlayerManager resetToPlayNewVideo];
+    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(smallVideoPlayIndex:)]) {
+       
+        self.ttcTransitionDelegate.smalCurPlayCell = [self.delegate smallVideoPlayIndex:self.currentPlayIndex];
+    }
 }
 
 - (CGFloat)deviceFreeMemorySize {
@@ -244,6 +251,7 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 
 //评论
 - (void)handleCommentVidieoModel:(SmallVideoModel *)smallVideoModel {
+   
     CommentsPopView *popView = [[CommentsPopView alloc] initWithSmallVideoModel:smallVideoModel];
     [popView showToView:self.view];
 }
@@ -254,7 +262,12 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 {
     [self.videoPlayerManager resetPlayer];
     [self.preloadVideoPlayerManager resetPlayer];
-    [self.navigationController popViewControllerAnimated:YES];
+    if(self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 

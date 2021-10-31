@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */; };
+		3373FD70272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */; };
+		3373FD77272CEE21006EA17A /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD76272CEE21006EA17A /* ViewController1.m */; };
+		3373FD7A272CEE2C006EA17A /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD79272CEE2C006EA17A /* ViewController2.m */; };
+		3373FD91272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD89272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m */; };
+		3373FD92272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD8B272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m */; };
+		3373FD93272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD8C272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m */; };
+		3373FD94272EA3E3006EA17A /* TTCTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD8D272EA3E3006EA17A /* TTCTransitionDelegate.m */; };
 		790F14D9225CF98F000E7335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F14D8225CF98F000E7335 /* AppDelegate.m */; };
 		790F14DF225CF98F000E7335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 790F14DD225CF98F000E7335 /* Main.storyboard */; };
 		790F14E1225CF991000E7335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790F14E0225CF991000E7335 /* Assets.xcassets */; };
@@ -283,7 +291,6 @@
 		795DB764229E372F003AFE44 /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB718229E372F003AFE44 /* ZFPlayerControlView.m */; };
 		795DB765229E372F003AFE44 /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB719229E372F003AFE44 /* ZFPlayerView.m */; };
 		795DB766229E372F003AFE44 /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB71A229E372F003AFE44 /* MMMaterialDesignSpinner.m */; };
-		795DB767229E372F003AFE44 /* ZFSuspendPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB71B229E372F003AFE44 /* ZFSuspendPlayerControlView.m */; };
 		795DB768229E372F003AFE44 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB71D229E372F003AFE44 /* ASValueTrackingSlider.m */; };
 		795DB769229E372F003AFE44 /* DDVideoPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB71E229E372F003AFE44 /* DDVideoPlayerManager.m */; };
 		795DB76C229E3F03003AFE44 /* SmallVideoPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB76A229E3F03003AFE44 /* SmallVideoPlayCell.m */; };
@@ -332,6 +339,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3373FD61272BDEDC006EA17A /* TransitionVideoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionVideoListViewController.h; sourceTree = "<group>"; };
+		3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionVideoListViewController.m; sourceTree = "<group>"; };
+		3373FD6E272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionSmallVideoPlayViewController.h; sourceTree = "<group>"; };
+		3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionSmallVideoPlayViewController.m; sourceTree = "<group>"; };
+		3373FD75272CEE21006EA17A /* ViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		3373FD76272CEE21006EA17A /* ViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		3373FD78272CEE2C006EA17A /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		3373FD79272CEE2C006EA17A /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		3373FD89272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCSmallVideoPresentOrPushAniTrans.m; sourceTree = "<group>"; };
+		3373FD8A272EA3E3006EA17A /* TTCTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCTransitionDelegate.h; sourceTree = "<group>"; };
+		3373FD8B272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCSmallVideoDismissOrPopAniTrans.m; sourceTree = "<group>"; };
+		3373FD8C272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TTCTransitionAnimator.m"; sourceTree = "<group>"; };
+		3373FD8D272EA3E3006EA17A /* TTCTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCTransitionDelegate.m; sourceTree = "<group>"; };
+		3373FD8E272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCSmallVideoPresentOrPushAniTrans.h; sourceTree = "<group>"; };
+		3373FD8F272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCSmallVideoDismissOrPopAniTrans.h; sourceTree = "<group>"; };
+		3373FD90272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TTCTransitionAnimator.h"; sourceTree = "<group>"; };
 		790F14D4225CF98F000E7335 /* DouYinCComment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYinCComment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		790F14D7225CF98F000E7335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		790F14D8225CF98F000E7335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -896,7 +919,6 @@
 		795DB680229E372E003AFE44 /* AVPlayer+MyAvPlayerCate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVPlayer+MyAvPlayerCate.h"; sourceTree = "<group>"; };
 		795DB681229E372E003AFE44 /* UINavigationController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
 		795DB683229E372E003AFE44 /* UIViewController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
-		795DB684229E372E003AFE44 /* ZFSuspendPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSuspendPlayerControlView.h; sourceTree = "<group>"; };
 		795DB685229E372E003AFE44 /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
 		795DB704229E372F003AFE44 /* ZFPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerView.h; sourceTree = "<group>"; };
 		795DB705229E372F003AFE44 /* DDVideoPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDVideoPlayerManager.h; sourceTree = "<group>"; };
@@ -910,7 +932,6 @@
 		795DB718229E372F003AFE44 /* ZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerControlView.m; sourceTree = "<group>"; };
 		795DB719229E372F003AFE44 /* ZFPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerView.m; sourceTree = "<group>"; };
 		795DB71A229E372F003AFE44 /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
-		795DB71B229E372F003AFE44 /* ZFSuspendPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSuspendPlayerControlView.m; sourceTree = "<group>"; };
 		795DB71C229E372F003AFE44 /* ZFBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBrightnessView.h; sourceTree = "<group>"; };
 		795DB71D229E372F003AFE44 /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
 		795DB71E229E372F003AFE44 /* DDVideoPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDVideoPlayerManager.m; sourceTree = "<group>"; };
@@ -995,6 +1016,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3373FD60272BAD98006EA17A /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				3373FD88272EA3E3006EA17A /* TTCTransition */,
+				3373FD61272BDEDC006EA17A /* TransitionVideoListViewController.h */,
+				3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */,
+				3373FD6E272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.h */,
+				3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */,
+				3373FD75272CEE21006EA17A /* ViewController1.h */,
+				3373FD76272CEE21006EA17A /* ViewController1.m */,
+				3373FD78272CEE2C006EA17A /* ViewController2.h */,
+				3373FD79272CEE2C006EA17A /* ViewController2.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		3373FD88272EA3E3006EA17A /* TTCTransition */ = {
+			isa = PBXGroup;
+			children = (
+				3373FD8A272EA3E3006EA17A /* TTCTransitionDelegate.h */,
+				3373FD8D272EA3E3006EA17A /* TTCTransitionDelegate.m */,
+				3373FD8E272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.h */,
+				3373FD89272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m */,
+				3373FD8F272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.h */,
+				3373FD8B272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m */,
+				3373FD90272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.h */,
+				3373FD8C272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m */,
+			);
+			name = TTCTransition;
+			path = TTCTool/TTCTransition;
+			sourceTree = SOURCE_ROOT;
+		};
 		790F14CB225CF98F000E7335 = {
 			isa = PBXGroup;
 			children = (
@@ -1024,6 +1077,7 @@
 				793D5B5526BFE74E00DFC4FB /* ViewPage */,
 				795DB589229D33EB003AFE44 /* DouYinPlay */,
 				793D5C0026BFE74F00DFC4FB /* UploadToGarageBand */,
+				3373FD60272BAD98006EA17A /* Transition */,
 				795DB584229D3355003AFE44 /* RootViewController.h */,
 				795DB585229D3355003AFE44 /* RootViewController.m */,
 				790F14D7225CF98F000E7335 /* AppDelegate.h */,
@@ -2041,8 +2095,6 @@
 				795DB670229E372E003AFE44 /* ZFPlayerModel.m */,
 				795DB704229E372F003AFE44 /* ZFPlayerView.h */,
 				795DB719229E372F003AFE44 /* ZFPlayerView.m */,
-				795DB684229E372E003AFE44 /* ZFSuspendPlayerControlView.h */,
-				795DB71B229E372F003AFE44 /* ZFSuspendPlayerControlView.m */,
 			);
 			path = ZFPlayer;
 			sourceTree = "<group>";
@@ -2301,6 +2353,7 @@
 				793D5D3626C0136000DFC4FB /* ZJScrollSegmentView.m in Sources */,
 				792EB91526C11F7400B94076 /* UIView+EasyFrame.m in Sources */,
 				792EBB5126C1220B00B94076 /* RACCommand.m in Sources */,
+				3373FD91272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */,
 				792EBB1426C1220B00B94076 /* NSString+RACSupport.m in Sources */,
 				795DB5C0229D3D69003AFE44 /* SDImageCache.m in Sources */,
 				792EBB3A26C1220B00B94076 /* UIGestureRecognizer+RACSignalSupport.m in Sources */,
@@ -2324,6 +2377,7 @@
 				793D5D3726C0136000DFC4FB /* ZJScrollPageView.m in Sources */,
 				795DB8D5229E8758003AFE44 /* CommentModel.m in Sources */,
 				792EBB4926C1220B00B94076 /* RACSubject.m in Sources */,
+				3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */,
 				793D5D3826C0136000DFC4FB /* Type5ViewControllerFirst.m in Sources */,
 				792EBB1226C1220B00B94076 /* RACDynamicSequence.m in Sources */,
 				795DB724229E372F003AFE44 /* AVPlayer+MyAvPlayerCate.m in Sources */,
@@ -2353,6 +2407,7 @@
 				792EBB0D26C1220B00B94076 /* EXTRuntimeExtensions.m in Sources */,
 				795DB5C5229D3D69003AFE44 /* SDImageCacheConfig.m in Sources */,
 				792EBB2426C1220B00B94076 /* NSData+RACSupport.m in Sources */,
+				3373FD70272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m in Sources */,
 				792EBB3026C1220B00B94076 /* NSArray+RACSequenceAdditions.m in Sources */,
 				792EBAFD26C1220B00B94076 /* NSObject+RACDescription.m in Sources */,
 				795DB622229E2FA1003AFE44 /* KTVHCDataUnit.m in Sources */,
@@ -2361,6 +2416,7 @@
 				792EBB0026C1220B00B94076 /* RACSignal.m in Sources */,
 				793D5D4026C0136000DFC4FB /* Type6ViewControllerFirst.m in Sources */,
 				795DB8CF229E86E9003AFE44 /* IQUIScrollView+Additions.m in Sources */,
+				3373FD93272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m in Sources */,
 				795DB62E229E2FA1003AFE44 /* KTVHCError.m in Sources */,
 				795DB667229E300D003AFE44 /* MultipartFormDataParser.m in Sources */,
 				792EBB3E26C1220B00B94076 /* UIRefreshControl+RACCommandSupport.m in Sources */,
@@ -2423,7 +2479,6 @@
 				795DB723229E372F003AFE44 /* AVPlayerItem+MyAvPlayerItemCate.m in Sources */,
 				790F152E225DED17000E7335 /* ViewController+MASAdditions.m in Sources */,
 				793D5D2626C0136000DFC4FB /* Type2ViewControllerSecond.m in Sources */,
-				795DB767229E372F003AFE44 /* ZFSuspendPlayerControlView.m in Sources */,
 				790F152D225DED17000E7335 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				790F152F225DED17000E7335 /* MASCompositeConstraint.m in Sources */,
 				795DB8D0229E86E9003AFE44 /* IQUIView+Hierarchy.m in Sources */,
@@ -2539,14 +2594,17 @@
 				795DB722229E372F003AFE44 /* UITabBarController+ZFPlayerRotation.m in Sources */,
 				795DB62B229E2FA1003AFE44 /* KTVHCDataCallback.m in Sources */,
 				792EBB1626C1220B00B94076 /* NSURLConnection+RACSupport.m in Sources */,
+				3373FD92272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m in Sources */,
 				795DB586229D3355003AFE44 /* RootViewController.m in Sources */,
 				795DB728229E372F003AFE44 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				793D5D0926C0135F00DFC4FB /* MJRefreshConst.m in Sources */,
 				795DB664229E300D003AFE44 /* HTTPConnection.m in Sources */,
 				793D5D2126C0135F00DFC4FB /* BaseTableViewController2.m in Sources */,
+				3373FD94272EA3E3006EA17A /* TTCTransitionDelegate.m in Sources */,
 				793D5D1D26C0135F00DFC4FB /* MJRefreshAutoFooter.m in Sources */,
 				795DB662229E300D003AFE44 /* HTTPMessage.m in Sources */,
 				792EBAFA26C1220B00B94076 /* UIStepper+RACSignalSupport.m in Sources */,
+				3373FD77272CEE21006EA17A /* ViewController1.m in Sources */,
 				790F1536225DED17000E7335 /* MASViewAttribute.m in Sources */,
 				792EBB1126C1220B00B94076 /* RACEmptySequence.m in Sources */,
 				795DB5C2229D3D69003AFE44 /* NSData+ImageContentType.m in Sources */,
@@ -2559,6 +2617,7 @@
 				792EBB4B26C1220B00B94076 /* NSObject+RACSelectorSignal.m in Sources */,
 				792EBB2A26C1220B00B94076 /* RACEvent.m in Sources */,
 				795DB941229E9459003AFE44 /* NSDate+Helper.m in Sources */,
+				3373FD7A272CEE2C006EA17A /* ViewController2.m in Sources */,
 				793D5D0326C0135F00DFC4FB /* Type1ViewControllerFirst.m in Sources */,
 				793D5D1B26C0135F00DFC4FB /* MJRefreshHeader.m in Sources */,
 				792EBB1D26C1220B00B94076 /* NSObject+RACDeallocating.m in Sources */,
@@ -2762,7 +2821,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = DouYinCComment/PrefixHeader.pch;
 				INFOPLIST_FILE = DouYinCComment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2789,7 +2848,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = DouYinCComment/PrefixHeader.pch;
 				INFOPLIST_FILE = DouYinCComment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

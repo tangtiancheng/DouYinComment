@@ -19,7 +19,7 @@ pod 'TTCTool
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
 
 ## 3.抖音转场动画(github上其它demo并未做到和抖音一样,所以我自己封装了一个)
-一行或者两行代码实现抖音视频播放转场动画,支持push和present,使用非常非常简单
+一行或者两行代码实现抖音视频播放转场动画,支持push和present,两行代码脑残式操作,自己看下代码
 
 #import "TTCTransitionDelegate.h"
 

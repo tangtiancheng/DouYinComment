@@ -9,17 +9,13 @@ pod 'TTCTool
 
 
 这个Demo主要功能:
-## 1.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大,功能2可能会对您有所帮助)
-### (1).支持边下边播
-### (2).支持视频预加载
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/smallVideoImage.gif)
 
-## 2.这个Demo有仿照抖音的小视频评论手势拖拽效果(直接将TCCommentsPopView这个类拖入您的项目即可使用,很简单)
+## 1.这个Demo有仿照抖音的小视频评论手势拖拽效果(直接将TCCommentsPopView这个类拖入您的项目即可使用,很简单)
 可以说完全和抖音的效果一模一样,该功能我已经在"铃声多多"项目中使用,iOS端日活有70万左右,现在是没发现有什么问题.我在github,cocoachina,coco4app等Demo网址上找了很久,都没有一个demo是能完全和抖音的一致的.如果觉得好用希望给一个star
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
 
-## 3.抖音转场动画(github上其它demo并未做到和抖音一样,所以我自己封装了一个)
+## 2.抖音转场动画(github上其它demo并未做到和抖音一样,或者完全侵入你的代码,让你要改很多东西,所以我自己封装了一个,只需将TTCTransition文件夹拖入你的项目,然后添加两行代码就行)
 一行或者两行代码实现抖音视频播放转场动画,支持push和present,两行代码脑残式操作,自己看下代码
 
 #import "TTCTransitionDelegate.h"
@@ -30,6 +26,10 @@ pod 'TTCTool
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/TTCTransition.gif)
 
+## 3.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大)
+### (1).支持边下边播
+### (2).支持视频预加载
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/smallVideoImage.gif)
 
 ## 4.和铃声多多一样,支持上传音频到库乐队(GarageBand)直接设置手机铃声
 这个小众功能我看现在基本没有开发者把实现代码开源出来,鉴于之前有好几位iOS开发者通过简书找到我,都是公司需要做这个功能但是不知道怎么实现,所以今天把这个功能实现代码写出来,希望能帮到大家.如果确实解决了您的燃眉之急,希望能帮我点一个star,谢谢啦.

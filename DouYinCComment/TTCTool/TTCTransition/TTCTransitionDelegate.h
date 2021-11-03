@@ -10,7 +10,7 @@
 #import "UIViewController+TTCTransitionAnimator.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TTCTransitionDelegate : NSObject<UIViewControllerTransitioningDelegate>
+@interface TTCTransitionDelegate : NSObject<UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, weak) UIView *smalCurPlayCell;
 

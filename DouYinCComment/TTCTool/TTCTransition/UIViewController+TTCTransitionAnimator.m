@@ -8,6 +8,7 @@
 
 #import "UIViewController+TTCTransitionAnimator.h"
 #import <objc/runtime.h>
+#import "TTCTransitionDelegate.h"
 
 @interface UIViewController ()
 
@@ -48,11 +49,13 @@
 }
 
 - (void)TTCviewDidAppear:(BOOL)animated {
-    if(self.ttcTransitionDelegate && animated && self.navigationController.viewControllers.lastObject == self) {
-        self.navigationController.delegate = self.ttcTransitionDelegate;
-    } else {
-        self.navigationController.delegate = nil;
-    }
+    if(self.navigationController.viewControllers.lastObject == self) {
+        if(self.ttcTransitionDelegate && animated) {
+            self.navigationController.delegate = self.ttcTransitionDelegate;
+        } else if([self.navigationController.delegate isKindOfClass:[TTCTransitionDelegate class]]) {
+            self.navigationController.delegate = nil;
+        }
+    } 
     [self TTCviewDidAppear:animated];
 }
 
@@ -116,7 +119,7 @@
 - (void)TTCpushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if(viewController.ttcTransitionDelegate && animated) {
         self.delegate = viewController.ttcTransitionDelegate;
-    } else {
+    } else if([self.delegate isKindOfClass:[TTCTransitionDelegate class]]) {
         self.delegate = nil;
     }
     [self TTCpushViewController:viewController animated:animated];

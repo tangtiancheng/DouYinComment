@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */; };
 		3373FD70272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */; };
-		3373FD77272CEE21006EA17A /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD76272CEE21006EA17A /* ViewController1.m */; };
-		3373FD7A272CEE2C006EA17A /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD79272CEE2C006EA17A /* ViewController2.m */; };
 		3373FD91272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD89272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m */; };
 		3373FD92272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD8B272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m */; };
 		3373FD93272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD8C272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m */; };
@@ -343,10 +341,6 @@
 		3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionVideoListViewController.m; sourceTree = "<group>"; };
 		3373FD6E272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionSmallVideoPlayViewController.h; sourceTree = "<group>"; };
 		3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionSmallVideoPlayViewController.m; sourceTree = "<group>"; };
-		3373FD75272CEE21006EA17A /* ViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
-		3373FD76272CEE21006EA17A /* ViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
-		3373FD78272CEE2C006EA17A /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
-		3373FD79272CEE2C006EA17A /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		3373FD89272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCSmallVideoPresentOrPushAniTrans.m; sourceTree = "<group>"; };
 		3373FD8A272EA3E3006EA17A /* TTCTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCTransitionDelegate.h; sourceTree = "<group>"; };
 		3373FD8B272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCSmallVideoDismissOrPopAniTrans.m; sourceTree = "<group>"; };
@@ -1024,10 +1018,6 @@
 				3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */,
 				3373FD6E272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.h */,
 				3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */,
-				3373FD75272CEE21006EA17A /* ViewController1.h */,
-				3373FD76272CEE21006EA17A /* ViewController1.m */,
-				3373FD78272CEE2C006EA17A /* ViewController2.h */,
-				3373FD79272CEE2C006EA17A /* ViewController2.m */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -1667,16 +1657,16 @@
 		793D5CCA26C0135F00DFC4FB /* Type4 */ = {
 			isa = PBXGroup;
 			children = (
-				793D5CCB26C0135F00DFC4FB /* Type4ViewControllerFifth.h */,
-				793D5CD226C0135F00DFC4FB /* Type4ViewControllerFifth.m */,
 				793D5CEA26C0135F00DFC4FB /* Type4ViewControllerFirst.h */,
 				793D5CCF26C0135F00DFC4FB /* Type4ViewControllerFirst.m */,
-				793D5CD026C0135F00DFC4FB /* Type4ViewControllerFourth.h */,
-				793D5CCD26C0135F00DFC4FB /* Type4ViewControllerFourth.m */,
 				793D5CD326C0135F00DFC4FB /* Type4ViewControllerSecond.h */,
 				793D5CCE26C0135F00DFC4FB /* Type4ViewControllerSecond.m */,
 				793D5CCC26C0135F00DFC4FB /* Type4ViewControllerThird.h */,
 				793D5CD126C0135F00DFC4FB /* Type4ViewControllerThird.m */,
+				793D5CD026C0135F00DFC4FB /* Type4ViewControllerFourth.h */,
+				793D5CCD26C0135F00DFC4FB /* Type4ViewControllerFourth.m */,
+				793D5CCB26C0135F00DFC4FB /* Type4ViewControllerFifth.h */,
+				793D5CD226C0135F00DFC4FB /* Type4ViewControllerFifth.m */,
 				793D5CD426C0135F00DFC4FB /* ZJScrollPageView */,
 			);
 			name = Type4;
@@ -2604,7 +2594,6 @@
 				793D5D1D26C0135F00DFC4FB /* MJRefreshAutoFooter.m in Sources */,
 				795DB662229E300D003AFE44 /* HTTPMessage.m in Sources */,
 				792EBAFA26C1220B00B94076 /* UIStepper+RACSignalSupport.m in Sources */,
-				3373FD77272CEE21006EA17A /* ViewController1.m in Sources */,
 				790F1536225DED17000E7335 /* MASViewAttribute.m in Sources */,
 				792EBB1126C1220B00B94076 /* RACEmptySequence.m in Sources */,
 				795DB5C2229D3D69003AFE44 /* NSData+ImageContentType.m in Sources */,
@@ -2617,7 +2606,6 @@
 				792EBB4B26C1220B00B94076 /* NSObject+RACSelectorSignal.m in Sources */,
 				792EBB2A26C1220B00B94076 /* RACEvent.m in Sources */,
 				795DB941229E9459003AFE44 /* NSDate+Helper.m in Sources */,
-				3373FD7A272CEE2C006EA17A /* ViewController2.m in Sources */,
 				793D5D0326C0135F00DFC4FB /* Type1ViewControllerFirst.m in Sources */,
 				793D5D1B26C0135F00DFC4FB /* MJRefreshHeader.m in Sources */,
 				792EBB1D26C1220B00B94076 /* NSObject+RACDeallocating.m in Sources */,

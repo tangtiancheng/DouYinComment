@@ -32,6 +32,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
@@ -42,6 +44,8 @@
     } else {
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     }
+    self.navigationController.navigationBar.hidden = NO;
+
 }
 
 - (void)viewDidLoad {
@@ -58,7 +62,7 @@
     pageParam.titleArray = arry_seg_title;
     pageParam.pageHeaderHeight = 0;
     pageParam.showBottomGradientLayer = NO;
-    TCViewPager *viewPager = [[TCViewPager alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) views:vcArray param:pageParam];
+    TCViewPager *viewPager = [[TCViewPager alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-naviHederH) views:vcArray param:pageParam];
    
     //2.创建你自己界面需要展示的嵌套headser
     self.nestPageScrollHeaderView = [self getHeader];

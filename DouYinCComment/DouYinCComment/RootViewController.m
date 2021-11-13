@@ -22,8 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = YES;
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+//    self.navigationController.navigationBar.hidden = YES;
+//    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     UIButton *combtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 100, 150, 100)];
     [self.view addSubview:combtn];
     [combtn setBackgroundColor:[UIColor redColor]];

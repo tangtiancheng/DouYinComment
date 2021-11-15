@@ -51,9 +51,11 @@ pod 'TTCTool
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/改变headerView高度.gif)
 ### (5).headerView不吸顶,下拉变大
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/headerView不吸顶,下拉变大.gif)
-### (6).标签编辑功能
+### (6).Header滚动延续
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/scrolContinue.gif)
+### (7).标签编辑功能
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/editTag.gif)
-### (7).铃声多多音乐播放界面,(类似豆瓣电影主页)
+### (8).铃声多多音乐播放界面,(类似豆瓣电影主页)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/DDMusic.gif)
 
 另外还有其他的效果自己去看demo,使用起来很简单,我写这些东西都是尽力朝着让使用者一两行就能用,不侵入使用者的代码,实现原理也不难,自己去看代码也肯定能看懂(好用请给个star,谢谢)

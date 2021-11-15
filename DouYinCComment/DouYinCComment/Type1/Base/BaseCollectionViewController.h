@@ -13,12 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseCollectionView : UIView
 
+@property (nonatomic, strong, readonly) UICollectionView *collectionView;
+
 - (void)didAppeared;
 
 @end
 
 
 @interface BaseCollectionViewController : UIViewController
+
+@property (nonatomic, strong, readonly) BaseCollectionView *baseCollectionView;
 
 @end
 

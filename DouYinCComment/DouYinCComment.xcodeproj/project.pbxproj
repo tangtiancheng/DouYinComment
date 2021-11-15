@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332975332742712D000EE10D /* Type5ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 332975322742712D000EE10D /* Type5ViewControllerFirst.m */; };
 		3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */; };
 		3373FD70272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */; };
 		3373FD91272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD89272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m */; };
@@ -196,7 +197,7 @@
 		793D5D3526C0136000DFC4FB /* ZJSegmentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CE526C0135F00DFC4FB /* ZJSegmentStyle.m */; };
 		793D5D3626C0136000DFC4FB /* ZJScrollSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CE626C0135F00DFC4FB /* ZJScrollSegmentView.m */; };
 		793D5D3726C0136000DFC4FB /* ZJScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CE726C0135F00DFC4FB /* ZJScrollPageView.m */; };
-		793D5D3826C0136000DFC4FB /* Type5ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CEC26C0135F00DFC4FB /* Type5ViewControllerFirst.m */; };
+		793D5D3826C0136000DFC4FB /* Type6ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CEC26C0135F00DFC4FB /* Type6ViewControllerFirst.m */; };
 		793D5D3926C0136000DFC4FB /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CEF26C0135F00DFC4FB /* MyModel.m */; };
 		793D5D3A26C0136000DFC4FB /* ContentListVBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CF326C0135F00DFC4FB /* ContentListVBackView.m */; };
 		793D5D3B26C0136000DFC4FB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CF626C0135F00DFC4FB /* ListViewController.m */; };
@@ -204,7 +205,7 @@
 		793D5D3D26C0136000DFC4FB /* UIScrollView+Interaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CFB26C0135F00DFC4FB /* UIScrollView+Interaction.m */; };
 		793D5D3E26C0136000DFC4FB /* PlayToolBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CFC26C0135F00DFC4FB /* PlayToolBackView.m */; };
 		793D5D3F26C0136000DFC4FB /* TopBackContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CFE26C0135F00DFC4FB /* TopBackContentView.m */; };
-		793D5D4026C0136000DFC4FB /* Type6ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CFF26C0135F00DFC4FB /* Type6ViewControllerFirst.m */; };
+		793D5D4026C0136000DFC4FB /* Type7ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5CFF26C0135F00DFC4FB /* Type7ViewControllerFirst.m */; };
 		793D5D8826C02C6300DFC4FB /* MyCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8326C02C6300DFC4FB /* MyCommentView.m */; };
 		793D5D8926C02C6300DFC4FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8426C02C6300DFC4FB /* ViewController.m */; };
 		793D5D8A26C02C6300DFC4FB /* MyCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 793D5D8626C02C6300DFC4FB /* MyCommentCell.m */; };
@@ -337,6 +338,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		332975312742712D000EE10D /* Type5ViewControllerFirst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Type5ViewControllerFirst.h; sourceTree = "<group>"; };
+		332975322742712D000EE10D /* Type5ViewControllerFirst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Type5ViewControllerFirst.m; sourceTree = "<group>"; };
 		3373FD61272BDEDC006EA17A /* TransitionVideoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionVideoListViewController.h; sourceTree = "<group>"; };
 		3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionVideoListViewController.m; sourceTree = "<group>"; };
 		3373FD6E272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionSmallVideoPlayViewController.h; sourceTree = "<group>"; };
@@ -730,11 +733,11 @@
 		793D5CE826C0135F00DFC4FB /* UIViewController+ZJScrollPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZJScrollPageController.h"; sourceTree = "<group>"; };
 		793D5CE926C0135F00DFC4FB /* ZJTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTitleView.h; sourceTree = "<group>"; };
 		793D5CEA26C0135F00DFC4FB /* Type4ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type4ViewControllerFirst.h; sourceTree = "<group>"; };
-		793D5CEC26C0135F00DFC4FB /* Type5ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type5ViewControllerFirst.m; sourceTree = "<group>"; };
+		793D5CEC26C0135F00DFC4FB /* Type6ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type6ViewControllerFirst.m; sourceTree = "<group>"; };
 		793D5CED26C0135F00DFC4FB /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
-		793D5CEE26C0135F00DFC4FB /* Type5ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type5ViewControllerFirst.h; sourceTree = "<group>"; };
+		793D5CEE26C0135F00DFC4FB /* Type6ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type6ViewControllerFirst.h; sourceTree = "<group>"; };
 		793D5CEF26C0135F00DFC4FB /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
-		793D5CF126C0135F00DFC4FB /* Type6ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type6ViewControllerFirst.h; sourceTree = "<group>"; };
+		793D5CF126C0135F00DFC4FB /* Type7ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type7ViewControllerFirst.h; sourceTree = "<group>"; };
 		793D5CF326C0135F00DFC4FB /* ContentListVBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentListVBackView.m; sourceTree = "<group>"; };
 		793D5CF426C0135F00DFC4FB /* PlayToolBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayToolBackView.h; sourceTree = "<group>"; };
 		793D5CF526C0135F00DFC4FB /* UIScrollView+Interaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Interaction.h"; sourceTree = "<group>"; };
@@ -747,7 +750,7 @@
 		793D5CFC26C0135F00DFC4FB /* PlayToolBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayToolBackView.m; sourceTree = "<group>"; };
 		793D5CFD26C0135F00DFC4FB /* ContentListVBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentListVBackView.h; sourceTree = "<group>"; };
 		793D5CFE26C0135F00DFC4FB /* TopBackContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopBackContentView.m; sourceTree = "<group>"; };
-		793D5CFF26C0135F00DFC4FB /* Type6ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type6ViewControllerFirst.m; sourceTree = "<group>"; };
+		793D5CFF26C0135F00DFC4FB /* Type7ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type7ViewControllerFirst.m; sourceTree = "<group>"; };
 		793D5D4126C0137200DFC4FB /* RootViewPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewPageViewController.h; path = DouYinCComment/RootViewPageViewController.h; sourceTree = SOURCE_ROOT; };
 		793D5D8226C02C6300DFC4FB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = DouYinCComment/ViewController.h; sourceTree = SOURCE_ROOT; };
 		793D5D8326C02C6300DFC4FB /* MyCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCommentView.m; path = DouYinCComment/MyCommentView.m; sourceTree = SOURCE_ROOT; };
@@ -1010,6 +1013,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3329753027427104000EE10D /* Type5 */ = {
+			isa = PBXGroup;
+			children = (
+				332975312742712D000EE10D /* Type5ViewControllerFirst.h */,
+				332975322742712D000EE10D /* Type5ViewControllerFirst.m */,
+			);
+			path = Type5;
+			sourceTree = "<group>";
+		};
 		3373FD60272BAD98006EA17A /* Transition */ = {
 			isa = PBXGroup;
 			children = (
@@ -1358,8 +1370,9 @@
 				793D5CC426C0135F00DFC4FB /* Type2 */,
 				793D5C6D26C0135F00DFC4FB /* Type3 */,
 				793D5CCA26C0135F00DFC4FB /* Type4 */,
-				793D5CEB26C0135F00DFC4FB /* Type5 */,
-				793D5CF026C0135F00DFC4FB /* Type6 */,
+				3329753027427104000EE10D /* Type5 */,
+				793D5CEB26C0135F00DFC4FB /* Type6 */,
+				793D5CF026C0135F00DFC4FB /* Type7 */,
 			);
 			name = ViewPage;
 			path = TTCTool/ViewPage;
@@ -1377,8 +1390,8 @@
 		793D5BB726BFE74F00DFC4FB /* TCNestScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
-				793D5BB826BFE74F00DFC4FB /* TCNestScrollPageView.m */,
 				793D5BB926BFE74F00DFC4FB /* TCNestScrollPageView.h */,
+				793D5BB826BFE74F00DFC4FB /* TCNestScrollPageView.m */,
 			);
 			path = TCNestScrollPageView;
 			sourceTree = "<group>";
@@ -1701,27 +1714,27 @@
 			path = ZJScrollPageView;
 			sourceTree = "<group>";
 		};
-		793D5CEB26C0135F00DFC4FB /* Type5 */ = {
+		793D5CEB26C0135F00DFC4FB /* Type6 */ = {
 			isa = PBXGroup;
 			children = (
 				793D5CED26C0135F00DFC4FB /* MyModel.h */,
 				793D5CEF26C0135F00DFC4FB /* MyModel.m */,
-				793D5CEE26C0135F00DFC4FB /* Type5ViewControllerFirst.h */,
-				793D5CEC26C0135F00DFC4FB /* Type5ViewControllerFirst.m */,
-			);
-			name = Type5;
-			path = DouYinCComment/Type5;
-			sourceTree = SOURCE_ROOT;
-		};
-		793D5CF026C0135F00DFC4FB /* Type6 */ = {
-			isa = PBXGroup;
-			children = (
-				793D5CF126C0135F00DFC4FB /* Type6ViewControllerFirst.h */,
-				793D5CFF26C0135F00DFC4FB /* Type6ViewControllerFirst.m */,
-				793D5CF226C0135F00DFC4FB /* View */,
+				793D5CEE26C0135F00DFC4FB /* Type6ViewControllerFirst.h */,
+				793D5CEC26C0135F00DFC4FB /* Type6ViewControllerFirst.m */,
 			);
 			name = Type6;
 			path = DouYinCComment/Type6;
+			sourceTree = SOURCE_ROOT;
+		};
+		793D5CF026C0135F00DFC4FB /* Type7 */ = {
+			isa = PBXGroup;
+			children = (
+				793D5CF126C0135F00DFC4FB /* Type7ViewControllerFirst.h */,
+				793D5CFF26C0135F00DFC4FB /* Type7ViewControllerFirst.m */,
+				793D5CF226C0135F00DFC4FB /* View */,
+			);
+			name = Type7;
+			path = DouYinCComment/Type7;
 			sourceTree = SOURCE_ROOT;
 		};
 		793D5CF226C0135F00DFC4FB /* View */ = {
@@ -2368,7 +2381,7 @@
 				795DB8D5229E8758003AFE44 /* CommentModel.m in Sources */,
 				792EBB4926C1220B00B94076 /* RACSubject.m in Sources */,
 				3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */,
-				793D5D3826C0136000DFC4FB /* Type5ViewControllerFirst.m in Sources */,
+				793D5D3826C0136000DFC4FB /* Type6ViewControllerFirst.m in Sources */,
 				792EBB1226C1220B00B94076 /* RACDynamicSequence.m in Sources */,
 				795DB724229E372F003AFE44 /* AVPlayer+MyAvPlayerCate.m in Sources */,
 				792EBB0826C1220B00B94076 /* RACStream.m in Sources */,
@@ -2404,7 +2417,7 @@
 				792EBB3826C1220B00B94076 /* UIAlertView+RACSignalSupport.m in Sources */,
 				795DB8CD229E86E9003AFE44 /* IQUIWindow+Hierarchy.m in Sources */,
 				792EBB0026C1220B00B94076 /* RACSignal.m in Sources */,
-				793D5D4026C0136000DFC4FB /* Type6ViewControllerFirst.m in Sources */,
+				793D5D4026C0136000DFC4FB /* Type7ViewControllerFirst.m in Sources */,
 				795DB8CF229E86E9003AFE44 /* IQUIScrollView+Additions.m in Sources */,
 				3373FD93272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m in Sources */,
 				795DB62E229E2FA1003AFE44 /* KTVHCError.m in Sources */,
@@ -2494,6 +2507,7 @@
 				795DB8C5229E86E9003AFE44 /* IQToolbar.m in Sources */,
 				790F1531225DED17000E7335 /* MASLayoutConstraint.m in Sources */,
 				792EBB3326C1220B00B94076 /* RACKVOProxy.m in Sources */,
+				332975332742712D000EE10D /* Type5ViewControllerFirst.m in Sources */,
 				793D5D2226C0136000DFC4FB /* BaseScrollViewController.m in Sources */,
 				795DB5D2229D40E2003AFE44 /* SmallVideoModel.m in Sources */,
 				792EBB1E26C1220B00B94076 /* RACErrorSignal.m in Sources */,

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseWebView : UIView
+
+@property (nonatomic, strong, readonly) WKWebView* webView;
 
 - (void)didAppeared;
 
@@ -18,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface BaseWebViewController : UIViewController
+
+@property (nonatomic, strong, readonly) BaseWebView *baseWebView;
 
 @end
 

@@ -23,7 +23,7 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    if(self.canScrolWhenMAX) {
+    if(self.canScrolWhenMAX && [gestureRecognizer isKindOfClass:UIPanGestureRecognizer.class]) {
         CGPoint beginningLocation = [gestureRecognizer locationInView:self];
             CGPoint translationLog = [gestureRecognizer translationInView:self];
             NSLog(@"gestureRecognizer.view = %@ location.x = %lf ,translation.x = %lf",gestureRecognizer.view,beginningLocation.x,translationLog.x);

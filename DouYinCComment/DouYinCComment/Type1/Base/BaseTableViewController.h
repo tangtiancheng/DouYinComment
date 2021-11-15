@@ -12,11 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseTableView : UIView
 
+@property (nonatomic, strong, readonly) UITableView *tableView;
+
 - (void)didAppeared;
 
 @end
 
 @interface BaseTableViewController : UIViewController
+
+@property (nonatomic, strong, readonly) BaseTableView *baseTableView;
+
 
 @end
 

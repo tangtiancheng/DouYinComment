@@ -128,7 +128,9 @@
         [scrollView addObserver:self.superview forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     }
     if(self.currentSubScrolleView != scrollView) {
-        [self.currentSubScrolleView addGestureRecognizer:self.scrolContinuePanGestureRecognizer];
+        if(self.scrolContinuePanGestureRecognizer && self.scrolContinuePanGestureRecognizer.view != self.currentSubScrolleView) {
+            [self.currentSubScrolleView addGestureRecognizer:self.scrolContinuePanGestureRecognizer];
+        }
         self.currentSubScrolleView = scrollView;
         self.scrolContinuePanGestureRecognizer = scrollView.panGestureRecognizer;
         if(self.scrolContinuePanGestureRecognizer) {

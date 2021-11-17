@@ -102,7 +102,7 @@
         } else if([currVC isKindOfClass:BaseWebViewController.class]) {
             scrolContineView = ((BaseWebViewController *)currVC).baseWebView.webView.scrollView;
         } else {
-            scrolContineView = nil;//如果对应的控制器没有需要滚动延续的scrollView,那么要赋值为nil
+            scrolContineView = nil;//如果对应的控制器没有需要滚动延续的scrollView,那么也一定要赋值为nil(一定要哈)
         }
         [weakSelf.scrollPageView setObserveScrollView:scrolContineView];
     }];

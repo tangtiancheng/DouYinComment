@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, NestScrollPageViewType) {
 
 
 /********************** 多个拖拽手势同时识别 ***************************/
-@interface TCMainScrollView : UITableView
+@interface TCMainScrollView : UIScrollView
 
 @property (nonatomic, assign) BOOL isScrolBySelf;
 @property (nonatomic, weak) UIScrollView *currentSubScrolleView;
@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, NestScrollPageViewType) {
 
 @interface TCNestScrollPageView : UIView
 
-@property (nonatomic, strong, readonly) TCMainScrollView *mainTabelView;
+@property (nonatomic, strong, readonly) TCMainScrollView *mainScrollView;
 @property(nonatomic,copy)void(^didScrollBlock)(CGFloat dy);         //滚动回调
 
 - (void)resetHeader:(UIView *)headerView;

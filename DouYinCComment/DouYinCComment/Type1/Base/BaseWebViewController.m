@@ -87,6 +87,7 @@
     self.baseWebView = [[BaseWebView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.baseWebView];
     [self.baseWebView didAppeared];
+
 }
 
 - (void)viewWillLayoutSubviews {

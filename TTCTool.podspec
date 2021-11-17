@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "TTCTool"
-  spec.version      = "0.0.7"
+  spec.version      = "0.0.8"
   spec.summary      = "TTCTool."
   spec.description  = <<-DESC
     TTCTool.TTCTool.TTCTool.TTCTool.

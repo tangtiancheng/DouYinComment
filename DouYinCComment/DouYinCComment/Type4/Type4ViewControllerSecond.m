@@ -53,6 +53,7 @@
     //1.创建TCViewPage处理分页(有些开发者可能之前已经写过分页的控件,只不过是没有实现嵌套滚动功能,那么你完全可以不需要用我的TCViewPager,你继续创建你项目里之前的分页控件,然后最后把你的分页控件传给TCNestScrollPageView就可以了)
     TCPageParam *pageParam = [self createPageParamWithTitleArr:arry_seg_title];
     TCViewPager *viewPager = [[TCViewPager alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - naviHederH) views:vcArray param:pageParam];
+    
    
     //2.创建你自己界面需要展示的嵌套headser
     self.nestPageScrollHeaderView = [self getHeader];
@@ -64,12 +65,12 @@
     [self.view addSubview:scrollPageView];
     
     @weakify(self);
-    scrollPageView.mainTabelView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    scrollPageView.mainScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //支持修改headerView
             if(self.headType == 1) {
-                [self.nestPageScrollHeaderView resetFrame:CGRectMake(0, 0, SCREEN_WIDTH, headerHeight+100)];
+                [self.nestPageScrollHeaderView resetFrame:CGRectMake(0, 0, SCREEN_WIDTH, headerHeight+200)];
                 [scrollPageView resetHeader:self.nestPageScrollHeaderView];
                 self.headType = 2;
             } else {
@@ -77,9 +78,10 @@
                 [scrollPageView resetHeader:self.nestPageScrollHeaderView];
                 self.headType = 1;
             }
-            [scrollPageView.mainTabelView.mj_header endRefreshing];
+            [scrollPageView.mainScrollView.mj_header endRefreshing];
         });
     }];
+    
   
 }
 

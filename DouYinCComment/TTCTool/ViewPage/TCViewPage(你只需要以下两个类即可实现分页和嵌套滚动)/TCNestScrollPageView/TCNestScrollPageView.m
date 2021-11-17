@@ -26,6 +26,7 @@
 
 
 
+
 #pragma mark - TCMainScrollView
 
 @interface TCMainScrollView ()
@@ -151,19 +152,19 @@
 
 
 
+
 #pragma mark - TCNestScrollPageView
 
 @interface TCNestScrollPageView ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) TCNestScrollParam *param;
 @property (nonatomic, strong) UIView *headerView;
-@property (nonatomic, strong) TCMainScrollView *mainTabelView;
-@property (nonatomic, strong) UITableViewCell *cell;
+@property (nonatomic, strong) TCMainScrollView *mainScrollView;
 @property (nonatomic, strong) UIView *viewPager;
-@property (nonatomic, assign) CGFloat lastDy;//mainTableView最后停留位置
-@property(nonatomic,assign)BOOL nextReturn;//这个用于记录是否是手动改变contentOffset的conteentOffSet,是的话就不用做监听处理
+@property (nonatomic, assign) CGFloat lastDy;//mainScrollView最后停留位置
+@property(nonatomic,assign)BOOL nextReturn;//这个用于记录是否是咱们通过代码手动给subScrollView的conteentOffSet赋值,是的话就不用做监听处理
 @property(nonatomic,assign)CGFloat stayHeight;//头部允许向上滚动的距离
-@property (nonatomic, assign) CGFloat mainTabExchangeDy;//mainTableView最后变化距离
+@property (nonatomic, assign) CGFloat mainTabExchangeDy;//mainScrollView最后变化距离
 
 @end
 
@@ -174,48 +175,59 @@
     if(self = [super initWithFrame:frame]) {
         self.param = param;
         self.lastDy = 0.0;
-        self.viewPager = viewPager;
-        [self setupBaseView];
-        self.headerView = headView;
-        self.mainTabelView.viewPager = viewPager;
+        self.mainScrollView = [[TCMainScrollView alloc] initWithFrame:self.bounds];
+        self.mainScrollView.delegate = self;
+        if(@available(iOS 11.0, *)){
+            self.mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//UIScrollView也适用
+        } else {
+            self.viewController.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        self.mainScrollView.bounces = self.param.bounces;
+        self.mainScrollView.showsVerticalScrollIndicator = NO;
+        [self insertSubview:self.mainScrollView atIndex:0];
+
+        [self resetHeader:headView];
+        [self resetViewPage:viewPager];
+        
     }
     return self;
 }
 
-- (void)setupBaseView {
-    self.mainTabelView = [[TCMainScrollView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
-    if(@available(iOS 11.0, *)){
-        self.mainTabelView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//UIScrollView也适用
-    } else {
-        self.viewController.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    [self.mainTabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
-    self.mainTabelView.dataSource = self;
-    self.mainTabelView.delegate = self;
-    self.mainTabelView.bounces = self.param.bounces;
-    self.mainTabelView.showsVerticalScrollIndicator = NO;
-    [self insertSubview:self.mainTabelView atIndex:0];
-}
 
 - (void)setHeaderView:(UIView *)headerView {
     _headerView = headerView;
     self.stayHeight =  ((CGFloat)ceil(headerView.frame.size.height - self.param.yOffset));
-    self.mainTabelView.tableHeaderView = self.headerView;
+    
 }
 
 - (void)resetHeader:(UIView *)headerView {
+    [self.headerView removeFromSuperview];
     self.headerView = headerView;
+    [self.mainScrollView addSubview:self.headerView];
+    self.viewPager.frame = CGRectMake(0, self.headerView.frame.size.height, self.frame.size.width, self.frame.size.height - self.param.yOffset);
+    self.mainScrollView.contentSize = CGSizeMake(0, self.headerView.frame.size.height + self.frame.size.height - self.param.yOffset);
 }
+
+- (void)resetViewPage:(UIView *)viewPage {
+    
+    [self.viewPager removeFromSuperview];
+    self.viewPager = viewPage;
+    self.viewPager.frame = CGRectMake(0, self.headerView.frame.size.height, self.frame.size.width, self.frame.size.height - self.param.yOffset);
+    [self.mainScrollView addSubview:self.viewPager];
+    self.mainScrollView.viewPager = self.viewPager;
+    self.mainScrollView.contentSize = CGSizeMake(0, self.headerView.frame.size.height + self.frame.size.height - self.param.yOffset);
+}
+
 
 //这个是给header滚动延续的时候用的
 - (void)setObserveScrollView:(UIScrollView *)scrollView {
-    [self.mainTabelView addObserveScrollView:scrollView];
+    [self.mainScrollView addObserveScrollView:scrollView];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview{
     [super willMoveToSuperview:newSuperview];
     if (newSuperview == nil) {
-        for (UIScrollView *sc in self.mainTabelView.viewArray) {
+        for (UIScrollView *sc in self.mainScrollView.viewArray) {
             [sc removeObserver:self forKeyPath:@"contentOffset"];
         }
     }
@@ -223,7 +235,7 @@
 
 #pragma mark - ScrollVieeScroll
 
-//mainScrollView(三种效果都分开写,全写一起我自己都晕了,也不方便其他人阅读)
+//mainScrollView的滚动监听(三种效果都分开写,全写一起我自己都晕了,也不方便其他人阅读)
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if(self.param.pageType == NestScrollPageViewHeadViewChageType) {
         //header随时变动
@@ -240,7 +252,7 @@
     }
 }
 
-//subScrollView(三种效果都分开写,全写一起我自己都晕了,也不方便其他人阅读)
+//subScrollView的滚动监听(三种效果都分开写,全写一起我自己都晕了,也不方便其他人阅读)
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:@"contentOffset"]){
         if(self.param.pageType == NestScrollPageViewHeadViewChageType) {
@@ -287,14 +299,14 @@
     if (dh < 0) {
         //向下
         
-        if(self.mainTabelView.contentOffset.y > 0 && ((UIScrollView *)object).contentOffset.y < (((UIScrollView *)object).contentSize.height-((UIScrollView *)object).frame.size.height) && self.mainTabelView.dragging == YES) {
+        if(self.mainScrollView.contentOffset.y > 0 && ((UIScrollView *)object).contentOffset.y < (((UIScrollView *)object).contentSize.height-((UIScrollView *)object).frame.size.height) && self.mainScrollView.dragging == YES) {
             _nextReturn = true;
             ((UIScrollView *)object).contentOffset = CGPointMake(0, old);
         }
     } else if(dh > 0) {
         //向上
-        if(self.mainTabelView.contentOffset.y < _stayHeight && ((UIScrollView *)object).contentOffset.y > 0 && self.mainTabelView.dragging == YES) {
-            //加一下这个if判断是因为在tableView的情况下,如果只选reloadData之后,不知道为什么会导致contentOffSet莫名其妙加上40,也就是会造成dh>0.然后当执行((UIScrollView *)object).contentOffset = CGPointMake(0, old)后并不管用,tableView会反复让contentOffSet莫名其妙加上40,最后赵成崩溃,所以想法:当maintableView的contentoffset变化没有subScrollView的contentOffset变化那么大时,就表示出现了上述行为,那么就不做强制修改contentoffset
+        if(self.mainScrollView.contentOffset.y < _stayHeight && ((UIScrollView *)object).contentOffset.y > 0 && self.mainScrollView.dragging == YES) {
+            //加一下这个if判断是因为在tableView的情况下,如果只选reloadData之后,不知道为什么会导致contentOffSet莫名其妙加上40,也就是会造成dh>0.然后当执行((UIScrollView *)object).contentOffset = CGPointMake(0, old)后并不管用,tableView会反复让contentOffSet莫名其妙加上40,最后赵成崩溃,所以想法:当mainScrollView的contentoffset变化没有subScrollView的contentOffset变化那么大时,就表示出现了上述行为,那么就不做强制修改contentoffset
             if(dh > (_mainTabExchangeDy)) {
                 return;
             }
@@ -315,12 +327,12 @@
         scrollView.contentOffset = CGPointMake(0, 0);
         _lastDy = scrollView.contentOffset.y;
     } else {
-        UIScrollView *currenSubScrollView = self.mainTabelView.currentSubScrolleView;//nil;
+        UIScrollView *currenSubScrollView = self.mainScrollView.currentSubScrolleView;//nil;
         if (currenSubScrollView == nil) {
             _lastDy = scrollView.contentOffset.y;
             return;
         }
-        if(currenSubScrollView.contentOffset.y > 0 && (scrollView.contentOffset.y < _stayHeight) && (scrollView.contentOffset.y - _lastDy)<0  && self.mainTabelView.isScrolBySelf == NO) {
+        if(currenSubScrollView.contentOffset.y > 0 && (scrollView.contentOffset.y < _stayHeight) && (scrollView.contentOffset.y - _lastDy)<0  && self.mainScrollView.isScrolBySelf == NO) {
             //向下拖拽
             scrollView.contentOffset = CGPointMake(0, _lastDy);
         } else if((scrollView.contentOffset.y - _lastDy)>0 && currenSubScrollView.contentOffset.y<0) {
@@ -344,14 +356,14 @@
     if (dh < 0) {
         //向下
         if(((UIScrollView *)object).contentOffset.y < 0){
-            if (self.mainTabelView.contentOffset.y > 0) {
+            if (self.mainScrollView.contentOffset.y > 0) {
                 _nextReturn = true;
                 ((UIScrollView *)object).contentOffset = CGPointMake(0, 0);
             }
         }
     }else{
         //向上
-        if (self.mainTabelView.contentOffset.y < _stayHeight) {
+        if (self.mainScrollView.contentOffset.y < _stayHeight) {
             if (((UIScrollView *)object).contentOffset.y > 0) {
                 _nextReturn = true;
                 if(old < 0) {
@@ -375,13 +387,13 @@
         scrollView.contentOffset = CGPointMake(0, _stayHeight);
         _lastDy = scrollView.contentOffset.y;
     } else {
-        UIScrollView *currenSubScrollView = self.mainTabelView.currentSubScrolleView;
+        UIScrollView *currenSubScrollView = self.mainScrollView.currentSubScrolleView;
         if (currenSubScrollView == nil) {
             _lastDy = scrollView.contentOffset.y;
             return;
         }
         //向下拖拽
-        if (currenSubScrollView.contentOffset.y > 0 && (self.mainTabelView.contentOffset.y < _stayHeight) && (self.mainTabelView.contentOffset.y - _lastDy)<0  && self.mainTabelView.isScrolBySelf == NO) {
+        if (currenSubScrollView.contentOffset.y > 0 && (self.mainScrollView.contentOffset.y < _stayHeight) && (self.mainScrollView.contentOffset.y - _lastDy)<0  && self.mainScrollView.isScrolBySelf == NO) {
             scrollView.contentOffset = CGPointMake(0, _lastDy);
         }
         _lastDy = scrollView.contentOffset.y;
@@ -406,7 +418,7 @@
         }
     }else{
         //向上
-        if (self.mainTabelView.contentOffset.y < _stayHeight) {
+        if (self.mainScrollView.contentOffset.y < _stayHeight) {
             _nextReturn = true;
             ((UIScrollView *)object).contentOffset = CGPointMake(0, old);
         }else{
@@ -414,37 +426,6 @@
     }
 }
 
-#pragma mark - UITableViewDataSource && UITableViewDlegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.frame.size.height - self.param.yOffset;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    self.cell = cell;
-    if(![cell.contentView.subviews containsObject:self.viewPager]) {
-        self.viewPager.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - self.param.yOffset);
-        [cell.contentView addSubview:self.viewPager];
-    }
-    return cell;
-}
-
-- (void)resetViewPage:(UIView *)viewPage {
-    
-    [self.viewPager removeFromSuperview];
-    self.viewPager = viewPage;
-    self.viewPager.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - self.param.yOffset);
-    [self.cell.contentView addSubview:self.viewPager];
-    self.mainTabelView.viewPager = self.viewPager;
-    
-}
 
 - (void)dealloc {
     NSLog(@"%@销毁了",self);

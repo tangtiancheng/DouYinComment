@@ -7,11 +7,12 @@ pod 'TTCTool
 分页: pod 'TTCTool/TCViewPage'  
 标签管理: pod 'TTCTool/TagChannelManager'  
 
+以下这些功能大部分都是我在"铃声多多"APP里已经用了,iOS端日活有70万左右,常年保持AppStore排行榜100多名,并不是让你们当小白鼠哈
 
 这个Demo主要功能:
 
 ## 1.这个Demo有仿照抖音的小视频评论手势拖拽效果(直接将TCCommentsPopView这个类拖入您的项目即可使用,很简单)
-可以说完全和抖音的效果一模一样,该功能我已经在"铃声多多"项目中使用,iOS端日活有70万左右,现在是没发现有什么问题.我在github,cocoachina,coco4app等Demo网址上找了很久,都没有一个demo是能完全和抖音的一致的.如果觉得好用希望给一个star
+可以说完全和抖音的效果一模一样,该功能我已经在"铃声多多"项目中使用.我在github,cocoachina,coco4app等Demo网址上找了很久,都没有一个demo是能完全和抖音的一致的.如果觉得好用希望给一个star
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
 

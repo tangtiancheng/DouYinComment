@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334FF24A27547D480052EAFF /* Type1ViewControllerThird.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF24527547D470052EAFF /* Type1ViewControllerThird.m */; };
+		334FF24B27547D480052EAFF /* Type1ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF24627547D470052EAFF /* Type1ViewControllerFirst.m */; };
+		334FF24C27547D480052EAFF /* Type1ViewControllerSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF24727547D470052EAFF /* Type1ViewControllerSecond.m */; };
+		334FF25127547D600052EAFF /* Type2ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF24D27547D600052EAFF /* Type2ViewControllerFirst.m */; };
+		334FF25227547D600052EAFF /* Type2ViewControllerSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF25027547D600052EAFF /* Type2ViewControllerSecond.m */; };
+		334FF25927547D6D0052EAFF /* MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF25427547D6C0052EAFF /* MyHeaderView.m */; };
+		334FF25A27547D6D0052EAFF /* Type3ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF25627547D6C0052EAFF /* Type3ViewControllerFirst.m */; };
+		334FF25B27547D6D0052EAFF /* Type3ViewControllerSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF25827547D6D0052EAFF /* Type3ViewControllerSecond.m */; };
+		334FF26627547E160052EAFF /* Type4ViewControllerFifth.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF25C27547E150052EAFF /* Type4ViewControllerFifth.m */; };
+		334FF26727547E160052EAFF /* Type4ViewControllerSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF25E27547E150052EAFF /* Type4ViewControllerSecond.m */; };
+		334FF26827547E160052EAFF /* Type4ViewControllerFourth.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26227547E150052EAFF /* Type4ViewControllerFourth.m */; };
+		334FF26927547E160052EAFF /* Type4ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26327547E150052EAFF /* Type4ViewControllerFirst.m */; };
+		334FF26A27547E160052EAFF /* Type4ViewControllerThird.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26427547E160052EAFF /* Type4ViewControllerThird.m */; };
+		334FF26F27547EEA0052EAFF /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26C27547EEA0052EAFF /* MyModel.m */; };
+		334FF27027547EEA0052EAFF /* Type6ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26D27547EEA0052EAFF /* Type6ViewControllerFirst.m */; };
+		334FF27327547EF50052EAFF /* Type7ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF27227547EF50052EAFF /* Type7ViewControllerFirst.m */; };
+		334FF27627547FE30052EAFF /* Type5ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF27527547FE30052EAFF /* Type5ViewControllerFirst.m */; };
 		3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */; };
 		3373FD70272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */; };
 		3373FD91272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD89272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m */; };
@@ -321,6 +338,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		334FF24427547D470052EAFF /* Type1ViewControllerThird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type1ViewControllerThird.h; sourceTree = "<group>"; };
+		334FF24527547D470052EAFF /* Type1ViewControllerThird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type1ViewControllerThird.m; sourceTree = "<group>"; };
+		334FF24627547D470052EAFF /* Type1ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type1ViewControllerFirst.m; sourceTree = "<group>"; };
+		334FF24727547D470052EAFF /* Type1ViewControllerSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type1ViewControllerSecond.m; sourceTree = "<group>"; };
+		334FF24827547D480052EAFF /* Type1ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type1ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF24927547D480052EAFF /* Type1ViewControllerSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type1ViewControllerSecond.h; sourceTree = "<group>"; };
+		334FF24D27547D600052EAFF /* Type2ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type2ViewControllerFirst.m; sourceTree = "<group>"; };
+		334FF24E27547D600052EAFF /* Type2ViewControllerSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type2ViewControllerSecond.h; sourceTree = "<group>"; };
+		334FF24F27547D600052EAFF /* Type2ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type2ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF25027547D600052EAFF /* Type2ViewControllerSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type2ViewControllerSecond.m; sourceTree = "<group>"; };
+		334FF25327547D6C0052EAFF /* Type3ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type3ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF25427547D6C0052EAFF /* MyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeaderView.m; sourceTree = "<group>"; };
+		334FF25527547D6C0052EAFF /* MyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHeaderView.h; sourceTree = "<group>"; };
+		334FF25627547D6C0052EAFF /* Type3ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type3ViewControllerFirst.m; sourceTree = "<group>"; };
+		334FF25727547D6C0052EAFF /* Type3ViewControllerSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type3ViewControllerSecond.h; sourceTree = "<group>"; };
+		334FF25827547D6D0052EAFF /* Type3ViewControllerSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type3ViewControllerSecond.m; sourceTree = "<group>"; };
+		334FF25C27547E150052EAFF /* Type4ViewControllerFifth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerFifth.m; sourceTree = "<group>"; };
+		334FF25D27547E150052EAFF /* Type4ViewControllerThird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type4ViewControllerThird.h; sourceTree = "<group>"; };
+		334FF25E27547E150052EAFF /* Type4ViewControllerSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerSecond.m; sourceTree = "<group>"; };
+		334FF25F27547E150052EAFF /* Type4ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type4ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF26027547E150052EAFF /* Type4ViewControllerFourth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type4ViewControllerFourth.h; sourceTree = "<group>"; };
+		334FF26127547E150052EAFF /* Type4ViewControllerSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type4ViewControllerSecond.h; sourceTree = "<group>"; };
+		334FF26227547E150052EAFF /* Type4ViewControllerFourth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerFourth.m; sourceTree = "<group>"; };
+		334FF26327547E150052EAFF /* Type4ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerFirst.m; sourceTree = "<group>"; };
+		334FF26427547E160052EAFF /* Type4ViewControllerThird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerThird.m; sourceTree = "<group>"; };
+		334FF26527547E160052EAFF /* Type4ViewControllerFifth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type4ViewControllerFifth.h; sourceTree = "<group>"; };
+		334FF26B27547EEA0052EAFF /* Type6ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type6ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF26C27547EEA0052EAFF /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
+		334FF26D27547EEA0052EAFF /* Type6ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type6ViewControllerFirst.m; sourceTree = "<group>"; };
+		334FF26E27547EEA0052EAFF /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
+		334FF27127547EF50052EAFF /* Type7ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type7ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF27227547EF50052EAFF /* Type7ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type7ViewControllerFirst.m; sourceTree = "<group>"; };
+		334FF27427547FE30052EAFF /* Type5ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type5ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF27527547FE30052EAFF /* Type5ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type5ViewControllerFirst.m; sourceTree = "<group>"; };
 		3373FD61272BDEDC006EA17A /* TransitionVideoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionVideoListViewController.h; sourceTree = "<group>"; };
 		3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionVideoListViewController.m; sourceTree = "<group>"; };
 		3373FD6E272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionSmallVideoPlayViewController.h; sourceTree = "<group>"; };
@@ -965,6 +1016,8 @@
 		3329753027427104000EE10D /* Type5 */ = {
 			isa = PBXGroup;
 			children = (
+				334FF27427547FE30052EAFF /* Type5ViewControllerFirst.h */,
+				334FF27527547FE30052EAFF /* Type5ViewControllerFirst.m */,
 			);
 			path = Type5;
 			sourceTree = "<group>";
@@ -1441,6 +1494,12 @@
 		793D5C6D26C0135F00DFC4FB /* Type3 */ = {
 			isa = PBXGroup;
 			children = (
+				334FF25527547D6C0052EAFF /* MyHeaderView.h */,
+				334FF25427547D6C0052EAFF /* MyHeaderView.m */,
+				334FF25327547D6C0052EAFF /* Type3ViewControllerFirst.h */,
+				334FF25627547D6C0052EAFF /* Type3ViewControllerFirst.m */,
+				334FF25727547D6C0052EAFF /* Type3ViewControllerSecond.h */,
+				334FF25827547D6D0052EAFF /* Type3ViewControllerSecond.m */,
 			);
 			name = Type3;
 			path = DouYinCComment/Type3;
@@ -1450,6 +1509,12 @@
 			isa = PBXGroup;
 			children = (
 				793D5C7A26C0135F00DFC4FB /* Base */,
+				334FF24827547D480052EAFF /* Type1ViewControllerFirst.h */,
+				334FF24627547D470052EAFF /* Type1ViewControllerFirst.m */,
+				334FF24927547D480052EAFF /* Type1ViewControllerSecond.h */,
+				334FF24727547D470052EAFF /* Type1ViewControllerSecond.m */,
+				334FF24427547D470052EAFF /* Type1ViewControllerThird.h */,
+				334FF24527547D470052EAFF /* Type1ViewControllerThird.m */,
 			);
 			name = Type1;
 			path = DouYinCComment/Type1;
@@ -1593,6 +1658,10 @@
 		793D5CC426C0135F00DFC4FB /* Type2 */ = {
 			isa = PBXGroup;
 			children = (
+				334FF24F27547D600052EAFF /* Type2ViewControllerFirst.h */,
+				334FF24D27547D600052EAFF /* Type2ViewControllerFirst.m */,
+				334FF24E27547D600052EAFF /* Type2ViewControllerSecond.h */,
+				334FF25027547D600052EAFF /* Type2ViewControllerSecond.m */,
 			);
 			name = Type2;
 			path = DouYinCComment/Type2;
@@ -1602,6 +1671,16 @@
 			isa = PBXGroup;
 			children = (
 				793D5CD426C0135F00DFC4FB /* ZJScrollPageView */,
+				334FF25F27547E150052EAFF /* Type4ViewControllerFirst.h */,
+				334FF26327547E150052EAFF /* Type4ViewControllerFirst.m */,
+				334FF26127547E150052EAFF /* Type4ViewControllerSecond.h */,
+				334FF25E27547E150052EAFF /* Type4ViewControllerSecond.m */,
+				334FF25D27547E150052EAFF /* Type4ViewControllerThird.h */,
+				334FF26427547E160052EAFF /* Type4ViewControllerThird.m */,
+				334FF26027547E150052EAFF /* Type4ViewControllerFourth.h */,
+				334FF26227547E150052EAFF /* Type4ViewControllerFourth.m */,
+				334FF26527547E160052EAFF /* Type4ViewControllerFifth.h */,
+				334FF25C27547E150052EAFF /* Type4ViewControllerFifth.m */,
 			);
 			name = Type4;
 			path = DouYinCComment/Type4;
@@ -1638,6 +1717,10 @@
 		793D5CEB26C0135F00DFC4FB /* Type6 */ = {
 			isa = PBXGroup;
 			children = (
+				334FF26E27547EEA0052EAFF /* MyModel.h */,
+				334FF26C27547EEA0052EAFF /* MyModel.m */,
+				334FF26B27547EEA0052EAFF /* Type6ViewControllerFirst.h */,
+				334FF26D27547EEA0052EAFF /* Type6ViewControllerFirst.m */,
 			);
 			name = Type6;
 			path = DouYinCComment/Type6;
@@ -1647,6 +1730,8 @@
 			isa = PBXGroup;
 			children = (
 				793D5CF226C0135F00DFC4FB /* View */,
+				334FF27127547EF50052EAFF /* Type7ViewControllerFirst.h */,
+				334FF27227547EF50052EAFF /* Type7ViewControllerFirst.m */,
 			);
 			name = Type7;
 			path = DouYinCComment/Type7;
@@ -2294,6 +2379,7 @@
 				790F1535225DED17000E7335 /* MASViewConstraint.m in Sources */,
 				793D5D3726C0136000DFC4FB /* ZJScrollPageView.m in Sources */,
 				795DB8D5229E8758003AFE44 /* CommentModel.m in Sources */,
+				334FF25227547D600052EAFF /* Type2ViewControllerSecond.m in Sources */,
 				792EBB4926C1220B00B94076 /* RACSubject.m in Sources */,
 				3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */,
 				792EBB1226C1220B00B94076 /* RACDynamicSequence.m in Sources */,
@@ -2313,6 +2399,7 @@
 				795DB8C4229E86E9003AFE44 /* IQTextView.m in Sources */,
 				793D5D3D26C0136000DFC4FB /* UIScrollView+Interaction.m in Sources */,
 				792EBB1926C1220B00B94076 /* NSOrderedSet+RACSequenceAdditions.m in Sources */,
+				334FF25927547D6D0052EAFF /* MyHeaderView.m in Sources */,
 				793D5C6726BFE74F00DFC4FB /* ExtAudioConverter.m in Sources */,
 				793D5D1A26C0135F00DFC4FB /* MJRefreshFooter.m in Sources */,
 				793D5D2826C0136000DFC4FB /* RootViewPageViewController.m in Sources */,
@@ -2336,6 +2423,7 @@
 				795DB62E229E2FA1003AFE44 /* KTVHCError.m in Sources */,
 				795DB667229E300D003AFE44 /* MultipartFormDataParser.m in Sources */,
 				792EBB3E26C1220B00B94076 /* UIRefreshControl+RACCommandSupport.m in Sources */,
+				334FF24C27547D480052EAFF /* Type1ViewControllerSecond.m in Sources */,
 				795DB620229E2FA1003AFE44 /* KTVHCDataReader.m in Sources */,
 				795DB763229E372F003AFE44 /* ASValuePopUpView.m in Sources */,
 				795DB5C1229D3D69003AFE44 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -2346,6 +2434,7 @@
 				795DB62F229E2FA1003AFE44 /* KTVHCDownload.m in Sources */,
 				792EBAFB26C1220B00B94076 /* RACSubscriptionScheduler.m in Sources */,
 				793D5D2026C0135F00DFC4FB /* MyTableViewCell.m in Sources */,
+				334FF26927547E160052EAFF /* Type4ViewControllerFirst.m in Sources */,
 				795DB625229E2FA1003AFE44 /* KTVHCDataUnitItem.m in Sources */,
 				793D5D0A26C0135F00DFC4FB /* MJRefreshConfig.m in Sources */,
 				795DB668229E300D003AFE44 /* MultipartMessageHeader.m in Sources */,
@@ -2402,8 +2491,10 @@
 				792EBB3F26C1220B00B94076 /* RACReturnSignal.m in Sources */,
 				792EBB2D26C1220B00B94076 /* NSControl+RACCommandSupport.m in Sources */,
 				795DB89E229E7D2C003AFE44 /* CommentsPopView.m in Sources */,
+				334FF24B27547D480052EAFF /* Type1ViewControllerFirst.m in Sources */,
 				793D5D1226C0135F00DFC4FB /* MJRefreshAutoStateFooter.m in Sources */,
 				795DB8C8229E86E9003AFE44 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				334FF24A27547D480052EAFF /* Type1ViewControllerThird.m in Sources */,
 				793D5C4A26BFE74F00DFC4FB /* TagChannelView.m in Sources */,
 				793D5C6326BFE74F00DFC4FB /* GarageBandViewController.m in Sources */,
 				792EBB3226C1220B00B94076 /* NSText+RACSignalSupport.m in Sources */,
@@ -2416,6 +2507,8 @@
 				793D5D2226C0136000DFC4FB /* BaseScrollViewController.m in Sources */,
 				795DB5D2229D40E2003AFE44 /* SmallVideoModel.m in Sources */,
 				792EBB1E26C1220B00B94076 /* RACErrorSignal.m in Sources */,
+				334FF27627547FE30052EAFF /* Type5ViewControllerFirst.m in Sources */,
+				334FF25B27547D6D0052EAFF /* Type3ViewControllerSecond.m in Sources */,
 				792EBAFC26C1220B00B94076 /* RACStringSequence.m in Sources */,
 				793D5D3226C0136000DFC4FB /* ZJContentView.m in Sources */,
 				795DB88C229E408E003AFE44 /* UIView+CommonFunction.m in Sources */,
@@ -2441,6 +2534,7 @@
 				790F1532225DED17000E7335 /* NSArray+MASAdditions.m in Sources */,
 				793D5D8A26C02C6300DFC4FB /* MyCommentCell.m in Sources */,
 				792EBB3926C1220B00B94076 /* RACValueTransformer.m in Sources */,
+				334FF26827547E160052EAFF /* Type4ViewControllerFourth.m in Sources */,
 				795DB660229E300D003AFE44 /* HTTPAsyncFileResponse.m in Sources */,
 				792EBB4D26C1220B00B94076 /* RACDelegateProxy.m in Sources */,
 				792EBB1826C1220B00B94076 /* RACSubscriptingAssignmentTrampoline.m in Sources */,
@@ -2458,6 +2552,7 @@
 				795DB623229E2FA1003AFE44 /* KTVHCDataRequest.m in Sources */,
 				790F14E7225CF991000E7335 /* main.m in Sources */,
 				795DB721229E372F003AFE44 /* ZFDouYinPlayerControlView.m in Sources */,
+				334FF25A27547D6D0052EAFF /* Type3ViewControllerFirst.m in Sources */,
 				792EBB2326C1220B00B94076 /* RACBehaviorSubject.m in Sources */,
 				793D5D2426C0136000DFC4FB /* BaseCollectionViewController.m in Sources */,
 				795DB769229E372F003AFE44 /* DDVideoPlayerManager.m in Sources */,
@@ -2467,6 +2562,7 @@
 				795DB5B8229D3D69003AFE44 /* SDWebImageManager.m in Sources */,
 				792EBB0126C1220B00B94076 /* UITableViewCell+RACSignalSupport.m in Sources */,
 				795DB630229E2FA1003AFE44 /* KTVHTTPCache.m in Sources */,
+				334FF27027547EEA0052EAFF /* Type6ViewControllerFirst.m in Sources */,
 				795DB663229E300D003AFE44 /* HTTPLogging.m in Sources */,
 				795DB8C6229E86E9003AFE44 /* IQTitleBarButtonItem.m in Sources */,
 				793D5D1426C0135F00DFC4FB /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -2499,6 +2595,7 @@
 				795DB62B229E2FA1003AFE44 /* KTVHCDataCallback.m in Sources */,
 				792EBB1626C1220B00B94076 /* NSURLConnection+RACSupport.m in Sources */,
 				3373FD92272EA3E3006EA17A /* TTCSmallVideoDismissOrPopAniTrans.m in Sources */,
+				334FF26A27547E160052EAFF /* Type4ViewControllerThird.m in Sources */,
 				795DB586229D3355003AFE44 /* RootViewController.m in Sources */,
 				795DB728229E372F003AFE44 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				793D5D0926C0135F00DFC4FB /* MJRefreshConst.m in Sources */,
@@ -2511,6 +2608,8 @@
 				790F1536225DED17000E7335 /* MASViewAttribute.m in Sources */,
 				792EBB1126C1220B00B94076 /* RACEmptySequence.m in Sources */,
 				795DB5C2229D3D69003AFE44 /* NSData+ImageContentType.m in Sources */,
+				334FF26627547E160052EAFF /* Type4ViewControllerFifth.m in Sources */,
+				334FF26F27547EEA0052EAFF /* MyModel.m in Sources */,
 				795DB65F229E300D003AFE44 /* HTTPFileResponse.m in Sources */,
 				793D5D0626C0135F00DFC4FB /* BaseTableViewController.m in Sources */,
 				795DB62A229E2FA1003AFE44 /* KTVHCDataLoader.m in Sources */,
@@ -2525,7 +2624,9 @@
 				792EBB2126C1220B00B94076 /* RACKVOChannel.m in Sources */,
 				792EBAFF26C1220B00B94076 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				792EBB2826C1220B00B94076 /* UICollectionReusableView+RACSignalSupport.m in Sources */,
+				334FF27327547EF50052EAFF /* Type7ViewControllerFirst.m in Sources */,
 				795DB661229E300D003AFE44 /* HTTPRedirectResponse.m in Sources */,
+				334FF26727547E160052EAFF /* Type4ViewControllerSecond.m in Sources */,
 				795DB8D1229E86E9003AFE44 /* IQUIViewController+Additions.m in Sources */,
 				792EBB0526C1220B00B94076 /* NSEnumerator+RACSequenceAdditions.m in Sources */,
 				792EBB0726C1220B00B94076 /* UITextView+RACSignalSupport.m in Sources */,
@@ -2540,6 +2641,7 @@
 				792EBB3C26C1220B00B94076 /* NSSet+RACSequenceAdditions.m in Sources */,
 				795DB725229E372F003AFE44 /* UIView+CustomControlView.m in Sources */,
 				792EBB0C26C1220B00B94076 /* MKAnnotationView+RACSignalSupport.m in Sources */,
+				334FF25127547D600052EAFF /* Type2ViewControllerFirst.m in Sources */,
 				792EBB3526C1220B00B94076 /* NSDictionary+RACSequenceAdditions.m in Sources */,
 				795DB895229E4606003AFE44 /* global.m in Sources */,
 				795DB890229E410B003AFE44 /* GCDAsyncSocket.m in Sources */,

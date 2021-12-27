@@ -124,7 +124,7 @@ static NSString* const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
     model1.score = 11;
     model1.artist = @"作者1";
     model1.head_url = @"http://cdnuserprofilebd.shoujiduoduo.com/head_pic/46/user_head_30881645_20190423071746.jpg";
-    model1.video_url = @"http://1251606748.vod2.myqcloud.com/0767df4avodcq1251606748/2168249b8602268011237771450/LAClXX8pjNkA.mp4";//@"http://cdnringbd.shoujiduoduo.com/ringres/userv1/video/551/76097551.mp4";
+    model1.video_url = @"http://cdnringbd.shoujiduoduo.com/ringres/userv1/video/551/76097551.mp4";
     model1.cover_url = @"http://cdnringbd.shoujiduoduo.com/ringres/userv1/cover/551/76097551.jpg";
     model1.aspect = 1.778;
     

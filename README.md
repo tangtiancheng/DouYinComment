@@ -58,5 +58,5 @@ pod 'TTCTool
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/editTag.gif)
 ### (8).铃声多多音乐播放界面,(类似豆瓣电影主页)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/DDMusic.gif)
-
+### (9).还添加了结合快捷指令实现充电音的功能和详细教程:https://www.jianshu.com/p/b4a706dc66ef
 另外还有其他的效果自己去看demo,使用起来很简单,我写这些东西都是尽力朝着让使用者一两行就能用,不侵入使用者的代码,实现原理也不难,自己去看代码也肯定能看懂(好用请给个star,谢谢)

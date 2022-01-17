@@ -1,8 +1,8 @@
 //
-//  Type7ViewControllerFirst.h
+//  Type6ViewControllerFirst.h
 //  DouYinCComment
 //
-//  Created by 唐天成 on 2020/12/22.
+//  Created by 唐天成 on 2020/8/21.
 //  Copyright © 2020 唐天成. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Type7ViewControllerFirst : UIViewController
-
-
+@interface Type5ViewControllerFirst : UIViewController
 
 @end
 

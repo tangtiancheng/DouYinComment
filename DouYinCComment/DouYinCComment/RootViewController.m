@@ -13,7 +13,6 @@
 #import "RootViewPageViewController.h"
 #import "TransitionVideoListViewController.h"
 #import "ReactiveObjC.h"
-#import "ChargingAudioViewController.h"
 
 @interface RootViewController ()
 
@@ -56,17 +55,6 @@
     [transitionbtn addTarget:self action:@selector(transition) forControlEvents:UIControlEventTouchUpInside];
     
     
-    UIButton *chargingbtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 400, 150, 100)];
-    [self.view addSubview:chargingbtn];
-    [chargingbtn setBackgroundColor:[UIColor redColor]];
-    [chargingbtn setTitle:@"如何设置充电音" forState:UIControlStateNormal];
-    [chargingbtn addTarget:self action:@selector(tutorial) forControlEvents:UIControlEventTouchUpInside];
-    
-//    [RACObserve(self, navigationController.delegate) subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"%@",x);
-//    }];
-    
-    
 }
 
 
@@ -97,10 +85,5 @@
     
 }
 
-- (void)tutorial {
-    ChargingAudioViewController *vc = [[ChargingAudioViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-
-}
 
 @end

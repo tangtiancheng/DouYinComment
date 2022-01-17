@@ -21,16 +21,8 @@
 		334FF26927547E160052EAFF /* Type4ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26327547E150052EAFF /* Type4ViewControllerFirst.m */; };
 		334FF26A27547E160052EAFF /* Type4ViewControllerThird.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26427547E160052EAFF /* Type4ViewControllerThird.m */; };
 		334FF26F27547EEA0052EAFF /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26C27547EEA0052EAFF /* MyModel.m */; };
-		334FF27027547EEA0052EAFF /* Type6ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26D27547EEA0052EAFF /* Type6ViewControllerFirst.m */; };
-		334FF27327547EF50052EAFF /* Type7ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF27227547EF50052EAFF /* Type7ViewControllerFirst.m */; };
-		334FF27627547FE30052EAFF /* Type5ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF27527547FE30052EAFF /* Type5ViewControllerFirst.m */; };
-		335490DD27897BFC00C4331E /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335490DC27897BFC00C4331E /* Intents.framework */; };
-		335490E127897BFC00C4331E /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 335490E027897BFC00C4331E /* IntentHandler.m */; };
-		335490E527897BFC00C4331E /* Shortcuts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 335490DA27897BFC00C4331E /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		335490EB27897C3400C4331E /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 335490EA27897C3400C4331E /* Intents.intentdefinition */; };
-		335490EC27897C3400C4331E /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 335490EA27897C3400C4331E /* Intents.intentdefinition */; };
-		335490F12789815F00C4331E /* 231401593.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 335490F02789815E00C4331E /* 231401593.mp3 */; };
-		335490F52789A0F200C4331E /* ChargingAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335490F42789A0F200C4331E /* ChargingAudioViewController.m */; };
+		334FF27027547EEA0052EAFF /* Type5ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF26D27547EEA0052EAFF /* Type5ViewControllerFirst.m */; };
+		334FF27327547EF50052EAFF /* Type6ViewControllerFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FF27227547EF50052EAFF /* Type6ViewControllerFirst.m */; };
 		3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */; };
 		3373FD70272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */; };
 		3373FD91272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373FD89272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m */; };
@@ -325,16 +317,6 @@
 		795DB941229E9459003AFE44 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB940229E9459003AFE44 /* NSDate+Helper.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		335490E327897BFC00C4331E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 790F14CC225CF98F000E7335 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 335490D927897BFC00C4331E;
-			remoteInfo = Shortcuts;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		335490E927897BFC00C4331E /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -342,7 +324,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				335490E527897BFC00C4331E /* Shortcuts.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,23 +357,13 @@
 		334FF26327547E150052EAFF /* Type4ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerFirst.m; sourceTree = "<group>"; };
 		334FF26427547E160052EAFF /* Type4ViewControllerThird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type4ViewControllerThird.m; sourceTree = "<group>"; };
 		334FF26527547E160052EAFF /* Type4ViewControllerFifth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type4ViewControllerFifth.h; sourceTree = "<group>"; };
-		334FF26B27547EEA0052EAFF /* Type6ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type6ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF26B27547EEA0052EAFF /* Type5ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type5ViewControllerFirst.h; sourceTree = "<group>"; };
 		334FF26C27547EEA0052EAFF /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
-		334FF26D27547EEA0052EAFF /* Type6ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type6ViewControllerFirst.m; sourceTree = "<group>"; };
+		334FF26D27547EEA0052EAFF /* Type5ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type5ViewControllerFirst.m; sourceTree = "<group>"; };
 		334FF26E27547EEA0052EAFF /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
-		334FF27127547EF50052EAFF /* Type7ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type7ViewControllerFirst.h; sourceTree = "<group>"; };
-		334FF27227547EF50052EAFF /* Type7ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type7ViewControllerFirst.m; sourceTree = "<group>"; };
-		334FF27427547FE30052EAFF /* Type5ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type5ViewControllerFirst.h; sourceTree = "<group>"; };
-		334FF27527547FE30052EAFF /* Type5ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type5ViewControllerFirst.m; sourceTree = "<group>"; };
-		335490DA27897BFC00C4331E /* Shortcuts.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shortcuts.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		334FF27127547EF50052EAFF /* Type6ViewControllerFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type6ViewControllerFirst.h; sourceTree = "<group>"; };
+		334FF27227547EF50052EAFF /* Type6ViewControllerFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type6ViewControllerFirst.m; sourceTree = "<group>"; };
 		335490DC27897BFC00C4331E /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		335490DF27897BFC00C4331E /* IntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntentHandler.h; sourceTree = "<group>"; };
-		335490E027897BFC00C4331E /* IntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentHandler.m; sourceTree = "<group>"; };
-		335490E227897BFC00C4331E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		335490EA27897C3400C4331E /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
-		335490F02789815E00C4331E /* 231401593.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 231401593.mp3; sourceTree = "<group>"; };
-		335490F32789A0F200C4331E /* ChargingAudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChargingAudioViewController.h; sourceTree = "<group>"; };
-		335490F42789A0F200C4331E /* ChargingAudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChargingAudioViewController.m; sourceTree = "<group>"; };
 		3373FD61272BDEDC006EA17A /* TransitionVideoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionVideoListViewController.h; sourceTree = "<group>"; };
 		3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionVideoListViewController.m; sourceTree = "<group>"; };
 		3373FD6E272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionSmallVideoPlayViewController.h; sourceTree = "<group>"; };
@@ -1003,14 +974,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		335490D727897BFC00C4331E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				335490DD27897BFC00C4331E /* Intents.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		790F14D1225CF98F000E7335 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1022,41 +985,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3329753027427104000EE10D /* Type5 */ = {
-			isa = PBXGroup;
-			children = (
-				334FF27427547FE30052EAFF /* Type5ViewControllerFirst.h */,
-				334FF27527547FE30052EAFF /* Type5ViewControllerFirst.m */,
-			);
-			path = Type5;
-			sourceTree = "<group>";
-		};
 		335490DB27897BFC00C4331E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				335490DC27897BFC00C4331E /* Intents.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		335490DE27897BFC00C4331E /* Shortcuts */ = {
-			isa = PBXGroup;
-			children = (
-				335490F02789815E00C4331E /* 231401593.mp3 */,
-				335490DF27897BFC00C4331E /* IntentHandler.h */,
-				335490E027897BFC00C4331E /* IntentHandler.m */,
-				335490E227897BFC00C4331E /* Info.plist */,
-			);
-			path = Shortcuts;
-			sourceTree = "<group>";
-		};
-		335490F22789A0C900C4331E /* ChargingAudio */ = {
-			isa = PBXGroup;
-			children = (
-				335490F32789A0F200C4331E /* ChargingAudioViewController.h */,
-				335490F42789A0F200C4331E /* ChargingAudioViewController.m */,
-			);
-			path = ChargingAudio;
 			sourceTree = "<group>";
 		};
 		3373FD60272BAD98006EA17A /* Transition */ = {
@@ -1091,7 +1025,6 @@
 			isa = PBXGroup;
 			children = (
 				790F14D6225CF98F000E7335 /* DouYinCComment */,
-				335490DE27897BFC00C4331E /* Shortcuts */,
 				335490DB27897BFC00C4331E /* Frameworks */,
 				790F14D5225CF98F000E7335 /* Products */,
 			);
@@ -1101,7 +1034,6 @@
 			isa = PBXGroup;
 			children = (
 				790F14D4225CF98F000E7335 /* DouYinCComment.app */,
-				335490DA27897BFC00C4331E /* Shortcuts.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1116,7 +1048,6 @@
 				795DB589229D33EB003AFE44 /* DouYinPlay */,
 				793D5C0026BFE74F00DFC4FB /* UploadToGarageBand */,
 				3373FD60272BAD98006EA17A /* Transition */,
-				335490F22789A0C900C4331E /* ChargingAudio */,
 				795DB584229D3355003AFE44 /* RootViewController.h */,
 				795DB585229D3355003AFE44 /* RootViewController.m */,
 				790F14D7225CF98F000E7335 /* AppDelegate.h */,
@@ -1128,7 +1059,6 @@
 				790F14E2225CF991000E7335 /* LaunchScreen.storyboard */,
 				790F14E5225CF991000E7335 /* Info.plist */,
 				790F14E6225CF991000E7335 /* main.m */,
-				335490EA27897C3400C4331E /* Intents.intentdefinition */,
 			);
 			path = DouYinCComment;
 			sourceTree = "<group>";
@@ -1390,9 +1320,8 @@
 				793D5CC426C0135F00DFC4FB /* Type2 */,
 				793D5C6D26C0135F00DFC4FB /* Type3 */,
 				793D5CCA26C0135F00DFC4FB /* Type4 */,
-				3329753027427104000EE10D /* Type5 */,
-				793D5CEB26C0135F00DFC4FB /* Type6 */,
-				793D5CF026C0135F00DFC4FB /* Type7 */,
+				793D5CEB26C0135F00DFC4FB /* Type5 */,
+				793D5CF026C0135F00DFC4FB /* Type6 */,
 			);
 			name = ViewPage;
 			path = TTCTool/ViewPage;
@@ -1734,27 +1663,27 @@
 			path = ZJScrollPageView;
 			sourceTree = "<group>";
 		};
-		793D5CEB26C0135F00DFC4FB /* Type6 */ = {
+		793D5CEB26C0135F00DFC4FB /* Type5 */ = {
 			isa = PBXGroup;
 			children = (
 				334FF26E27547EEA0052EAFF /* MyModel.h */,
 				334FF26C27547EEA0052EAFF /* MyModel.m */,
-				334FF26B27547EEA0052EAFF /* Type6ViewControllerFirst.h */,
-				334FF26D27547EEA0052EAFF /* Type6ViewControllerFirst.m */,
+				334FF26B27547EEA0052EAFF /* Type5ViewControllerFirst.h */,
+				334FF26D27547EEA0052EAFF /* Type5ViewControllerFirst.m */,
 			);
-			name = Type6;
-			path = DouYinCComment/Type6;
+			name = Type5;
+			path = DouYinCComment/Type5;
 			sourceTree = SOURCE_ROOT;
 		};
-		793D5CF026C0135F00DFC4FB /* Type7 */ = {
+		793D5CF026C0135F00DFC4FB /* Type6 */ = {
 			isa = PBXGroup;
 			children = (
 				793D5CF226C0135F00DFC4FB /* View */,
-				334FF27127547EF50052EAFF /* Type7ViewControllerFirst.h */,
-				334FF27227547EF50052EAFF /* Type7ViewControllerFirst.m */,
+				334FF27127547EF50052EAFF /* Type6ViewControllerFirst.h */,
+				334FF27227547EF50052EAFF /* Type6ViewControllerFirst.m */,
 			);
-			name = Type7;
-			path = DouYinCComment/Type7;
+			name = Type6;
+			path = DouYinCComment/Type6;
 			sourceTree = SOURCE_ROOT;
 		};
 		793D5CF226C0135F00DFC4FB /* View */ = {
@@ -2235,23 +2164,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		335490D927897BFC00C4331E /* Shortcuts */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 335490E627897BFC00C4331E /* Build configuration list for PBXNativeTarget "Shortcuts" */;
-			buildPhases = (
-				335490D627897BFC00C4331E /* Sources */,
-				335490D727897BFC00C4331E /* Frameworks */,
-				335490D827897BFC00C4331E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Shortcuts;
-			productName = Shortcuts;
-			productReference = 335490DA27897BFC00C4331E /* Shortcuts.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		790F14D3225CF98F000E7335 /* DouYinCComment */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 790F1500225CF991000E7335 /* Build configuration list for PBXNativeTarget "DouYinCComment" */;
@@ -2264,7 +2176,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				335490E427897BFC00C4331E /* PBXTargetDependency */,
 			);
 			name = DouYinCComment;
 			productName = DouYinCComment;
@@ -2280,9 +2191,6 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "唐天成";
 				TargetAttributes = {
-					335490D927897BFC00C4331E = {
-						CreatedOnToolsVersion = 13.0;
-					};
 					790F14D3225CF98F000E7335 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -2302,20 +2210,11 @@
 			projectRoot = "";
 			targets = (
 				790F14D3225CF98F000E7335 /* DouYinCComment */,
-				335490D927897BFC00C4331E /* Shortcuts */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		335490D827897BFC00C4331E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				335490F12789815F00C4331E /* 231401593.mp3 in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		790F14D2225CF98F000E7335 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2335,15 +2234,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		335490D627897BFC00C4331E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				335490EC27897C3400C4331E /* Intents.intentdefinition in Sources */,
-				335490E127897BFC00C4331E /* IntentHandler.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		790F14D0225CF98F000E7335 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2486,7 +2376,6 @@
 				793D5D0D26C0135F00DFC4FB /* NSBundle+MJRefresh.m in Sources */,
 				792EBB0426C1220B00B94076 /* NSUserDefaults+RACSupport.m in Sources */,
 				792EBB0B26C1220B00B94076 /* RACTupleSequence.m in Sources */,
-				335490EB27897C3400C4331E /* Intents.intentdefinition in Sources */,
 				793D5D0526C0135F00DFC4FB /* BaseWebViewController.m in Sources */,
 				792EBB2226C1220B00B94076 /* NSObject+RACPropertySubscribing.m in Sources */,
 				792EBB3F26C1220B00B94076 /* RACReturnSignal.m in Sources */,
@@ -2508,7 +2397,6 @@
 				793D5D2226C0136000DFC4FB /* BaseScrollViewController.m in Sources */,
 				795DB5D2229D40E2003AFE44 /* SmallVideoModel.m in Sources */,
 				792EBB1E26C1220B00B94076 /* RACErrorSignal.m in Sources */,
-				334FF27627547FE30052EAFF /* Type5ViewControllerFirst.m in Sources */,
 				334FF25B27547D6D0052EAFF /* Type3ViewControllerSecond.m in Sources */,
 				792EBAFC26C1220B00B94076 /* RACStringSequence.m in Sources */,
 				793D5D3226C0136000DFC4FB /* ZJContentView.m in Sources */,
@@ -2563,7 +2451,7 @@
 				795DB5B8229D3D69003AFE44 /* SDWebImageManager.m in Sources */,
 				792EBB0126C1220B00B94076 /* UITableViewCell+RACSignalSupport.m in Sources */,
 				795DB630229E2FA1003AFE44 /* KTVHTTPCache.m in Sources */,
-				334FF27027547EEA0052EAFF /* Type6ViewControllerFirst.m in Sources */,
+				334FF27027547EEA0052EAFF /* Type5ViewControllerFirst.m in Sources */,
 				795DB663229E300D003AFE44 /* HTTPLogging.m in Sources */,
 				795DB8C6229E86E9003AFE44 /* IQTitleBarButtonItem.m in Sources */,
 				793D5D1426C0135F00DFC4FB /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -2577,7 +2465,6 @@
 				792EBB3126C1220B00B94076 /* RACQueueScheduler.m in Sources */,
 				792EBB2B26C1220B00B94076 /* RACScopedDisposable.m in Sources */,
 				792EBB3B26C1220B00B94076 /* NSInvocation+RACTypeParsing.m in Sources */,
-				335490F52789A0F200C4331E /* ChargingAudioViewController.m in Sources */,
 				793D5D2326C0136000DFC4FB /* UICollectionView+MyCol.m in Sources */,
 				793D5D1726C0135F00DFC4FB /* MJRefreshNormalHeader.m in Sources */,
 				792EBB1726C1220B00B94076 /* RACKVOTrampoline.m in Sources */,
@@ -2626,7 +2513,7 @@
 				792EBB2126C1220B00B94076 /* RACKVOChannel.m in Sources */,
 				792EBAFF26C1220B00B94076 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				792EBB2826C1220B00B94076 /* UICollectionReusableView+RACSignalSupport.m in Sources */,
-				334FF27327547EF50052EAFF /* Type7ViewControllerFirst.m in Sources */,
+				334FF27327547EF50052EAFF /* Type6ViewControllerFirst.m in Sources */,
 				795DB661229E300D003AFE44 /* HTTPRedirectResponse.m in Sources */,
 				334FF26727547E160052EAFF /* Type4ViewControllerSecond.m in Sources */,
 				795DB8D1229E86E9003AFE44 /* IQUIViewController+Additions.m in Sources */,
@@ -2654,14 +2541,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		335490E427897BFC00C4331E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 335490D927897BFC00C4331E /* Shortcuts */;
-			targetProxy = 335490E327897BFC00C4331E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		790F14DD225CF98F000E7335 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -2682,62 +2561,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		335490E727897BFC00C4331E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GE5UCEG562;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Shortcuts/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Shortcuts;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 唐天成. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DBLD.DouYinCComment.Shortcuts;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		335490E827897BFC00C4331E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GE5UCEG562;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Shortcuts/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Shortcuts;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 唐天成. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DBLD.DouYinCComment.Shortcuts;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		790F14FE225CF991000E7335 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2907,15 +2730,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		335490E627897BFC00C4331E /* Build configuration list for PBXNativeTarget "Shortcuts" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				335490E727897BFC00C4331E /* Debug */,
-				335490E827897BFC00C4331E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		790F14CF225CF98F000E7335 /* Build configuration list for PBXProject "DouYinCComment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

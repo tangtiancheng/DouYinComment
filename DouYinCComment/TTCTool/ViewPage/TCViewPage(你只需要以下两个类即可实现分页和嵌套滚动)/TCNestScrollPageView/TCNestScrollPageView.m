@@ -33,9 +33,6 @@
 
 @property (nonatomic, strong) UIView *viewPager;
 
-//这个是header滚动延续的时候才会用到
-//scrolContinuePanGestureRecognizer表示当前取到的最新的滚动延续的PanGestureRecognizer拖拽手势
-@property (nonatomic, weak) UIPanGestureRecognizer *scrolContinuePanGestureRecognizer;
 
 @end
 
@@ -43,11 +40,7 @@
 /********************** 多手势同时识别 ***************************/
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     UIView *otherGestureRecognizerView = otherGestureRecognizer.view;
-    //header滚动延续的情况下
-    if(otherGestureRecognizerView == self && gestureRecognizer == self.panGestureRecognizer && otherGestureRecognizer == self.scrolContinuePanGestureRecognizer && ((TCNestScrollPageView *)self.superview).param.scrolContinue) {
-            return YES;
-    }
-    //header滚动不延续的情况下
+
     if( [otherGestureRecognizerView isKindOfClass:[UIScrollView class]] && otherGestureRecognizerView != self && gestureRecognizer == self.panGestureRecognizer && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
 
         if([self.viewArray containsObject:(UIScrollView *)otherGestureRecognizerView]) {
@@ -61,10 +54,6 @@
 
 //1
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    if(((TCNestScrollPageView *)self.superview).param.scrolContinue && self.scrolContinuePanGestureRecognizer) {
-        //如果是header滚动延续的话就不需要后面那么多代码了
-        return YES;
-    }
     if(gestureRecognizer == self.panGestureRecognizer) {
         self.isScrolBySelf = YES;
         self.currentSubScrolleView = nil;
@@ -101,7 +90,6 @@
                             [self.viewArray addObject:self.currentSubScrolleView];
                             [self.currentSubScrolleView addObserver:self.superview forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
                         }
-                        [self addObserveScrollView:self.currentSubScrolleView];
                         break;
                     }
                 }
@@ -114,29 +102,6 @@
         
     }
     return YES;
-}
-
-
-//这个方法给header滚动延续用的
-- (void)addObserveScrollView:(UIScrollView *)scrollView {
-    if(!((TCNestScrollPageView *)self.superview).param.scrolContinue) {
-        return;
-    }
-    self.isScrolBySelf = NO;
-    if(![self.viewArray containsObject:scrollView] && scrollView) {
-        [self.viewArray addObject:scrollView];
-        [scrollView addObserver:self.superview forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-    }
-    if(self.currentSubScrolleView != scrollView) {
-        if(self.scrolContinuePanGestureRecognizer && self.scrolContinuePanGestureRecognizer.view != self.currentSubScrolleView) {
-            [self.currentSubScrolleView addGestureRecognizer:self.scrolContinuePanGestureRecognizer];
-        }
-        self.currentSubScrolleView = scrollView;
-        self.scrolContinuePanGestureRecognizer = scrollView.panGestureRecognizer;
-        if(self.scrolContinuePanGestureRecognizer) {
-            [self addGestureRecognizer:self.scrolContinuePanGestureRecognizer];
-        }
-    }
 }
 
 - (NSMutableArray *)viewArray {
@@ -218,12 +183,6 @@
     [self.mainScrollView addSubview:self.viewPager];
     self.mainScrollView.viewPager = self.viewPager;
     self.mainScrollView.contentSize = CGSizeMake(0, self.headerView.frame.size.height + self.frame.size.height - self.param.yOffset);
-}
-
-
-//这个是给header滚动延续的时候用的
-- (void)setObserveScrollView:(UIScrollView *)scrollView {
-    [self.mainScrollView addObserveScrollView:scrollView];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview{

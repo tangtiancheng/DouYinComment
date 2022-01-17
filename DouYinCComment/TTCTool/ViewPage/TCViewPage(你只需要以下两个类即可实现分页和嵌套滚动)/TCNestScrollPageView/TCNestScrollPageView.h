@@ -25,7 +25,6 @@ typedef NS_ENUM(NSInteger, NestScrollPageViewType) {
 @property (nonatomic, assign) CGFloat yOffset;//往上滚动时头部的预留预期,默认为0;
 @property (nonatomic, assign) NestScrollPageViewType pageType;
 @property (nonatomic, assign) BOOL bounces;//是否保留TCMainScrollView的bounces,默认为YES
-@property (nonatomic, assign) BOOL scrolContinue;//是否支持header滚动延续  //(我自己写的滚动延续的原理和网上的不一样,我这边不要求改动你viewPage中各个控制器View的排版和层级, 做法是把要延续滚动的scrollView或者tableView或者collectionView的panGestureRecognizer取出来赋值给TCMainScrollView,这样你在拖拽header头部的时候也就相当于在拖拽下面的(scrollView或者tableView或者collectionView), 这样就能实现滚动延续了,而且尽可能的不侵入你的控制器代码)
 
 @end
 

@@ -24,11 +24,10 @@
 #import "Type4ViewControllerThird.h"
 #import "Type4ViewControllerFourth.h"
 #import "Type4ViewControllerFifth.h"
+
 #import "Type5ViewControllerFirst.h"
 
 #import "Type6ViewControllerFirst.h"
-
-#import "Type7ViewControllerFirst.h"
 
 static NSString *const cellIdentifier = @"cellIdentifier";
 
@@ -56,7 +55,7 @@ static NSString *const cellIdentifier = @"cellIdentifier";
 #pragma mark - UITableViewDataSource || UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 7;
+    return 6;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(section == 0) {
@@ -70,8 +69,6 @@ static NSString *const cellIdentifier = @"cellIdentifier";
     } else if(section == 4) {
         return 1;
     } else if(section == 5) {
-        return 1;
-    } else if(section == 6) {
         return 1;
     }
     return 0;
@@ -88,10 +85,8 @@ static NSString *const cellIdentifier = @"cellIdentifier";
     } else if(section == 3) {
         label.text = @"嵌套滚动(header不吸顶)";
     } else if(section == 4) {
-        label.text = @"Header滚动延续";
-    } else if(section == 5) {
         label.text = @"编辑标签";
-    } else if(section == 6) {
+    } else if(section == 5) {
         label.text = @"音乐播放界面";
     }
     return label;
@@ -139,13 +134,9 @@ static NSString *const cellIdentifier = @"cellIdentifier";
         }
     } else if(indexPath.section == 4) {
         if(indexPath.row == 0) {
-            cell.textLabel.text = @"header滚动延续";
-        }
-    } else if(indexPath.section == 5) {
-        if(indexPath.row == 0) {
             cell.textLabel.text = @"编辑标签";
         }
-    } else if(indexPath.section == 6) {
+    } else if(indexPath.section == 5) {
         if(indexPath.row == 0) {
             cell.textLabel.text = @"铃声多多音乐播放界面(类似豆瓣电影主页)(和酷我音乐播放界面一样支持侧滑和下拉返回)";
         }
@@ -211,11 +202,6 @@ static NSString *const cellIdentifier = @"cellIdentifier";
     } else if(indexPath.section == 5) {
         if(indexPath.row == 0) {
             Type6ViewControllerFirst *vc = [[Type6ViewControllerFirst alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-    } else if(indexPath.section == 6) {
-        if(indexPath.row == 0) {
-            Type7ViewControllerFirst *vc = [[Type7ViewControllerFirst alloc] init];
             [self.navigationController pushViewController:vc animated:NO];
         }
     }

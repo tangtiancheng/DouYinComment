@@ -27,7 +27,7 @@ pod 'TTCTool
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/TTCTransition.gif)
 
-## 3.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大)
+## 3.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大 )
 ### (1).支持边下边播
 ### (2).支持视频预加载
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/smallVideoImage.gif)

@@ -7,7 +7,7 @@ pod 'TTCTool
 分页: pod 'TTCTool/TCViewPage'  
 标签管理: pod 'TTCTool/TagChannelManager'  
 
-以下这些功能大部分都是我在"铃声多多"APP里已经用了,iOS端日活有70万左右,常年保持AppStore排行榜100多名,并不是让你们当小白鼠哈
+以下这些功能大部分都是我在"铃声多多"APP里已经用了,iOS端日活有70万左右, 常年保持AppStore排行榜100多名,并不是让你们当小白鼠哈
 
 这个Demo主要功能:
 

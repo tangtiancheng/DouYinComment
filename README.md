@@ -12,7 +12,7 @@ pod 'TTCTool
 这个Demo主要功能:
 
 ## 1.这个Demo有仿照抖音的小视频评论手势拖拽效果 (直接将TCCommentsPopView这个类拖入您的项目即可使用,很简单)
-可以说完全和抖音的效果一模一样, 该功能我已经在"铃声多多"项目中使用. 我在github,cocoachina,coco4app等网址上找了很久,都没有一个demo是能完全和抖音的一致的.如果觉得好用希望给一个star
+可以说完全和抖音的效果一模一样,该功能我已经在"铃声多多"项目中使用. 我在github,cocoachina,coco4app等网址上找了很久,都没有一个demo是能完全和抖音的一致的.如果觉得好用希望给一个star
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
 

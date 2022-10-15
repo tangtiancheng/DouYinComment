@@ -17,6 +17,37 @@
 @implementation AppDelegate
 
 
+//点击小组件响应这里
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
+{
+    //都已经到跳转了,说明代码没问题了,好歹我把demo写出来助人为乐了,不去帮我点个star就是你的不对了
+    UIViewController *vc = [[UIViewController alloc] init];
+    if([url.absoluteString isEqualToString:@"RingToneDD://Widget/1"]) {
+        //最热铃声
+        vc.title = @"最火铃声";
+        vc.view.backgroundColor = [UIColor redColor];
+    } else if([url.absoluteString isEqualToString:@"RingToneDD://Widget/2"]) {
+        //我的下载
+        vc.title = @"我的下载";
+        vc.view.backgroundColor = [UIColor yellowColor];
+    } else if([url.absoluteString isEqualToString:@"RingToneDD://Widget/3"]) {
+        //我的收藏
+        vc.title = @"我的收藏";
+        vc.view.backgroundColor = [UIColor purpleColor];
+    } else if([url.absoluteString isEqualToString:@"RingToneDD://Widget/4"]) {
+        //播放历史
+        vc.title = @"播放历史";
+        vc.view.backgroundColor = [UIColor blueColor];
+    } else if([url.absoluteString isEqualToString:@"RingToneDD://Widget/5"]) {
+        //进入我的一起听房间
+        vc.title = @"一起听房间";
+        vc.view.backgroundColor = [UIColor greenColor];
+    }
+        [(UINavigationController *)self.window.rootViewController pushViewController:vc animated:YES];
+    
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [IQKeyboardManager sharedManager].enable = NO;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;

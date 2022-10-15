@@ -32,7 +32,6 @@ struct RTDDData {
         list.append(.init(id:"3", title: "收藏铃声", desc: "我的收藏铃声", icon: "Mycollect", bg: "hotRingBacImg"))
         list.append(.init(id:"4", title: "最近播放", desc: "最近播放铃声", icon: "PlayHis", bg: "hotRingBacImg"))
         list.append(.init(id:"5", title: "一起听", desc: "我的一起听房间", icon: "yiqiting", bg: "hotRingBacImg"))
-
         return list
     }
     

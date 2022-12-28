@@ -58,6 +58,7 @@ pod 'TTCTool
 ### (5).headerView不吸顶,下拉变大
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/headerView不吸顶,下拉变大.gif)
 ### (6).Header滚动延续(实现方法和网上其它的不太一样,可以看看)
+https://github.com/tangtiancheng/DouYinComment/archive/refs/tags/0.0.7.zip 新版没了,老版本有实现代码
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/scrolContinue.gif)
 ### (7).标签编辑功能
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/editTag.gif)

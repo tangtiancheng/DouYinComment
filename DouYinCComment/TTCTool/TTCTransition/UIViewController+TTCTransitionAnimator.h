@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) TTCTransitionDelegate *ttcTransitionDelegate;
 
+//@property (nonatomic, strong) UIImageView *tabbarCaptureImageV;
+
 @end
 
 @interface UINavigationController (TTCTransitionAnimator)
@@ -22,5 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+@interface UIView (TTCTransitionAnimator)
+
+- (UIImage *)getCaptureImage;
+
+//push的时候如果需要hidesBottomBarWhenPushed,tabbar自己的push动画会对咱们得自定义转场照成很难看的干扰, 所以这时候咱们获取tabbar截图,把tabbar图片放到fromVC上,假装tabbar还在, 其实真的tabbar会hidden = YES隐藏掉,等转场动画完毕再把hidden = NO
++ (UIImageView *)getTabbarCaptureImageVFromViewController:(UIViewController *)fromVC
+                                         toViewController:(UIViewController *)toVC;
+@end
 
 NS_ASSUME_NONNULL_END

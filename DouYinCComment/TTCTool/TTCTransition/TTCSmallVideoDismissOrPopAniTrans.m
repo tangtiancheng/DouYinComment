@@ -16,13 +16,19 @@
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
-   
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
 
     
-    UIView *containerView = [transitionContext containerView];
+    UITabBar *tabBar;
+    if(self.tabbarCaptureImageV) {
+        [toVC.view addSubview:self.tabbarCaptureImageV];
+        tabBar = fromVC.tabBarController.tabBar;
+        tabBar.hidden = YES;
+    }
     
+    
+    UIView *containerView = [transitionContext containerView];
     CGRect finalFrame;
     CGRect initialFrame;
     initialFrame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -33,16 +39,12 @@
     NSLog(@"%@",containerView.subviews);
     [containerView insertSubview:self.maskView belowSubview:fromVC.view];
     [containerView insertSubview:toVC.view belowSubview:self.maskView];
-
     if(self.smalCurPlayCell && self.smalCurPlayCell.superview) {
         finalFrame = [self.smalCurPlayCell.superview convertRect:self.smalCurPlayCell.frame toView:[UIApplication sharedApplication].delegate.window];
     }
-    
     NSTimeInterval duration = [self transitionDuration:transitionContext];
-
     fromVC.view.alpha = 1;
     self.smalCurPlayCell.alpha = 0.0;
-    
     [UIView animateWithDuration:duration
                      animations:^{
         fromVC.view.transform = CGAffineTransformMakeScale(finalFrame.size.width/ initialFrame.size.width,  finalFrame.size.height/initialFrame.size.height);
@@ -52,9 +54,14 @@
         self.smalCurPlayCell.alpha = 1.0;
     } completion:^(BOOL finished) {
         [self.maskView removeFromSuperview];
+        if(self.tabbarCaptureImageV) {
+            [self.tabbarCaptureImageV removeFromSuperview];
+            tabBar.hidden = NO;
+        }
         BOOL iscancel = [transitionContext transitionWasCancelled];
         [transitionContext completeTransition:!iscancel];
-
+        
+        
     }];
 }
 

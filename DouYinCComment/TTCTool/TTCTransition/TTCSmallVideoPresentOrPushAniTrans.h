@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) UIViewController *fromVC;
 @property (nonatomic, weak) UIViewController *toVC;
 
+@property (nonatomic, weak) UIImageView *tabbarCaptureImageV;
+
 
 @end
 

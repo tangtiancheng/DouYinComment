@@ -189,6 +189,9 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
        
         self.ttcTransitionDelegate.smalCurPlayCell = [self.delegate smallVideoPlayIndex:self.currentPlayIndex];
     }
+    
+   
+    
 }
 
 - (CGFloat)deviceFreeMemorySize {
@@ -255,6 +258,8 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
    
     CommentsPopView *popView = [[CommentsPopView alloc] initWithSmallVideoModel:smallVideoModel];
     [popView showToView:self.view];
+    
+
 }
 
 
@@ -265,6 +270,7 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
     [self.preloadVideoPlayerManager resetPlayer];
     if(self.navigationController) {
         [self.navigationController popViewControllerAnimated:YES];
+//        [self.navigationController popToRootViewControllerAnimated:YES];
 
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];

@@ -23,7 +23,14 @@
 // This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
 //这个函数用来处理具体的动画效果
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-   
+
+    if(self.tabbarCaptureImageV) {
+        [self.fromVC.view addSubview:self.tabbarCaptureImageV];
+        UITabBar *tabBar = self.fromVC.tabBarController.tabBar;
+        tabBar.hidden = YES;
+    }
+    
+    
     NSLog(@"%@",[transitionContext containerView].subviews);
     UIView *containerView = [transitionContext containerView];
     
@@ -57,7 +64,11 @@
             [self.maskView removeFromSuperview];
             [containerView insertSubview:self.fromVC.view belowSubview:self.toVC.view];
         });
+        if(self.tabbarCaptureImageV) {
+            [self.tabbarCaptureImageV removeFromSuperview];
+        }
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+
     }];
     
 
@@ -65,6 +76,17 @@
 
 - (void)dealloc {
     NSLog(@"%@销毁了",self);
+}
+
+
+
+
+- (UIImage *)getCaptureWithView:(UIView *)view {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, UIScreen.mainScreen.scale);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 @end

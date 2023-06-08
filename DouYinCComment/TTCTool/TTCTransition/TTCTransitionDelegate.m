@@ -36,6 +36,9 @@
 @property (nonatomic, assign) CGFloat lastDrapDistance;
 
 
+@property (nonatomic, strong) UIImageView *tabbarCaptureImageV;
+
+
 @end
 
 @implementation TTCTransitionDelegate
@@ -50,13 +53,16 @@
 }
 
 
-//这个是push的
+#pragma mark - 这个是push的
 - (nullable id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                            toViewController:(UIViewController *)toVC  API_AVAILABLE(ios(7.0)) {
+
     self.navigationController = navigationController;
     if(operation == UINavigationControllerOperationPush) {
+        
+        self.tabbarCaptureImageV = [UIView getTabbarCaptureImageVFromViewController:fromVC toViewController:toVC];
         TTCSmallVideoPresentOrPushAniTrans *presentOrPushAniTrans = [[TTCSmallVideoPresentOrPushAniTrans alloc] init];
         presentOrPushAniTrans.duration = self.duration;
         self.presentOrPushAniTrans = presentOrPushAniTrans;
@@ -65,16 +71,20 @@
         [self prepareGestureRecognizerInView:toVC.view];
         presentOrPushAniTrans.fromVC = fromVC;
         presentOrPushAniTrans.toVC = toVC;
+        presentOrPushAniTrans.tabbarCaptureImageV = self.tabbarCaptureImageV;
         self.fromVC = fromVC;
         self.toVC = toVC;
         return presentOrPushAniTrans;
+        
     } else if(operation == UINavigationControllerOperationPop) {
         TTCSmallVideoDismissOrPopAniTrans *dismissOrPopAniTrans = [[TTCSmallVideoDismissOrPopAniTrans alloc] init];
         dismissOrPopAniTrans.duration = self.duration;
         self.dismissOrPopAniTrans = dismissOrPopAniTrans;
         dismissOrPopAniTrans.smalCurPlayCell = self.smalCurPlayCell;
         dismissOrPopAniTrans.maskView = self.maskView;
+        dismissOrPopAniTrans.tabbarCaptureImageV = self.tabbarCaptureImageV;
         return dismissOrPopAniTrans;
+        
     } else {
         return nil;
     }
@@ -82,7 +92,11 @@
 
 
 
-//这个是present
+
+
+
+
+#pragma mark - 这个是present的
 /// 这个函数用来设置当执行present方法时进行的转场动画
 /// @param presented 要弹出的Controller
 /// @param presenting 当前的Controller
@@ -113,7 +127,7 @@
 }
 
 
-
+#pragma mark - PanGesture
 - (void)setSmalCurPlayCell:(UIView *)smalCurPlayCell {
     _smalCurPlayCell.alpha = 1;
     if(_smalCurPlayCell) {
@@ -122,7 +136,6 @@
     _smalCurPlayCell = smalCurPlayCell;
     self.presentOrPushAniTrans.smalCurPlayCell = smalCurPlayCell;
     self.dismissOrPopAniTrans.smalCurPlayCell = smalCurPlayCell;
-
 }
 
 - (void)prepareGestureRecognizerInView:(UIView*)view {
@@ -135,58 +148,44 @@
 
 - (void)handleGesture:(UIPanGestureRecognizer *)gestureRecognizer {
     CGPoint translation = [gestureRecognizer translationInView:self.panGesView.superview];
-
-    //    if(!_interacting && (translation.x < 0 || translation.y < 0 || translation.x < translation.y)) {
-    //        return;
-    //    }
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStateBegan:
-            //            _interacting = YES;
-            
             [self.panGesView.superview insertSubview:self.maskView belowSubview:self.panGesView];
             self.maskView.alpha = 1;
+            
+            if(self.tabbarCaptureImageV) {
+                [self.fromVC.view addSubview:self.tabbarCaptureImageV];
+            }
             
             break;
         case UIGestureRecognizerStateChanged: {
             CGFloat progressX = fabs(translation.x / SCREEN_WIDTH);
             CGFloat progressY = fabs(translation.y / SCREEN_HEIGHT);
             CGFloat progress = MAX(progressX, progressY);
-            
             CGFloat ratio = 1.0f - progress*0.5f;
-            
-            //            [self.panGesView setCenter:CGPointMake(self.viewCenter.x + translation.x * (1.0f - fabs(progressX)*0.5f), self.viewCenter.y + translation.y * (1.0f - fabs(progressY)*0.5f))];
-            
             self.panGesView.transform = CGAffineTransformMakeScale(ratio, ratio);
             self.panGesView.frame = CGRectMake(self.startTapPoint.x + translation.x - ratio * self.startTapPoint.x, self.startTapPoint.y + translation.y - ratio * self.startTapPoint.y, self.viewFrame.size.width * ratio, self.viewFrame.size.height * ratio);
             self.maskView.alpha = 1 - progress;
-            
             break;
         }
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStateEnded:{
             CGFloat progress = translation.x / SCREEN_WIDTH;
             if(self.lastDrapDistance < -10) {
+                //往左轻扫
                 [self viewResetToIdentifier];
-
             } else {
                 if (progress <= 0.25) {
                     if(self.lastDrapDistance > 10) {
-                        //如果是类似轻扫的那种
+                        //往右轻扫
                         [self popVC];
-
                     } else {
                         [self viewResetToIdentifier];
                     }
                 } else {
-                    //                _interacting = NO;
-                    //                [self finishInteractiveTransition];
-                    //                [_presentingVC dismissViewControllerAnimated:YES completion:nil];
-//                    [GetAppDelegate().globalNaviatrionController popViewControllerAnimated:YES];
                     [self popVC];
                 }
             }
-            
-            
             break;
         }
         default:
@@ -197,6 +196,7 @@
 }
 
 - (void)viewResetToIdentifier {
+    
     [UIView animateWithDuration:self.duration
                      animations:^{
         [self.panGesView setCenter:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)];
@@ -204,8 +204,12 @@
         self.maskView.alpha = 1;
     } completion:^(BOOL finished) {
         [self.maskView removeFromSuperview];
+        if(self.tabbarCaptureImageV) {
+            [self.tabbarCaptureImageV removeFromSuperview];
+        }
     }];
 }
+
 - (void)popVC {
     if(self.navigationController) {
         [self.navigationController popViewControllerAnimated:YES];
@@ -219,6 +223,7 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
 {
+    //一开始就往左滑动直接忽略本次手势
     self.startTapPoint = [gestureRecognizer locationInView:self.panGesView.superview];
     CGPoint translationLog = [gestureRecognizer translationInView:self.panGesView.superview];
     if(translationLog.x < 0) {
@@ -230,7 +235,7 @@
 - (UIView *)maskView {
     if(!_maskView) {
         _maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        _maskView.backgroundColor = RGBA(0, 0, 0, 0.9);//[UIColor redColor];
+        _maskView.backgroundColor = RGBA(0, 0, 0, 0.9);
     }
     return _maskView;
 }

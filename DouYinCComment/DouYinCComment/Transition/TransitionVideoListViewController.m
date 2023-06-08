@@ -13,7 +13,6 @@
 #import "TTCCom.h"
 #import "Masonry.h"
 #import "TransitionSmallVideoPlayViewController.h"
-
 #import "UIViewController+TTCTransitionAnimator.h"
 #import "TTCTransitionDelegate.h"
 
@@ -91,13 +90,15 @@ static NSString* const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
     smallVideoPlayViewController.currentPlayIndex = indexPath.row;
     smallVideoPlayViewController.delegate = self;
     smallVideoPlayViewController.ttcTransitionDelegate = [[TTCTransitionDelegate alloc] init];
-
     
     if(indexPath.item % 2 == 0) {
+        smallVideoPlayViewController.hidesBottomBarWhenPushed = YES;
+
         [self.navigationController pushViewController:smallVideoPlayViewController animated:YES];
     } else {
         smallVideoPlayViewController.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:smallVideoPlayViewController animated:YES completion:nil];
+        
     }
 }
 

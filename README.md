@@ -23,13 +23,13 @@ pod 'TTCTool
     3.然后在videDidLoad方法中调用getpanPushToViewController:方法, block返回你的个人主页控制器类  
      不会侵入你自己的原有代码,详细看demo 
      
-     ```
+     
     [self getpanPushToViewController:^UIViewController * _Nonnull{
         //这个应该是你的个人主页控制器
         Type4ViewControllerThird *vc = [[Type4ViewControllerThird alloc] init];
         return vc;
     }];
-    ```
+    
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/panPush.gif)
 

@@ -13,6 +13,7 @@
 #import "RootViewPageViewController.h"
 #import "TransitionVideoListViewController.h"
 #import "ReactiveObjC.h"
+#import "DouyinTabBarController.h"
 
 @interface RootViewController ()
 
@@ -51,10 +52,16 @@
     UIButton *transitionbtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 400, 150, 100)];
     [self.view addSubview:transitionbtn];
     [transitionbtn setBackgroundColor:[UIColor redColor]];
-    [transitionbtn setTitle:@"转场动画" forState:UIControlStateNormal];
+    [transitionbtn setTitle:@"视频播放转场动画" forState:UIControlStateNormal];
     [transitionbtn addTarget:self action:@selector(transition) forControlEvents:UIControlEventTouchUpInside];
     
     
+    UIButton *panPushbtn = [[UIButton alloc] initWithFrame:CGRectMake(210, 400, 150, 100)];
+    [self.view addSubview:panPushbtn];
+    panPushbtn.titleLabel.numberOfLines = 0;
+    [panPushbtn setBackgroundColor:[UIColor redColor]];
+    [panPushbtn setTitle:@"抖音首页左滑进入个人主页" forState:UIControlStateNormal];
+    [panPushbtn addTarget:self action:@selector(panPush) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -85,5 +92,12 @@
     
 }
 
+- (void)panPush {
+    DouyinTabBarController *vc = [[DouyinTabBarController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
 
 @end

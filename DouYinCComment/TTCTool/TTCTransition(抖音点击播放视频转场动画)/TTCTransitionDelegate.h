@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TTCTransitionDelegate : NSObject<UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
 
+
 @property (nonatomic, weak) UIView *smalCurPlayCell;
 
 

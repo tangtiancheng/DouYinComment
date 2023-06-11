@@ -60,8 +60,6 @@
         }
         BOOL iscancel = [transitionContext transitionWasCancelled];
         [transitionContext completeTransition:!iscancel];
-        
-        
     }];
 }
 

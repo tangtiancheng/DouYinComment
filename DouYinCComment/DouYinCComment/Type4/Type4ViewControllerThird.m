@@ -30,10 +30,25 @@
 
 @implementation Type4ViewControllerThird
 
+- (instancetype)init {
+    if(self = [super init]) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    static dispatch_once_t onceToken;
+        self.navigationController.navigationBar.hidden = YES;
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
 - (void)viewWillDisappear:(BOOL)animated{
@@ -140,4 +155,9 @@
 - (void)backClick{
     [self.navigationController popViewControllerAnimated:true];
 }
+
+- (void)dealloc {
+    
+}
+
 @end

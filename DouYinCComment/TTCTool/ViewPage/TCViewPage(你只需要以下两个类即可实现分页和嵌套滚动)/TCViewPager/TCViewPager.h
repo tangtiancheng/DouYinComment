@@ -51,7 +51,10 @@ typedef void (^TC_VP_EditTagBlock)();
 @property (nonatomic, assign)CGFloat pageHeaderHeight;
 //顶部pageHeaderControl滚动条最左边按钮距离左边的间距 最右边按钮距离右边的间距
 @property (nonatomic, assign)CGFloat leftAndRightSpace;
-
+//顶部pageHeaderControl滚动条是否置于scrollView顶上 //默认是YES
+@property (nonatomic, assign) BOOL pageHeaderControlStayInTop;
+//如果pageHeaderControl滚动条不是置于scrollView顶上,那么top与上方的距离
+@property (nonatomic, assign) CGFloat pageHeaderControlStaySpaceWithTop;
 
 //顶部pageHeaderControl底下的渐变层 //默认为YES
 @property (nonatomic, assign)BOOL showBottomGradientLayer ;

@@ -15,6 +15,9 @@
 #import "TTCCom.h"
 #import "TTCTransitionDelegate.h"
 
+
+
+
 static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 
 
@@ -34,6 +37,7 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -80,12 +84,10 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.currentPlayIndex inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self playIndex:self.currentPlayIndex];
         if(self.modelArray.count > (self.currentPlayIndex + 1)) {
             [self preLoadIndex:self.currentPlayIndex + 1];
         }
-//    });
     
     UIButton *btn = [[UIButton alloc] init];
     [self.view addSubview:btn];
@@ -97,6 +99,9 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
         make.size.mas_equalTo(CGSizeMake(60, 64));
     }];
     
+    
+   
+   
 }
 
 #pragma mrak - UITableViewDataSource & UITableViewDelegate
@@ -270,7 +275,6 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
     [self.preloadVideoPlayerManager resetPlayer];
     if(self.navigationController) {
         [self.navigationController popViewControllerAnimated:YES];
-//        [self.navigationController popToRootViewControllerAnimated:YES];
 
     } else {
         [self dismissViewControllerAnimated:YES completion:nil];

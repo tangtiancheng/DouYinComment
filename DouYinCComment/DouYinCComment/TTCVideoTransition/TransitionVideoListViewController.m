@@ -35,6 +35,12 @@ static NSString* const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
     [super viewDidLoad];
     [self setupBaseView];
     [self loadData];
+    
+//    [self getpanPushToViewController:^UIViewController * _Nonnull{
+//        //这个应该是你的个人主页控制器
+//        Type4ViewControllerThird *vc = [[Type4ViewControllerThird alloc] init];
+//        return vc;
+//    }];
 }
 
 #pragma mark - SetupBase
@@ -57,6 +63,8 @@ static NSString* const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
         make.top.left.right.bottom.with.offset(0);
     }];
     [self loadData];
+    
+    
 }
 
 
@@ -95,6 +103,7 @@ static NSString* const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
         smallVideoPlayViewController.hidesBottomBarWhenPushed = YES;
 
         [self.navigationController pushViewController:smallVideoPlayViewController animated:YES];
+        NSLog(@"123");
     } else {
         smallVideoPlayViewController.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:smallVideoPlayViewController animated:YES completion:nil];

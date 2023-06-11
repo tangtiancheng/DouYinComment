@@ -46,7 +46,7 @@
     self.selectedLabelBigScale = 1.0;
     self.labelFont = [UIFont systemFontOfSize:15];
     self.pageHeaderHeight = 40;
-    
+    self.pageHeaderControlStayInTop = YES;
     self.showBottomGradientLayer = YES;
     self.bottomGradientH = 6;
     self.bottomGradientColorArr = @[MYRGBACOLOR(239,242,241,1), MYRGBACOLOR(239,242,241,0.0)];
@@ -386,7 +386,7 @@
     if(self.scrollView) return;
     CGRect rect = self.bounds;
     self.backgroundColor = self.param.viewPagerBgColor;
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.param.pageHeaderHeight, self.width, self.height - self.param.pageHeaderHeight)];
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.param.pageHeaderControlStayInTop ?  self.param.pageHeaderHeight : self.param.pageHeaderControlStayInTop, self.width, self.height - (self.param.pageHeaderControlStayInTop ? self.param.pageHeaderHeight : self.param.pageHeaderControlStayInTop))];
     if(@available(iOS 11.0, *)){
         self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//UIScrollView也适用
     } else {
@@ -399,7 +399,7 @@
     self.scrollView.directionalLockEnabled = YES;
     self.scrollView.bounces = NO;
     self.scrollView.backgroundColor = self.param.viewPagerBgColor;
-    self.pageHeaderControl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.param.canEdit ? self.width - EditBtnW : self.width, self.param.pageHeaderHeight)];
+    self.pageHeaderControl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.param.pageHeaderControlStaySpaceWithTop, self.param.canEdit ? self.width - EditBtnW : self.width, self.param.pageHeaderHeight)];
     self.pageHeaderControl.backgroundColor = self.param.viewPagerBgColor;
     self.pageHeaderControl.showsHorizontalScrollIndicator = NO;
     [self addSubview:self.scrollView];
@@ -435,7 +435,8 @@
         for(NSInteger j = 0; j < i; j++) {
             pageframe.origin.x = pageframe.origin.x + self.param.titlePageSpace + [self.param.titleArrayLength[j] floatValue];
         }
-        
+        pageframe.origin.y = 0;
+
         //创建菜单按钮
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -489,7 +490,7 @@
         pageContentSizeWidth = pageContentSizeWidth + [self.param.titleArrayLength[i] floatValue];
     }
     self.pageHeaderControl.contentSize = CGSizeMake(pageContentSizeWidth >= self.pageHeaderControl.width ? pageContentSizeWidth : self.pageHeaderControl.width, 0);
-    [self.scrollView setContentSize:CGSizeMake(rect.size.width * self.views.count + 1, 0)];
+    [self.scrollView setContentSize:CGSizeMake(rect.size.width * self.views.count , 0)];
     self.scrollView.delegate = self;
     self.scrollView.contentOffset = CGPointMake(self.width*self.param.selectIndex, 0);
     if(self.views.count) {

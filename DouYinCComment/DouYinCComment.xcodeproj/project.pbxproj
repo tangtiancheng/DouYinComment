@@ -58,6 +58,9 @@
 		790F1534225DED17000E7335 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F1529225DED16000E7335 /* MASConstraint.m */; };
 		790F1535225DED17000E7335 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F152B225DED16000E7335 /* MASViewConstraint.m */; };
 		790F1536225DED17000E7335 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F152C225DED16000E7335 /* MASViewAttribute.m */; };
+		7928C0662A358EF600CD844A /* DouyinTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7928C0652A358EF600CD844A /* DouyinTabBarController.m */; };
+		7928C0692A35A29600CD844A /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7928C0682A35A29600CD844A /* HomePageViewController.m */; };
+		7928C06C2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7928C06B2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m */; };
 		792EB91526C11F7400B94076 /* UIView+EasyFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 792EB91326C11F7400B94076 /* UIView+EasyFrame.m */; };
 		792EBAF826C1220B00B94076 /* NSFileHandle+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 792EBA3026C1220A00B94076 /* NSFileHandle+RACSupport.m */; };
 		792EBAF926C1220B00B94076 /* NSNotificationCenter+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 792EBA3326C1220A00B94076 /* NSNotificationCenter+RACSupport.m */; };
@@ -329,6 +332,9 @@
 		795DB8D8229E876A003AFE44 /* CommentMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB8D6229E876A003AFE44 /* CommentMessageCell.m */; };
 		795DB93E229E8844003AFE44 /* CommentInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB93C229E8844003AFE44 /* CommentInputView.m */; };
 		795DB941229E9459003AFE44 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 795DB940229E9459003AFE44 /* NSDate+Helper.m */; };
+		7997030C2A3317E700D7CADA /* TTCPanPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 7997030B2A3317E700D7CADA /* TTCPanPushAniTrans.m */; };
+		7997030F2A331FDA00D7CADA /* UIViewController+TTCPanPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 7997030E2A331FDA00D7CADA /* UIViewController+TTCPanPush.m */; };
+		799703122A33298D00D7CADA /* TTCPanPushTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 799703112A33298D00D7CADA /* TTCPanPushTransitionDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -455,6 +461,12 @@
 		790F152A225DED16000E7335 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		790F152B225DED16000E7335 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		790F152C225DED16000E7335 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		7928C0642A358EF600CD844A /* DouyinTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DouyinTabBarController.h; sourceTree = "<group>"; };
+		7928C0652A358EF600CD844A /* DouyinTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DouyinTabBarController.m; sourceTree = "<group>"; };
+		7928C0672A35A29600CD844A /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		7928C0682A35A29600CD844A /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		7928C06A2A35D56700CD844A /* PanPushSmallVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanPushSmallVideoPlayViewController.h; sourceTree = "<group>"; };
+		7928C06B2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanPushSmallVideoPlayViewController.m; sourceTree = "<group>"; };
 		792EB91326C11F7400B94076 /* UIView+EasyFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EasyFrame.m"; sourceTree = "<group>"; };
 		792EB91426C11F7400B94076 /* UIView+EasyFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyFrame.h"; sourceTree = "<group>"; };
 		792EBA3026C1220A00B94076 /* NSFileHandle+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+RACSupport.m"; sourceTree = "<group>"; };
@@ -1016,6 +1028,12 @@
 		795DB93D229E8844003AFE44 /* CommentInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentInputView.h; sourceTree = "<group>"; };
 		795DB93F229E9459003AFE44 /* NSDate+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		795DB940229E9459003AFE44 /* NSDate+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		7997030A2A3317E700D7CADA /* TTCPanPushAniTrans.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTCPanPushAniTrans.h; sourceTree = "<group>"; };
+		7997030B2A3317E700D7CADA /* TTCPanPushAniTrans.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTCPanPushAniTrans.m; sourceTree = "<group>"; };
+		7997030D2A331FDA00D7CADA /* UIViewController+TTCPanPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TTCPanPush.h"; sourceTree = "<group>"; };
+		7997030E2A331FDA00D7CADA /* UIViewController+TTCPanPush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TTCPanPush.m"; sourceTree = "<group>"; };
+		799703102A33298D00D7CADA /* TTCPanPushTransitionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTCPanPushTransitionDelegate.h; sourceTree = "<group>"; };
+		799703112A33298D00D7CADA /* TTCPanPushTransitionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTCPanPushTransitionDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1057,19 +1075,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3373FD60272BAD98006EA17A /* Transition */ = {
+		3373FD60272BAD98006EA17A /* TTCVideoTransition */ = {
 			isa = PBXGroup;
 			children = (
-				3373FD88272EA3E3006EA17A /* TTCTransition */,
+				3373FD88272EA3E3006EA17A /* TTCTransition(抖音点击播放视频转场动画) */,
 				3373FD61272BDEDC006EA17A /* TransitionVideoListViewController.h */,
 				3373FD62272BDEDC006EA17A /* TransitionVideoListViewController.m */,
 				3373FD6E272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.h */,
 				3373FD6F272BEF3F006EA17A /* TransitionSmallVideoPlayViewController.m */,
 			);
-			path = Transition;
+			path = TTCVideoTransition;
 			sourceTree = "<group>";
 		};
-		3373FD88272EA3E3006EA17A /* TTCTransition */ = {
+		3373FD88272EA3E3006EA17A /* TTCTransition(抖音点击播放视频转场动画) */ = {
 			isa = PBXGroup;
 			children = (
 				3373FD8A272EA3E3006EA17A /* TTCTransitionDelegate.h */,
@@ -1081,8 +1099,8 @@
 				3373FD90272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.h */,
 				3373FD8C272EA3E3006EA17A /* UIViewController+TTCTransitionAnimator.m */,
 			);
-			name = TTCTransition;
-			path = TTCTool/TTCTransition;
+			name = "TTCTransition(抖音点击播放视频转场动画)";
+			path = "TTCTool/TTCTransition(抖音点击播放视频转场动画)";
 			sourceTree = SOURCE_ROOT;
 		};
 		33BF7EEF28FB26C900CA4292 /* RecommendWidget */ = {
@@ -1134,10 +1152,11 @@
 				792EBB5826C12EE000B94076 /* TTCCom.h */,
 				793D5DB726C060C500DFC4FB /* TTCTool.podspec */,
 				793D5C0F26BFE74F00DFC4FB /* CommentMethod */,
-				793D5B5526BFE74E00DFC4FB /* ViewPage */,
 				795DB589229D33EB003AFE44 /* DouYinPlay */,
 				793D5C0026BFE74F00DFC4FB /* UploadToGarageBand */,
-				3373FD60272BAD98006EA17A /* Transition */,
+				793D5B5526BFE74E00DFC4FB /* ViewPage */,
+				3373FD60272BAD98006EA17A /* TTCVideoTransition */,
+				7928C0632A358B0F00CD844A /* DouyinPanPush */,
 				795DB584229D3355003AFE44 /* RootViewController.h */,
 				795DB585229D3355003AFE44 /* RootViewController.m */,
 				790F14D7225CF98F000E7335 /* AppDelegate.h */,
@@ -1183,6 +1202,20 @@
 				790F151E225DED16000E7335 /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		7928C0632A358B0F00CD844A /* DouyinPanPush */ = {
+			isa = PBXGroup;
+			children = (
+				799703092A3314A300D7CADA /* TTCPanPushTransition(抖音左滑进入个人主页转场动画) */,
+				7928C0642A358EF600CD844A /* DouyinTabBarController.h */,
+				7928C0652A358EF600CD844A /* DouyinTabBarController.m */,
+				7928C0672A35A29600CD844A /* HomePageViewController.h */,
+				7928C0682A35A29600CD844A /* HomePageViewController.m */,
+				7928C06A2A35D56700CD844A /* PanPushSmallVideoPlayViewController.h */,
+				7928C06B2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m */,
+			);
+			path = DouyinPanPush;
 			sourceTree = "<group>";
 		};
 		792EBA2F26C1220A00B94076 /* ReactiveObjC */ = {
@@ -2251,6 +2284,19 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		799703092A3314A300D7CADA /* TTCPanPushTransition(抖音左滑进入个人主页转场动画) */ = {
+			isa = PBXGroup;
+			children = (
+				799703102A33298D00D7CADA /* TTCPanPushTransitionDelegate.h */,
+				799703112A33298D00D7CADA /* TTCPanPushTransitionDelegate.m */,
+				7997030A2A3317E700D7CADA /* TTCPanPushAniTrans.h */,
+				7997030B2A3317E700D7CADA /* TTCPanPushAniTrans.m */,
+				7997030D2A331FDA00D7CADA /* UIViewController+TTCPanPush.h */,
+				7997030E2A331FDA00D7CADA /* UIViewController+TTCPanPush.m */,
+			);
+			path = "TTCPanPushTransition(抖音左滑进入个人主页转场动画)";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2419,6 +2465,7 @@
 				792EBB5126C1220B00B94076 /* RACCommand.m in Sources */,
 				3373FD91272EA3E3006EA17A /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */,
 				792EBB1426C1220B00B94076 /* NSString+RACSupport.m in Sources */,
+				7997030F2A331FDA00D7CADA /* UIViewController+TTCPanPush.m in Sources */,
 				795DB5C0229D3D69003AFE44 /* SDImageCache.m in Sources */,
 				792EBB3A26C1220B00B94076 /* UIGestureRecognizer+RACSignalSupport.m in Sources */,
 				795DB8D8229E876A003AFE44 /* CommentMessageCell.m in Sources */,
@@ -2450,6 +2497,7 @@
 				792EBB2026C1220B00B94076 /* RACBlockTrampoline.m in Sources */,
 				793D5D2E26C0136000DFC4FB /* UIView+ZJFrame.m in Sources */,
 				792EBB0E26C1220B00B94076 /* RACChannel.m in Sources */,
+				7997030C2A3317E700D7CADA /* TTCPanPushAniTrans.m in Sources */,
 				792EBB2926C1220B00B94076 /* UIDatePicker+RACSignalSupport.m in Sources */,
 				795DB618229E2FA1003AFE44 /* KTVHCPathTool.m in Sources */,
 				793D5C4626BFE74F00DFC4FB /* TagBtn.m in Sources */,
@@ -2603,6 +2651,7 @@
 				792EBB5326C1220B00B94076 /* RACImmediateScheduler.m in Sources */,
 				795DB75D229E372F003AFE44 /* ZFBrightnessView.m in Sources */,
 				795DB66B229E300D003AFE44 /* DDData.m in Sources */,
+				7928C06C2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m in Sources */,
 				792EBB0226C1220B00B94076 /* UISwitch+RACSignalSupport.m in Sources */,
 				795DB665229E300D003AFE44 /* WebSocket.m in Sources */,
 				792EBB5726C1220B00B94076 /* NSControl+RACTextSignalSupport.m in Sources */,
@@ -2639,9 +2688,11 @@
 				792EBB3B26C1220B00B94076 /* NSInvocation+RACTypeParsing.m in Sources */,
 				793D5D2326C0136000DFC4FB /* UICollectionView+MyCol.m in Sources */,
 				793D5D1726C0135F00DFC4FB /* MJRefreshNormalHeader.m in Sources */,
+				7928C0692A35A29600CD844A /* HomePageViewController.m in Sources */,
 				792EBB1726C1220B00B94076 /* RACKVOTrampoline.m in Sources */,
 				795DB61D229E2FA1003AFE44 /* KTVHCDataResponse.m in Sources */,
 				793D5D1326C0135F00DFC4FB /* MJRefreshAutoGifFooter.m in Sources */,
+				799703122A33298D00D7CADA /* TTCPanPushTransitionDelegate.m in Sources */,
 				795DB5B9229D3D69003AFE44 /* SDWebImageDecoder.m in Sources */,
 				793D5D3F26C0136000DFC4FB /* TopBackContentView.m in Sources */,
 				795DB5C4229D3D69003AFE44 /* NSImage+WebCache.m in Sources */,
@@ -2650,6 +2701,7 @@
 				793D5D3E26C0136000DFC4FB /* PlayToolBackView.m in Sources */,
 				793D5D1826C0135F00DFC4FB /* MJRefreshStateHeader.m in Sources */,
 				792EBB2E26C1220B00B94076 /* RACPassthroughSubscriber.m in Sources */,
+				7928C0662A358EF600CD844A /* DouyinTabBarController.m in Sources */,
 				792EBAF826C1220B00B94076 /* NSFileHandle+RACSupport.m in Sources */,
 				795DB765229E372F003AFE44 /* ZFPlayerView.m in Sources */,
 				795DB722229E372F003AFE44 /* UITabBarController+ZFPlayerRotation.m in Sources */,

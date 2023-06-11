@@ -16,7 +16,24 @@ pod 'TTCTool
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
 
-## 2.抖音转场动画(github上其它demo并未做到和抖音一样,或者完全侵入你的代码,让你要改很多东西,所以我自己封装了一个, 我自己觉得写的还行,只需将TTCTransition文件夹拖入你的项目,然后添加两行代码就行,希望大佬们多提意见)
+## 2.一行代码实现仿抖音左滑Push进个人主页功能
+  一行代码实现仿抖音 左滑 push进入个人主页,  
+    1.把TTCPanPushTransition文件夹拖入你的项目中,  
+    2.在需要push的控制器类中  #import "UIViewController+TTCPanPush.h"  
+    3.然后在videDidLoad方法中调用getpanPushToViewController:方法, block返回你的个人主页控制器类  
+     不会侵入你自己的原有代码,详细看demo 
+     
+     ```
+    [self getpanPushToViewController:^UIViewController * _Nonnull{
+        //这个应该是你的个人主页控制器
+        Type4ViewControllerThird *vc = [[Type4ViewControllerThird alloc] init];
+        return vc;
+    }];
+    ```
+
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/panPush.gif)
+
+## 3.抖音视频播放转场动画(github上其它demo并未做到和抖音一样,或者耦合度太高需要侵入你的代码,让你改很多东西才能实现,我自己封装了一个,只需将TTCTransition文件夹拖入你的项目,然后添加两行代码就行,完全不需要侵入修改你原有的代码. 希望大佬们多提意见)
 一行或者两行代码实现抖音视频播放转场动画,支持push和present,两行代码脑残式操作,自己看下代码
 首先将TTCTransition文件夹拖入你的项目中,
 #import "TTCTransitionDelegate.h"
@@ -27,19 +44,7 @@ pod 'TTCTool
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/TTCTransition.gif)
 
-## 3.一行代码实现仿抖音左滑Push进个人主页功能
-     一行代码实现仿抖音 左滑 push进入个人主页,
-    1.把TTCPanPushTransition文件夹拖入你的项目中,
-    2.在需要push的控制器类中  #import "UIViewController+TTCPanPush.h"
-    3.然后在videDidLoad方法中调用getpanPushToViewController:方法, block返回你的个人主页控制器类
-     不会侵入你自己的原有代码,详细看demo
-    [self getpanPushToViewController:^UIViewController * _Nonnull{
-        //这个应该是你的个人主页控制器
-        Type4ViewControllerThird *vc = [[Type4ViewControllerThird alloc] init];
-        return vc;
-    }];
 
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/panPush.gif)
 
 ## 4.仿照网易云iOS写了可编辑小组件Widget功能,网上也有很多博客写了,但是不知道为啥不提供Demo,我这边就偷懒不写简书了,只提供Demo,和网易云一样,可编辑列表选项,需要注意的细节在demo里也写了,自己去跑起来看吧
 

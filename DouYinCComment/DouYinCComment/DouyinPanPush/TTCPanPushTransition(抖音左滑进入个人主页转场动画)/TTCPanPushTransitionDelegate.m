@@ -83,8 +83,8 @@
 - (void)handlepanPushGesture:(UIPanGestureRecognizer *)gestureRecognizer {
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view.superview];
     CGFloat scale = -translation.x / [UIScreen mainScreen].bounds.size.width;
-    CGFloat velocity = [gestureRecognizer velocityInView:gestureRecognizer.view.superview].x;
-    NSLog(@"132 %lf %ld %lf",translation.x,gestureRecognizer.state,velocity);
+//    CGFloat velocity = [gestureRecognizer velocityInView:gestureRecognizer.view.superview].x;
+//    NSLog(@"132 %lf %ld %lf",translation.x,gestureRecognizer.state,velocity);
 
     scale = scale < 0 ? 0 : scale;
     switch (gestureRecognizer.state) {

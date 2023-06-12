@@ -188,6 +188,9 @@
         if(velocity > 300 && self.isDragScrollView == NO) {
             //如果是类似往下轻扫的那种
             [self dismiss];
+        } else if(velocity < -300 && self.isDragScrollView == NO) {
+            //如果是类似往上轻扫的那种
+            [self show];
         } else {
             //如果是普通拖拽
             if(self.container.frame.origin.y >= [UIScreen mainScreen].bounds.size.height - self.container.frame.size.height/2) {

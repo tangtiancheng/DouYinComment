@@ -14,10 +14,7 @@
 
 @property (nonatomic, strong) TTCPanPushTransitionDelegate *panPushTransitionDelegate;
 
-//左右拖拽最后时刻的位移
-@property (nonatomic, assign) CGFloat drapDistance;
-//往左快速轻扫(回位) 和 往右快速轻扫(Pop Dismiss)
-@property (nonatomic, assign) CGFloat lastDrapDistance;
+
 
 @end
 

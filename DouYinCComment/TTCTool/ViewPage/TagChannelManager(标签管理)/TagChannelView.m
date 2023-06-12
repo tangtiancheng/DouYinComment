@@ -45,8 +45,7 @@
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 //当前正在拖拽的是否是tableView
 @property (nonatomic, assign) BOOL isDragTableView;
-//向下拖拽最后时刻的位移
-@property (nonatomic, assign) CGFloat lastDrapDistance;
+
 
 @end
 
@@ -61,7 +60,7 @@
         self.belowBtnArr = [NSMutableArray array];
         self.upFranmeArr = [NSMutableArray array];
         self.belowFranmeArr = [NSMutableArray array];
-           
+        
         self.frame = [UIScreen mainScreen].bounds;
         self.backgroundColor = RGBA(0, 0, 0, 0.5);
         self.container = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NavigationHeight)];
@@ -83,7 +82,7 @@
         upBtnAllHeight = (upBtnAllHeight > 0 ? upBtnAllHeight : 0);
         CGFloat belowBtnAllHeight = (self.param.belowBtnDataArr.count/4 + (self.param.belowBtnDataArr.count%4 ? 1 : 0)) * TAGBtnH + ((self.param.belowBtnDataArr.count/4 + (self.param.belowBtnDataArr.count%4 ? 1 : 0))-1) * TagSpaceV;
         belowBtnAllHeight = (belowBtnAllHeight > 0 ? belowBtnAllHeight : 0);
-
+        
         self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, TopHeadHeight, SCREEN_WIDTH, SCREEN_HEIGHT - TopHeadHeight - NavigationHeight)];
         self.scrollView.delegate = self;
         [self.container addSubview:self.scrollView];
@@ -111,7 +110,7 @@
         [self.editBtn setTitleColor:RGBCOLORVALUE(0x3dcc79) forState:UIControlStateNormal];
         self.editBtn.titleLabel.font = [UIFont systemFontOfSize:14 ];
         
-
+        
         for(NSInteger i = 0;i<self.param.upBtnDataArr.count;i++) {
             int row = i / 4;
             int column = i % 4;
@@ -153,7 +152,6 @@
         
         //添加拖拽手势
         self.isDragTableView = NO;
-        self.lastDrapDistance = 0.0;
         self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
         [self.container addGestureRecognizer:self.panGestureRecognizer];
         self.panGestureRecognizer.delegate = self;
@@ -446,9 +444,22 @@ static CGPoint locationInBtn;
     if(panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
         NSLog(@"transP : %@",NSStringFromCGPoint(transP));
         NSLog(@"transP2 : %@",NSStringFromCGPoint(transP2));
-        if(self.lastDrapDistance > 10 && self.isDragTableView == NO) {
-            //如果是类似轻扫的那种
+        //速度
+        CGFloat velocity = [panGestureRecognizer velocityInView:self.container].y;
+        if(velocity > 300 && self.isDragTableView == NO) {
+            //如果是类似往下轻扫的那种
             [self show:NO];
+        } else if(velocity < -300 && self.isDragTableView == NO) {
+            //如果是类似往上轻扫的那种
+            [UIView animateWithDuration:0.15f
+                                  delay:0.0f
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                self.container.top = SCREEN_HEIGHT - self.container.height;
+            }
+                             completion:^(BOOL finished) {
+                NSLog(@"结束");
+            }];
         } else {
             //如果是普通拖拽
             if(self.container.top >= SCREEN_HEIGHT - self.container.height/2) {
@@ -458,16 +469,15 @@ static CGPoint locationInBtn;
                                       delay:0.0f
                                     options:UIViewAnimationOptionCurveEaseOut
                                  animations:^{
-                                     self.container.top = SCREEN_HEIGHT - self.container.height;
-                                 }
+                    self.container.top = SCREEN_HEIGHT - self.container.height;
+                }
                                  completion:^(BOOL finished) {
-                                     NSLog(@"结束");
-                                 }];
+                    NSLog(@"结束");
+                }];
                 
             }
         }
     }
-    self.lastDrapDistance = transP.y;
     
 }
 

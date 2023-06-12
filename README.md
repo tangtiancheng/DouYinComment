@@ -16,14 +16,26 @@ pod 'TTCTool
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
 
-## 2.仿照网易云iOS写了可编辑小组件Widget功能,网上也有很多博客写了,但是不知道为啥不提供Demo,我这边就偷懒不写简书了,只提供Demo,和网易云一样,可编辑列表选项,需要注意的细节在demo里也写了,自己去跑起来看吧
+## 2.一行代码实现仿抖音左滑Push进个人主页功能
+  一行代码实现仿抖音 左滑 push进入个人主页,  
+    1.把TTCPanPushTransition文件夹拖入你的项目中,  
+    2.在需要push的控制器类中  #import "UIViewController+TTCPanPush.h"  
+    3.然后在videDidLoad方法中调用getpanPushToViewController:方法, block返回你的个人主页控制器类  
+     不会侵入你自己的原有代码,详细看demo 
+     
+     
+    [self getpanPushToViewController:^UIViewController * _Nonnull{
+        //这个应该是你的个人主页控制器
+        Type4ViewControllerThird *vc = [[Type4ViewControllerThird alloc] init];
+        return vc;
+    }];
+    
 
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件编辑.gif)
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/panPush.gif)
 
-## 3.抖音转场动画(github上其它demo并未做到和抖音一样,或者完全侵入你的代码,让你要改很多东西,所以我自己封装了一个, 我自己觉得写的还行,只需将TTCTransition文件夹拖入你的项目,然后添加两行代码就行,希望大佬们多提意见)
+## 3.抖音视频播放转场动画(github上其它demo并未做到和抖音一样,或者耦合度太高需要侵入你的代码,让你改很多东西才能实现,我自己封装了一个,只需将TTCTransition文件夹拖入你的项目,然后添加两行代码就行,完全不需要侵入修改你原有的代码. 希望大佬们多提意见)
 一行或者两行代码实现抖音视频播放转场动画,支持push和present,两行代码脑残式操作,自己看下代码
-
+首先将TTCTransition文件夹拖入你的项目中,
 #import "TTCTransitionDelegate.h"
 
 第一行:假设需要转场的控制器叫myVC,  那么调用myVC.ttcTransitionDelegate = [[TTCTransitionDelegate alloc] init];
@@ -32,18 +44,26 @@ pod 'TTCTool
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/TTCTransition.gif)
 
-## 4.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大 )
+
+
+## 4.仿照网易云iOS写了可编辑小组件Widget功能,网上也有很多博客写了,但是不知道为啥不提供Demo,我这边就偷懒不写简书了,只提供Demo,和网易云一样,可编辑列表选项,需要注意的细节在demo里也写了,自己去跑起来看吧
+
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件编辑.gif)
+
+
+## 5.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大 )
 ### (1).支持边下边播
 ### (2).支持视频预加载
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/smallVideoImage.gif)
 
-## 5.和铃声多多一样,支持上传音频到库乐队(GarageBand)直接设置手机铃声
+## 6.和铃声多多一样,支持上传音频到库乐队(GarageBand)直接设置手机铃声
 这个小众功能我看现在网上没有任何资料,鉴于之前有好几位iOS开发者通过简书找到我, 都是公司需要做这个功能但是不知道怎么实现,所以今天把这个功能实现方法写出来,希望能帮到大家.如果确实解决了您的燃眉之急,希望能点一个star,感谢.
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/GarageBandImage.gif)
 
 
-## 6.多列表嵌套分页滚动, header悬浮
+## 7.多列表嵌套分页滚动, header悬浮
 ### 该功能共有两个类:1.TCViewPager(用于处理列表分页)  2.TCNestScrollPageView(用于处理嵌套header滚动悬浮)
 一开始铃声多多中只有分页功能，没有需要加入headerView悬浮嵌套的功能，所以就只写了TCViewPager，用于处理分页功能，后来个人主页需要做成headerView悬浮的效果，但是我又不想修改之前TCViewPager已经写好的代码，而且肯定有其他开发者已经有了自己的分页控件（改样式改代码肯定是改自己的代码比较熟悉比较快），只想添加一个headerView悬浮功能，不想用我的TCViewPager，所以我就索性写了TCNestScrollPageView用于处理嵌套headerView滚动悬浮，把TCNestScrollPageView和TCViewPager完全拆开。
 如果你已经有了自己的分页控件,但是想在其基础上再添加header悬浮滚动的功能,那么你就只需要使用TCNestScrollPageView即可,不需要用到TCViewPager.用法非常非常简单,直接参照demo（github上有一些一两千star的项目我觉得无论是代码还是使用都有丢丢复杂，对新手不太友好，看起来一脸懵逼，想做一些改动都无从下手，TCNestScrollPageView和TCViewPager相对来说思想思路和代码都很简单，想做一些修改看看代码就能改，有需要的就用起来吧）

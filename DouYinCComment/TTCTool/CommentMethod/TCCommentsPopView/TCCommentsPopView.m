@@ -22,8 +22,8 @@
 //当前正在拖拽的是否是tableView
 @property (nonatomic, assign) BOOL isDragScrollView;
 @property (nonatomic, strong) UIScrollView *scrollerView;
-//向下拖拽最后时刻的位移
-@property (nonatomic, assign) CGFloat lastDrapDistance;
+////向下拖拽最后时刻的位移
+//@property (nonatomic, assign) CGFloat lastDrapDistance;
 
 
 @end
@@ -40,7 +40,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.isDragScrollView = NO;
-        self.lastDrapDistance = 0.0;
+//        self.lastDrapDistance = 0.0;
         self.frame = frame;
         self.backgroundColor = RGBA(0, 0, 0, 0.5);
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGuesture:)];
@@ -67,16 +67,21 @@
 - (void)showToView:(UIView *)view{
     [self removeFromSuperview];
     [view addSubview:self];
+    [self show];
+}
+
+- (void)show {
     [UIView animateWithDuration:0.15f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         CGRect frame = self.container.frame;
-                         frame.origin.y = frame.origin.y - frame.size.height;
-                         self.container.frame = frame;
-                     }
+        CGRect frame = self.container.frame;
+        frame.origin.y = self.frame.size.height - self.container.frame.size.height;
+        self.container.frame = frame;
+    }
                      completion:^(BOOL finished) {
-                     }];
+        NSLog(@"结束");
+    }];
 }
 
 - (void)dismiss {
@@ -178,29 +183,21 @@
     [panGestureRecognizer setTranslation:CGPointZero inView:self.container];
     if(panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
         NSLog(@"transP : %@",NSStringFromCGPoint(transP));
-        if(self.lastDrapDistance > 10 && self.isDragScrollView == NO) {
-            //如果是类似轻扫的那种
+        //速度
+        CGFloat velocity = [panGestureRecognizer velocityInView:self.container].y;
+        if(velocity > 300 && self.isDragScrollView == NO) {
+            //如果是类似往下轻扫的那种
             [self dismiss];
         } else {
             //如果是普通拖拽
             if(self.container.frame.origin.y >= [UIScreen mainScreen].bounds.size.height - self.container.frame.size.height/2) {
                 [self dismiss];
             } else {
-                [UIView animateWithDuration:0.15f
-                                      delay:0.0f
-                                    options:UIViewAnimationOptionCurveEaseOut
-                                 animations:^{
-                                     CGRect frame = self.container.frame;
-                                     frame.origin.y = self.frame.size.height - self.container.frame.size.height;
-                                     self.container.frame = frame;
-                                 }
-                                 completion:^(BOOL finished) {
-                                     NSLog(@"结束");
-                                 }];
+                [self show];
             }
         }
     }
-    self.lastDrapDistance = transP.y;
+//    self.lastDrapDistance = transP.y;
 }
 
 //点击手势

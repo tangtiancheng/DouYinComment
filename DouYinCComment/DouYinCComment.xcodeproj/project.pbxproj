@@ -61,6 +61,8 @@
 		7928C0662A358EF600CD844A /* DouyinTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7928C0652A358EF600CD844A /* DouyinTabBarController.m */; };
 		7928C0692A35A29600CD844A /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7928C0682A35A29600CD844A /* HomePageViewController.m */; };
 		7928C06C2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7928C06B2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m */; };
+		792CF31E2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 792CF31D2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		792CF3202A373516005CD799 /* read.txt in Resources */ = {isa = PBXBuildFile; fileRef = 792CF31F2A373515005CD799 /* read.txt */; };
 		792EB91526C11F7400B94076 /* UIView+EasyFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 792EB91326C11F7400B94076 /* UIView+EasyFrame.m */; };
 		792EBAF826C1220B00B94076 /* NSFileHandle+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 792EBA3026C1220A00B94076 /* NSFileHandle+RACSupport.m */; };
 		792EBAF926C1220B00B94076 /* NSNotificationCenter+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 792EBA3326C1220A00B94076 /* NSNotificationCenter+RACSupport.m */; };
@@ -467,6 +469,9 @@
 		7928C0682A35A29600CD844A /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		7928C06A2A35D56700CD844A /* PanPushSmallVideoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanPushSmallVideoPlayViewController.h; sourceTree = "<group>"; };
 		7928C06B2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanPushSmallVideoPlayViewController.m; sourceTree = "<group>"; };
+		792CF31C2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		792CF31D2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		792CF31F2A373515005CD799 /* read.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read.txt; sourceTree = "<group>"; };
 		792EB91326C11F7400B94076 /* UIView+EasyFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EasyFrame.m"; sourceTree = "<group>"; };
 		792EB91426C11F7400B94076 /* UIView+EasyFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyFrame.h"; sourceTree = "<group>"; };
 		792EBA3026C1220A00B94076 /* NSFileHandle+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+RACSupport.m"; sourceTree = "<group>"; };
@@ -1161,6 +1166,7 @@
 				795DB585229D3355003AFE44 /* RootViewController.m */,
 				790F14D7225CF98F000E7335 /* AppDelegate.h */,
 				790F14D8225CF98F000E7335 /* AppDelegate.m */,
+				792CF31B2A37343E005CD799 /* FDFullscreenPopGesture */,
 				795DB5D3229D43AB003AFE44 /* PrefixHeader.pch */,
 				790F150F225D01CC000E7335 /* readme.h */,
 				790F14DD225CF98F000E7335 /* Main.storyboard */,
@@ -1216,6 +1222,16 @@
 				7928C06B2A35D56700CD844A /* PanPushSmallVideoPlayViewController.m */,
 			);
 			path = DouyinPanPush;
+			sourceTree = "<group>";
+		};
+		792CF31B2A37343E005CD799 /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				792CF31F2A373515005CD799 /* read.txt */,
+				792CF31C2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.h */,
+				792CF31D2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
 			sourceTree = "<group>";
 		};
 		792EBA2F26C1220A00B94076 /* ReactiveObjC */ = {
@@ -2419,6 +2435,7 @@
 				795DB75E229E372F003AFE44 /* ZFPlayer.bundle in Resources */,
 				793D5C6826BFE74F00DFC4FB /* bandfolder.band in Resources */,
 				793D5C6526BFE74F00DFC4FB /* 牡丹亭外.m4a in Resources */,
+				792CF3202A373516005CD799 /* read.txt in Resources */,
 				793D5DB826C060C600DFC4FB /* TTCTool.podspec in Resources */,
 				790F14E4225CF991000E7335 /* LaunchScreen.storyboard in Resources */,
 				790F14E1225CF991000E7335 /* Assets.xcassets in Resources */,
@@ -2557,6 +2574,7 @@
 				793D5D8826C02C6300DFC4FB /* MyCommentView.m in Sources */,
 				790F1530225DED17000E7335 /* MASConstraintMaker.m in Sources */,
 				795DB8CC229E86E9003AFE44 /* IQNSArray+Sort.m in Sources */,
+				792CF31E2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				795DB5C3229D3D69003AFE44 /* UIImageView+WebCache.m in Sources */,
 				792EBB4E26C1220B00B94076 /* RACEagerSequence.m in Sources */,
 				795DB66D229E300D003AFE44 /* HTTPServer.m in Sources */,

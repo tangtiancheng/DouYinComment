@@ -41,6 +41,26 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
     [super viewDidLoad];
     [self createUI];
     
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 300, 300, 50)];
+    label.text = @"类似抖音那样的往左滑动进入个人主页\n往左滑动试试吧";
+    label.numberOfLines = 0;
+    label.backgroundColor = [UIColor redColor];
+    [self.view addSubview:label];
+    
+    
+    /*
+     一行代码实现仿抖音 左滑 push进入个人主页,
+    1.把TTCPanPushTransition文件夹拖入你的项目中,
+    2.在需要push的控制器类中#import "UIViewController+TTCPanPush.h"
+    3.然后在videDidLoad方法中调用getpanPushToViewController:方法, block返回你的主页控制器类
+     不会侵入你自己的原有代码
+     */
+    [self getpanPushToViewController:^UIViewController * _Nonnull{
+        //这个应该是你的个人主页控制器
+        Type4ViewControllerThird *vc = [[Type4ViewControllerThird alloc] init];
+        return vc;
+    }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -217,18 +237,7 @@ static NSString * const SmallVideoCellIdentifier = @"SmallVideoCellIdentifier";
     [self playIndex:self.currentPlayIndex];
     
   
-    /*
-     一行代码实现仿抖音 左滑 push进入个人主页,
-    1.把TTCPanPushTransition文件夹拖入你的项目中,
-    2.在需要push的控制器类中#import "UIViewController+TTCPanPush.h"
-    3.然后在videDidLoad方法中调用getpanPushToViewController:方法, block返回你的主页控制器类
-     不会侵入你自己的原有代码
-     */
-    [self getpanPushToViewController:^UIViewController * _Nonnull{
-        //这个应该是你的个人主页控制器
-        Type4ViewControllerThird *vc = [[Type4ViewControllerThird alloc] init];
-        return vc;
-    }];
+
 
 }
 

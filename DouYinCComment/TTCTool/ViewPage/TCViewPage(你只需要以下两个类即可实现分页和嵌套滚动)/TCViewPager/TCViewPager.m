@@ -17,13 +17,43 @@
 #define DefultTitlePageSpace     22
 #define EditBtnW   30
 
+
+//为什么要自定义TTCScrollView呢,因为有时候scrollView的滑动手势和其他滑动手势会起冲突,scrollView在最上层的话,优先级会高,然后默认两个滑动手势是不会共存的(gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:   这个默认是return NO), 但是正常来说当scrollView滚动到最左边或者最右边时,  再往左或者往右拖拽时,应该让拖动手势往下传递才对,所以就TTCScrollView继承于UIScrollView,然后自己来实现gestureRecognizerShouldBegin代理方法
+@interface TTCScrollView : UIScrollView<UIGestureRecognizerDelegate>
+@end
+@implementation TTCScrollView
+
+#pragma mark - UIGestureRecognizeDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
+{
+    if(self.contentOffset.x > 0) {
+        return YES;
+    }
+        CGPoint beginningLocation = [gestureRecognizer locationInView:self];
+        CGPoint translationLog = [gestureRecognizer translationInView:self];
+        NSLog(@"gestureRecognizer.view = %@ location.x = %lf ,translation.x = %lf",gestureRecognizer.view,beginningLocation.x,translationLog.x);
+
+    NSLog(@"%@  %@  %@",NSStringFromCGSize(self.contentSize),NSStringFromCGRect(self.frame),NSStringFromCGPoint(self.contentOffset));
+    if(self.contentOffset.x == 0 && translationLog.x>=0) {
+        return NO;
+    }
+    if(ceil(self.contentOffset.x) == ceil(self.contentSize.width-self.frame.size.width) && translationLog.x<=0) {
+        return NO;
+    }
+    return YES;
+}
+
+
+@end
+
+
+
+
 @interface TCPageParam ()
 
 @property (nonatomic, assign) CGFloat width;
 
 @end
-
-
 @implementation TCPageParam
 
 - (instancetype)init {
@@ -110,10 +140,14 @@
 
 
 
+
+
+
+
 @interface TCViewPager ()
 
 //分页列表
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) TTCScrollView *scrollView;
 //菜单标题按钮列表
 @property (nonatomic, strong) UIScrollView *pageHeaderControl;
 //菜单标题按钮数组
@@ -386,7 +420,7 @@
     if(self.scrollView) return;
     CGRect rect = self.bounds;
     self.backgroundColor = self.param.viewPagerBgColor;
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.param.pageHeaderControlStayInTop ?  self.param.pageHeaderHeight : self.param.pageHeaderControlStayInTop, self.width, self.height - (self.param.pageHeaderControlStayInTop ? self.param.pageHeaderHeight : self.param.pageHeaderControlStayInTop))];
+    self.scrollView = [[TTCScrollView alloc]initWithFrame:CGRectMake(0, self.param.pageHeaderControlStayInTop ?  self.param.pageHeaderHeight : self.param.pageHeaderControlStayInTop, self.width, self.height - (self.param.pageHeaderControlStayInTop ? self.param.pageHeaderHeight : self.param.pageHeaderControlStayInTop))];
     if(@available(iOS 11.0, *)){
         self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;//UIScrollView也适用
     } else {
@@ -516,3 +550,14 @@
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+

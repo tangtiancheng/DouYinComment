@@ -65,11 +65,7 @@
     [backBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
     
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 300, 300, 50)];
-    label.text = @"类似抖音那样的往左滑动进入个人主页\n往左滑动试试吧";
-    label.numberOfLines = 0;
-    label.backgroundColor = [UIColor redColor];
-    [self.view addSubview:label];
+   
 
 
 }

@@ -1,0 +1,2 @@
+这是一个大佬写的支持全屏左滑返回的分类(https://github.com/forkingdog/FDFullscreenPopGesture.git),6000star,是我的10几倍😂  它与本Demo的所有功能都无必然关联
+你要是不想支持全屏左滑返回,直接把这个分类删除即可

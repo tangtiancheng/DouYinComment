@@ -51,7 +51,11 @@
         if(self.tabbarCaptureImageV) {
             [self.tabbarCaptureImageV removeFromSuperview];
         }
-        fromViewController.navigationController.delegate = nil;
+        if(transitionContext.transitionWasCancelled) {
+            fromViewController.navigationController.delegate = self.previousNavDelegate;
+        } else {
+            fromViewController.navigationController.delegate = nil;
+        }
         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
     }];
     

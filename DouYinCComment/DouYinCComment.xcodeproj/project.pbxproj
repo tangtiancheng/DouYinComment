@@ -472,6 +472,24 @@
 		792CF31C2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		792CF31D2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		792CF31F2A373515005CD799 /* read.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read.txt; sourceTree = "<group>"; };
+		792CF3272A37620C005CD799 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		792CF3292A37620C005CD799 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		792CF32B2A37620C005CD799 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		792CF32E2A37620C005CD799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		792CF3302A37620E005CD799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		792CF3332A37620E005CD799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		792CF3352A37620E005CD799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		792CF33F2A376238005CD799 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		792CF3402A376238005CD799 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		792CF3422A376238005CD799 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		792CF3432A376238005CD799 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		792CF3452A376238005CD799 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		792CF3462A376238005CD799 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		792CF3492A376238005CD799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		792CF34B2A376239005CD799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		792CF34E2A376239005CD799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		792CF3502A376239005CD799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		792CF3512A376239005CD799 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		792EB91326C11F7400B94076 /* UIView+EasyFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EasyFrame.m"; sourceTree = "<group>"; };
 		792EB91426C11F7400B94076 /* UIView+EasyFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyFrame.h"; sourceTree = "<group>"; };
 		792EBA3026C1220A00B94076 /* NSFileHandle+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+RACSupport.m"; sourceTree = "<group>"; };
@@ -1133,6 +1151,8 @@
 		790F14CB225CF98F000E7335 = {
 			isa = PBXGroup;
 			children = (
+				792CF33E2A376238005CD799 /* DOuyinOC */,
+				792CF3262A37620C005CD799 /* DouyinSwift */,
 				790F14D6225CF98F000E7335 /* DouYinCComment */,
 				33BF7EEF28FB26C900CA4292 /* RecommendWidget */,
 				33BF7F0428FB26E500CA4292 /* WidgetIntentHandler */,
@@ -1232,6 +1252,38 @@
 				792CF31D2A373446005CD799 /* UINavigationController+FDFullscreenPopGesture.m */,
 			);
 			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
+		792CF3262A37620C005CD799 /* DouyinSwift */ = {
+			isa = PBXGroup;
+			children = (
+				792CF3272A37620C005CD799 /* AppDelegate.swift */,
+				792CF3292A37620C005CD799 /* SceneDelegate.swift */,
+				792CF32B2A37620C005CD799 /* ViewController.swift */,
+				792CF32D2A37620C005CD799 /* Main.storyboard */,
+				792CF3302A37620E005CD799 /* Assets.xcassets */,
+				792CF3322A37620E005CD799 /* LaunchScreen.storyboard */,
+				792CF3352A37620E005CD799 /* Info.plist */,
+			);
+			path = DouyinSwift;
+			sourceTree = "<group>";
+		};
+		792CF33E2A376238005CD799 /* DOuyinOC */ = {
+			isa = PBXGroup;
+			children = (
+				792CF33F2A376238005CD799 /* AppDelegate.h */,
+				792CF3402A376238005CD799 /* AppDelegate.m */,
+				792CF3422A376238005CD799 /* SceneDelegate.h */,
+				792CF3432A376238005CD799 /* SceneDelegate.m */,
+				792CF3452A376238005CD799 /* ViewController.h */,
+				792CF3462A376238005CD799 /* ViewController.m */,
+				792CF3482A376238005CD799 /* Main.storyboard */,
+				792CF34B2A376239005CD799 /* Assets.xcassets */,
+				792CF34D2A376239005CD799 /* LaunchScreen.storyboard */,
+				792CF3502A376239005CD799 /* Info.plist */,
+				792CF3512A376239005CD799 /* main.m */,
+			);
+			path = DOuyinOC;
 			sourceTree = "<group>";
 		};
 		792EBA2F26C1220A00B94076 /* ReactiveObjC */ = {
@@ -2376,7 +2428,7 @@
 		790F14CC225CF98F000E7335 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "唐天成";
 				TargetAttributes = {
@@ -2809,6 +2861,38 @@
 			isa = PBXVariantGroup;
 			children = (
 				790F14E3225CF991000E7335 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		792CF32D2A37620C005CD799 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				792CF32E2A37620C005CD799 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		792CF3322A37620E005CD799 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				792CF3332A37620E005CD799 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		792CF3482A376238005CD799 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				792CF3492A376238005CD799 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		792CF34D2A376239005CD799 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				792CF34E2A376239005CD799 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

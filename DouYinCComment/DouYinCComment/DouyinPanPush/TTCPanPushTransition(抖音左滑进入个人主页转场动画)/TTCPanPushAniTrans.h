@@ -13,8 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TTCPanPushAniTrans : NSObject<UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic, assign) CGFloat duration;
-//是否有tabbarPush干扰
+//如果从tabbar页面跳进来的有值,否则为nil
 @property (nonatomic, weak) UIImageView *tabbarCaptureImageV;
+
+@property (nonatomic, weak) id<UINavigationControllerDelegate> previousNavDelegate;
 
 @end
 

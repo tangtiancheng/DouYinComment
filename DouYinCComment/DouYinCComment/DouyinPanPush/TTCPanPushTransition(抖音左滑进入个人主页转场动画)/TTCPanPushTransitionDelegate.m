@@ -12,12 +12,12 @@
 
 @interface TTCPanPushTransitionDelegate ()<UIGestureRecognizerDelegate>
 
-//添加拖拽手势的控制器
+//被添加pan拖拽手势的控制器
 @property (nonatomic, weak) UIViewController *panPushVC;
-//获取要push到哪个控制器
-@property (nonatomic, copy) UIViewController *(^panPushBlock) (void);
-//手势
+//pan拖拽手势
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
+//获取toViewController控制器
+@property (nonatomic, copy) UIViewController *(^panPushBlock) (void);
 //可交互代理
 @property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactiveTransition;
 //动画时长
@@ -25,6 +25,9 @@
 
 //push的时候如果需要hidesBottomBarWhenPushed,tabbar自己的push动画会对咱们得自定义转场照成很难看的干扰, 所以这时候咱们获取tabbar截图,把tabbar图片放到fromVC上,假装tabbar还在, 其实真的tabbar会hidden = YES隐藏掉,等转场动画完毕再把它显示出来
 @property (nonatomic, strong) UIImageView *tabbarCaptureImageV;
+
+//之前的navigationController.delegate. 记录这个,是为了[self.interactiveTransition cancelInteractiveTransition],也就是取消本次push转场时,要让导航控制器的代理恢复为原来的,
+@property (nonatomic, weak) id<UINavigationControllerDelegate> previousNavDelegate;
 
 @end
 
@@ -60,6 +63,7 @@
         TTCPanPushAniTrans *panPushAniTrans = [[TTCPanPushAniTrans alloc] init];
         panPushAniTrans.duration = self.duration;
         panPushAniTrans.tabbarCaptureImageV = self.tabbarCaptureImageV;
+        panPushAniTrans.previousNavDelegate = self.previousNavDelegate;
         return panPushAniTrans;
     } else if(operation == UINavigationControllerOperationPop) {
         //pop
@@ -137,7 +141,7 @@
 
 
 
-//push的时候如果需要hidesBottomBarWhenPushed,tabbar自己的push动画会对咱们得自定义转场照成很难看的干扰, 所以这时候咱们获取tabbar截图,把tabbar图片放到fromVC上,假装tabbar还在, 其实真的tabbar会hidden = YES隐藏掉,等转场动画完毕再把hidden = NO
+//push的时候如果需要hidesBottomBarWhenPushed,tabbar自己的push动画会对咱们的自定义转场照成很难看的干扰, 所以这时候咱们获取tabbar截图,把tabbar图片放到fromVC上,假装tabbar还在, 其实真的tabbar会hidden = YES隐藏掉,等转场动画完毕再把hidden = NO
 - (UIImageView *)getTabbarCaptureImageVFromViewController:(UIViewController *)fromVC
                                          toViewController:(UIViewController *)toVC {
     //以下是判断是否需要隐藏tabbar

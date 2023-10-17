@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "TTCTool"
-  spec.version      = "0.0.9"
+  spec.version      = "0.1.2"
   spec.summary      = "TTCTool."
   spec.description  = <<-DESC
     TTCTool.TTCTool.TTCTool.TTCTool.
@@ -29,6 +29,10 @@ Pod::Spec.new do |spec|
  
     spec.subspec 'TTCTransition' do |ss|
     ss.source_files  = "DouYinCComment/TTCTool/TTCTransition/**/*.{h,m}","DouYinCComment/TTCTool/ViewPage/UIView+EasyFrame.{h,m}","DouYinCComment/TTCTool/TTCCom.h"
+  end
+ 
+     spec.subspec 'TTCPanPush' do |ss|
+    ss.source_files  = "DouYinCComment/TTCTool/TTCPanPushTransition(抖音左滑进入个人主页转场动画)/**/*.{h,m}"
   end
  
  

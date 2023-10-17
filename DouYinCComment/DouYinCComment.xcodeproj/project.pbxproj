@@ -334,9 +334,9 @@
 		79C7F00B2ADEE979003CF3C1 /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0032ADEE979003CF3C1 /* TTCSmallVideoPresentOrPushAniTrans.m */; };
 		79C7F00C2ADEE979003CF3C1 /* UIViewController+TTCTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0042ADEE979003CF3C1 /* UIViewController+TTCTransitionAnimator.m */; };
 		79C7F00D2ADEE979003CF3C1 /* TTCTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0052ADEE979003CF3C1 /* TTCTransitionDelegate.m */; };
-		79C7F0152ADEEA4F003CF3C1 /* TTCPanPushTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F00F2ADEEA4E003CF3C1 /* TTCPanPushTransitionDelegate.m */; };
-		79C7F0162ADEEA4F003CF3C1 /* UIViewController+TTCPanPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0102ADEEA4E003CF3C1 /* UIViewController+TTCPanPush.m */; };
-		79C7F0172ADEEA4F003CF3C1 /* TTCPanPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0112ADEEA4E003CF3C1 /* TTCPanPushAniTrans.m */; };
+		79C7F01F2ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0192ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.m */; };
+		79C7F0202ADEF00F003CF3C1 /* UIViewController+TTCPanPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F01A2ADEF00F003CF3C1 /* UIViewController+TTCPanPush.m */; };
+		79C7F0212ADEF00F003CF3C1 /* TTCPanPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F01B2ADEF00F003CF3C1 /* TTCPanPushAniTrans.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1033,12 +1033,12 @@
 		79C7F0072ADEE979003CF3C1 /* TTCSmallVideoPresentOrPushAniTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCSmallVideoPresentOrPushAniTrans.h; sourceTree = "<group>"; };
 		79C7F0082ADEE979003CF3C1 /* TTCTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCTransitionDelegate.h; sourceTree = "<group>"; };
 		79C7F0092ADEE979003CF3C1 /* UIViewController+TTCTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TTCTransitionAnimator.h"; sourceTree = "<group>"; };
-		79C7F00F2ADEEA4E003CF3C1 /* TTCPanPushTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCPanPushTransitionDelegate.m; sourceTree = "<group>"; };
-		79C7F0102ADEEA4E003CF3C1 /* UIViewController+TTCPanPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TTCPanPush.m"; sourceTree = "<group>"; };
-		79C7F0112ADEEA4E003CF3C1 /* TTCPanPushAniTrans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCPanPushAniTrans.m; sourceTree = "<group>"; };
-		79C7F0122ADEEA4E003CF3C1 /* UIViewController+TTCPanPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TTCPanPush.h"; sourceTree = "<group>"; };
-		79C7F0132ADEEA4F003CF3C1 /* TTCPanPushTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCPanPushTransitionDelegate.h; sourceTree = "<group>"; };
-		79C7F0142ADEEA4F003CF3C1 /* TTCPanPushAniTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCPanPushAniTrans.h; sourceTree = "<group>"; };
+		79C7F0192ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCPanPushTransitionDelegate.m; sourceTree = "<group>"; };
+		79C7F01A2ADEF00F003CF3C1 /* UIViewController+TTCPanPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TTCPanPush.m"; sourceTree = "<group>"; };
+		79C7F01B2ADEF00F003CF3C1 /* TTCPanPushAniTrans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCPanPushAniTrans.m; sourceTree = "<group>"; };
+		79C7F01C2ADEF00F003CF3C1 /* UIViewController+TTCPanPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TTCPanPush.h"; sourceTree = "<group>"; };
+		79C7F01D2ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCPanPushTransitionDelegate.h; sourceTree = "<group>"; };
+		79C7F01E2ADEF00F003CF3C1 /* TTCPanPushAniTrans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCPanPushAniTrans.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1197,7 +1197,7 @@
 		7928C0632A358B0F00CD844A /* DouyinPanPush */ = {
 			isa = PBXGroup;
 			children = (
-				79C7F00E2ADEEA4E003CF3C1 /* TTCPanPushTransition(抖音左滑进入个人主页转场动画) */,
+				79C7F0182ADEF00F003CF3C1 /* TTCPanPushTransition */,
 				7928C0642A358EF600CD844A /* DouyinTabBarController.h */,
 				7928C0652A358EF600CD844A /* DouyinTabBarController.m */,
 				7928C0672A35A29600CD844A /* HomePageViewController.h */,
@@ -2300,18 +2300,18 @@
 			path = TTCTool/TTCTransition;
 			sourceTree = SOURCE_ROOT;
 		};
-		79C7F00E2ADEEA4E003CF3C1 /* TTCPanPushTransition(抖音左滑进入个人主页转场动画) */ = {
+		79C7F0182ADEF00F003CF3C1 /* TTCPanPushTransition */ = {
 			isa = PBXGroup;
 			children = (
-				79C7F0142ADEEA4F003CF3C1 /* TTCPanPushAniTrans.h */,
-				79C7F0112ADEEA4E003CF3C1 /* TTCPanPushAniTrans.m */,
-				79C7F0132ADEEA4F003CF3C1 /* TTCPanPushTransitionDelegate.h */,
-				79C7F00F2ADEEA4E003CF3C1 /* TTCPanPushTransitionDelegate.m */,
-				79C7F0122ADEEA4E003CF3C1 /* UIViewController+TTCPanPush.h */,
-				79C7F0102ADEEA4E003CF3C1 /* UIViewController+TTCPanPush.m */,
+				79C7F0192ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.m */,
+				79C7F01A2ADEF00F003CF3C1 /* UIViewController+TTCPanPush.m */,
+				79C7F01B2ADEF00F003CF3C1 /* TTCPanPushAniTrans.m */,
+				79C7F01C2ADEF00F003CF3C1 /* UIViewController+TTCPanPush.h */,
+				79C7F01D2ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.h */,
+				79C7F01E2ADEF00F003CF3C1 /* TTCPanPushAniTrans.h */,
 			);
-			name = "TTCPanPushTransition(抖音左滑进入个人主页转场动画)";
-			path = "TTCTool/TTCPanPushTransition(抖音左滑进入个人主页转场动画)";
+			name = TTCPanPushTransition;
+			path = TTCTool/TTCPanPushTransition;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -2600,7 +2600,7 @@
 				795DB5CF229D3E0C003AFE44 /* SmallVideoCell.m in Sources */,
 				795DB65E229E300D003AFE44 /* HTTPDynamicFileResponse.m in Sources */,
 				792EBB0A26C1220B00B94076 /* RACGroupedSignal.m in Sources */,
-				79C7F0162ADEEA4F003CF3C1 /* UIViewController+TTCPanPush.m in Sources */,
+				79C7F0202ADEF00F003CF3C1 /* UIViewController+TTCPanPush.m in Sources */,
 				792EBB0926C1220B00B94076 /* RACSignal+Operations.m in Sources */,
 				793D5C6926BFE74F00DFC4FB /* TCCommentsPopView.m in Sources */,
 				793D5D1C26C0135F00DFC4FB /* MJRefreshBackFooter.m in Sources */,
@@ -2742,7 +2742,7 @@
 				334FF26F27547EEA0052EAFF /* MyModel.m in Sources */,
 				795DB65F229E300D003AFE44 /* HTTPFileResponse.m in Sources */,
 				793D5D0626C0135F00DFC4FB /* BaseTableViewController.m in Sources */,
-				79C7F0172ADEEA4F003CF3C1 /* TTCPanPushAniTrans.m in Sources */,
+				79C7F0212ADEF00F003CF3C1 /* TTCPanPushAniTrans.m in Sources */,
 				795DB62A229E2FA1003AFE44 /* KTVHCDataLoader.m in Sources */,
 				793D5D0726C0135F00DFC4FB /* BaseViewController.m in Sources */,
 				790F1534225DED17000E7335 /* MASConstraint.m in Sources */,
@@ -2756,7 +2756,7 @@
 				792EBAFF26C1220B00B94076 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				792EBB2826C1220B00B94076 /* UICollectionReusableView+RACSignalSupport.m in Sources */,
 				334FF27327547EF50052EAFF /* Type6ViewControllerFirst.m in Sources */,
-				79C7F0152ADEEA4F003CF3C1 /* TTCPanPushTransitionDelegate.m in Sources */,
+				79C7F01F2ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.m in Sources */,
 				795DB661229E300D003AFE44 /* HTTPRedirectResponse.m in Sources */,
 				334FF26727547E160052EAFF /* Type4ViewControllerSecond.m in Sources */,
 				795DB8D1229E86E9003AFE44 /* IQUIViewController+Additions.m in Sources */,

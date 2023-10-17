@@ -4,6 +4,7 @@ pod 'TTCTool
 或者只导入单个功能  
 抖音评论效果: pod 'TTCTool/TCCommentsPopView'  
 抖音转场动画: pod 'TTCTool/TTCTransition'  
+抖音左滑进入个人主页: pod 'TTCTool/TTCPanPush'  
 分页: pod 'TTCTool/TCViewPage'  
 标签管理: pod 'TTCTool/TagChannelManager'  
 

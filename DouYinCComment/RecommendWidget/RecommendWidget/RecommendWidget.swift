@@ -68,17 +68,18 @@ struct RecommendWidgetEntryView : View {
     }
 }
 
-@main
 struct RecommendWidget: Widget {
     let kind: String = "RecommendWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             RecommendWidgetEntryView(entry: entry)
+                .widgetBackground(Color.black.opacity(0))
         }
         .configurationDisplayName("铃声多多推荐")
         .description("快捷音乐播放入口,并可自定义精选功能")
         .supportedFamilies([.systemSmall,.systemMedium])//只支持小号和中号组件.大号的组件UI懒得写了,都一样,你自己去写吧
+        .ddcontentMarginsDisabled()
     }
 }
 

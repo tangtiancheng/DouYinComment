@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,40 @@
 		33BF7F1028FB271A00CA4292 /* RTDDDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF7F0E28FB271A00CA4292 /* RTDDDataModel.swift */; };
 		33BF7F1228FB273700CA4292 /* RecommendWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF7F1128FB273700CA4292 /* RecommendWidgetView.swift */; };
 		33BF7F1328FB279600CA4292 /* RecommendWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 33BF7EF228FB26C900CA4292 /* RecommendWidget.intentdefinition */; };
+		790B61A42B722C4400CE4993 /* WidgetSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61A32B722C4400CE4993 /* WidgetSwiftView.swift */; };
+		790B61A72B7232A300CE4993 /* WidgetSwiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B61A62B7232A300CE4993 /* WidgetSwiftViewController.m */; };
+		790B61A92B7237CF00CE4993 /* ClockHandRotationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61A82B7237CE00CE4993 /* ClockHandRotationKit.swift */; };
+		790B61AC2B7239D700CE4993 /* ScrolPick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61AB2B7239D700CE4993 /* ScrolPick.swift */; };
+		790B61AD2B7239D700CE4993 /* ScrolPick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61AB2B7239D700CE4993 /* ScrolPick.swift */; };
+		790B61B52B723A4700CE4993 /* SwingAnimationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61B22B723A4600CE4993 /* SwingAnimationModifier.swift */; };
+		790B61B62B723A4700CE4993 /* SwingAnimationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61B22B723A4600CE4993 /* SwingAnimationModifier.swift */; };
+		790B61B72B723A4700CE4993 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61B32B723A4600CE4993 /* Direction.swift */; };
+		790B61B82B723A4700CE4993 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61B32B723A4600CE4993 /* Direction.swift */; };
+		790B61B92B723A4700CE4993 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61B42B723A4700CE4993 /* View+Extension.swift */; };
+		790B61BA2B723A4700CE4993 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61B42B723A4700CE4993 /* View+Extension.swift */; };
+		790B61BB2B723B3100CE4993 /* ClockHandRotationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61A82B7237CE00CE4993 /* ClockHandRotationKit.swift */; };
+		790B61BC2B723C4800CE4993 /* ClockHandRotationKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */; };
+		790B61BD2B723C4800CE4993 /* ClockHandRotationKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		790B61BF2B723D8B00CE4993 /* ClockHandRotationKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */; };
+		790B61C02B723D8B00CE4993 /* ClockHandRotationKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		790B61C32B7342B800CE4993 /* Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61C22B7342B800CE4993 /* Fan.swift */; };
+		790B61C42B7342B800CE4993 /* Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61C22B7342B800CE4993 /* Fan.swift */; };
+		790B61C62B73448600CE4993 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61C52B73448600CE4993 /* Clock.swift */; };
+		790B61C72B73448600CE4993 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61C52B73448600CE4993 /* Clock.swift */; };
+		790B61C92B73643200CE4993 /* DDWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61C82B73643200CE4993 /* DDWidgetBundle.swift */; };
+		790B61CF2B73671800CE4993 /* ScrolPicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61CE2B73671800CE4993 /* ScrolPicWidget.swift */; };
+		790B61D12B736B0300CE4993 /* ScrolPicWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61D02B736B0300CE4993 /* ScrolPicWidget+Provider.swift */; };
+		790B61D32B736B7A00CE4993 /* ScrolPicWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61D22B736B7A00CE4993 /* ScrolPicWidget+Entry.swift */; };
+		790B61D52B736B8200CE4993 /* ScrolPicWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61D42B736B8200CE4993 /* ScrolPicWidget+EntryView.swift */; };
+		790B62632B748B4400CE4993 /* DDWidgetCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B62622B748B4300CE4993 /* DDWidgetCommon.swift */; };
+		790B62662B78F21B00CE4993 /* ClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B62652B78F21B00CE4993 /* ClockWidget.swift */; };
+		790B62682B78F26500CE4993 /* ClockWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B62672B78F26500CE4993 /* ClockWidget+Entry.swift */; };
+		790B626A2B78F27100CE4993 /* ClockWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B62692B78F27100CE4993 /* ClockWidget+EntryView.swift */; };
+		790B626C2B78F28400CE4993 /* ClockWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B626B2B78F28400CE4993 /* ClockWidget+Provider.swift */; };
+		790B626E2B79206A00CE4993 /* FanWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B626D2B79206900CE4993 /* FanWidget.swift */; };
+		790B62702B79207500CE4993 /* FanWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B626F2B79207500CE4993 /* FanWidget+Entry.swift */; };
+		790B62722B79207F00CE4993 /* FanWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B62712B79207F00CE4993 /* FanWidget+EntryView.swift */; };
+		790B62742B79208C00CE4993 /* FanWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B62732B79208C00CE4993 /* FanWidget+Provider.swift */; };
 		790F14D9225CF98F000E7335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F14D8225CF98F000E7335 /* AppDelegate.m */; };
 		790F14DF225CF98F000E7335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 790F14DD225CF98F000E7335 /* Main.storyboard */; };
 		790F14E1225CF991000E7335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790F14E0225CF991000E7335 /* Assets.xcassets */; };
@@ -369,6 +403,28 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		790B61BE2B723C4900CE4993 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				790B61BD2B723C4800CE4993 /* ClockHandRotationKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		790B61C12B723D8C00CE4993 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				790B61C02B723D8B00CE4993 /* ClockHandRotationKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -421,6 +477,32 @@
 		33BF7F0728FB26E500CA4292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33BF7F0E28FB271A00CA4292 /* RTDDDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDDDataModel.swift; sourceTree = "<group>"; };
 		33BF7F1128FB273700CA4292 /* RecommendWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendWidgetView.swift; sourceTree = "<group>"; };
+		790B61A22B722C4300CE4993 /* DouYinCComment-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DouYinCComment-Bridging-Header.h"; sourceTree = "<group>"; };
+		790B61A32B722C4400CE4993 /* WidgetSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSwiftView.swift; sourceTree = "<group>"; };
+		790B61A52B7232A300CE4993 /* WidgetSwiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetSwiftViewController.h; sourceTree = "<group>"; };
+		790B61A62B7232A300CE4993 /* WidgetSwiftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WidgetSwiftViewController.m; sourceTree = "<group>"; };
+		790B61A82B7237CE00CE4993 /* ClockHandRotationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHandRotationKit.swift; sourceTree = "<group>"; };
+		790B61AB2B7239D700CE4993 /* ScrolPick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolPick.swift; sourceTree = "<group>"; };
+		790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ClockHandRotationKit.xcframework; sourceTree = "<group>"; };
+		790B61B22B723A4600CE4993 /* SwingAnimationModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwingAnimationModifier.swift; sourceTree = "<group>"; };
+		790B61B32B723A4600CE4993 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		790B61B42B723A4700CE4993 /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		790B61C22B7342B800CE4993 /* Fan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fan.swift; sourceTree = "<group>"; };
+		790B61C52B73448600CE4993 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		790B61C82B73643200CE4993 /* DDWidgetBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDWidgetBundle.swift; sourceTree = "<group>"; };
+		790B61CE2B73671800CE4993 /* ScrolPicWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrolPicWidget.swift; sourceTree = "<group>"; };
+		790B61D02B736B0300CE4993 /* ScrolPicWidget+Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrolPicWidget+Provider.swift"; sourceTree = "<group>"; };
+		790B61D22B736B7A00CE4993 /* ScrolPicWidget+Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrolPicWidget+Entry.swift"; sourceTree = "<group>"; };
+		790B61D42B736B8200CE4993 /* ScrolPicWidget+EntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrolPicWidget+EntryView.swift"; sourceTree = "<group>"; };
+		790B62622B748B4300CE4993 /* DDWidgetCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDWidgetCommon.swift; sourceTree = "<group>"; };
+		790B62652B78F21B00CE4993 /* ClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockWidget.swift; sourceTree = "<group>"; };
+		790B62672B78F26500CE4993 /* ClockWidget+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClockWidget+Entry.swift"; sourceTree = "<group>"; };
+		790B62692B78F27100CE4993 /* ClockWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClockWidget+EntryView.swift"; sourceTree = "<group>"; };
+		790B626B2B78F28400CE4993 /* ClockWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClockWidget+Provider.swift"; sourceTree = "<group>"; };
+		790B626D2B79206900CE4993 /* FanWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanWidget.swift; sourceTree = "<group>"; };
+		790B626F2B79207500CE4993 /* FanWidget+Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FanWidget+Entry.swift"; sourceTree = "<group>"; };
+		790B62712B79207F00CE4993 /* FanWidget+EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FanWidget+EntryView.swift"; sourceTree = "<group>"; };
+		790B62732B79208C00CE4993 /* FanWidget+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FanWidget+Provider.swift"; sourceTree = "<group>"; };
 		790F14D4225CF98F000E7335 /* DouYinCComment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYinCComment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		790F14D7225CF98F000E7335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		790F14D8225CF98F000E7335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1047,6 +1129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33BF7EEE28FB26C900CA4292 /* SwiftUI.framework in Frameworks */,
+				790B61BF2B723D8B00CE4993 /* ClockHandRotationKit.xcframework in Frameworks */,
 				33BF7EED28FB26C900CA4292 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1063,6 +1146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790B61BC2B723C4800CE4993 /* ClockHandRotationKit.xcframework in Frameworks */,
 				793D5C6626BFE74F00DFC4FB /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1095,10 +1179,12 @@
 		33BF7EEF28FB26C900CA4292 /* RecommendWidget */ = {
 			isa = PBXGroup;
 			children = (
-				33BF7F0E28FB271A00CA4292 /* RTDDDataModel.swift */,
-				33BF7EF028FB26C900CA4292 /* RecommendWidget.swift */,
-				33BF7F1128FB273700CA4292 /* RecommendWidgetView.swift */,
-				33BF7EF228FB26C900CA4292 /* RecommendWidget.intentdefinition */,
+				790B61C82B73643200CE4993 /* DDWidgetBundle.swift */,
+				790B62622B748B4300CE4993 /* DDWidgetCommon.swift */,
+				790B61CA2B73649C00CE4993 /* RecommendWidget */,
+				790B61CB2B7364B800CE4993 /* ScrolPicWidget */,
+				790B61CC2B7364C600CE4993 /* FanWidget */,
+				790B61CD2B7364D400CE4993 /* ClockWidget */,
 				33BF7EF328FB26CC00CA4292 /* Assets.xcassets */,
 				33BF7EF528FB26CC00CA4292 /* Info.plist */,
 			);
@@ -1112,6 +1198,77 @@
 				33BF7F0728FB26E500CA4292 /* Info.plist */,
 			);
 			path = WidgetIntentHandler;
+			sourceTree = "<group>";
+		};
+		790B61A12B722B1800CE4993 /* WidgetSwift */ = {
+			isa = PBXGroup;
+			children = (
+				790B61A52B7232A300CE4993 /* WidgetSwiftViewController.h */,
+				790B61A62B7232A300CE4993 /* WidgetSwiftViewController.m */,
+				790B61A32B722C4400CE4993 /* WidgetSwiftView.swift */,
+				790B61A22B722C4300CE4993 /* DouYinCComment-Bridging-Header.h */,
+				790B61AB2B7239D700CE4993 /* ScrolPick.swift */,
+				790B61C22B7342B800CE4993 /* Fan.swift */,
+				790B61C52B73448600CE4993 /* Clock.swift */,
+				790B61AE2B723A2800CE4993 /* SwingAnimation File */,
+			);
+			path = WidgetSwift;
+			sourceTree = "<group>";
+		};
+		790B61AE2B723A2800CE4993 /* SwingAnimation File */ = {
+			isa = PBXGroup;
+			children = (
+				790B61A82B7237CE00CE4993 /* ClockHandRotationKit.swift */,
+				790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */,
+				790B61B32B723A4600CE4993 /* Direction.swift */,
+				790B61B22B723A4600CE4993 /* SwingAnimationModifier.swift */,
+				790B61B42B723A4700CE4993 /* View+Extension.swift */,
+			);
+			path = "SwingAnimation File";
+			sourceTree = "<group>";
+		};
+		790B61CA2B73649C00CE4993 /* RecommendWidget */ = {
+			isa = PBXGroup;
+			children = (
+				33BF7F0E28FB271A00CA4292 /* RTDDDataModel.swift */,
+				33BF7EF028FB26C900CA4292 /* RecommendWidget.swift */,
+				33BF7F1128FB273700CA4292 /* RecommendWidgetView.swift */,
+				33BF7EF228FB26C900CA4292 /* RecommendWidget.intentdefinition */,
+			);
+			path = RecommendWidget;
+			sourceTree = "<group>";
+		};
+		790B61CB2B7364B800CE4993 /* ScrolPicWidget */ = {
+			isa = PBXGroup;
+			children = (
+				790B61CE2B73671800CE4993 /* ScrolPicWidget.swift */,
+				790B61D22B736B7A00CE4993 /* ScrolPicWidget+Entry.swift */,
+				790B61D42B736B8200CE4993 /* ScrolPicWidget+EntryView.swift */,
+				790B61D02B736B0300CE4993 /* ScrolPicWidget+Provider.swift */,
+			);
+			path = ScrolPicWidget;
+			sourceTree = "<group>";
+		};
+		790B61CC2B7364C600CE4993 /* FanWidget */ = {
+			isa = PBXGroup;
+			children = (
+				790B626D2B79206900CE4993 /* FanWidget.swift */,
+				790B626F2B79207500CE4993 /* FanWidget+Entry.swift */,
+				790B62712B79207F00CE4993 /* FanWidget+EntryView.swift */,
+				790B62732B79208C00CE4993 /* FanWidget+Provider.swift */,
+			);
+			path = FanWidget;
+			sourceTree = "<group>";
+		};
+		790B61CD2B7364D400CE4993 /* ClockWidget */ = {
+			isa = PBXGroup;
+			children = (
+				790B62652B78F21B00CE4993 /* ClockWidget.swift */,
+				790B62672B78F26500CE4993 /* ClockWidget+Entry.swift */,
+				790B62692B78F27100CE4993 /* ClockWidget+EntryView.swift */,
+				790B626B2B78F28400CE4993 /* ClockWidget+Provider.swift */,
+			);
+			path = ClockWidget;
 			sourceTree = "<group>";
 		};
 		790F14CB225CF98F000E7335 = {
@@ -1146,6 +1303,7 @@
 				793D5B5526BFE74E00DFC4FB /* ViewPage */,
 				3373FD60272BAD98006EA17A /* TTCVideoTransition */,
 				7928C0632A358B0F00CD844A /* DouyinPanPush */,
+				790B61A12B722B1800CE4993 /* WidgetSwift */,
 				795DB584229D3355003AFE44 /* RootViewController.h */,
 				795DB585229D3355003AFE44 /* RootViewController.m */,
 				790F14D7225CF98F000E7335 /* AppDelegate.h */,
@@ -2324,6 +2482,7 @@
 				33BF7EE828FB26C800CA4292 /* Sources */,
 				33BF7EE928FB26C800CA4292 /* Frameworks */,
 				33BF7EEA28FB26C800CA4292 /* Resources */,
+				790B61C12B723D8C00CE4993 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2359,6 +2518,7 @@
 				790F14D1225CF98F000E7335 /* Frameworks */,
 				790F14D2225CF98F000E7335 /* Resources */,
 				335490E927897BFC00C4331E /* Embed App Extensions */,
+				790B61BE2B723C4900CE4993 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2389,6 +2549,7 @@
 					};
 					790F14D3225CF98F000E7335 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -2452,10 +2613,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790B61BB2B723B3100CE4993 /* ClockHandRotationKit.swift in Sources */,
+				790B61C92B73643200CE4993 /* DDWidgetBundle.swift in Sources */,
+				790B62742B79208C00CE4993 /* FanWidget+Provider.swift in Sources */,
+				790B626E2B79206A00CE4993 /* FanWidget.swift in Sources */,
+				790B626A2B78F27100CE4993 /* ClockWidget+EntryView.swift in Sources */,
+				790B62662B78F21B00CE4993 /* ClockWidget.swift in Sources */,
+				790B61B82B723A4700CE4993 /* Direction.swift in Sources */,
+				790B61D52B736B8200CE4993 /* ScrolPicWidget+EntryView.swift in Sources */,
+				790B61B62B723A4700CE4993 /* SwingAnimationModifier.swift in Sources */,
+				790B61BA2B723A4700CE4993 /* View+Extension.swift in Sources */,
+				790B61D12B736B0300CE4993 /* ScrolPicWidget+Provider.swift in Sources */,
 				33BF7EF628FB26CC00CA4292 /* RecommendWidget.intentdefinition in Sources */,
+				790B61D32B736B7A00CE4993 /* ScrolPicWidget+Entry.swift in Sources */,
 				33BF7F1228FB273700CA4292 /* RecommendWidgetView.swift in Sources */,
+				790B61AD2B7239D700CE4993 /* ScrolPick.swift in Sources */,
+				790B62722B79207F00CE4993 /* FanWidget+EntryView.swift in Sources */,
+				790B61C42B7342B800CE4993 /* Fan.swift in Sources */,
+				790B626C2B78F28400CE4993 /* ClockWidget+Provider.swift in Sources */,
 				33BF7F0F28FB271A00CA4292 /* RTDDDataModel.swift in Sources */,
+				790B62702B79207500CE4993 /* FanWidget+Entry.swift in Sources */,
 				33BF7EF128FB26C900CA4292 /* RecommendWidget.swift in Sources */,
+				790B61C72B73448600CE4993 /* Clock.swift in Sources */,
+				790B62682B78F26500CE4993 /* ClockWidget+Entry.swift in Sources */,
+				790B62632B748B4400CE4993 /* DDWidgetCommon.swift in Sources */,
+				790B61CF2B73671800CE4993 /* ScrolPicWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2503,8 +2685,10 @@
 				792EBB4526C1220B00B94076 /* UIButton+RACCommandSupport.m in Sources */,
 				790F1535225DED17000E7335 /* MASViewConstraint.m in Sources */,
 				793D5D3726C0136000DFC4FB /* ZJScrollPageView.m in Sources */,
+				790B61A92B7237CF00CE4993 /* ClockHandRotationKit.swift in Sources */,
 				795DB8D5229E8758003AFE44 /* CommentModel.m in Sources */,
 				334FF25227547D600052EAFF /* Type2ViewControllerSecond.m in Sources */,
+				790B61A42B722C4400CE4993 /* WidgetSwiftView.swift in Sources */,
 				792EBB4926C1220B00B94076 /* RACSubject.m in Sources */,
 				3373FD63272BDEDC006EA17A /* TransitionVideoListViewController.m in Sources */,
 				792EBB1226C1220B00B94076 /* RACDynamicSequence.m in Sources */,
@@ -2542,6 +2726,7 @@
 				792EBB3026C1220B00B94076 /* NSArray+RACSequenceAdditions.m in Sources */,
 				792EBAFD26C1220B00B94076 /* NSObject+RACDescription.m in Sources */,
 				795DB622229E2FA1003AFE44 /* KTVHCDataUnit.m in Sources */,
+				790B61B52B723A4700CE4993 /* SwingAnimationModifier.swift in Sources */,
 				792EBB3826C1220B00B94076 /* UIAlertView+RACSignalSupport.m in Sources */,
 				795DB8CD229E86E9003AFE44 /* IQUIWindow+Hierarchy.m in Sources */,
 				792EBB0026C1220B00B94076 /* RACSignal.m in Sources */,
@@ -2599,6 +2784,7 @@
 				795DB65C229E300D003AFE44 /* HTTPErrorResponse.m in Sources */,
 				795DB5CF229D3E0C003AFE44 /* SmallVideoCell.m in Sources */,
 				795DB65E229E300D003AFE44 /* HTTPDynamicFileResponse.m in Sources */,
+				790B61C62B73448600CE4993 /* Clock.swift in Sources */,
 				792EBB0A26C1220B00B94076 /* RACGroupedSignal.m in Sources */,
 				79C7F0202ADEF00F003CF3C1 /* UIViewController+TTCPanPush.m in Sources */,
 				792EBB0926C1220B00B94076 /* RACSignal+Operations.m in Sources */,
@@ -2606,6 +2792,7 @@
 				793D5D1C26C0135F00DFC4FB /* MJRefreshBackFooter.m in Sources */,
 				795DB5C8229D3D69003AFE44 /* UIButton+WebCache.m in Sources */,
 				795DB723229E372F003AFE44 /* AVPlayerItem+MyAvPlayerItemCate.m in Sources */,
+				790B61B92B723A4700CE4993 /* View+Extension.swift in Sources */,
 				790F152E225DED17000E7335 /* ViewController+MASAdditions.m in Sources */,
 				790F152D225DED17000E7335 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				790F152F225DED17000E7335 /* MASCompositeConstraint.m in Sources */,
@@ -2625,6 +2812,7 @@
 				793D5D1226C0135F00DFC4FB /* MJRefreshAutoStateFooter.m in Sources */,
 				795DB8C8229E86E9003AFE44 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				334FF24A27547D480052EAFF /* Type1ViewControllerThird.m in Sources */,
+				790B61B72B723A4700CE4993 /* Direction.swift in Sources */,
 				793D5C4A26BFE74F00DFC4FB /* TagChannelView.m in Sources */,
 				793D5C6326BFE74F00DFC4FB /* GarageBandViewController.m in Sources */,
 				792EBB3226C1220B00B94076 /* NSText+RACSignalSupport.m in Sources */,
@@ -2685,6 +2873,7 @@
 				334FF25A27547D6D0052EAFF /* Type3ViewControllerFirst.m in Sources */,
 				792EBB2326C1220B00B94076 /* RACBehaviorSubject.m in Sources */,
 				793D5D2426C0136000DFC4FB /* BaseCollectionViewController.m in Sources */,
+				790B61C32B7342B800CE4993 /* Fan.swift in Sources */,
 				795DB769229E372F003AFE44 /* DDVideoPlayerManager.m in Sources */,
 				792EBB1C26C1220B00B94076 /* UIControl+RACSignalSupportPrivate.m in Sources */,
 				795DB5BB229D3D69003AFE44 /* SDWebImageDownloader.m in Sources */,
@@ -2693,11 +2882,13 @@
 				792EBB0126C1220B00B94076 /* UITableViewCell+RACSignalSupport.m in Sources */,
 				795DB630229E2FA1003AFE44 /* KTVHTTPCache.m in Sources */,
 				334FF27027547EEA0052EAFF /* Type5ViewControllerFirst.m in Sources */,
+				790B61AC2B7239D700CE4993 /* ScrolPick.swift in Sources */,
 				795DB663229E300D003AFE44 /* HTTPLogging.m in Sources */,
 				795DB8C6229E86E9003AFE44 /* IQTitleBarButtonItem.m in Sources */,
 				793D5D1426C0135F00DFC4FB /* MJRefreshAutoNormalFooter.m in Sources */,
 				793D5D3126C0136000DFC4FB /* ZJPageTableViewController.m in Sources */,
 				793D5D1926C0135F00DFC4FB /* MJRefreshGifHeader.m in Sources */,
+				790B61A72B7232A300CE4993 /* WidgetSwiftViewController.m in Sources */,
 				792EBB1026C1220B00B94076 /* RACUnarySequence.m in Sources */,
 				795DB61B229E2FA1003AFE44 /* KTVHCHTTPResponse.m in Sources */,
 				795DB62D229E2FA1003AFE44 /* KTVHCRange.m in Sources */,
@@ -3062,13 +3253,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GE5UCEG562;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = DouYinCComment/PrefixHeader.pch;
 				INFOPLIST_FILE = DouYinCComment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3081,6 +3273,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DBLD.DouYinCComment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DouYinCComment/WidgetSwift/DouYinCComment-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3090,13 +3285,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GE5UCEG562;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = DouYinCComment/PrefixHeader.pch;
 				INFOPLIST_FILE = DouYinCComment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3109,6 +3305,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DBLD.DouYinCComment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DouYinCComment/WidgetSwift/DouYinCComment-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

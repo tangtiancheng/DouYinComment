@@ -1,0 +1,4 @@
+framework module ClockHandRotationKit {
+  header "ClockHandRotationKit-Swift.h"
+  requires objc
+}

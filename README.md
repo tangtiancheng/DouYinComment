@@ -47,10 +47,11 @@ pod 'TTCTool
 
 
 
-## 4.仿照网易云iOS写了可编辑小组件Widget功能,网上也有很多博客写了,但是不知道为啥不提供Demo,我这边就偷懒不写简书了,只提供Demo,和网易云一样,可编辑列表选项,需要注意的细节在demo里也写了,自己去跑起来看吧
+## 4.仿照网易云iOS写了可编辑小组件Widget功能,和网易云一样,可编辑列表选项,还有风扇小组件,时钟小组件,滚动照片小组件,小组件帧动画,自己去跑起来看吧
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件编辑.gif)
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
 
 
 ## 5.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大 )

@@ -2,6 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TreeNewBee2.ttf</string>
+		<string>TreeNewBee3.ttf</string>
+		<string>TreeNewBee4.ttf</string>
+		<string>TreeNewBee5.ttf</string>
+		<string>TreeNewBee6.ttf</string>
+		<string>TreeNewBee8.ttf</string>
+		<string>TreeNewBee10.ttf</string>
+		<string>TreeNewBee12.ttf</string>
+		<string>TreeNewBee15.ttf</string>
+		<string>TreeNewBee20.ttf</string>
+		<string>TreeNewBee24.ttf</string>
+		<string>TreeNewBee30.ttf</string>
+		<string>TreeNewBee60.ttf</string>
+	</array>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>

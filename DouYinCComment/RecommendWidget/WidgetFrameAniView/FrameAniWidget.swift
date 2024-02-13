@@ -9,8 +9,8 @@ import WidgetKit
 import SwiftUI
 
 
-struct ClockWidget: Widget {
-    let kind: String = "ClockWidget"
+struct FrameAniWidget: Widget {
+    let kind: String = "FrameAniWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
@@ -18,8 +18,8 @@ struct ClockWidget: Widget {
                 .widgetBackground(Color.black.opacity(0))
             
         }
-        .configurationDisplayName("表情时钟")
-        .description("时钟小组件,有需要代码自拿")
+        .configurationDisplayName("帧动画")
+        .description("帧动画小组件,有需要代码自拿")
         .supportedFamilies([.systemSmall])
         .ddcontentMarginsDisabled()
     }

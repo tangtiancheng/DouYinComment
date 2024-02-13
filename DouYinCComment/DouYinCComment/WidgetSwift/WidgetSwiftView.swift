@@ -45,31 +45,48 @@ import WidgetKit
             scrolV.addSubview(vc2.view)
             vc2.view.frame = CGRectMake(180, 0, 160, 160)
             
-            var vc3 = UIHostingController(rootView:SmallWidgetScrolPicView(lineNum: 1,sizeType: .WidgetSizeMidType))
-            vc3.view.layer.cornerRadius = 22;
-            vc3.view.layer.masksToBounds = true;
-            scrolV.addSubview(vc3.view)
-            vc3.view.frame = CGRectMake(10, 170, 320, 160)
+//            var vc3 = UIHostingController(rootView:SmallWidgetScrolPicView(lineNum: 1,sizeType: .WidgetSizeMidType))
+//            vc3.view.layer.cornerRadius = 22;
+//            vc3.view.layer.masksToBounds = true;
+//            scrolV.addSubview(vc3.view)
+//            vc3.view.frame = CGRectMake(10, 170, 320, 160)
             
             var vc4 = UIHostingController(rootView:SmallWidgetScrolPicView(lineNum: 2,sizeType: .WidgetSizeMidType))
             vc4.view.layer.cornerRadius = 22;
             vc4.view.layer.masksToBounds = true;
             scrolV.addSubview(vc4.view)
-            vc4.view.frame = CGRectMake(10, 340, 320, 160)
+            vc4.view.frame = CGRectMake(10, 170, 320, 160)
             
             //风扇
             var vc5 = UIHostingController(rootView:SmallWidgetFanView())
             vc5.view.layer.cornerRadius = 22;
             vc5.view.layer.masksToBounds = true;
             scrolV.addSubview(vc5.view)
-            vc5.view.frame = CGRectMake(10, 510, 160, 160)
+            vc5.view.frame = CGRectMake(10, 340, 160, 160)
             
             //时钟
             var vc6 = UIHostingController(rootView:SmallWidgetClockView())
             vc6.view.layer.cornerRadius = 22;
             vc6.view.layer.masksToBounds = true;
             scrolV.addSubview(vc6.view)
-            vc6.view.frame = CGRectMake(180, 510, 160, 160)
+            vc6.view.frame = CGRectMake(180, 340, 160, 160)
+            
+            //小组件模拟帧动画
+            if #available(iOS 15.0, *) {
+                var vc7 = UIHostingController(rootView:WidgetFrameAniView(frameImages: ["01","02","03","04","05","06","07","08","09","010"]))
+                vc7.view.backgroundColor = UIColor.black
+                vc7.view.layer.cornerRadius = 22;
+                vc7.view.layer.masksToBounds = true;
+                scrolV.addSubview(vc7.view)
+                vc7.view.frame = CGRectMake(10, 530, 160, 160)
+                
+               
+            }
+           
+            
+            
+           
+            
         }
        
         

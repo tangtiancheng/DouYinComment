@@ -18,6 +18,6 @@ struct DDWidgetBundle: WidgetBundle {
         ScrolPicWidget()
         ClockWidget()
         FanWidget()
-
+        FrameAniWidget()
     }
 }

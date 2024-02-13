@@ -12,12 +12,19 @@ pod 'TTCTool
 
 这个Demo主要功能:
 
-## 1.这个Demo有仿照抖音的小视频评论手势拖拽效果 (直接将TCCommentsPopView这个类拖入您的项目即可使用,很简单)
+## 1.仿照网易云iOS写了可编辑小组件Widget功能,和网易云一样,可编辑列表选项,还有风扇小组件,时钟小组件,滚动照片小组件,小组件帧动画,自己去跑起来看吧
+
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件编辑.gif)
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
+
+
+## 2.这个Demo有仿照抖音的小视频评论手势拖拽效果 (直接将TCCommentsPopView这个类拖入您的项目即可使用,很简单)
 可以说完全和抖音的效果一模一样,该功能我已经在"铃声多多"项目中使用. 我在github,cocoachina,coco4app等网址上找了很久,都没有一个demo是能完全和抖音的一致的.如果觉得好用希望给一个star
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/comment.gif)
 
-## 2.一行代码实现仿抖音左滑Push进个人主页功能
+## 3.一行代码实现仿抖音左滑Push进个人主页功能
   一行代码实现仿抖音 左滑 push进入个人主页,  
     1.把TTCPanPushTransition文件夹拖入你的项目中,  
     2.在需要push的控制器类中  #import "UIViewController+TTCPanPush.h"  
@@ -34,7 +41,7 @@ pod 'TTCTool
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/panPush.gif)
 
-## 3.抖音视频播放转场动画(github上其它demo并未做到和抖音一样,或者耦合度太高需要侵入你的代码,让你改很多东西才能实现,我自己封装了一个,只需将TTCTransition文件夹拖入你的项目,然后添加两行代码就行,完全不需要侵入修改你原有的代码. 希望大佬们多提意见)
+## 4.抖音视频播放转场动画(github上其它demo并未做到和抖音一样,或者耦合度太高需要侵入你的代码,让你改很多东西才能实现,我自己封装了一个,只需将TTCTransition文件夹拖入你的项目,然后添加两行代码就行,完全不需要侵入修改你原有的代码. 希望大佬们多提意见)
 一行或者两行代码实现抖音视频播放转场动画,支持push和present,两行代码脑残式操作,自己看下代码
 首先将TTCTransition文件夹拖入你的项目中,
 #import "TTCTransitionDelegate.h"
@@ -45,13 +52,6 @@ pod 'TTCTool
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/TTCTransition.gif)
 
-
-
-## 4.仿照网易云iOS写了可编辑小组件Widget功能,和网易云一样,可编辑列表选项,还有风扇小组件,时钟小组件,滚动照片小组件,小组件帧动画,自己去跑起来看吧
-
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件编辑.gif)
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
 
 
 ## 5.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大 )

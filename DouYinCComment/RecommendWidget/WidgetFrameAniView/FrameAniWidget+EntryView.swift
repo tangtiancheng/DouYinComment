@@ -30,7 +30,14 @@ extension FrameAniWidget {
 
         var body: some View {
             if #available(iOS 15.0, *) {
-                WidgetFrameAniView(frameImages: ["01","02","03","04","05","06","07","08","09","010"])
+                
+                switch family {
+                case .systemSmall: WidgetFrameAniView(frameImages: ["01","02","03","04","05","06","07","08","09","010"])
+                case .systemMedium: WidgetFrameAniView2(color: .red)
+                default: WidgetFrameAniView(frameImages: ["01","02","03","04","05","06","07","08","09","010"])
+                }
+                
+                
             } else {
                 Text("123")
             }

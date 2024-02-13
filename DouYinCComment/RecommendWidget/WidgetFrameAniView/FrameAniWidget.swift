@@ -20,7 +20,7 @@ struct FrameAniWidget: Widget {
         }
         .configurationDisplayName("帧动画")
         .description("帧动画小组件,有需要代码自拿")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
         .ddcontentMarginsDisabled()
     }
 }

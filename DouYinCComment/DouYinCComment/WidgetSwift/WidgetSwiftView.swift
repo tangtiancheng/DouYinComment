@@ -82,9 +82,24 @@ import WidgetKit
                 
                
             }
-           
             
             
+            if #available(iOS 14.0, *) {
+                var vc8 = UIHostingController(rootView:WidgetFrameAniView2(color: .white))
+                vc8.view.backgroundColor = UIColor.black
+                vc8.view.layer.cornerRadius = 22;
+                vc8.view.layer.masksToBounds = true;
+                scrolV.addSubview(vc8.view)
+                vc8.view.frame = CGRectMake(180, 530, 80, 80)
+                
+                var vc9 = UIHostingController(rootView:WidgetFrameAniView2(color: .red))
+                vc9.view.backgroundColor = UIColor.black
+                vc9.view.layer.cornerRadius = 22;
+                vc9.view.layer.masksToBounds = true;
+                scrolV.addSubview(vc9.view)
+                vc9.view.frame = CGRectMake(270, 530, 80, 80)
+                
+            }
            
             
         }

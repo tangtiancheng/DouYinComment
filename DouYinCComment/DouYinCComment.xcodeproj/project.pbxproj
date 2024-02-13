@@ -133,6 +133,8 @@
 		790B62D02B7B811000CE4993 /* 03.png in Resources */ = {isa = PBXBuildFile; fileRef = 790B62B52B7B811000CE4993 /* 03.png */; };
 		790B62D12B7B811000CE4993 /* 09.png in Resources */ = {isa = PBXBuildFile; fileRef = 790B62B62B7B811000CE4993 /* 09.png */; };
 		790B62D22B7B811000CE4993 /* 09.png in Resources */ = {isa = PBXBuildFile; fileRef = 790B62B62B7B811000CE4993 /* 09.png */; };
+		790B62D42B7BCCA900CE4993 /* spaceman_astronaut.otf in Resources */ = {isa = PBXBuildFile; fileRef = 790B62D32B7BCCA900CE4993 /* spaceman_astronaut.otf */; };
+		790B62D52B7BCCA900CE4993 /* spaceman_astronaut.otf in Resources */ = {isa = PBXBuildFile; fileRef = 790B62D32B7BCCA900CE4993 /* spaceman_astronaut.otf */; };
 		790F14D9225CF98F000E7335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F14D8225CF98F000E7335 /* AppDelegate.m */; };
 		790F14DF225CF98F000E7335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 790F14DD225CF98F000E7335 /* Main.storyboard */; };
 		790F14E1225CF991000E7335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790F14E0225CF991000E7335 /* Assets.xcassets */; };
@@ -595,6 +597,7 @@
 		790B62B42B7B810F00CE4993 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		790B62B52B7B811000CE4993 /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03.png; sourceTree = "<group>"; };
 		790B62B62B7B811000CE4993 /* 09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09.png; sourceTree = "<group>"; };
+		790B62D32B7BCCA900CE4993 /* spaceman_astronaut.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceman_astronaut.otf; sourceTree = "<group>"; };
 		790F14D4225CF98F000E7335 /* DouYinCComment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYinCComment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		790F14D7225CF98F000E7335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		790F14D8225CF98F000E7335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1382,6 +1385,7 @@
 				790B627B2B7A4E4000CE4993 /* TreeNewBee24.ttf */,
 				790B62822B7A4E4300CE4993 /* TreeNewBee30.ttf */,
 				790B627F2B7A4E4100CE4993 /* TreeNewBee60.ttf */,
+				790B62D32B7BCCA900CE4993 /* spaceman_astronaut.otf */,
 				790B62B42B7B810F00CE4993 /* 1.png */,
 				790B62AD2B7B810D00CE4993 /* 01.png */,
 				790B62AA2B7B810C00CE4993 /* 2.png */,
@@ -2738,6 +2742,7 @@
 				790B62D02B7B811000CE4993 /* 03.png in Resources */,
 				33BF7EF428FB26CC00CA4292 /* Assets.xcassets in Resources */,
 				790B62C22B7B811000CE4993 /* 06.png in Resources */,
+				790B62D52B7BCCA900CE4993 /* spaceman_astronaut.otf in Resources */,
 				790B62C62B7B811000CE4993 /* 07.png in Resources */,
 				790B62BE2B7B811000CE4993 /* 05.png in Resources */,
 				790B62C82B7B811000CE4993 /* 4.png in Resources */,
@@ -2793,6 +2798,7 @@
 				790B629E2B7A4E4500CE4993 /* TreeNewBee3.ttf in Resources */,
 				790B62882B7A4E4400CE4993 /* TreeNewBee8.ttf in Resources */,
 				793D5D0B26C0135F00DFC4FB /* MJRefresh.bundle in Resources */,
+				790B62D42B7BCCA900CE4993 /* spaceman_astronaut.otf in Resources */,
 				790B62962B7A4E4500CE4993 /* TreeNewBee6.ttf in Resources */,
 				790B629A2B7A4E4500CE4993 /* TreeNewBee15.ttf in Resources */,
 				790F14DF225CF98F000E7335 /* Main.storyboard in Resources */,

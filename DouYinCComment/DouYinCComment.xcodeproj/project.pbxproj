@@ -135,6 +135,8 @@
 		790B62D22B7B811000CE4993 /* 09.png in Resources */ = {isa = PBXBuildFile; fileRef = 790B62B62B7B811000CE4993 /* 09.png */; };
 		790B62D42B7BCCA900CE4993 /* spaceman_astronaut.otf in Resources */ = {isa = PBXBuildFile; fileRef = 790B62D32B7BCCA900CE4993 /* spaceman_astronaut.otf */; };
 		790B62D52B7BCCA900CE4993 /* spaceman_astronaut.otf in Resources */ = {isa = PBXBuildFile; fileRef = 790B62D32B7BCCA900CE4993 /* spaceman_astronaut.otf */; };
+		790B63F02B82FD7300CE4993 /* NSNull+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B63EF2B82FD7200CE4993 /* NSNull+Safe.m */; };
+		790B63F32B82FE4D00CE4993 /* MyTe.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B63F22B82FE4D00CE4993 /* MyTe.m */; };
 		790F14D9225CF98F000E7335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 790F14D8225CF98F000E7335 /* AppDelegate.m */; };
 		790F14DF225CF98F000E7335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 790F14DD225CF98F000E7335 /* Main.storyboard */; };
 		790F14E1225CF991000E7335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790F14E0225CF991000E7335 /* Assets.xcassets */; };
@@ -598,6 +600,10 @@
 		790B62B52B7B811000CE4993 /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03.png; sourceTree = "<group>"; };
 		790B62B62B7B811000CE4993 /* 09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09.png; sourceTree = "<group>"; };
 		790B62D32B7BCCA900CE4993 /* spaceman_astronaut.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceman_astronaut.otf; sourceTree = "<group>"; };
+		790B63EE2B82FD7200CE4993 /* NSNull+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+Safe.h"; sourceTree = "<group>"; };
+		790B63EF2B82FD7200CE4993 /* NSNull+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Safe.m"; sourceTree = "<group>"; };
+		790B63F12B82FE4D00CE4993 /* MyTe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTe.h; sourceTree = "<group>"; };
+		790B63F22B82FE4D00CE4993 /* MyTe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTe.m; sourceTree = "<group>"; };
 		790F14D4225CF98F000E7335 /* DouYinCComment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYinCComment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		790F14D7225CF98F000E7335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		790F14D8225CF98F000E7335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1452,6 +1458,10 @@
 				795DB585229D3355003AFE44 /* RootViewController.m */,
 				790F14D7225CF98F000E7335 /* AppDelegate.h */,
 				790F14D8225CF98F000E7335 /* AppDelegate.m */,
+				790B63EE2B82FD7200CE4993 /* NSNull+Safe.h */,
+				790B63EF2B82FD7200CE4993 /* NSNull+Safe.m */,
+				790B63F12B82FE4D00CE4993 /* MyTe.h */,
+				790B63F22B82FE4D00CE4993 /* MyTe.m */,
 				792CF31B2A37343E005CD799 /* FDFullscreenPopGesture */,
 				795DB5D3229D43AB003AFE44 /* PrefixHeader.pch */,
 				790F150F225D01CC000E7335 /* readme.h */,
@@ -3000,6 +3010,7 @@
 				790B61B92B723A4700CE4993 /* View+Extension.swift in Sources */,
 				790F152E225DED17000E7335 /* ViewController+MASAdditions.m in Sources */,
 				790F152D225DED17000E7335 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				790B63F32B82FE4D00CE4993 /* MyTe.m in Sources */,
 				790F152F225DED17000E7335 /* MASCompositeConstraint.m in Sources */,
 				795DB8D0229E86E9003AFE44 /* IQUIView+Hierarchy.m in Sources */,
 				793D5C6426BFE74F00DFC4FB /* AppConfigure.m in Sources */,
@@ -3056,6 +3067,7 @@
 				793D5D1626C0135F00DFC4FB /* MJRefreshNormalTrailer.m in Sources */,
 				790F1532225DED17000E7335 /* NSArray+MASAdditions.m in Sources */,
 				793D5D8A26C02C6300DFC4FB /* MyCommentCell.m in Sources */,
+				790B63F02B82FD7300CE4993 /* NSNull+Safe.m in Sources */,
 				792EBB3926C1220B00B94076 /* RACValueTransformer.m in Sources */,
 				334FF26827547E160052EAFF /* Type4ViewControllerFourth.m in Sources */,
 				795DB660229E300D003AFE44 /* HTTPAsyncFileResponse.m in Sources */,

@@ -100,6 +100,10 @@ import WidgetKit
                 vc9.view.frame = CGRectMake(270, 530, 80, 80)
                 
             }
+            
+            
+            
+            
            
             
         }

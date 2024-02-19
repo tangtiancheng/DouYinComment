@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "IQKeyboardManager.h"
-
+//#import "MyTe.h"
 
 @interface AppDelegate ()
 
@@ -54,6 +54,16 @@
     [IQKeyboardManager sharedManager].keyboardDistanceFromTextField = 0.0;
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     // Override point for customization after application launch.
+    
+//    MyTe *myte = [NSNull new];
+//    NSLog(@"%@",[myte s]);
+//    NSLog(@"%lf",[myte f]);
+//    NSLog(@"%ld",[myte i]);
+//    
+//    NSLog(@"%ld",[myte walk](10));
+   
+
+    
     return YES;
 }
 

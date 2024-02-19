@@ -29,11 +29,13 @@ struct WidgetFrameAniView: View {
                             .multilineTextAlignment(.trailing)
                             .font(.custom("TreeNewBee\(frameImages.count)", size: minSize))
                             .foregroundColor(Color.black)
+                            .ddContentTransitionIdent()
                         //                            .offset(x: -minSize/2)
                             .frame(width: minSize * 5, height: minSize, alignment: .trailing)
                     }
                     //                    .frame(width: minSize,height: minSize)
-                    //                        .contentTransition(.identity)
+//                                    .contentTransition(.identity)
+                    .ddContentTransitionIdent()
                     .clipped()
                 }
             }
@@ -59,6 +61,7 @@ struct WidgetFrameAniView2: View {
                     .multilineTextAlignment(.trailing)
                     .font(.custom("spaceman_astronaut", size: minSize))
                     .foregroundColor(color)
+                    .ddContentTransitionIdent()
 //                    .background(Color.green)
                     .frame(width: minSize * 5, height: minSize, alignment: .trailing)
 //                    .clipped()
@@ -72,6 +75,19 @@ struct WidgetFrameAniView2: View {
     }
 }
 
+
+@available(iOS 13.0, *)
+extension View {
+    func ddContentTransitionIdent() -> some View {
+        if #available(iOS 17.0, *) {
+            return self.contentTransition(.identity)
+        } else {
+            return self
+        }
+    }
+}
+
+   
 
 
 //@available(iOS 14.0, *)

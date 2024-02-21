@@ -31,8 +31,8 @@ extension ScrolPicWidget {
         var body: some View {
             GeometryReader { geo in
                 switch family {
-                case .systemSmall: SmallWidgetScrolPicView(lineNum: 1, sizeType: .WidgetSizeSmallType)
-                case .systemMedium: SmallWidgetScrolPicView(lineNum: 2, sizeType: .WidgetSizeMidType)
+                case .systemSmall: SmallWidgetScrolPicView(lineNum: 2, sizeType: .WidgetSizeSmallType)
+                case .systemMedium: SmallWidgetScrolPicView(lineNum: 1, sizeType: .WidgetSizeMidType)
                 default: SmallWidgetScrolPicView(lineNum: 2, sizeType: .WidgetSizeSmallType)
                 }
                 

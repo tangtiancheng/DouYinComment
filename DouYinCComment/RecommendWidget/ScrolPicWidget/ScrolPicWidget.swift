@@ -22,5 +22,6 @@ struct ScrolPicWidget: Widget {
         .description("滚动相册小组件,有需要代码自拿")
         .supportedFamilies([.systemSmall,.systemMedium])
         .ddcontentMarginsDisabled()
+        
     }
 }

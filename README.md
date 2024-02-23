@@ -11,6 +11,7 @@ pod 'TTCTool
 以下这些功能大部分都是我在 "铃声多多"APP里已经用了,iOS端日活有70万左右, 常年保持AppStore 排行榜100多名,  并不是让你们当小白鼠哈!
 这个Demo主要功能:
 
+
 ## 1.网易云iOS可编辑小组件,动态Widget,风扇小组件,时钟小组件,滚动照片小组件,小组件帧动画,自己去跑起来看吧
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)

@@ -16,9 +16,10 @@ pod 'TTCTool
 
 ## 1.网易云iOS可编辑小组件,动态Widget,风扇小组件,时钟小组件,滚动照片小组件,小组件帧动画,自己去跑起来看吧
 
+![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件编辑.gif)
-![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
+
 
 
 ## 2.这个Demo有仿照抖音的小视频评论手势拖拽效果 (直接将TCCommentsPopView这个类拖入您的项目即可使用,很简单)

@@ -423,7 +423,7 @@ static NSString *JPVideoPlayerURL = @"www.newpan.com";
 }
 
 - (void)configPlayerWithWeb {
-    if(!self.playerModel.useDownAndPlay) {
+    if(!self.playerModel.useDownAndPlay || [self.playerModel.videoURL.absoluteString hasSuffix:@".m3u8"]) {
         //如果不需要边下边播
         self.urlAsset = [AVURLAsset URLAssetWithURL:self.videoURL options:nil];
         [self playResource];

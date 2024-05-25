@@ -75,7 +75,7 @@
 - (void)commonInit
 {
     KTVHCLogAlloc(self);
-    [self lock];
+    self.coreLock = [[NSRecursiveLock alloc] init];
     if (!self.unitItemsInternal) {
         self.unitItemsInternal = [NSMutableArray array];
     }
@@ -89,7 +89,6 @@
     [self.unitItemsInternal removeObjectsInArray:removal];
     [self sortUnitItems];
     KTVHCLogDataUnit(@"%p, Create Unit\nURL : %@\nkey : %@\ntimeInterval : %@\ntotalLength : %lld\ncacheLength : %lld\nvaildLength : %lld\nresponseHeaders : %@\nunitItems : %@", self, self.URL, self.key, [NSDate dateWithTimeIntervalSince1970:self.createTimeInterval], self.totalLength, self.cacheLength, self.validLength, self.responseHeaders, self.unitItemsInternal);
-    [self unlock];
 }
 
 - (void)sortUnitItems
@@ -295,7 +294,11 @@
                 }
                 KTVHCLogDataUnit(@"%p, Merge write data : %lld", self, (long long)data.length);
                 @try {
-                    [writingHandle writeData:data];
+                    if (@available(iOS 13.0, *)) {
+                        [writingHandle writeData:data error:&error];
+                    } else {
+                        [writingHandle writeData:data];
+                    }
                 } @catch (NSException *exception) {
                     KTVHCLogDataUnit(@"%p, Merge files write exception\n%@", self, exception);
                     error = [KTVHCError errorForException:exception];
@@ -332,9 +335,6 @@
 
 - (void)lock
 {
-    if (!self.coreLock) {
-        self.coreLock = [[NSRecursiveLock alloc] init];
-    }
     [self.coreLock lock];
     if (!self.lockingUnitItems) {
         self.lockingUnitItems = [NSMutableArray array];

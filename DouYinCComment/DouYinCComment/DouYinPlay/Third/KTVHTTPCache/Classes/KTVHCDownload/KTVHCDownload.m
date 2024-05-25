@@ -15,8 +15,11 @@
 
 #import <UIKit/UIKit.h>
 
+NSString * const KTVHCContentTypeText                   = @"text/";
 NSString * const KTVHCContentTypeVideo                  = @"video/";
 NSString * const KTVHCContentTypeAudio                  = @"audio/";
+NSString * const KTVHCContentTypeAppleHLS1              = @"vnd.apple.mpegURL";
+NSString * const KTVHCContentTypeAppleHLS2              = @"application/x-mpegURL";
 NSString * const KTVHCContentTypeApplicationMPEG4       = @"application/mp4";
 NSString * const KTVHCContentTypeApplicationOctetStream = @"application/octet-stream";
 NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream";
@@ -51,6 +54,7 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
     if (self = [super init]) {
         KTVHCLogAlloc(self);
         self.timeoutInterval = 30.0f;
+        self.coreLock = [[NSLock alloc] init];
         self.backgroundTask = UIBackgroundTaskInvalid;
         self.errorDictionary = [NSMutableDictionary dictionary];
         self.requestDictionary = [NSMutableDictionary dictionary];
@@ -63,8 +67,11 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
         self.session = [NSURLSession sessionWithConfiguration:self.sessionConfiguration
                                                      delegate:self
                                                 delegateQueue:self.sessionDelegateQueue];
-        self.acceptableContentTypes = @[KTVHCContentTypeVideo,
+        self.acceptableContentTypes = @[KTVHCContentTypeText,
+                                        KTVHCContentTypeVideo,
                                         KTVHCContentTypeAudio,
+                                        KTVHCContentTypeAppleHLS1,
+                                        KTVHCContentTypeAppleHLS2,
                                         KTVHCContentTypeApplicationMPEG4,
                                         KTVHCContentTypeApplicationOctetStream,
                                         KTVHCContentTypeBinaryOctetStream];
@@ -101,9 +108,8 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
     return obj;
 }
 
-- (NSURLSessionTask *)downloadWithRequest:(KTVHCDataRequest *)request delegate:(id<KTVHCDownloadDelegate>)delegate
+- (NSURLRequest *)requestWithDataRequest:(KTVHCDataRequest *)request
 {
-    [self lock];
     NSMutableURLRequest *mRequest = [NSMutableURLRequest requestWithURL:request.URL];
     mRequest.timeoutInterval = self.timeoutInterval;
     mRequest.cachePolicy = NSURLRequestReloadIgnoringCacheData;
@@ -116,12 +122,20 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
     [self.additionalHeaders enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
         [mRequest setValue:obj forHTTPHeaderField:key];
     }];
+    return mRequest;;
+}
+
+- (NSURLSessionTask *)downloadWithRequest:(KTVHCDataRequest *)request delegate:(id<KTVHCDownloadDelegate>)delegate
+{
+    [self lock];
+    NSURLRequest *mRequest = [self requestWithDataRequest:request];
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:mRequest];
     [self.requestDictionary setObject:request forKey:task];
     [self.delegateDictionary setObject:delegate forKey:task];
     task.priority = 1.0;
     [task resume];
     KTVHCLogDownload(@"%p, Add Request\nrequest : %@\nURL : %@\nheaders : %@\nHTTPRequest headers : %@\nCount : %d", self, request, request.URL, request.headers, mRequest.allHTTPHeaderFields, (int)self.delegateDictionary.count);
+    [self beginBackgroundTaskAsync];
     [self unlock];
     return task;
 }
@@ -138,25 +152,33 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
     [self.delegateDictionary removeObjectForKey:task];
     [self.requestDictionary removeObjectForKey:task];
     [self.errorDictionary removeObjectForKey:task];
-    if (self.delegateDictionary.count <= 0) {
+    if (self.delegateDictionary.count <= 0 && self.backgroundTask != UIBackgroundTaskInvalid) {
         [self endBackgroundTaskDelay];
     }
     [self unlock];
 }
 
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)task didReceiveResponse:(NSHTTPURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)task didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 {
     [self lock];
-    KTVHCDataRequest *dataRequest = [self.requestDictionary objectForKey:task];
-    KTVHCDataResponse *dataResponse = [[KTVHCDataResponse alloc] initWithURL:dataRequest.URL headers:response.allHeaderFields];
-    KTVHCLogDownload(@"%p, Receive response\nrequest : %@\nresponse : %@\nHTTPResponse : %@", self, dataRequest, dataResponse, response.allHeaderFields);
     NSError *error = nil;
-    if (!error) {
-        if (response.statusCode > 400) {
-            error = [KTVHCError errorForResponseUnavailable:task.currentRequest.URL
-                                                    request:task.currentRequest
-                                                   response:task.response];
+    KTVHCDataRequest *dataRequest = nil;
+    KTVHCDataResponse *dataResponse = nil;
+    NSHTTPURLResponse *HTTPURLResponse = nil;
+    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+        HTTPURLResponse = (NSHTTPURLResponse *)response;
+        if (HTTPURLResponse.statusCode > 400) {
+            error = [KTVHCError errorForResponseStatusCode:task.currentRequest.URL
+                                                   request:task.currentRequest
+                                                  response:task.response];
+        } else {
+            dataRequest = [self.requestDictionary objectForKey:task];
+            dataResponse = [[KTVHCDataResponse alloc] initWithURL:dataRequest.URL headers:HTTPURLResponse.allHeaderFields];
         }
+    } else {
+        error = [KTVHCError errorForResponseClass:task.currentRequest.URL
+                                          request:task.currentRequest
+                                         response:task.response];
     }
     if (!error) {
         BOOL vaild = NO;
@@ -171,18 +193,19 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
             }
         }
         if (!vaild) {
-            error = [KTVHCError errorForUnsupportContentType:task.currentRequest.URL
-                                                     request:task.currentRequest
-                                                    response:task.response];
+            error = [KTVHCError errorForResponseContentType:task.currentRequest.URL
+                                                    request:task.currentRequest
+                                                   response:task.response];
         }
     }
     if (!error) {
         if (dataResponse.contentLength <= 0 ||
             (!KTVHCRangeIsFull(dataRequest.range) &&
+             dataRequest.range.end < dataResponse.totalLength &&
              (dataResponse.contentLength != KTVHCRangeGetLength(dataRequest.range)))) {
-                error = [KTVHCError errorForUnsupportContentType:task.currentRequest.URL
-                                                         request:task.currentRequest
-                                                        response:task.response];
+                error = [KTVHCError errorForResponseContentLength:task.currentRequest.URL
+                                                          request:task.currentRequest
+                                                         response:task.response];
             }
     }
     if (!error) {
@@ -206,6 +229,7 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
         [self.errorDictionary setObject:error forKey:task];
         completionHandler(NSURLSessionResponseCancel);
     } else {
+        KTVHCLogDownload(@"%p, Receive response\nrequest : %@\nresponse : %@\nHTTPResponse : %@", self, dataRequest, dataResponse, HTTPURLResponse);
         id<KTVHCDownloadDelegate> delegate = [self.delegateDictionary objectForKey:task];
         [delegate ktv_download:self didReceiveResponse:dataResponse];
         completionHandler(NSURLSessionResponseAllow);
@@ -233,9 +257,6 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
 
 - (void)lock
 {
-    if (!self.coreLock) {
-        self.coreLock = [[NSLock alloc] init];
-    }
     [self.coreLock lock];
 }
 
@@ -248,41 +269,52 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
 
 - (void)applicationDidEnterBackground:(NSNotification *)notification
 {
-    [self lock];
-    if (self.delegateDictionary.count > 0) {
-        [self beginBackgroundTask];
-    }
-    [self unlock];
+    [self beginBackgroundTaskIfNeeded];
 }
 
 - (void)applicationWillEnterForeground:(NSNotification *)notification
 {
-    [self endBackgroundTask];
+    [self endBackgroundTaskIfNeeded:YES];
 }
 
-- (void)beginBackgroundTask
+- (void)beginBackgroundTaskIfNeeded
 {
-    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        [self endBackgroundTask];
-    }];
-}
-
-- (void)endBackgroundTask
-{
-    if (self.backgroundTask != UIBackgroundTaskInvalid) {
-        [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
-        self.backgroundTask = UIBackgroundTaskInvalid;
+    [self lock];
+    if (self.backgroundTask == UIBackgroundTaskInvalid && self.delegateDictionary.count > 0) {
+        __weak typeof(self) weakSelf = self;
+        self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf endBackgroundTaskIfNeeded:YES];
+        }];
     }
+    [self unlock];
+}
+
+- (void)endBackgroundTaskIfNeeded:(BOOL)force
+{
+    [self lock];
+    if (force || self.delegateDictionary.count <= 0) {
+        if (self.backgroundTask != UIBackgroundTaskInvalid) {
+            [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
+            self.backgroundTask = UIBackgroundTaskInvalid;
+        }
+    }
+    [self unlock];
+}
+
+- (void)beginBackgroundTaskAsync
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+            [self beginBackgroundTaskIfNeeded];
+        }
+    });
 }
 
 - (void)endBackgroundTaskDelay
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self lock];
-        if (self.delegateDictionary.count <= 0) {
-            [self endBackgroundTask];
-        }
-        [self unlock];
+        [self endBackgroundTaskIfNeeded:NO];
     });
 }
 

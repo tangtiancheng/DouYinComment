@@ -1,9 +1,9 @@
 //
-//  KTVHCHTTPResponse.h
+//  KTVHCHTTPHLSResponse.h
 //  KTVHTTPCache
 //
-//  Created by Single on 2017/8/10.
-//  Copyright © 2017年 Single. All rights reserved.
+//  Created by Gary Zhao on 2024/1/7.
+//  Copyright © 2024 Single. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,7 +12,7 @@
 @class KTVHCHTTPConnection;
 @class KTVHCDataRequest;
 
-@interface KTVHCHTTPResponse : NSObject <HTTPResponse>
+@interface KTVHCHTTPHLSResponse : NSObject <HTTPResponse>
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;

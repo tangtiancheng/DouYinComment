@@ -11,4 +11,8 @@
 
 @interface KTVHCHTTPConnection : HTTPConnection
 
++ (NSString *)URITokenPing;
++ (NSString *)URITokenPlaceHolder;
++ (NSString *)URITokenLastPathComponent;
+
 @end

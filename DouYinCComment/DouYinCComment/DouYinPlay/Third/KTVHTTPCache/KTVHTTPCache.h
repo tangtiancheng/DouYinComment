@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
 #if __has_include(<KTVHTTPCache/KTVHTTPCache.h>)
 
 FOUNDATION_EXPORT double KTVHTTPCacheVersionNumber;
 FOUNDATION_EXPORT const unsigned char KTVHTTPCacheVersionString[];
 
+#import <KTVHTTPCache/KTVHCError.h>
 #import <KTVHTTPCache/KTVHCRange.h>
 #import <KTVHTTPCache/KTVHCDataReader.h>
 #import <KTVHTTPCache/KTVHCDataLoader.h>
@@ -23,6 +25,7 @@ FOUNDATION_EXPORT const unsigned char KTVHTTPCacheVersionString[];
 
 #else
 
+#import "KTVHCError.h"
 #import "KTVHCRange.h"
 #import "KTVHCDataReader.h"
 #import "KTVHCDataLoader.h"
@@ -60,6 +63,13 @@ FOUNDATION_EXPORT const unsigned char KTVHTTPCacheVersionString[];
 + (void)proxyStop;
 
 /**
+ *  The port number to run the HTTP server on.
+ *
+ *  @param port : The default port number is zero, meaning the server will automatically use any available port.
+ */
++ (void)proxySetPort:(UInt16)port;
+
+/**
  *  Proxy service running status.
  *
  *  @return YES when the proxy service is running, otherwise NO.
@@ -68,11 +78,21 @@ FOUNDATION_EXPORT const unsigned char KTVHTTPCacheVersionString[];
 
 /**
  *  Convert the URL to the proxy URL.
+ *  Only accept HTTP requests coming from localhost i.e. not from the outside network.
  *
  *  @param URL : The URL for HTTP content.
  *  @return If the param is a file URL or the proxy service isn't running, return URL. Otherwise reutrn the proxy URL.
  */
 + (NSURL *)proxyURLWithOriginalURL:(NSURL *)URL;
+
+/**
+ *  Convert the URL to the proxy URL.
+ *
+ *  @param URL : The URL for HTTP content.
+ *  @param bindToLocalhost : If you want to connect to other devices on the LAN, set to NO.  i.e. AirPlay and other functions.
+ *  @return If the param is a file URL or the proxy service isn't running, return URL. Otherwise reutrn the proxy URL.
+ */
++ (NSURL *)proxyURLWithOriginalURL:(NSURL *)URL bindToLocalhost:(BOOL)bindToLocalhost;
 
 /**
  *  Data Storage
@@ -226,7 +246,7 @@ FOUNDATION_EXPORT const unsigned char KTVHTTPCacheVersionString[];
 /**
  *  Set the acceptable content types.
  *  The following values are only supported by default:
- *      video/x, audio/x, application/mp4, application/octet-stream, binary/octet-stream
+ *      text/x, video/x, audio/x, application/x-mpegURL, vnd.apple.mpegURL, application/mp4, application/octet-stream, binary/octet-stream
  *  If you want to allow other content types, set them here.
  *
  *  @param acceptableContentTypes : The content types can be allowed.
@@ -325,30 +345,5 @@ FOUNDATION_EXPORT const unsigned char KTVHTTPCacheVersionString[];
  *  @param URL : The URL for HTTP content.
  */
 + (void)logCleanErrorForURL:(NSURL *)URL;
-
-@end
-
-/**
- *  Deprecated
- *
- *  This part is for compatibility with historical versions.
- *
- *  @warning This part will be removed in future versions.
- */
-#pragma mark - Deprecated
-
-@interface KTVHTTPCache (Deprecated)
-
-+ (void)logDeleteRecordLog                                                      __attribute__((deprecated("Use +logDeleteRecordLogFile instead.")));
-+ (NSString *)logRecordLogFilePath                                              __attribute__((deprecated("Use +logRecordLogFileURL instead.")));
-+ (NSString *)proxyURLStringWithOriginalURLString:(NSString *)URLString         __attribute__((deprecated("Use +proxyURLWithOriginalURL: instead.")));
-+ (NSURL *)cacheCompleteFileURLIfExistedWithURL:(NSURL *)URL                    __attribute__((deprecated("Use +cacheCompleteFileURLWithURL: instead.")));
-+ (NSString *)cacheCompleteFilePathIfExistedWithURLString:(NSString *)URLString __attribute__((deprecated("Use +cacheCompleteFileURLWithURL: instead.")));
-+ (KTVHCDataCacheItem *)cacheCacheItemWithURLString:(NSString *)URLString       __attribute__((deprecated("Use +cacheCacheItemWithURL: instead.")));
-+ (void)cacheDeleteCacheWithURLString:(NSString *)URLString                     __attribute__((deprecated("Use +cacheDeleteCacheWithURL: instead.")));
-+ (void)tokenSetURLFilter:(NSURL * (^)(NSURL * URL))URLFilter                   __attribute__((deprecated("Use +encodeSetURLConverter: instead.")));
-+ (void)downloadSetAcceptContentTypes:(NSArray<NSString *> *)acceptContentTypes __attribute__((deprecated("Use +downloadSetAcceptableContentTypes: instead.")));
-+ (NSArray<NSString *> *)downloadAcceptContentTypes                             __attribute__((deprecated("Use +downloadAcceptableContentTypes instead.")));
-+ (void)downloadSetUnsupportContentTypeFilter:(BOOL(^)(NSURL *URL, NSString *contentType))contentTypeFilter __attribute__((deprecated("Use +downloadSetUnacceptableContentTypeDisposer: instead.")));
 
 @end

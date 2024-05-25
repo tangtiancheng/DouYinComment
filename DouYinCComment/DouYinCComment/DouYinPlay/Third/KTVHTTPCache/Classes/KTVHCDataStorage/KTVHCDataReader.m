@@ -32,6 +32,7 @@
         KTVHCLogAlloc(self);
         self.unit = [[KTVHCDataUnitPool pool] unitWithURL:request.URL];
         self->_request = [request newRequestWithTotalLength:self.unit.totalLength];
+        self.coreLock = [[NSRecursiveLock alloc] init];
         self.delegateQueue = dispatch_queue_create("KTVHCDataReader_delegateQueue", DISPATCH_QUEUE_SERIAL);
         self.internalDelegateQueue = dispatch_queue_create("KTVHCDataReader_internalDelegateQueue", DISPATCH_QUEUE_SERIAL);
         KTVHCLogDataReader(@"%p, Create reader\norignalRequest : %@\nfinalRequest : %@\nUnit : %@", self, request, self.request, self.unit);
@@ -93,6 +94,7 @@
         [self unlock];
         return nil;
     }
+    NSAssert(self->_calledPrepare == YES, @"Prepare api must be called befor read data.");
     NSData *data = [self.sourceManager readDataOfLength:length];
     if (data.length > 0) {
         self->_readedLength += data.length;
@@ -142,7 +144,7 @@
         return NSOrderedDescending;
     }];
     long long offset = self.request.range.start;
-    long long length = KTVHCRangeIsFull(self.request.range) ? KTVHCRangeGetLength(self.request.range) : (self.request.range.end - offset + 1);
+    long long length = KTVHCRangeGetLength(self.request.range);
     for (KTVHCDataFileSource *obj in fileSources) {
         long long delta = obj.range.start + obj.readRange.start - offset;
         if (delta > 0) {
@@ -255,9 +257,6 @@
 
 - (void)lock
 {
-    if (!self.coreLock) {
-        self.coreLock = [[NSRecursiveLock alloc] init];
-    }
     [self.coreLock lock];
 }
 

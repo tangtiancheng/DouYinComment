@@ -12,11 +12,17 @@
 #import "KTVHCURLTool.h"
 #import "KTVHCLog.h"
 
+#import <net/if.h>
+#import <ifaddrs.h>
+#import <arpa/inet.h>
+
 @interface KTVHCHTTPServer ()
 
-@property (nonatomic, strong) HTTPServer *server;
-@property (nonatomic) UIBackgroundTaskIdentifier backgroundTask;
 @property (nonatomic) BOOL wantsRunning;
+@property (nonatomic, strong) HTTPServer *server;
+@property (nonatomic, strong) NSCondition *pingCondition;
+@property (nonatomic, strong) dispatch_queue_t pingQueue;
+@property (nonatomic, strong) NSURLSessionDataTask *pingTask;
 
 @end
 
@@ -36,18 +42,14 @@
 {
     if (self = [super init]) {
         KTVHCLogAlloc(self);
-        self.backgroundTask = UIBackgroundTaskInvalid;
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(applicationDidEnterBackground)
-                                                     name:UIApplicationDidEnterBackgroundNotification
-                                                   object:nil];
+        self.server = [[HTTPServer alloc] init];
+        [self.server setConnectionClass:[KTVHCHTTPConnection class]];
+        [self.server setType:@"_http._tcp."];
+        self.pingCondition = [[NSCondition alloc] init];
+        self.pingQueue = dispatch_queue_create("KTVHCHTTPServer_pingQueue", DISPATCH_QUEUE_SERIAL);
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(applicationWillEnterForeground)
                                                      name:UIApplicationWillEnterForegroundNotification
-                                                   object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(HTTPConnectionDidDie)
-                                                     name:HTTPConnectionDidDieNotification
                                                    object:nil];
     }
     return self;
@@ -57,6 +59,15 @@
 {
     KTVHCLogDealloc(self);
     [self stopInternal];
+}
+
+- (BOOL)setPort:(UInt16)port
+{
+    if (self.isRunning) {
+        return NO;
+    }
+    [self.server setPort:port];
+    return YES;
 }
 
 - (BOOL)isRunning
@@ -78,16 +89,24 @@
 
 - (NSURL *)URLWithOriginalURL:(NSURL *)URL
 {
+    return [self URLWithOriginalURL:URL bindToLocalhost:YES];
+}
+
+- (NSURL *)URLWithOriginalURL:(NSURL *)URL bindToLocalhost:(BOOL)bindToLocalhost
+{
     if (!URL || URL.isFileURL || URL.absoluteString.length == 0) {
         return URL;
     }
     if (!self.isRunning) {
         return URL;
     }
-    NSString *original = [[KTVHCURLTool tool] URLEncode:URL.absoluteString];
-    NSString *server = [NSString stringWithFormat:@"http://127.0.0.1:%d/", self.server.listeningPort];
-    NSString *extension = URL.pathExtension ? [NSString stringWithFormat:@".%@", URL.pathExtension] : @"";
-    NSString *URLString = [NSString stringWithFormat:@"%@request%@?url=%@", server, extension, original];
+    NSString *URLString = [NSString stringWithFormat:@"http://%@:%d/%@/%@/%@%@",
+                           bindToLocalhost ? @"localhost" : [self getPrimaryIPAddress],
+                           self.server.listeningPort,
+                           [[KTVHCURLTool tool] URLEncode:URL.absoluteString],
+                           [KTVHCHTTPConnection URITokenPlaceHolder],
+                           [KTVHCHTTPConnection URITokenLastPathComponent],
+                           URL.pathExtension.length > 0 ? [NSString stringWithFormat:@".%@", URL.pathExtension] : @""];
     URL = [NSURL URLWithString:URLString];
     KTVHCLogHTTPServer(@"%p, Return URL\nURL : %@", self, URL);
     return URL;
@@ -97,10 +116,6 @@
 
 - (BOOL)startInternal:(NSError **)error
 {
-    self.server = [[HTTPServer alloc] init];
-    [self.server setConnectionClass:[KTVHCHTTPConnection class]];
-    [self.server setType:@"_http._tcp."];
-    [self.server setPort:80];
     BOOL ret = [self.server start:error];
     if (ret) {
         KTVHCLogHTTPServer(@"%p, Start server success", self);
@@ -113,62 +128,71 @@
 - (void)stopInternal
 {
     [self.server stop];
-    self.server = nil;
+}
+
+- (BOOL)ping
+{
+    [self.pingCondition lock];
+    static NSURLSession *session = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        configuration.timeoutIntervalForRequest = 3;
+        session = [NSURLSession sessionWithConfiguration:configuration];
+    });
+    __block BOOL result = NO;
+    __weak typeof(self) weakSelf = self;
+    NSURL *URL = [self URLWithOriginalURL:[NSURL URLWithString:[KTVHCHTTPConnection URITokenPing]]];
+    self.pingTask = [session dataTaskWithURL:URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (!error && data.length > 0) {
+            result = YES;
+        }
+        [weakSelf.pingCondition lock];
+        [weakSelf.pingCondition broadcast];
+        [weakSelf.pingCondition unlock];
+    }];
+    [self.pingTask resume];
+    [self.pingCondition wait];
+    self.pingTask = nil;
+    [self.pingCondition unlock];
+    return result;
+}
+
+- (NSString *)getPrimaryIPAddress
+{
+    NSString *address = @"localhost";
+    struct ifaddrs *list;
+    if (getifaddrs(&list) >= 0) {
+        for (struct ifaddrs *ifap = list; ifap; ifap = ifap->ifa_next) {
+            if (strcmp(ifap->ifa_name, "en0")) {
+                continue;
+            }
+            if ((ifap->ifa_flags & IFF_UP) && (ifap->ifa_addr->sa_family == AF_INET)) {
+                address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)ifap->ifa_addr)->sin_addr)];
+                break;
+            }
+        }
+        freeifaddrs(list);
+    }
+    return address;
 }
 
 #pragma mark - Background Task
 
-- (void)applicationDidEnterBackground
-{
-    if (self.server.numberOfHTTPConnections > 0) {
-        KTVHCLogHTTPServer(@"%p, enter background", self);
-        [self beginBackgroundTask];
-    } else {
-        KTVHCLogHTTPServer(@"%p, enter background and stop server", self);
-        [self stopInternal];
-    }
-}
-
 - (void)applicationWillEnterForeground
 {
-    KTVHCLogHTTPServer(@"%p, enter foreground", self);
-    if (self.backgroundTask == UIBackgroundTaskInvalid && self.wantsRunning) {
-        KTVHCLogHTTPServer(@"%p, restart server", self);
-        [self startInternal:nil];
-    }
-    [self endBackgroundTask];
-}
-
-- (void)HTTPConnectionDidDie
-{
-    KTVHCLogHTTPServer(@"%p, connection did die", self);
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground &&
-            self.server.numberOfHTTPConnections == 0) {
-            KTVHCLogHTTPServer(@"%p, server idle", self);
-            [self endBackgroundTask];
-            [self stopInternal];
+    dispatch_async(self.pingQueue, ^{
+        if (self.wantsRunning) {
+            KTVHCLogHTTPServer(@"%p, ping server", self);
+            if (![self ping]) {
+                [self stopInternal];
+                NSError *error = nil;
+                if (![self startInternal:&error]) {
+                    KTVHCLogHTTPServer(@"%p, restart server error %@", self, error);
+                };
+            }
         }
     });
-}
-
-- (void)beginBackgroundTask
-{
-    KTVHCLogHTTPServer(@"%p, begin background task", self);
-    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        KTVHCLogHTTPServer(@"%p, background task expiration", self);
-        [self endBackgroundTask];
-        [self stopInternal];
-    }];
-}
-
-- (void)endBackgroundTask
-{
-    if (self.backgroundTask != UIBackgroundTaskInvalid) {
-        KTVHCLogHTTPServer(@"%p, end background task", self);
-        [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
-        self.backgroundTask = UIBackgroundTaskInvalid;
-    }
 }
 
 @end

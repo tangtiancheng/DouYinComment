@@ -35,6 +35,7 @@
 @property (nonatomic, readonly) long long totalLength;
 @property (nonatomic, readonly) long long cacheLength;
 @property (nonatomic, readonly) long long validLength;
+@property (nonatomic, readonly) NSInteger s;
 
 /**
  *  Unit Item

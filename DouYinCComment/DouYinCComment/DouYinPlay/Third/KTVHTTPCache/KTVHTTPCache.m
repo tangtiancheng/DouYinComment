@@ -27,6 +27,11 @@
     [[KTVHCHTTPServer server] stop];
 }
 
++ (void)proxySetPort:(UInt16)port
+{
+    [[KTVHCHTTPServer server] setPort:port];
+}
+
 + (BOOL)proxyIsRunning
 {
     return [KTVHCHTTPServer server].isRunning;
@@ -35,6 +40,11 @@
 + (NSURL *)proxyURLWithOriginalURL:(NSURL *)URL
 {
     return [[KTVHCHTTPServer server] URLWithOriginalURL:URL];
+}
+
++ (NSURL *)proxyURLWithOriginalURL:(NSURL *)URL bindToLocalhost:(BOOL)bindToLocalhost
+{
+    return [[KTVHCHTTPServer server] URLWithOriginalURL:URL bindToLocalhost:bindToLocalhost];
 }
 
 #pragma mark - Data Storage
@@ -154,6 +164,8 @@
 
 + (void)logSetConsoleLogEnable:(BOOL)consoleLogEnable
 {
+//    int a = YUTG;
+    NSLog(@"========================================================================");
     [KTVHCLog log].consoleLogEnable = consoleLogEnable;
 }
 
@@ -195,71 +207,6 @@
 + (NSError *)logErrorForURL:(NSURL *)URL
 {
     return [[KTVHCLog log] errorForURL:URL];
-}
-
-@end
-
-#pragma mark - Deprecated
-
-@implementation KTVHTTPCache (Deprecated)
-
-+ (void)logDeleteRecordLog
-{
-    [self logDeleteRecordLogFile];
-}
-
-+ (NSString *)logRecordLogFilePath
-{
-    return [self logRecordLogFileURL].path;
-}
-
-+ (NSString *)proxyURLStringWithOriginalURLString:(NSString *)URLString
-{
-    NSURL *URL = [NSURL URLWithString:URLString];
-    return [self proxyURLWithOriginalURL:URL].absoluteString;
-}
-
-+ (NSURL *)cacheCompleteFileURLIfExistedWithURL:(NSURL *)URL
-{
-    return [self cacheCompleteFileURLWithURL:URL];
-}
-
-+ (NSString *)cacheCompleteFilePathIfExistedWithURLString:(NSString *)URLString
-{
-    NSURL *URL = [NSURL URLWithString:URLString];
-    return [self cacheCompleteFileURLWithURL:URL].path;
-}
-
-+ (KTVHCDataCacheItem *)cacheCacheItemWithURLString:(NSString *)URLString
-{
-    NSURL *URL = [NSURL URLWithString:URLString];
-    return [self cacheCacheItemWithURL:URL];
-}
-
-+ (void)cacheDeleteCacheWithURLString:(NSString *)URLString
-{
-    NSURL *URL = [NSURL URLWithString:URLString];
-    [self cacheDeleteCacheWithURL:URL];
-}
-
-+ (void)tokenSetURLFilter:(NSURL * (^)(NSURL *URL))URLFilter
-{
-    [self encodeSetURLConverter:URLFilter];
-}
-
-+ (void)downloadSetAcceptContentTypes:(NSArray<NSString *> *)acceptContentTypes
-{
-    [self downloadSetAcceptableContentTypes:acceptContentTypes];
-}
-
-+ (NSArray<NSString *> *)downloadAcceptContentTypes
-{
-    return [self downloadAcceptableContentTypes];
-}
-
-+ (void)downloadSetUnsupportContentTypeFilter:(BOOL(^)(NSURL *URL, NSString *contentType))contentTypeFilter
-{
-    [self downloadSetUnacceptableContentTypeDisposer:contentTypeFilter];
 }
 
 @end

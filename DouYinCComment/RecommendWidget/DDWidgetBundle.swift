@@ -19,5 +19,6 @@ struct DDWidgetBundle: WidgetBundle {
         ClockWidget()
         FanWidget()
         FrameAniWidget()
+        GifVideoPlayWidget()
     }
 }

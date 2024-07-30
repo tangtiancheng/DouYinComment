@@ -33,8 +33,8 @@ extension GifVideoPlayWidget {
         var body: some View {
             GeometryReader { geo in
                 switch family {
-                case .systemSmall: SmallGifVideoPlayView(name: "dog")
-                default: SmallGifVideoPlayView(name: "dog")
+                case .systemSmall: SmallGifVideoPlayView(name: "baby")
+                default: SmallGifVideoPlayView(name: "baby")
                 }
                 
             }

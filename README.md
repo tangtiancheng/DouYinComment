@@ -11,10 +11,10 @@ pod 'TTCTool
 
 
 
-以下这些功能大部分都是我在 "铃声多多"APP里已经用了,iOS端日活有70万左右, 常年保持AppStore 排行榜100多名, 并不是让你们当小白鼠哈，只是为了我自己装逼, 外加可能稍微能帮上别人一点点忙,有需要就拿去吧!
+这些功能大部分都是我在 "铃声多多"APP里已经用了,iOS端日活有70万左右, 常年保持AppStore 排行榜100多名, 不是让你们当小白鼠哈，仅仅为了自己记录(装逼)一下, 外加能帮别人一点是一点吧,有需要就拿去用!
 这个Demo主要功 能:
 
-## 1.iOS播放gif视频小组件, 网易云iOS可编辑小组件,动态Widget,风扇小组件,时钟小组件,滚动照片小组件,小组件帧动画,摇摇乐小组件, 自己去跑起来看吧
+## 1.iOS播放gif视频小组件,小组件帧动画,摇摇乐小组件,动态Widget, 网易云iOS可编辑小组件, 风扇小组件, 时钟小组件, 滚动照片小组件, 自己去跑起来看吧!
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)
@@ -57,13 +57,13 @@ pod 'TTCTool
 
 
 
-## 5.模仿抖音播放小视频功能;(这个功能网上有很多Demo,所以大家可能大家需求不大 )
+## 5.模仿抖音播放小视频功能;(这个功能网上有很多其它更优秀的Demo,所以大家可能需求不大)
 ### (1).支持边下边播
 ### (2).支持视频预加载
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/smallVideoImage.gif)
 
 ## 6.和铃声多多一样,支持上传音频到库乐队(GarageBand)直接设置手机铃声
-这个小众功能我看现在网上没有任何资料,鉴于之前有好几位iOS开发者通过简书找到我, 都是公司需要做这个功能但是不知道怎么实现,所以今天把这个功能实现方法写出来,希望能帮到大家.如果确实解决了您的燃眉之急,希望能点一个star,感谢.
+鉴于之前有好几位iOS开发者通过简书找到我, 都是公司需要做这个功能但是不知道怎么实现, 这个小众功能我做的时候网上没有任何资料,当时我自己也是迷迷糊糊琢磨了一些时间才弄出来的. 今天把这个功能实现方法写出来把,希望能帮到大家.如果确实解决了您的燃眉之急,希望能点一个star,感谢.
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/GarageBandImage.gif)
 

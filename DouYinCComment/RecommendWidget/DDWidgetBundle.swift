@@ -13,12 +13,13 @@ import SwiftUI
 struct DDWidgetBundle: WidgetBundle {
     @WidgetBundleBuilder
     var body: some Widget {
-        
-        RecommendWidget()
+        GifVideoPlayWidget()
+        ShakeWidget()
         ScrolPicWidget()
+        FrameAniWidget()
         ClockWidget()
         FanWidget()
-        FrameAniWidget()
-        GifVideoPlayWidget()
+        RecommendWidget()
+ 
     }
 }

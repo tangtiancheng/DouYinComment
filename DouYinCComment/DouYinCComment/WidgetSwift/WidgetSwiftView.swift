@@ -33,15 +33,16 @@ import WidgetKit
             self.addSubview(scrolV)
             scrolV.contentSize = CGSizeMake(self.frame.size.width, 2000)
 //            scrolV.contentInsetAdjustmentBehavior = .never;
-            
+           
+            //滚动相册
             var vc1 = UIHostingController(rootView:SmallWidgetScrolPicView(lineNum: 2,sizeType: .WidgetSizeMidType))
             vc1.view.layer.cornerRadius = 22;
             vc1.view.layer.masksToBounds = true;
             scrolV.addSubview(vc1.view)
             vc1.view.frame = CGRectMake(10, 0, 320, 160)
             
-            //滚动相册
-            var vc2 = UIHostingController(rootView:SmallWidgetScrolPicView(lineNum: 1,sizeType: .WidgetSizeSmallType))
+            //摇一摇
+            var vc2 = UIHostingController(rootView:SmallShakeView())
             vc2.view.layer.cornerRadius = 22;
             vc2.view.layer.masksToBounds = true;
             scrolV.addSubview(vc2.view)
@@ -79,8 +80,6 @@ import WidgetKit
                 vc7.view.layer.masksToBounds = true;
                 scrolV.addSubview(vc7.view)
                 vc7.view.frame = CGRectMake(10, 530, 160, 160)
-                
-               
             }
             
             

@@ -53,8 +53,6 @@
 		790B61BB2B723B3100CE4993 /* ClockHandRotationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61A82B7237CE00CE4993 /* ClockHandRotationKit.swift */; };
 		790B61BC2B723C4800CE4993 /* ClockHandRotationKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */; };
 		790B61BD2B723C4800CE4993 /* ClockHandRotationKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		790B61BF2B723D8B00CE4993 /* ClockHandRotationKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */; };
-		790B61C02B723D8B00CE4993 /* ClockHandRotationKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 790B61AF2B723A2800CE4993 /* ClockHandRotationKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		790B61C32B7342B800CE4993 /* Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61C22B7342B800CE4993 /* Fan.swift */; };
 		790B61C42B7342B800CE4993 /* Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61C22B7342B800CE4993 /* Fan.swift */; };
 		790B61C62B73448600CE4993 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B61C52B73448600CE4993 /* Clock.swift */; };
@@ -560,6 +558,14 @@
 		79A9E0FC2C57B2F0000FB14E /* GifVideoPlayWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E0F82C57B2EF000FB14E /* GifVideoPlayWidget+Provider.swift */; };
 		79A9E0FD2C57B2F0000FB14E /* GifVideoPlayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E0F92C57B2EF000FB14E /* GifVideoPlayWidget.swift */; };
 		79A9E0FE2C57B3AA000FB14E /* GifVideoPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9DF712C57937F000FB14E /* GifVideoPlay.swift */; };
+		79A9E1052C5803D8000FB14E /* ShakeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E1012C5803D8000FB14E /* ShakeWidget.swift */; };
+		79A9E1062C5803D8000FB14E /* ShakeWidget+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E1022C5803D8000FB14E /* ShakeWidget+Provider.swift */; };
+		79A9E1072C5803D8000FB14E /* ShakeWidget+EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E1032C5803D8000FB14E /* ShakeWidget+EntryView.swift */; };
+		79A9E1082C5803D8000FB14E /* ShakeWidget+Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E1042C5803D8000FB14E /* ShakeWidget+Entry.swift */; };
+		79A9E10A2C580598000FB14E /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E1092C580598000FB14E /* Shake.swift */; };
+		79A9E10B2C580599000FB14E /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9E1092C580598000FB14E /* Shake.swift */; };
+		79A9E10D2C590B05000FB14E /* dog.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79A9E10C2C590B05000FB14E /* dog.gif */; };
+		79A9E10E2C590B05000FB14E /* dog.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79A9E10C2C590B05000FB14E /* dog.gif */; };
 		79C7F00A2ADEE979003CF3C1 /* TTCSmallVideoDismissOrPopAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0022ADEE979003CF3C1 /* TTCSmallVideoDismissOrPopAniTrans.m */; };
 		79C7F00B2ADEE979003CF3C1 /* TTCSmallVideoPresentOrPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0032ADEE979003CF3C1 /* TTCSmallVideoPresentOrPushAniTrans.m */; };
 		79C7F00C2ADEE979003CF3C1 /* UIViewController+TTCTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0042ADEE979003CF3C1 /* UIViewController+TTCTransitionAnimator.m */; };
@@ -616,7 +622,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				790B61C02B723D8B00CE4993 /* ClockHandRotationKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1456,6 +1461,12 @@
 		79A9E0F72C57B2EF000FB14E /* GifVideoPlayWidget+Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GifVideoPlayWidget+Entry.swift"; sourceTree = "<group>"; };
 		79A9E0F82C57B2EF000FB14E /* GifVideoPlayWidget+Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GifVideoPlayWidget+Provider.swift"; sourceTree = "<group>"; };
 		79A9E0F92C57B2EF000FB14E /* GifVideoPlayWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifVideoPlayWidget.swift; sourceTree = "<group>"; };
+		79A9E1012C5803D8000FB14E /* ShakeWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeWidget.swift; sourceTree = "<group>"; };
+		79A9E1022C5803D8000FB14E /* ShakeWidget+Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShakeWidget+Provider.swift"; sourceTree = "<group>"; };
+		79A9E1032C5803D8000FB14E /* ShakeWidget+EntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShakeWidget+EntryView.swift"; sourceTree = "<group>"; };
+		79A9E1042C5803D8000FB14E /* ShakeWidget+Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShakeWidget+Entry.swift"; sourceTree = "<group>"; };
+		79A9E1092C580598000FB14E /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		79A9E10C2C590B05000FB14E /* dog.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dog.gif; sourceTree = "<group>"; };
 		79C7F0022ADEE979003CF3C1 /* TTCSmallVideoDismissOrPopAniTrans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCSmallVideoDismissOrPopAniTrans.m; sourceTree = "<group>"; };
 		79C7F0032ADEE979003CF3C1 /* TTCSmallVideoPresentOrPushAniTrans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCSmallVideoPresentOrPushAniTrans.m; sourceTree = "<group>"; };
 		79C7F0042ADEE979003CF3C1 /* UIViewController+TTCTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TTCTransitionAnimator.m"; sourceTree = "<group>"; };
@@ -1478,7 +1489,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33BF7EEE28FB26C900CA4292 /* SwiftUI.framework in Frameworks */,
-				790B61BF2B723D8B00CE4993 /* ClockHandRotationKit.xcframework in Frameworks */,
 				33BF7EED28FB26C900CA4292 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1531,6 +1541,7 @@
 				790B61C82B73643200CE4993 /* DDWidgetBundle.swift */,
 				790B62622B748B4300CE4993 /* DDWidgetCommon.swift */,
 				790B61CA2B73649C00CE4993 /* RecommendWidget */,
+				79A9E1002C5801F4000FB14E /* ShakeWidget */,
 				79A9E0F52C57B22E000FB14E /* GifVideoPlayWidget */,
 				790B61CB2B7364B800CE4993 /* ScrolPicWidget */,
 				790B61CC2B7364C600CE4993 /* FanWidget */,
@@ -1560,6 +1571,7 @@
 				790B61A62B7232A300CE4993 /* WidgetSwiftViewController.m */,
 				790B61A32B722C4400CE4993 /* WidgetSwiftView.swift */,
 				790B61A22B722C4300CE4993 /* DouYinCComment-Bridging-Header.h */,
+				79A9E0FF2C5801C1000FB14E /* Shake */,
 				79A9DF702C5785F4000FB14E /* GifVideoPlay */,
 				79A9DF6F2C5784EB000FB14E /* ScrolPick */,
 				79A9DF6E2C5784E3000FB14E /* Fan */,
@@ -2827,6 +2839,7 @@
 			children = (
 				79A9DF712C57937F000FB14E /* GifVideoPlay.swift */,
 				79A9DF742C5793EF000FB14E /* baby.gif */,
+				79A9E10C2C590B05000FB14E /* dog.gif */,
 			);
 			path = GifVideoPlay;
 			sourceTree = "<group>";
@@ -3024,6 +3037,25 @@
 			path = GifVideoPlayWidget;
 			sourceTree = "<group>";
 		};
+		79A9E0FF2C5801C1000FB14E /* Shake */ = {
+			isa = PBXGroup;
+			children = (
+				79A9E1092C580598000FB14E /* Shake.swift */,
+			);
+			path = Shake;
+			sourceTree = "<group>";
+		};
+		79A9E1002C5801F4000FB14E /* ShakeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				79A9E1012C5803D8000FB14E /* ShakeWidget.swift */,
+				79A9E1042C5803D8000FB14E /* ShakeWidget+Entry.swift */,
+				79A9E1032C5803D8000FB14E /* ShakeWidget+EntryView.swift */,
+				79A9E1022C5803D8000FB14E /* ShakeWidget+Provider.swift */,
+			);
+			path = ShakeWidget;
+			sourceTree = "<group>";
+		};
 		79C7F0012ADEE979003CF3C1 /* TTCTransition */ = {
 			isa = PBXGroup;
 			children = (
@@ -3169,6 +3201,7 @@
 				790B628F2B7A4E4400CE4993 /* TreeNewBee12.ttf in Resources */,
 				790B62972B7A4E4500CE4993 /* TreeNewBee6.ttf in Resources */,
 				790B62BC2B7B811000CE4993 /* 010.png in Resources */,
+				79A9E10E2C590B05000FB14E /* dog.gif in Resources */,
 				79A9E0242C57A329000FB14E /* LICENSE in Resources */,
 				790B629B2B7A4E4500CE4993 /* TreeNewBee15.ttf in Resources */,
 				790B62D22B7B811000CE4993 /* 09.png in Resources */,
@@ -3209,6 +3242,7 @@
 				790B628A2B7A4E4400CE4993 /* TreeNewBee24.ttf in Resources */,
 				790B62C52B7B811000CE4993 /* 07.png in Resources */,
 				795DB8CA229E86E9003AFE44 /* IQKeyboardManager.bundle in Resources */,
+				79A9E10D2C590B05000FB14E /* dog.gif in Resources */,
 				790B62C92B7B811000CE4993 /* 04.png in Resources */,
 				795DB75E229E372F003AFE44 /* ZFPlayer.bundle in Resources */,
 				790B62B72B7B811000CE4993 /* 3.png in Resources */,
@@ -3269,6 +3303,7 @@
 				790B62662B78F21B00CE4993 /* ClockWidget.swift in Sources */,
 				79A9E0B92C57A684000FB14E /* SDAnimatedImagePlayer.m in Sources */,
 				79A9E0B62C57A684000FB14E /* SDImageTransformer.m in Sources */,
+				79A9E1072C5803D8000FB14E /* ShakeWidget+EntryView.swift in Sources */,
 				79A9E0CB2C57A6A0000FB14E /* UIImage+Transform.m in Sources */,
 				79A9E0FC2C57B2F0000FB14E /* GifVideoPlayWidget+Provider.swift in Sources */,
 				79A9E0BC2C57A684000FB14E /* NSButton+WebCache.m in Sources */,
@@ -3318,6 +3353,7 @@
 				79A9E0E22C57A6A0000FB14E /* SDWebImageDefine.m in Sources */,
 				79A9E0EE2C57A6AD000FB14E /* SDDisplayLink.m in Sources */,
 				79A9E0B52C57A684000FB14E /* SDAnimatedImage.m in Sources */,
+				79A9E1082C5803D8000FB14E /* ShakeWidget+Entry.swift in Sources */,
 				79A9E0C82C57A684000FB14E /* SDImageCoder.m in Sources */,
 				79A9E0DD2C57A6A0000FB14E /* SDWebImageDownloader.m in Sources */,
 				79A9E0E42C57A6A0000FB14E /* UIView+WebCacheOperation.m in Sources */,
@@ -3338,6 +3374,7 @@
 				79A9E0B02C57A684000FB14E /* SDImageIOAnimatedCoder.m in Sources */,
 				79A9E0BA2C57A684000FB14E /* SDImageHEICCoder.m in Sources */,
 				79A9E0C62C57A684000FB14E /* SDImageIOCoder.m in Sources */,
+				79A9E1062C5803D8000FB14E /* ShakeWidget+Provider.swift in Sources */,
 				790B626C2B78F28400CE4993 /* ClockWidget+Provider.swift in Sources */,
 				33BF7F0F28FB271A00CA4292 /* RTDDDataModel.swift in Sources */,
 				79A9E0BB2C57A684000FB14E /* SDImageAPNGCoder.m in Sources */,
@@ -3349,7 +3386,9 @@
 				790B61C72B73448600CE4993 /* Clock.swift in Sources */,
 				79A9E0E82C57A6AD000FB14E /* SDAssociatedObject.m in Sources */,
 				790B62682B78F26500CE4993 /* ClockWidget+Entry.swift in Sources */,
+				79A9E1052C5803D8000FB14E /* ShakeWidget.swift in Sources */,
 				79A9E0C42C57A684000FB14E /* SDImageCachesManager.m in Sources */,
+				79A9E10B2C580599000FB14E /* Shake.swift in Sources */,
 				79A9E0B22C57A684000FB14E /* SDImageCache.m in Sources */,
 				790B62772B793B1D00CE4993 /* WidgetFrameAniView.swift in Sources */,
 				79A9E0D02C57A6A0000FB14E /* SDWebImageOptionsProcessor.m in Sources */,
@@ -3726,6 +3765,7 @@
 				79A2CC6C2C01A6DF003FDA50 /* KTVHCDataCacheItemZone.m in Sources */,
 				334FF26727547E160052EAFF /* Type4ViewControllerSecond.m in Sources */,
 				79A9E0792C57A329000FB14E /* SDWebImageTransition.m in Sources */,
+				79A9E10A2C580598000FB14E /* Shake.swift in Sources */,
 				795DB8D1229E86E9003AFE44 /* IQUIViewController+Additions.m in Sources */,
 				79A9E04B2C57A329000FB14E /* SDGraphicsImageRenderer.m in Sources */,
 				79A9E05D2C57A329000FB14E /* SDWebImagePrefetcher.m in Sources */,

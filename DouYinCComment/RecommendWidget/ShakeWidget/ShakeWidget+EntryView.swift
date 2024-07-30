@@ -1,5 +1,3 @@
-
-
 // The MIT License (MIT)
 //
 // Copyright (c) 2020-Present Paweł Wiszenko
@@ -25,7 +23,7 @@
 import SwiftUI
 import WidgetKit
 
-extension GifVideoPlayWidget {
+extension ShakeWidget {
     struct EntryView: View {
         let entry: Entry
         @Environment(\.widgetFamily) var family: WidgetFamily
@@ -33,8 +31,8 @@ extension GifVideoPlayWidget {
         var body: some View {
             GeometryReader { geo in
                 switch family {
-                case .systemSmall: SmallGifVideoPlayView(name: "dog")
-                default: SmallGifVideoPlayView(name: "dog")
+                case .systemSmall: SmallShakeView()
+                default: SmallShakeView()
                 }
                 
             }

@@ -1,5 +1,3 @@
-
-
 // The MIT License (MIT)
 //
 // Copyright (c) 2020-Present Paweł Wiszenko
@@ -22,23 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
 import WidgetKit
 
-extension GifVideoPlayWidget {
-    struct EntryView: View {
-        let entry: Entry
-        @Environment(\.widgetFamily) var family: WidgetFamily
-
-        var body: some View {
-            GeometryReader { geo in
-                switch family {
-                case .systemSmall: SmallGifVideoPlayView(name: "dog")
-                default: SmallGifVideoPlayView(name: "dog")
-                }
-                
-            }
-        }
+extension ShakeWidget {
+    struct Entry: TimelineEntry {
+        var date: Date = Date()
     }
 }
 
+// MARK: - Data
+
+extension ShakeWidget.Entry {
+    static var placeholder: Self {
+        .init()
+    }
+}

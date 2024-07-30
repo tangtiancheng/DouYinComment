@@ -1,5 +1,3 @@
-
-
 // The MIT License (MIT)
 //
 // Copyright (c) 2020-Present Paweł Wiszenko
@@ -22,23 +20,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
 import WidgetKit
 
-extension GifVideoPlayWidget {
-    struct EntryView: View {
-        let entry: Entry
-        @Environment(\.widgetFamily) var family: WidgetFamily
+extension ShakeWidget {
+    struct Provider: TimelineProvider {
+//        static let persistenceController = PersistenceController()
+//        let managedObjectContext = Self.persistenceController.managedObjectContext
 
-        var body: some View {
-            GeometryReader { geo in
-                switch family {
-                case .systemSmall: SmallGifVideoPlayView(name: "dog")
-                default: SmallGifVideoPlayView(name: "dog")
-                }
-                
-            }
+        func placeholder(in context: Context) -> Entry {
+            .placeholder
+        }
+
+        func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
+            completion(.placeholder)
+        }
+
+        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+            let entry = Entry(date: Date())
+            completion(.init(entries: [entry], policy: .never))
         }
     }
 }
-

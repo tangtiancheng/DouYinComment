@@ -58,7 +58,7 @@ struct SmallGifVideoPlayView: View {
                     let offsetY = arcRadius - t / 2
                     ZStack {
                         ForEach(1...gifImages.count, id: \.self) { index in
-                            Image(uiImage: gifImages[index-1])
+                            Image(uiImage: gifImages[gifImages.count-index])
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: width, height: height)

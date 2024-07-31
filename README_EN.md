@@ -1,7 +1,6 @@
 # DouYinComment
 
-- [English](https://github.com/tangtiancheng/DouYinComment/blob/master/README_EN.md)
-
+- [中文](https://github.com/tangtiancheng/DouYinComment/blob/master/README.md)
 
 支持pod导入:  
 pod 'TTCTool  

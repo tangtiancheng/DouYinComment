@@ -23,7 +23,6 @@ pod 'TTCTool
 ## 1.iOS播放gif视频小组件,小组件帧动画,摇摇乐小组件,动态Widget, 网易云iOS可编辑小组件, 风扇小组件, 时钟小组件, 滚动照片小组件, 自己去跑起来看吧
 
 
-
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件编辑.gif)
@@ -92,6 +91,8 @@ pod 'TTCTool
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/headerView不吸顶,下拉变大.gif)
 ### (6).Header滚动延续(实现方法和网上其它的不太一样,可以看看)
 https://github.com/tangtiancheng/DouYinComment/archive/refs/tags/0.0.7.zip 新版没了,老版本有实现代码
+
+
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/scrolContinue.gif)
 ### (7).标签编辑功能
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/editTag.gif)

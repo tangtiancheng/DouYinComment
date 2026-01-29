@@ -16,6 +16,7 @@ Most of these functions are I have used in the "铃声多多" APP,iOS daily life
 The main functions of this Demo:
 
 ## 1.iOS Widget Play gif Video, Widget Frame animation, Widget Shake, Dynamic Widget, Wangyiyun Edit Widget, Fan Widget, Clock Widget, Scroll Picture Widget, Run it for yourself!
+(The new version of Xcode 26 does not support the rotation function of widgets on iOS 26. However, the older versions of Xcode are fine.)
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件添加.gif)

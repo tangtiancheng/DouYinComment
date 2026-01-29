@@ -45,7 +45,7 @@ struct SmallShakeView: View {
             let b = halfWH / tanHalf
             let t = radiu - imageWH - b
             let lineWidth = radiu - b;
-            let arcRadius = (radiu - (lineWidth / 2)) * 400//这里其实不乘以300才是完完全全正确的结果,每个大小都是刚刚好的.但是这样转起来之后重叠部分会留阴影, 所以加以放大后.半径变大了,但是重叠部分还是那么大.相应的周长绝对速度就变大了. 这样阴影就会快速略过,肉眼便无法感知了.越放大效果越好.应该是这个理
+            let arcRadius = (radiu - (lineWidth / 2)) * 400//这里其实不乘以400才是完完全全正确的结果,每个大小都是刚刚好的.但是这样转起来之后重叠部分会留阴影, 所以加以放大后.半径变大了,但是重叠部分还是那么大.相应的周长绝对速度就变大了. 这样阴影就会快速略过,肉眼便无法感知了.越放大效果越好.应该是这个理
             let offsetY = arcRadius - t / 2
             
             
@@ -71,7 +71,7 @@ struct SmallShakeView: View {
                 }
             }
             .frame(width: width, height: height)
-        }.background(Color.black)
+        }
         
     }
     
@@ -101,16 +101,15 @@ struct ShakeView: View {
             
             Image("shake")
                 .resizable()
+                .ddwidgetAccentedRenderingMode()
                 .aspectRatio(contentMode: .fit)
+
             Image("shakeMan")
                 .resizable()
+                .ddwidgetAccentedRenderingMode()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 258.0/411 * width , height: 222.0 / 411 * width)
                 .position(CGPoint(x: width / 2, y: 177.0 / 411.0 * height))
-            
         }
-        
     }
-    
-    
 }

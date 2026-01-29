@@ -16,14 +16,16 @@ struct SmallWidgetFanView: View {
             ZStack() {
                 Image("Fan_S_NingMeng_lamina")
                     .resizable()//自适应填满
+                    .ddwidgetAccentedRenderingMode()
                     .scaledToFill()
                     .frame(width: geo.size.width, height: geo.size.height)
                     .clockHandRotationEffect(period: .custom(0.5))
                 Image("Fan_S_NingMeng_shell")
                     .resizable()//自适应填满
+                    .ddwidgetAccentedRenderingMode()
                     .scaledToFill()
                     .frame(width: geo.size.width, height: geo.size.height)
             }
-        }.background(Color.black)
+        }
     }
 }

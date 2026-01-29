@@ -573,6 +573,7 @@
 		79C7F01F2ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F0192ADEF00F003CF3C1 /* TTCPanPushTransitionDelegate.m */; };
 		79C7F0202ADEF00F003CF3C1 /* UIViewController+TTCPanPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F01A2ADEF00F003CF3C1 /* UIViewController+TTCPanPush.m */; };
 		79C7F0212ADEF00F003CF3C1 /* TTCPanPushAniTrans.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C7F01B2ADEF00F003CF3C1 /* TTCPanPushAniTrans.m */; };
+		79D429E52F2B5A1C00A38FFB /* DDWidgetCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B62622B748B4300CE4993 /* DDWidgetCommon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -3554,6 +3555,7 @@
 				792EBB1526C1220B00B94076 /* RACCompoundDisposableProvider.d in Sources */,
 				793D5D1F26C0135F00DFC4FB /* MJRefreshTrailer.m in Sources */,
 				795DB5CF229D3E0C003AFE44 /* SmallVideoCell.m in Sources */,
+				79D429E52F2B5A1C00A38FFB /* DDWidgetCommon.swift in Sources */,
 				79A2CC782C01A6DF003FDA50 /* HTTPErrorResponse.m in Sources */,
 				790B61C62B73448600CE4993 /* Clock.swift in Sources */,
 				79A9E0AB2C57A32A000FB14E /* SDAsyncBlockOperation.m in Sources */,

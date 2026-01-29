@@ -22,6 +22,7 @@ struct WidgetFrameAniView: View {
                     let imageDate = Date(timeInterval: TimeInterval(index - frameImages.count), since: date)
                     Image(uiImage:image ?? UIImage())
                         .resizable()
+                        .ddwidgetAccentedRenderingMode()
                         .scaledToFit()
                         .mask(alignment: .trailing)
                     {

@@ -28,9 +28,10 @@ struct RTDDWidgetViewSystemSmall: View {
                 RTDDWidgetBigView(data: list[0])
             }.widgetURL(URL(string: "RingToneDD://Widget/"+list[0].id)!)//跳转方式其实就是普通的scheme
             
-        }.background(
-            Color.init(CGColor(red: 61.0/255, green: 204.0/255, blue: 121.0/255, alpha: 1))
-        )
+        }
+//        .background(
+//            Color.init(CGColor(red: 61.0/255, green: 204.0/255, blue: 121.0/255, alpha: 1))
+//        )
     }
 }
 
@@ -59,9 +60,10 @@ struct RTDDWidgetViewSystemMedium: View {
                 }
             }
             .padding(10)//距离top left right bottom的距离
-        }.background(
-            Color.init(CGColor(red: 61.0/255, green: 204.0/255, blue: 121.0/255, alpha: 1))
-        )
+        }
+//        .background(
+//            Color.init(CGColor(red: 61.0/255, green: 204.0/255, blue: 121.0/255, alpha: 1))
+//        )
     }
 }
 
@@ -123,9 +125,11 @@ struct RTDDWidgetBigView: View {
                 // 添加背景图
                 Image(data.bg)
                     .resizable()
+                    .ddwidgetAccentedRenderingMode()
                 // 添加logo
                 Image("icon")
                     .resizable()
+                    .ddwidgetAccentedRenderingMode()
                     .scaledToFill()
                     .frame(width: 20, height: 20)
                     .position(x: geo.size.width - (20/2) - 10, y: (20/2) + 10)
@@ -135,6 +139,7 @@ struct RTDDWidgetBigView: View {
                     HStack(spacing: 3) {
                         Image(data.icon)
                             .resizable()
+                            .ddwidgetAccentedRenderingMode()
                             .frame(width: 20, height: 20)
                         Text(data.title)
                             .font(.system(size: 16))
@@ -169,6 +174,7 @@ struct RTDDWidgetSmallView: View {
                 HStack() {
                     Image(data.icon)
                         .resizable()
+                        .ddwidgetAccentedRenderingMode()
                         .frame(width: 25, height: 25)
                     Text(data.title)
                         .font(.system(size: 16))

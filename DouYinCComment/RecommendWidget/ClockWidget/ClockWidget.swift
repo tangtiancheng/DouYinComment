@@ -15,7 +15,7 @@ struct ClockWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             EntryView(entry: entry)
-                .widgetBackground(Color.black.opacity(0))
+                .ddwidgetBackground(Color.black)
             
         }
         .configurationDisplayName("表情时钟")

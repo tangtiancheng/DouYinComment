@@ -60,6 +60,7 @@ struct SmallGifVideoPlayView: View {
                         ForEach(1...gifImages.count, id: \.self) { index in
                             Image(uiImage: gifImages[gifImages.count-index])
                                 .resizable()
+                                .ddwidgetAccentedRenderingMode()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: width, height: height)
                                 .mask(

@@ -35,9 +35,9 @@ struct SmallWidgetScrolPicView: View {
                 }
             }
         }
-        .background(
-            Color.black
-        )
+//        .background(
+//            Color.black
+//        )
     }
 }
 
@@ -52,6 +52,7 @@ struct SmallWidgetRow1ScrolPicView: View {
             ZStack() {
                 Image(sizeType == .WidgetSizeSmallType ? "ScrolPic_S_Back" : "ScrolPic_M_Back")
                     .resizable()//自适应填满
+                    .ddwidgetAccentedRenderingMode()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geo.size.width, height: geo.size.height)
                 SmallWidgetRowScrolPicView()
@@ -121,6 +122,7 @@ struct SmallWidgetRowScrolPicView: View {
                          var imageStr = String("ScrolPicDef\(index % 10)")
                          Image(imageStr)
                              .resizable()//自适应填满
+                             .ddwidgetAccentedRenderingMode()
                              .aspectRatio(contentMode: .fill)
                              .frame(width: imageW , height: geo.size.height )
                              .cornerRadius(3)

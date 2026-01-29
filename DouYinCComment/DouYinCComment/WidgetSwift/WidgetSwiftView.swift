@@ -38,6 +38,7 @@ import WidgetKit
             var vc1 = UIHostingController(rootView:SmallWidgetScrolPicView(lineNum: 2,sizeType: .WidgetSizeMidType))
             vc1.view.layer.cornerRadius = 22;
             vc1.view.layer.masksToBounds = true;
+            vc1.view.backgroundColor = UIColor.black
             scrolV.addSubview(vc1.view)
             vc1.view.frame = CGRectMake(10, 0, 320, 160)
             
@@ -45,6 +46,7 @@ import WidgetKit
             var vc2 = UIHostingController(rootView:SmallShakeView())
             vc2.view.layer.cornerRadius = 22;
             vc2.view.layer.masksToBounds = true;
+            vc2.view.backgroundColor = UIColor.black
             scrolV.addSubview(vc2.view)
             vc2.view.frame = CGRectMake(10, 170, 160, 160)
             
@@ -52,6 +54,7 @@ import WidgetKit
             var vc3 = UIHostingController(rootView:SmallWidgetClockView())
             vc3.view.layer.cornerRadius = 22;
             vc3.view.layer.masksToBounds = true;
+            vc3.view.backgroundColor = UIColor.black
             scrolV.addSubview(vc3.view)
             vc3.view.frame = CGRectMake(180, 170, 160, 160)
             
@@ -61,6 +64,7 @@ import WidgetKit
             var vc4 = UIHostingController(rootView:SmallWidgetFanView())
             vc4.view.layer.cornerRadius = 22;
             vc4.view.layer.masksToBounds = true;
+            vc4.view.backgroundColor = UIColor.black
             scrolV.addSubview(vc4.view)
             vc4.view.frame = CGRectMake(10, 340, 160, 160)
             

@@ -74,7 +74,9 @@ struct RecommendWidget: Widget {
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             RecommendWidgetEntryView(entry: entry)
-                .widgetBackground(Color.black.opacity(0))
+                .ddwidgetBackground(            Color.init(CGColor(red: 61.0/255, green: 204.0/255, blue: 121.0/255, alpha: 1))
+)
+            
         }
         .configurationDisplayName("铃声多多推荐")
         .description("快捷音乐播放入口,并可自定义精选功能")

@@ -15,11 +15,11 @@ struct GifVideoPlayWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             EntryView(entry: entry)
-                .widgetBackground(Color.black.opacity(0))
+                .ddwidgetBackground(Color.black)
             
         }
-        .configurationDisplayName("播放git视频")
-        .description("git视频小组件,有需要代码自拿")
+        .configurationDisplayName("播放gif视频")
+        .description("gif视频小组件,有需要代码自拿")
         .supportedFamilies([.systemSmall])
         .ddcontentMarginsDisabled()
         

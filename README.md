@@ -22,7 +22,7 @@ pod 'TTCTool
 这个Demo主要功 能:
 
 ## 1.iOS播放gif视频小组件,小组件帧动画,摇摇乐小组件,动态Widget, 网易云iOS可编辑小组件, 风扇小组件, 时钟小组件, 滚动照片小组件, 自己去跑起来看吧
-(新版xcode26不支持在iOS26上的小组件旋转功能,老版本xcode没问题)
+(新版xcode26.1不支持在iOS26上的小组件旋转功能,xcode26.1之前的老版本xcode没问题)
 
 
 ![image](https://github.com/tangtiancheng/ttcgif/blob/master/gif/小组件动画.gif)
